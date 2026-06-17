@@ -36,8 +36,9 @@ representeras via extensions – se [MED-001](#öppna-frågor).
 
 | RIVTA-element | Kard. | FHIR-element | Kommentar |
 |---|---|---|---|
-| `medicationMedicalRecordHeader.documentId` | 1..1 | `MedicationStatement.identifier` | Källsystemets dokumentidentifierare |
+| `medicationMedicalRecordHeader.documentId` | 1..1 | `MedicationStatement.identifier[0].value` | Källsystemets dokumentidentifierare |
 | `medicationMedicalRecordHeader.sourceSystemHSAId` | 1..1 | `MedicationStatement.meta.source` | Format: `urn:oid:1.2.752.129.2.1.4.1#{hsaId}` |
+| `medicationMedicalRecordHeader.documentTitle` | 0..1 | Ej mappad | Fritexttitel för dokument – ingen motsvarighet i MedicationStatement; informationen finns i anteckning eller profiltitel |
 | `medicationMedicalRecordHeader.patientId.extension` | 1..1 | `MedicationStatement.subject.identifier.value` | Personnummer eller samordningsnummer |
 | `medicationMedicalRecordHeader.patientId.root` | 1..1 | `MedicationStatement.subject.identifier.system` | OID→URI, se tabell nedan |
 | `medicationMedicalRecordHeader.accountableHealthcareProfessional.authorTime` | 1..1 | `MedicationStatement.dateAsserted` | YYYYMMDDHHMMSS → ISO 8601 (Europe/Stockholm), se [GENERAL-001](#öppna-frågor) |
@@ -46,12 +47,16 @@ representeras via extensions – se [MED-001](#öppna-frågor).
 | `medicationMedicalRecordHeader.accountableHealthcareProfessional.healthcareProfessionalRoleCode` | 0..1 | `PractitionerRole.code` | Yrkesrollskod |
 | `medicationMedicalRecordHeader.accountableHealthcareProfessional.healthcareProfessionalOrgUnit.orgUnitHSAId` | 0..1 | `PractitionerRole.organization.identifier.value` | Organisationsenhetens HSA-id |
 | `medicationMedicalRecordHeader.accountableHealthcareProfessional.healthcareProfessionalOrgUnit.orgUnitName` | 0..1 | `PractitionerRole.organization.display` | Organisationsenhetens namn |
+| `medicationMedicalRecordHeader.accountableHealthcareProfessional.healthcareProfessionalOrgUnit.orgUnitTelecom` | 0..1 | Ej mappad | Telefon till organisationsenhet – MedicationStatement saknar adressfält; inkluderas ej i FHIR-resursen |
+| `medicationMedicalRecordHeader.accountableHealthcareProfessional.healthcareProfessionalOrgUnit.orgUnitEmail` | 0..1 | Ej mappad | E-post till organisationsenhet – se orgUnitTelecom ovan |
+| `medicationMedicalRecordHeader.accountableHealthcareProfessional.healthcareProfessionalOrgUnit.orgUnitAddress` | 0..1 | Ej mappad | Postadress – se orgUnitTelecom ovan |
+| `medicationMedicalRecordHeader.accountableHealthcareProfessional.healthcareProfessionalOrgUnit.orgUnitLocation` | 0..1 | Ej mappad | Plats/ort – se orgUnitTelecom ovan |
 | `medicationMedicalRecordHeader.accountableHealthcareProfessional.healthcareProfessionalcareGiverHSAId` | 0..1 | `Provenance.agent[custodian].who.identifier` | **Yttre Sparr** – lowercase 'c' i 'care' (TK-specifik stavning) |
 | `medicationMedicalRecordHeader.accountableHealthcareProfessional.healthcareProfessionalcareUnitHSAId` | 0..1 | `Provenance.agent[author].who.identifier` | **Inre Sparr** – lowercase 'c' i 'care' (TK-specifik stavning) |
 | `medicationMedicalRecordHeader.legalAuthenticator.signatureTime` | 1..1 (om legalAuth) | `MedicationStatement.extension[legalAuthenticator].signatureTime` | Signeringstidpunkt; YYYYMMDDHHMMSS → ISO 8601 |
 | `medicationMedicalRecordHeader.legalAuthenticator.legalAuthenticatorHSAId` | 0..1 | `MedicationStatement.extension[legalAuthenticator].hsaId` | HSA-id för signerare |
-| `medicationMedicalRecordHeader.legalAuthenticator.legalAuthenticatorName` | 0..1 | `MedicationStatement.extension[legalAuthenticator].name` | Visningsnamn för signerare |
-| `medicationMedicalRecordHeader.approvedForPatient` | 1..1 | (ej mappad) | Inget standardiserat FHIR-fält; se [PDL-001](#öppna-frågor) |
+| `medicationMedicalRecordHeader.legalAuthenticator.legalAuthenticatorName` | 0..1 | Ej mappad | Namn i klartext – HSA-id räcker för logisk referens |
+| `medicationMedicalRecordHeader.approvedForPatient` | 1..1 | `MedicationStatement.meta.security` | PDL-kontroll – se [PDL-001](#öppna-frågor) |
 | `medicationMedicalRecordHeader.careContactId` | 0..1 | `MedicationStatement.context.identifier.value` | Logisk referens till vårdkontakt |
 
 ---
@@ -64,28 +69,39 @@ representeras via extensions – se [MED-001](#öppna-frågor).
 | `medicationMedicalRecordBody.medicationPrescription.typeOfPrescription` | 1..1 | `MedicationStatement.extension[typeOfPrescription]` | I=Insättning, U=Utsättning; se [MED-002](#öppna-frågor) |
 | `medicationMedicalRecordBody.medicationPrescription.prescriptionStatus` | 1..1 | `MedicationStatement.status` | Active→`active`, Inactive→`stopped`; se härledda fält |
 | `medicationMedicalRecordBody.medicationPrescription.prescriptionNote` | 0..1 | `MedicationStatement.note[0].text` | Fritext anteckning om ordination |
-| `medicationMedicalRecordBody.medicationPrescription.principalPrescriptionReason[i].reason` | 0..1 | `MedicationStatement.reasonCode[i]` | Primär ordinationsorsak (CodeableConcept) |
-| `medicationMedicalRecordBody.medicationPrescription.principalPrescriptionReason[i].otherReason` | 0..1 | `MedicationStatement.note[].text` | Fritextorsak; läggs som separat anteckning |
-| `medicationMedicalRecordBody.medicationPrescription.additionalPrescriptionReason[i].reason` | 0..1 | `MedicationStatement.reasonCode[i]` | Ytterligare ordinationsorsak |
-| `medicationMedicalRecordBody.medicationPrescription.additionalPrescriptionReason[i].otherReason` | 0..1 | `MedicationStatement.note[].text` | Ytterligare fritextorsak |
+| `medicationMedicalRecordBody.medicationPrescription.principalPrescriptionReason[i].reason` | 0..* | `MedicationStatement.reasonCode[i]` | Primär ordinationsorsak (CodeableConcept) |
+| `medicationMedicalRecordBody.medicationPrescription.principalPrescriptionReason[i].otherReason` | 0..1 | `MedicationStatement.note[].text` | Fritextorsak för primär ordinationsorsak; läggs som separat anteckning |
+| `medicationMedicalRecordBody.medicationPrescription.additionalPrescriptionReason[i].reason` | 0..* | `MedicationStatement.reasonCode[i]` | Ytterligare ordinationsorsak (CodeableConcept) |
+| `medicationMedicalRecordBody.medicationPrescription.additionalPrescriptionReason[i].otherReason` | 0..1 | `MedicationStatement.note[].text` | Fritextorsak för ytterligare ordinationsorsak |
 | `medicationMedicalRecordBody.medicationPrescription.evaluationTime` | 0..1 | `MedicationStatement.extension[evaluationTime]` | Planerad utvärderingstidpunkt; YYYYMMDDHHMMSS → ISO 8601 |
-| `medicationMedicalRecordBody.medicationPrescription.treatmentPurpose` | 0..1 | `MedicationStatement.note[1].text` | Behandlingsändamål (fritext) |
+| `medicationMedicalRecordBody.medicationPrescription.treatmentPurpose` | 0..1 | `MedicationStatement.note[].text` | Behandlingsändamål (fritext); läggs som separat anteckning |
 | `medicationMedicalRecordBody.medicationPrescription.prescriptionChainId` | 0..1 | `MedicationStatement.extension[prescriptionChain].chainId` | Kedjeidentifierare för relaterade ordinationer |
 | `medicationMedicalRecordBody.medicationPrescription.precedingPrescriptionId` | 0..1 | `MedicationStatement.extension[prescriptionChain].precedingId` | Föregående ordination i kedjan |
 | `medicationMedicalRecordBody.medicationPrescription.succeedingPrescriptionId` | 0..1 | `MedicationStatement.extension[prescriptionChain].succeedingId` | Efterföljande ordination i kedjan |
-| `medicationMedicalRecordBody.medicationPrescription.prescriber.authorTime` | 0..1 | `MedicationStatement.extension[prescriber].authorTime` | Förskrivartidpunkt |
+| `medicationMedicalRecordBody.medicationPrescription.prescriber.authorTime` | 1..1 (om prescriber) | `MedicationStatement.extension[prescriber].authorTime` | Förskrivarbeslutets tidpunkt; YYYYMMDDHHMMSS → ISO 8601 |
 | `medicationMedicalRecordBody.medicationPrescription.prescriber.healthcareProfessionalHSAId` | 0..1 | `MedicationStatement.extension[prescriber].hsaId` | Förskrivarens HSA-id |
 | `medicationMedicalRecordBody.medicationPrescription.prescriber.healthcareProfessionalName` | 0..1 | `MedicationStatement.extension[prescriber].name` | Förskrivarens namn |
+| `medicationMedicalRecordBody.medicationPrescription.prescriber.healthcareProfessionalRoleCode` | 0..1 | `MedicationStatement.extension[prescriber].roleCode` | Förskrivarens befattningskod |
+| `medicationMedicalRecordBody.medicationPrescription.prescriber.healthcareProfessionalOrgUnit.orgUnitHSAId` | 0..1 | `MedicationStatement.extension[prescriber].orgUnitHSAId` | Förskrivarens organisationsenhet (HSA-id) |
+| `medicationMedicalRecordBody.medicationPrescription.prescriber.healthcareProfessionalOrgUnit.orgUnitName` | 0..1 | `MedicationStatement.extension[prescriber].orgUnitName` | Förskrivarens organisationsenhet (namn) |
+| `medicationMedicalRecordBody.medicationPrescription.prescriber.healthcareProfessionalOrgUnit.orgUnitTelecom` | 0..1 | Ej mappad | Förskrivarens org-telefon – kontaktuppgifter lagras ej i MedicationStatement |
+| `medicationMedicalRecordBody.medicationPrescription.prescriber.healthcareProfessionalOrgUnit.orgUnitEmail` | 0..1 | Ej mappad | Förskrivarens org-e-post – se orgUnitTelecom ovan |
+| `medicationMedicalRecordBody.medicationPrescription.prescriber.healthcareProfessionalOrgUnit.orgUnitAddress` | 0..1 | Ej mappad | Förskrivarens org-postadress – se orgUnitTelecom ovan |
+| `medicationMedicalRecordBody.medicationPrescription.prescriber.healthcareProfessionalOrgUnit.orgUnitLocation` | 0..1 | Ej mappad | Förskrivarens org-plats/ort – se orgUnitTelecom ovan |
+| `medicationMedicalRecordBody.medicationPrescription.evaluator.authorTime` | 1..1 (om evaluator) | `MedicationStatement.extension[evaluator].authorTime` | Faktisk utvärderingstidpunkt; YYYYMMDDHHMMSS → ISO 8601 |
 | `medicationMedicalRecordBody.medicationPrescription.evaluator.healthcareProfessionalHSAId` | 0..1 | `MedicationStatement.extension[evaluator].hsaId` | Utvärderarens HSA-id |
+| `medicationMedicalRecordBody.medicationPrescription.evaluator.healthcareProfessionalName` | 0..1 | `MedicationStatement.extension[evaluator].name` | Utvärderarens namn |
+| `medicationMedicalRecordBody.medicationPrescription.evaluator.healthcareProfessionalRoleCode` | 0..1 | `MedicationStatement.extension[evaluator].roleCode` | Utvärderarens befattningskod |
+| `medicationMedicalRecordBody.medicationPrescription.evaluator.healthcareProfessionalOrgUnit.orgUnitHSAId` | 0..1 | `MedicationStatement.extension[evaluator].orgUnitHSAId` | Utvärderarens organisationsenhet (HSA-id) |
+| `medicationMedicalRecordBody.medicationPrescription.evaluator.healthcareProfessionalOrgUnit.orgUnitName` | 0..1 | `MedicationStatement.extension[evaluator].orgUnitName` | Utvärderarens organisationsenhet (namn) |
 | `medicationMedicalRecordBody.medicationPrescription.startOfFirstTreatment` | 0..1 | `MedicationStatement.extension[startOfFirstTreatment]` | Start för första behandlingsomgång; YYYYMMDDHHMMSS → ISO 8601 |
 | `medicationMedicalRecordBody.medicationPrescription.startOfTreatment` | 0..1 | `MedicationStatement.effectivePeriod.start` | Behandlingsstart; YYYYMMDDHHMMSS → ISO 8601 |
 | `medicationMedicalRecordBody.medicationPrescription.endOfTreatment` | 0..1 | `MedicationStatement.effectivePeriod.end` | Behandlingsslut; YYYYMMDDHHMMSS → ISO 8601 |
 | `medicationMedicalRecordBody.medicationPrescription.endOfTreatmentReason` | 0..1 | `MedicationStatement.extension[endOfTreatmentReason]` | Orsak till behandlingsavslut (CodeableConcept) |
 | `medicationMedicalRecordBody.medicationPrescription.selfMedication` | 1..1 | `MedicationStatement.extension[selfMedication]` | Egenmedicinering (boolean); DES-008 |
-
-> **Obs – dispensationAuthorization, administration, relation:** Dessa element i TKB:n är markerade
-> "delvis extraherade – kontrollera manuellt" och saknar fullständig mappning i denna version.
-> Se [MED-001](#öppna-frågor).
+| `medicationMedicalRecordBody.medicationPrescription.dispensationAuthorization` | 0..1 | Ej mappad | Förskrivningsinformation – strukturen är ej fullt specificerad i TKB (se [MED-001](#öppna-frågor)); kan inte mappas förrän XSD-strukturen är verifierad |
+| `medicationMedicalRecordBody.medicationPrescription.administration` | 0..* | Ej mappad | Administreringstillfällen – strukturen är ej fullt specificerad i TKB (se [MED-001](#öppna-frågor)); kan mappas till MedicationAdministration-resurs när XSD är verifierad |
+| `medicationMedicalRecordBody.medicationPrescription.relation` | 0..* | Ej mappad | Sambandsklass – strukturen är ej fullt specificerad i TKB (se [MED-001](#öppna-frågor)); relationstyper avgör mappning när XSD är verifierad |
 
 ---
 
@@ -97,17 +113,19 @@ begränsning i FSH-uttrycket.
 
 | RIVTA-alternativ | Kard. | FHIR-element | Kommentar |
 |---|---|---|---|
-| `drug.unstructuredDrugInformation` | 0..1 | `MedicationStatement.medicationCodeableConcept.text` | Ostrukturerad läkemedelsinformation; ingen coding-del |
-| `drug.merchandise.name` | 0..1 | `MedicationStatement.medicationCodeableConcept.text` | Handelsvarans namn |
-| `drug.merchandise.code` | 0..1 | `MedicationStatement.medicationCodeableConcept.coding` | Handelsvarans kod (lokalt kodsystem) |
-| `drug.merchandise.manufacturer` | 0..1 | `MedicationStatement.extension[manufacturer]` | Tillverkare (fritext) |
-| `drug.drugArticle.name` | 0..1 | `MedicationStatement.medicationCodeableConcept.text` | Läkemedelsartikelns namn |
-| `drug.drugArticle.nplPackId` | 0..1 | `MedicationStatement.medicationCodeableConcept.coding` | NPL förpacknings-id; system=`urn:oid:1.2.752.129.2.1.5.2` |
-| `drug.drug.name` | 0..1 | `MedicationStatement.medicationCodeableConcept.text` | Läkemedlets namn |
+| `drug.comment` | 0..1 | `MedicationStatement.note[].text` | Kommentar om läkemedelsval; läggs som anteckning |
+| `drug.unstructuredDrugInformation.unstructuredInformation` | 1..1 (om unstructured) | `MedicationStatement.medicationCodeableConcept.text` | Ostrukturerad läkemedelsinformation; ingen coding-del |
+| `drug.merchandise.articleNumber` | 1..1 (om merchandise) | `MedicationStatement.medicationCodeableConcept.coding` | Handelsvara – varunummer (från SIL) som coding |
+| `drug.drugArticle.nplPackId` | 1..1 (om drugArticle) | `MedicationStatement.medicationCodeableConcept.coding` | NPL förpacknings-id; system=`urn:oid:1.2.752.129.2.1.5.2` |
 | `drug.drug.nplId` | 0..1 | `MedicationStatement.medicationCodeableConcept.coding` | NPL-id; system=`urn:oid:1.2.752.129.2.1.5.1` |
 | `drug.drug.atcCode` | 0..1 | `MedicationStatement.medicationCodeableConcept.coding` | ATC-kod; system=`http://www.whocc.no/atc` |
-| `drug.generics.name` | 0..1 | `MedicationStatement.medicationCodeableConcept.text` | Generikans namn |
-| `drug.generics.atcCode` | 0..1 | `MedicationStatement.medicationCodeableConcept.coding` | ATC-kod för generika; system=`http://www.whocc.no/atc` |
+| `drug.drug.routeOfAdministration` | 0..1 | `MedicationStatement.dosage[0].route` | Administreringssätt (CodeableConcept) – tas från drug-nivå och kopieras till dosage |
+| `drug.drug.pharmaceuticalForm` | 0..1 | `MedicationStatement.extension[pharmaceuticalForm]` | Läkemedelsform (fritext, t.ex. "Tablett") – inget standard FHIR-fält i MedicationStatement |
+| `drug.drug.strength` | 0..1 | `MedicationStatement.extension[drugStrength].value` | Styrka (decimal) – inget standard FHIR-fält i MedicationStatement |
+| `drug.drug.strengthUnit` | 0..1 | `MedicationStatement.extension[drugStrength].unit` | Enhet på styrka (fritext, t.ex. "mg") |
+| `drug.generics.substance` | 0..1 | `MedicationStatement.medicationCodeableConcept.text` | Substansgrupp (fritext) för generikt läkemedelsval |
+| `drug.generics.strength` | 0..1 | `MedicationStatement.extension[drugStrength]` | Önskad styrka (Quantity) för generika |
+| `drug.generics.form` | 0..1 | `MedicationStatement.extension[pharmaceuticalForm]` | Läkemedelsform (fritext) för generika |
 
 ---
 
@@ -119,12 +137,13 @@ begränsning i FSH-uttrycket.
 | RIVTA-element | Kard. | FHIR-element | Kommentar |
 |---|---|---|---|
 | `dosage[i].dosageInstruction` | 1..1 | `MedicationStatement.dosage[i].text` | Doseringsanvisning (fritext) |
-| `dosage[i].unitDose` | 0..1 | `MedicationStatement.dosage[i].doseAndRate.doseQuantity` | Enhetsdos med mängd och enhet |
+| `dosage[i].unitDose` | 0..1 | `MedicationStatement.dosage[i].doseAndRate[0].doseQuantity` | Enhetsdos med mängd och enhet |
 | `dosage[i].shortNotation` | 0..1 | `MedicationStatement.dosage[i].patientInstruction` | Kortnotation (t.ex. "1x2") |
-| `dosage[i].maximumDosage` | 0..1 | `MedicationStatement.dosage[i].maxDosePerPeriod` | Maxdos per period |
-| `dosage[i].conditionalDosage` | 0..1 | `MedicationStatement.dosage[i].additionalInstruction.text` | Villkorsdosering (fritext, t.ex. "vid behov") |
-| `dosage[i].lengthOfTreatment` | 0..1 | `MedicationStatement.dosage[i].extension[lengthOfTreatment]` | Behandlingslängd |
-| `dosage[i].setDosage` | 0..1 | `MedicationStatement.dosage[i].extension[setDosage]` | Komplex strukturerad dosering; se [MED-001](#öppna-frågor) |
+| `dosage[i].lengthOfTreatment.treatmentInterval` | 1..1 (om lengthOfTreatment) | `MedicationStatement.dosage[i].extension[lengthOfTreatment].interval` | Tidsintervall för behandling (Range) |
+| `dosage[i].lengthOfTreatment.isMaximumTreatmentTime` | 1..1 (om lengthOfTreatment) | `MedicationStatement.dosage[i].extension[lengthOfTreatment].isMaximum` | Om true: maximalt tillåten behandlingstid (boolean) |
+| `dosage[i].setDosage` | 0..1 | `MedicationStatement.dosage[i].extension[setDosage]` | Komplex strukturerad dosering – fullständig struktur ej specificerad i TKB; se [MED-001](#öppna-frågor) |
+| `dosage[i].maximumDosage` | 0..1 | `MedicationStatement.dosage[i].maxDosePerPeriod` | Maxdos per period – fullständig struktur ej specificerad i TKB; se [MED-001](#öppna-frågor) |
+| `dosage[i].conditionalDosage.conditionDescription` | 0..1 | `MedicationStatement.dosage[i].additionalInstruction[0].text` | Villkorstext för behovsordination (fritext) |
 
 ---
 
@@ -132,8 +151,23 @@ begränsning i FSH-uttrycket.
 
 | RIVTA-element | Kard. | FHIR-element | Kommentar |
 |---|---|---|---|
-| `medicationMedicalRecordBody.additionalPatientInformation.dateOfBirth` | 1..1 | `MedicationStatement.subject.birthDate` | Kräver inline Patient-resurs eller extension |
-| `medicationMedicalRecordBody.additionalPatientInformation.gender` | 0..1 | `MedicationStatement.subject.gender` | Administrativt kön |
+| `medicationMedicalRecordBody.additionalPatientInformation.dateOfBirth` | 1..1 | `MedicationStatement.subject.birthDate` | Kräver inline Patient-resurs eller extension på subject |
+| `medicationMedicalRecordBody.additionalPatientInformation.gender` | 0..1 | `MedicationStatement.subject.gender` | Administrativt kön (KV Kön OID 1.2.752.129.2.2.1.1 → AdministrativeGender) |
+
+---
+
+## Mappningstabell – result (tekniska svarsfält)
+
+`result 1..1` innehåller teknisk statusinformation som hanteras av transportlagret och inte
+ingår i klinisk FHIR-data.
+
+| RIVTA-element | Kard. | FHIR-element | Kommentar |
+|---|---|---|---|
+| `result.resultCode` | 1..1 | Ej mappad | Teknisk responskod (OK/INFO/ERROR) – hanteras av transportlagret |
+| `result.errorCode` | 0..1 | Ej mappad | Teknisk felkod – hanteras av transportlagret |
+| `result.subcode` | 0..1 | Ej mappad | Teknisk subkod – hanteras av transportlagret |
+| `result.logId` | 1..1 | Ej mappad | Teknisk spårnings-UUID – hanteras av transportlagret |
+| `result.message` | 0..1 | Ej mappad | Teknisk felbeskrivning – hanteras av transportlagret |
 
 ---
 
@@ -173,7 +207,7 @@ PDL-styrning utgår från `accountableHealthcareProfessional`-blocket i headern.
 |---|---|---|
 | Yttre Sparr (vårdgivare) | `medicationMedicalRecordHeader.accountableHealthcareProfessional.healthcareProfessionalcareGiverHSAId` | `Provenance.agent[custodian].who.identifier` |
 | Inre Sparr (vårdenhet) | `medicationMedicalRecordHeader.accountableHealthcareProfessional.healthcareProfessionalcareUnitHSAId` | `Provenance.agent[author].who.identifier` |
-| Patientgodkännande | `medicationMedicalRecordHeader.approvedForPatient` (boolean) | Inget standardiserat FHIR-fält; se [PDL-001](#öppna-frågor) |
+| Patientgodkännande | `medicationMedicalRecordHeader.approvedForPatient` (boolean) | `MedicationStatement.meta.security`; se [PDL-001](#öppna-frågor) |
 
 ---
 
@@ -205,8 +239,16 @@ OID:er utan känd URI-mappning bevaras som `urn:oid:{oid}`.
 
 | ID | Fråga |
 |---|---|
-| MED-001 | **`dispensationAuthorization`, `administration`, `relation` delvis extraherade.** Dessa element i TKB:n är markerade "SAKNAS I KÄLLDOKUMENT – endast delvis extraherat – kontrollera manuellt". Behöver verifieras mot XSD för `DispensationAuthorizationType`, `AdministrationType`, `RelationType`. `setDosage` (komplex strukturerad dosering) ingår också. Mappning läggs till när elementen är verifierade. |
+| MED-001 | **`dispensationAuthorization`, `administration`, `relation` delvis extraherade.** Dessa element i TKB:n är markerade "SAKNAS I KÄLLDOKUMENT – endast delvis extraherat – kontrollera manuellt". Behöver verifieras mot XSD för `DispensationAuthorizationType`, `AdministrationType`, `RelationType`. `setDosage` och `maximumDosage` (komplex strukturerad dosering) ingår också i vad som behöver verifieras. Mappning läggs till när elementen är verifierade. |
 | MED-002 | **`typeOfPrescription` (I/U) mappar inte naturligt till `MedicationStatement.status`.** I=Insättning och U=Utsättning anger ordinationshändelsens karaktär, inte dess aktuella status. Nuvarande beslut: bevara i extension; status härleds primärt från `prescriptionStatus`. Alternativ: ignorera `prescriptionStatus` och sätt `status=active` för I, `status=stopped` för U. |
 | MED-003 | **`drug` XOR-villkor kan inte uttryckas i FSH-kardinalitet.** Fem varianter (unstructured/merchandise/drugArticle/drug/generics) är ömsesidigt uteslutande enligt TKB. FSH Invariant med FHIRPath implementeras som workaround. |
-| PDL-001 | **`approvedForPatient` (boolean) saknar FHIR-motsvarighet.** Inget standardiserat `meta.security`-kodsystem. Behöver gemensamt beslut; se central issue i [mapping-issues](mapping-issues.html). |
+| PDL-001 | **`approvedForPatient` (boolean) saknar standardiserat FHIR-kodsystem.** Fältet mappas tentativt till `meta.security` men inget standardiserat kodsystem för detta begrepp finns. Behöver gemensamt beslut; se central issue i [mapping-issues](mapping-issues.html). |
 | GENERAL-001 | **Tidsstämpelformat.** RIVTA använder `YYYYMMDDhhmmss` utan tidszon; FHIR kräver ISO 8601 med tidszon. Konvertering ska anta `Europe/Stockholm` (CET/CEST). Gäller alla tidsfält. |
+
+## Föreslagna nya issues
+
+| ID | Förslag |
+|---|---|
+| MED-004 | **`drug.drug.pharmaceuticalForm`, `drug.drug.strength`, `drug.drug.strengthUnit` saknar standard FHIR-element i MedicationStatement.** Dessa fält beskriver läkemedlets form och styrka på produktnivå. Överväg om de ska mappas till Medication-resurs istället för MedicationStatement-extension, i linje med FHIR-mönstret för Medication.form och Medication.ingredient.strength. |
+| MED-005 | **`prescriber`-blocket kontra FHIR `requester`.** MedicationStatement.basedOn → MedicationRequest skulle vara ett mer korrekt mönster för förskrivaren om en MedicationRequest-resurs genereras. Beslut behövs om MedicationRequest ska ingå i resurshierarkin. |
+| MED-006 | **`documentTitle` (header) saknar mappning.** Fritexttiteln för dokument har ingen standardmotpart i MedicationStatement. Överväg `MedicationStatement.note` eller ignorera som en rent administrativ etikett utan klinisk relevans. |

@@ -44,22 +44,24 @@ Inget explicit statusfält finns i TKB:n. Fälten härleds:
 
 | RIVTA-element | Kard. | FHIR-element | Kommentar |
 |---|---|---|---|
-| `functionalStatusAssessmentHeader.documentId` | 1..1 | `Condition.identifier.value` | Källsystemets dokumentidentifierare |
+| `functionalStatusAssessmentHeader.documentId` | 1..1 | `Condition.identifier[0].value` | Källsystemets dokumentidentifierare |
 | `functionalStatusAssessmentHeader.sourceSystemHSAId` | 1..1 | `Condition.meta.source` | Format: `urn:oid:1.2.752.129.2.1.4.1#{hsaId}` |
+| `functionalStatusAssessmentHeader.documentTime` | 1..1 | `Condition.extension[assertedDate]` | Bedömningstidpunkt/händelsetidpunkt; YYYYMMDDHHMMSS → ISO 8601, se [GENERAL-001](#öppna-frågor) |
 | `functionalStatusAssessmentHeader.patientId.extension` | 1..1 | `Condition.subject.identifier.value` | Personnummer eller samordningsnummer |
 | `functionalStatusAssessmentHeader.patientId.root` | 1..1 | `Condition.subject.identifier.system` | OID→URI, se tabell nedan |
-| `functionalStatusAssessmentHeader.accountableHealthcareProfessional.authorTime` | 1..1 | `Condition.recordedDate` | YYYYMMDDHHMMSS → ISO 8601 (Europe/Stockholm), se [GENERAL-001](#öppna-frågor) |
+| `functionalStatusAssessmentHeader.accountableHealthcareProfessional.authorTime` | 1..1 | `Condition.recordedDate` | Registreringstidpunkt; YYYYMMDDHHMMSS → ISO 8601 (Europe/Stockholm), se [GENERAL-001](#öppna-frågor) |
 | `functionalStatusAssessmentHeader.accountableHealthcareProfessional.healthcareProfessionalHSAId` | 0..1 | `Condition.recorder` (Reference(PractitionerRole)) | Logisk referens via HSA-id |
 | `functionalStatusAssessmentHeader.accountableHealthcareProfessional.healthcareProfessionalName` | 0..1 | `PractitionerRole.practitioner.display` | Visningsnamn |
 | `functionalStatusAssessmentHeader.accountableHealthcareProfessional.healthcareProfessionalRoleCode` | 0..1 | `PractitionerRole.code` | Yrkesrollskod |
 | `functionalStatusAssessmentHeader.accountableHealthcareProfessional.healthcareProfessionalOrgUnit.orgUnitHSAId` | 0..1 | `PractitionerRole.organization.identifier.value` | Organisationsenhetens HSA-id |
 | `functionalStatusAssessmentHeader.accountableHealthcareProfessional.healthcareProfessionalOrgUnit.orgUnitName` | 0..1 | `PractitionerRole.organization.display` | Organisationsenhetens namn |
-| `functionalStatusAssessmentHeader.accountableHealthcareProfessional.healthcareProfessionalCareGiverHSAId` | 0..1 | `Provenance.agent[custodian].who.identifier` | Yttre Sparr |
-| `functionalStatusAssessmentHeader.accountableHealthcareProfessional.healthcareProfessionalCareUnitHSAId` | 0..1 | `Provenance.agent[author].who.identifier` | Inre Sparr |
-| `functionalStatusAssessmentHeader.legalAuthenticator.signatureTime` | 1..1 (om legalAuth) | `Condition.extension[assertedDate]` | Signeringstidpunkt; YYYYMMDDHHMMSS → ISO 8601 |
+| `functionalStatusAssessmentHeader.accountableHealthcareProfessional.healthcareProfessionalCareUnitHSAId` | 0..1 | `Provenance.agent[author].who.identifier` | Inre Sparr – vårdenhet |
+| `functionalStatusAssessmentHeader.accountableHealthcareProfessional.healthcareProfessionalCareGiverHSAId` | 0..1 | `Provenance.agent[custodian].who.identifier` | Yttre Sparr – vårdgivare |
+| `functionalStatusAssessmentHeader.legalAuthenticator.signatureTime` | 1..1 (om legalAuth) | `Condition.extension[assertedDate]` | Signeringstidpunkt; YYYYMMDDHHMMSS → ISO 8601 (om legalAuthenticator finns, prioriteras framför documentTime) |
 | `functionalStatusAssessmentHeader.legalAuthenticator.legalAuthenticatorHSAId` | 0..1 | `Condition.asserter` (Reference(PractitionerRole)) | Logisk referens via HSA-id |
-| `functionalStatusAssessmentHeader.legalAuthenticator.legalAuthenticatorName` | 0..1 | `PractitionerRole.practitioner.display` | Visningsnamn |
-| `functionalStatusAssessmentHeader.approvedForPatient` | 1..1 | (ej mappad) | Inget standardiserat FHIR-fält; se [PDL-001](#öppna-frågor) |
+| `functionalStatusAssessmentHeader.legalAuthenticator.legalAuthenticatorName` | 0..1 | Ej mappad | Namn i klartext – HSA-id räcker för logisk referens |
+| `functionalStatusAssessmentHeader.legalAuthenticator.legalAuthenticatorRoleCode` | 0..1 | Ej mappad | Signerande persons befattning – ingen direkt FHIR-mappning utanför PractitionerRole; Condition.asserter är en Reference utan rollkod |
+| `functionalStatusAssessmentHeader.approvedForPatient` | 1..1 | `Condition.meta.security` | PDL-kontroll – se [PDL-001](#öppna-frågor) |
 | `functionalStatusAssessmentHeader.careContactId` | 0..1 | `Condition.encounter.identifier.value` | Logisk referens till vårdkontakt |
 
 ---
@@ -68,7 +70,7 @@ Inget explicit statusfält finns i TKB:n. Fälten härleds:
 
 | RIVTA-element | Kard. | FHIR-element | Kommentar |
 |---|---|---|---|
-| `functionalStatusAssessmentBody.assessmentCategory` | 1..1 | `Condition.category` | Kodverk `AssessmentCategoryCS`; pad-pad eller fun-fun |
+| `functionalStatusAssessmentBody.assessmentCategory` | 1..1 | `Condition.category` | Kodverk `AssessmentCategoryCS`; `pad-pad` eller `fun-fun` |
 | `functionalStatusAssessmentBody.comment` | 0..1 | `Condition.note[0].text` | Fritext-kommentar för hela bedömningen |
 
 ### Underelement – padl (vid assessmentCategory = pad-pad)
@@ -83,10 +85,22 @@ Inget explicit statusfält finns i TKB:n. Fälten härleds:
 
 | RIVTA-element | Kard. | FHIR-element | Kommentar |
 |---|---|---|---|
-| `functionalStatusAssessmentBody.disability.disabilityAssessment.code` | 1..1 | `Condition.code.coding.code` | ICF-kod |
-| `functionalStatusAssessmentBody.disability.disabilityAssessment.codeSystem` | 1..1 | `Condition.code.coding.system` | OID `1.2.752.116.1.1.3` → `urn:oid:1.2.752.116.1.1.3` (ICF, se tabell nedan) |
+| `functionalStatusAssessmentBody.disability.disabilityAssessment` | 1..1 | `Condition.code` | ICF-kod för funktionsnedsättning; se underelement nedan |
+| `functionalStatusAssessmentBody.disability.disabilityAssessment.code` | — | `Condition.code.coding.code` | ICF-kod, t.ex. `b310` |
+| `functionalStatusAssessmentBody.disability.disabilityAssessment.codeSystem` | — | `Condition.code.coding.system` | OID `1.2.752.116.1.1.3` → `urn:oid:1.2.752.116.1.1.3` (ICF, se tabell nedan) |
 | `functionalStatusAssessmentBody.disability.disabilityAssessment.displayName` | 0..1 | `Condition.code.coding.display` | Kodverkets officiella benämning |
 | `functionalStatusAssessmentBody.disability.comment` | 0..1 | `Condition.note[n].text` | Kommentar specifik för funktionsnedsättningsbedömningen |
+
+---
+
+## Mappningstabell – result
+
+| RIVTA-element | Kard. | FHIR-element | Kommentar |
+|---|---|---|---|
+| `result.resultCode` | 1..1 | Ej mappad | Teknisk responskod – hanteras av transportlagret |
+| `result.errorCode` | 0..1 | Ej mappad | Teknisk felkod – hanteras av transportlagret |
+| `result.logId` | 1..1 | Ej mappad | Teknisk spårnings-UUID – hanteras av transportlagret |
+| `result.message` | 0..1 | Ej mappad | Teknisk felbeskrivning – hanteras av transportlagret |
 
 ---
 
@@ -98,7 +112,7 @@ PDL-styrning i GetFunctionalStatus utgår från `accountableHealthcareProfession
 |---|---|---|
 | Yttre Sparr (vårdgivare) | `functionalStatusAssessmentHeader.accountableHealthcareProfessional.healthcareProfessionalCareGiverHSAId` | `Provenance.agent[custodian].who.identifier` |
 | Inre Sparr (vårdenhet) | `functionalStatusAssessmentHeader.accountableHealthcareProfessional.healthcareProfessionalCareUnitHSAId` | `Provenance.agent[author].who.identifier` |
-| Patientgodkännande | `functionalStatusAssessmentHeader.approvedForPatient` (boolean) | Inget standardiserat FHIR-fält; se [PDL-001](#öppna-frågor) |
+| Patientgodkännande | `functionalStatusAssessmentHeader.approvedForPatient` (boolean) | `Condition.meta.security`; se [PDL-001](#öppna-frågor) |
 
 ---
 
@@ -114,16 +128,6 @@ PDL-styrning i GetFunctionalStatus utgår från `accountableHealthcareProfession
 
 ---
 
-## Öppna frågor
-
-| ID | Fråga |
-|---|---|
-| FUNC-001 | **PADL-poster saknar dedikerat FHIR Condition-element.** `padl.typeOfAssessment` och `padl.assessment` har ingen naturlig placering i Condition. Nuvarande workaround är att enkoda varje PADL-post som en `Condition.note` med prefixat format `[typeOfAssessment]: assessment`. Alternativ: använda en separat Observation-resurs per PADL-post. Kräver designbeslut. |
-| PDL-001 | **`approvedForPatient` (boolean) saknar FHIR-motsvarighet.** Fältet finns i alla PatientSummaryHeader-kontrakt men `meta.security` i FHIR har inget standardkodsystem för detta begrepp. Behöver gemensamt beslut för alla TK:er. |
-| GENERAL-001 | **Tidsstämpelformat.** RIVTA använder `YYYYMMDDhhmmss` utan tidszon; FHIR kräver ISO 8601 med tidszon. Konvertering ska anta `Europe/Stockholm` (CET/CEST). Gäller alla tidsfält i alla tjänstekontrakt. |
-
----
-
 ## OID-till-URI-tabell
 
 | OID | URI |
@@ -134,3 +138,21 @@ PDL-styrning i GetFunctionalStatus utgår från `accountableHealthcareProfession
 | `1.2.752.116.1.1.3` | `urn:oid:1.2.752.116.1.1.3` |
 
 OID:er utan känd URI-mappning bevaras som `urn:oid:{oid}`.
+
+---
+
+## Öppna frågor
+
+| ID | Fråga |
+|---|---|
+| FUNC-001 | **PADL-poster saknar dedikerat FHIR Condition-element.** `padl.typeOfAssessment` och `padl.assessment` har ingen naturlig placering i Condition. Nuvarande workaround är att enkoda varje PADL-post som en `Condition.note` med prefixat format `[typeOfAssessment]: assessment`. Alternativ: använda en separat Observation-resurs per PADL-post. Kräver designbeslut. |
+| PDL-001 | **`approvedForPatient` (boolean) saknar FHIR-motsvarighet.** Fältet finns i alla PatientSummaryHeader-kontrakt men `meta.security` i FHIR har inget standardkodsystem för detta begrepp. Behöver gemensamt beslut för alla TK:er. |
+| GENERAL-001 | **Tidsstämpelformat.** RIVTA använder `YYYYMMDDhhmmss` utan tidszon; FHIR kräver ISO 8601 med tidszon. Konvertering ska anta `Europe/Stockholm` (CET/CEST). Gäller alla tidsfält i alla tjänstekontrakt. |
+
+---
+
+## Föreslagna nya issues
+
+| ID | Fält | Beskrivning |
+|---|---|---|
+| FUNC-002 | `functionalStatusAssessmentHeader.legalAuthenticator.legalAuthenticatorRoleCode` | Signerande persons befattning (CodeableConcept). Det finns inget standardelement i Condition för detta. `Condition.asserter` är en enkel Reference utan plats för rollkod. Alternativ: (a) enkoda i den refererade PractitionerRole-resursen om en sådan skapas, eller (b) ignorera då det är samma person som legalAuthenticatorHSAId och rollkoden hämtas via HSA-katalogen. Kräver designbeslut. |
