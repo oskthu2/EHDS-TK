@@ -1,0 +1,25 @@
+Logical: SEEHDSLMCarePlans
+Id: se-ehds-lm-care-plans
+Title: "LM – Vårdplan (GetCarePlans)"
+Description: "Logisk modell för vårdplaner och vård- och omsorgsplaner hämtad via GetCarePlans (clinicalprocess:logistics:logistics v2.0)."
+
+* carePlanHeader 1..1 BackboneElement "Header med metadata"
+  * patientId 1..1 Identifier "Patientidentifierare"
+  * sourceSystemHSAId 1..1 string "Källsystemets HSA-id"
+  * documentTime 1..1 dateTime "Registreringstidpunkt"
+  * accountableHealthcareProfessional 1..1 Identifier "Ansvarig personal"
+  * careProviderHSAId 1..1 string "Vårdgivarens HSA-id"
+  * careUnitHSAId 1..1 string "Vårdenhetens HSA-id"
+
+* carePlanTitle 0..1 string "Plantitel"
+* carePlanType 0..1 CodeableConcept "Plantyp (Vårdplan/Vård- och omsorgsplan)"
+* carePlanStatus 1..1 CodeableConcept "Planstatus"
+* carePlanTimePeriod 0..1 Period "Planperiod"
+  * start 0..1 date "Startdatum"
+  * end 0..1 date "Slutdatum"
+* carePlanDescription 0..1 string "Planbeskrivning"
+* plannedActivity 0..* BackboneElement "Planerade åtgärder"
+  * activityCode 0..1 CodeableConcept "Åtgärdskod"
+  * activityDescription 0..1 string "Åtgärdsbeskrivning"
+  * activityTime 0..1 dateTime "Planerad tidpunkt"
+* carePlanComment 0..1 string "Kommentar"

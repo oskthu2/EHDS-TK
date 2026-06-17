@@ -1,20 +1,59 @@
 # Introduction
 
-### [Domain name] Domain
+### Domän
 
-*Describe the clinical or administrative domain this IG addresses. Explain why this domain is important in Swedish healthcare, what role it plays in patient care or information exchange, and why it has been prioritised for FHIR standardisation. Example: clinical laboratory results, referrals, care plans, prescriptions.*
+Denna Implementation Guide (IG) beskriver den FHIR-funktionalitet som krävs för att informationsförsörja **NPÖ** (Nationell patientöversikt) och **1177 Journal** via Ineras RIVTA-tjänstekontrakt. IG:t definierar FHIR-profiler, logiska modeller och mappningar för 16 tjänstekontrakt fördelade på 6 FHIR-grupper.
 
 ---
 
 ### Scope
 
-*Define what this IG covers and what it does not. Specify the types of use cases, clinical scenarios, or information exchanges in scope. Mention any explicit exclusions or boundary decisions. If this IG is meant to be used as a base for more specialised guides, say so here. Example: "This IG applies to X within the context of Y. It does not cover Z. Derived guides may restrict or extend the scope as needed."*
+IG:t täcker följande FHIR-grupper och tjänstekontrakt:
+
+| FHIR-grupp | Informationsmängd | Tjänstekontrakt | NPÖ | 1177 Journal |
+|---|---|---|---|---|
+| Patientöversikt | Diagnos | GetDiagnosis | Ja (2.0) | Ja (2.0) |
+| Patientöversikt | Uppmärksamhetsinformation | GetAlertInformation | Ja (2.0, 3.0) | Ja (2.0, 3.0) |
+| Patientöversikt | Läkemedel | GetMedicationHistory | Ja (2.2) | Ja (2.2) |
+| Patientöversikt | Vaccinationer | GetVaccinationHistory | Ja (2.0) | Ja (1.0, 2.0) |
+| Patientöversikt | Funktionstillstånd och ADL | GetFunctionalStatus | Ja (2.0) | Ja (2.0) |
+| Patientöversikt | Mödravård | GetMaternityMedicalHistory | Ja (2.0) | Ja (2.0) |
+| Patientöversikt | Vårdplan | GetCarePlans | Ja (2.0) | Ja (2.0) |
+| Patientöversikt | Vårdkontakter | GetCareContacts | Ja (2.0, 3.0) | Ja (2.0, 3.0) |
+| Patientöversikt | Anteckningar | GetCareDocumentation | Ja (2.1, 3.0) | Ja (2.1, 3.0) |
+| Laboratorie och diagnostik | Provsvar | GetLaboratoryOrderOutcome | Ja (3.1, 4.1) | Ja (3.1, 4.2) |
+| Bilddiagnostik | Bilddiagnostik | GetImagingOutcome | Ja (1.0) | Ja (1.0) |
+| Remiss och process | Konsultationsremiss | GetReferralOutcome | Ja (3.1) | Ja (3.1) |
+| Remiss och process | Remisstatus | GetRequestActivities | Ja (2.0) | Ja (1.0, 2.0) |
+| Tillväxtkurva barn | Tillväxtkurva | GetObservations | Ja (1.2) | Ja (1.2) |
+| Logg | Åtkomstloggar | GetAccessLogForPatient | Nej | Ja (1.1, 2.0) |
+
+IG:t täcker **inte** tjänstekontrakt utanför ovanstående tabell, och avser inte att ersätta källsystemen eller specificera gränssnittet mot NPÖ/1177 Journal på transaktionsnivå.
 
 ---
 
-### Purpose
+### Syfte
 
-*State the goal of this IG. Explain what problem it solves, who it is intended for (implementers, vendors, healthcare providers), and how it fits into the broader Inera and Swedish e-health landscape. Reference any national or regional programmes, standards, or mandates that motivated the work.*
+Syftet med IG:t är att:
+
+1. Definiera FHIR-profiler (R4) som möjliggör EHDS-kompatibel representation av data från Ineras RIVTA-tjänstekontrakt
+2. Dokumentera mappningen från RIVTA-element till FHIR-element, inklusive OID→URI-översättning, Provenance-mönster och Sparr-hantering
+3. Stödja implementörer av EHDS-bryggan som transformerar RIVTA-svar till FHIR-resurser för NPÖ och 1177 Journal
+
+IG:t riktar sig till systemleverantörer, arkitekter och integrationsspecialister inom svensk e-hälsa.
+
+---
+
+### Arkitektur och EHDS-relation
+
+Profilerna bygger på:
+- **IPS (International Patient Summary)** – profiler ärvs där de finns
+- **EU EPS (European Patient Summary)** – obligations-profilen sätts i `meta.profile` vid runtime
+- **HL7 Sweden basprofiler** – SEBasePractitionerRole och SEBaseOrganization används för personreferenser
+
+Varje producerad FHIR-resurs bär **två profiler** i `meta.profile`:
+1. Aktuell EHDS-TK-profil (t.ex. `SEEHDSConditionDiagnosis`)
+2. Relevant EU EPS obligations-profil
 
 ---
 
@@ -26,22 +65,21 @@ On [Inera Terminologitjänst](https://www.inera.se/tjanster/alla-tjanster-a-o/te
 
 ### Dependencies
 
-This IG has a dependency to SE-core, defined by HL7 Sweden. This is currently reflected in the profiles that inherit from SECore profiles.
+This IG has dependencies to:
+- **HL7 IPS:** `hl7.fhir.uv.ips`
+- **EU EPS:** `hl7.fhir.eu.eps`
+- **SE-core (HL7 Sweden):** `hl7se.fhir.base`
 
 ---
 
 ### Documentation
 
-More information about Inera Core can be found [here](https://www.inera.se/tjanster/alla-tjanster-a-o/inera-core/). Inera Core is part of RIVTA – the reference architecture of Swedish healthcare.
+More information about Inera Core and RIVTA can be found at [Inera Core](https://www.inera.se/tjanster/alla-tjanster-a-o/inera-core/).
 
 ---
 
 ### Governance and guidance
 
-FHIR profiles are managed by Inera: [Source code](https://github.com/inera-ab).
+FHIR profiles are managed by Inera: [Source code](https://github.com/oskthu2/ehds-tk).
 
 A description of conformance requirements and guidance for Inera's FHIR IGs can be found on the [Inera FHIR Landing Page](https://www.inera.se/fhir).
-
-The Inera FHIR landing page provides an overview of conformance requirements that apply to Inera's FHIR standards. This includes for example the mandatory rules for interpreting MustSupport, the formal validation requirements that implementers must follow, the expectations for producing narrative texts and governance for how Inera Terminology is versioned, as well as security and client and API non-functional requirements.
-
-The landing page also offers help to developers to understand how to work with Inera's FHIR standards. This includes a guide on how to read an Implementation Guide. Users will also find instructions on how to use some of the FHIR tools, such as validation setup.

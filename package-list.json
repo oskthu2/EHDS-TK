@@ -1,8 +1,8 @@
 {
-  "package-id": "inera.core.template",
-  "title": "Inera FHIR Implementation Guide Template",
-  "canonical": "https://fhir.inera.se/ig/template",
-  "introduction": "Template Implementation Guide demonstrating Inera's FHIR IG structure, governance conventions, and publishing workflow.",
+  "package-id": "inera.ehds.tk",
+  "title": "Inera EHDS Tjänstekontrakt – FHIR Implementation Guide",
+  "canonical": "https://fhir.inera.se/ig/ehds-tk",
+  "introduction": "FHIR IG som beskriver hur Ineras RIVTA-tjänstekontrakt mappas till FHIR för att informationsförsörja NPÖ och 1177 Journal.",
   "category": "National Base",
   "language": "sv",
   "country": "SE",
@@ -10,7 +10,7 @@
     {
       "version": "current",
       "desc": "Continuous Integration Build — latest commit on main branch",
-      "path": "https://inera-ab.github.io/inerafhirtemplate",
+      "path": "https://oskthu2.github.io/ehds-tk",
       "status": "ci-build",
       "current": true
     }

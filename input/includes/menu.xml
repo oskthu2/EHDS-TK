@@ -11,13 +11,45 @@
         <a class="navbar-brand hidden" href="http://hl7.org/fhir/R4/index.html">FHIR</a>
         <div class="nav-collapse collapse navbar-inverse-collapse">
           <ul class="nav navbar-nav">
-            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html">Hem</a></li>
             <li class="dropdown">
-              <a data-toggle="dropdown" href="#" class="dropdown-toggle">Background<b class="caret"> </b></a>
+              <a data-toggle="dropdown" href="#" class="dropdown-toggle">Bakgrund<b class="caret"> </b></a>
               <ul class="dropdown-menu">
                 <li><a href="workflow.html">Workflow</a></li>
-                <li><a href="logical-models.html">Logical Models</a></li>
-                <li><a href="mappings.html">Mappings</a></li>
+                <li><a href="logical-models.html">Logiska modeller</a></li>
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a data-toggle="dropdown" href="#" class="dropdown-toggle">Mappningar<b class="caret"> </b></a>
+              <ul class="dropdown-menu">
+                <li><a href="mappings.html">Översikt</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="dropdown-header">Patientöversikt</li>
+                <li><a href="mapping-getdiagnosis.html">GetDiagnosis – Diagnoser</a></li>
+                <li><a href="mapping-getalertinformation.html">GetAlertInformation – Uppmärksamhet</a></li>
+                <li><a href="mapping-getmedicationhistory.html">GetMedicationHistory – Läkemedel</a></li>
+                <li><a href="mapping-getvaccinationhistory.html">GetVaccinationHistory – Vaccinationer</a></li>
+                <li><a href="mapping-getfunctionalstatus.html">GetFunctionalStatus – Funktionstillstånd</a></li>
+                <li><a href="mapping-getmaternitymedicalhistory.html">GetMaternityMedicalHistory – Mödravård</a></li>
+                <li><a href="mapping-getcareplans.html">GetCarePlans – Vårdplan</a></li>
+                <li><a href="mapping-getcarecontacts.html">GetCareContacts – Vårdkontakter</a></li>
+                <li><a href="mapping-getcaredocumentation.html">GetCareDocumentation – Anteckningar</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="dropdown-header">Laboratorie och diagnostik</li>
+                <li><a href="mapping-getlaboratoryorderoutcome.html">GetLaboratoryOrderOutcome – Provsvar</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="dropdown-header">Bilddiagnostik</li>
+                <li><a href="mapping-getimagingoutcome.html">GetImagingOutcome – Bilddiagnostik</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="dropdown-header">Remiss och process</li>
+                <li><a href="mapping-getreferraloutcome.html">GetReferralOutcome – Remisser</a></li>
+                <li><a href="mapping-getrequestactivities.html">GetRequestActivities – Remisstatus</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="dropdown-header">Tillväxtkurva barn</li>
+                <li><a href="mapping-getobservations.html">GetObservations – Tillväxtkurva</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="dropdown-header">Logg</li>
+                <li><a href="mapping-getaccesslogforpatient.html">GetAccessLogForPatient – Åtkomstloggar</a></li>
               </ul>
             </li>
             <li class="dropdown">

@@ -1,8 +1,8 @@
-id: inera.core.template
-canonical: https://fhir.inera.se/ig/template
-name: IneraCoreTemplate
-title: "Inera FHIR Implementation Guide Template"
-description: "Template Implementation Guide for Inera FHIR IGs, demonstrating structure and governance conventions."
+id: inera.ehds.tk
+canonical: https://fhir.inera.se/ig/ehds-tk
+name: IneraEHDSTK
+title: "Inera EHDS Tjänstekontrakt – FHIR Implementation Guide"
+description: "FHIR IG som beskriver hur Ineras RIVTA-tjänstekontrakt mappas till FHIR för att informationsförsörja NPÖ och 1177 Journal."
 status: draft
 version: 0.1.0
 fhirVersion: 4.0.1
@@ -15,6 +15,11 @@ publisher:
   url: https://www.inera.se
 
 jurisdiction: urn:iso:std:iso:3166#SE "Sweden"
+
+dependencies:
+  hl7.fhir.uv.ips: 1.1.0
+  hl7.fhir.eu.eps: current
+  hl7se.fhir.base: current
 
 parameters:
   show-inherited-invariants: false
@@ -29,6 +34,36 @@ pages:
     title: Logical Models
   mappings.md:
     title: Mappings
+  mapping-getdiagnosis.md:
+    title: GetDiagnosis – Diagnoser
+  mapping-getalertinformation.md:
+    title: GetAlertInformation – Uppmärksamhetsinformation
+  mapping-getmedicationhistory.md:
+    title: GetMedicationHistory – Läkemedel
+  mapping-getvaccinationhistory.md:
+    title: GetVaccinationHistory – Vaccinationer
+  mapping-getfunctionalstatus.md:
+    title: GetFunctionalStatus – Funktionstillstånd och ADL
+  mapping-getmaternitymedicalhistory.md:
+    title: GetMaternityMedicalHistory – Mödravård
+  mapping-getcareplans.md:
+    title: GetCarePlans – Vårdplan
+  mapping-getcarecontacts.md:
+    title: GetCareContacts – Vårdkontakter
+  mapping-getcaredocumentation.md:
+    title: GetCareDocumentation – Anteckningar
+  mapping-getlaboratoryorderoutcome.md:
+    title: GetLaboratoryOrderOutcome – Provsvar
+  mapping-getimagingoutcome.md:
+    title: GetImagingOutcome – Bilddiagnostik
+  mapping-getreferraloutcome.md:
+    title: GetReferralOutcome – Remisser
+  mapping-getrequestactivities.md:
+    title: GetRequestActivities – Remisstatus
+  mapping-getobservations.md:
+    title: GetObservations – Tillväxtkurva
+  mapping-getaccesslogforpatient.md:
+    title: GetAccessLogForPatient – Åtkomstloggar
   profiles.md:
     title: Profiles
   terminology.md:

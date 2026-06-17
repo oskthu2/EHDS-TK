@@ -1,0 +1,25 @@
+Logical: SEEHDSLMAlertInformation
+Id: se-ehds-lm-alert-information
+Title: "LM – Uppmärksamhetsinformation (GetAlertInformation)"
+Description: "Logisk modell för uppmärksamhetsinformation (allergier, överkänslighet, varningar) hämtad via tjänstekontraktet GetAlertInformation (clinicalprocess:healthcond:description v2.0, 3.0)."
+
+* alertHeader 1..1 BackboneElement "Header med metadata"
+  * patientId 1..1 Identifier "Patientidentifierare"
+  * sourceSystemHSAId 1..1 string "Källsystemets HSA-id"
+  * documentTime 1..1 dateTime "Registreringstidpunkt"
+  * accountableHealthcareProfessional 1..1 Identifier "Ansvarig hälso- och sjukvårdspersonal"
+  * legalAuthenticator 0..1 Identifier "Rättslig äkthetsintygsgivare"
+  * careProviderHSAId 1..1 string "Vårdgivarens HSA-id"
+  * careUnitHSAId 1..1 string "Vårdenhetens HSA-id"
+
+* alertType 1..1 CodeableConcept "Uppmärksamhetstyp (kv_uppmärksamhetstyp: Allergi/Överkänslighet/Varning)"
+* alertCode 0..1 CodeableConcept "Kod för orsak till uppmärksamhet"
+* alertStatus 1..1 CodeableConcept "Status (Aktuell/Historisk)"
+* alertTimePeriod 0..1 Period "Giltighetstid"
+  * start 0..1 date "Startdatum"
+  * end 0..1 date "Slutdatum"
+* causeCode 0..1 CodeableConcept "Utlösande ämne/orsak"
+* reaction 0..* BackboneElement "Reaktioner"
+  * description 0..1 string "Reaktionsbeskrivning"
+  * severity 0..1 CodeableConcept "Svårighetsgrad"
+* alertComment 0..1 string "Kommentar"

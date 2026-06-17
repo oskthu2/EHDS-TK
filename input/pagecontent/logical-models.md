@@ -1,33 +1,50 @@
 # Logical Models
 
-This page describes the logical information models that underpin the profiles defined in this Implementation Guide. Logical models capture the information requirements of the domain independently of any technical representation.
+Denna sida dokumenterar de logiska informationsmodeller som utgör grunden för profilerna i denna IG. De logiska modellerna fångar informationskraven från Ineras RIVTA-tjänstekontrakt oberoende av teknisk representation.
 
 ---
 
-### Purpose of logical models
+### Syfte
 
-*Explain why logical models are included in this IG. Example: "The logical models below represent the information requirements agreed with clinical and domain experts. They serve as the authoritative definition of what data must be exchanged and form the basis for the FHIR profiles defined in this IG."*
-
----
-
-### Models
-
-*List each logical model defined in this IG. For each model, provide a short description and link to the generated StructureDefinition page.*
-
-| Logical model | Description |
-|---------------|-------------|
-| *[[ModelName]](StructureDefinition-[ModelName].html)* | *Describe what information this model captures and in which context it is used.* |
+De logiska modellerna nedan representerar de informationskrav som definieras av respektive tjänstekontrakt i Ineras tjänstekatalog. De tjänar som auktoritativ källa för vilka data som ska utväxlas och utgör grunden för FHIR-profilerna i IG:t.
 
 ---
 
-### Model descriptions
+### Modeller
 
-*For each logical model, describe its key elements, cardinalities, and any important constraints or business rules that are not self-evident from the element names.*
-
-#### [Model name]
-
-*Describe the model. List the most important elements and explain any design decisions, for example why certain elements are mandatory or why particular data types were chosen.*
+| Logisk modell | Tjänstekontrakt | FHIR-grupp |
+|---|---|---|
+| [SEEHDSLMDiagnosis](StructureDefinition-se-ehds-lm-diagnosis.html) | GetDiagnosis | Patientöversikt |
+| [SEEHDSLMAlertInformation](StructureDefinition-se-ehds-lm-alert-information.html) | GetAlertInformation | Patientöversikt |
+| [SEEHDSLMMedicationHistory](StructureDefinition-se-ehds-lm-medication-history.html) | GetMedicationHistory | Patientöversikt |
+| [SEEHDSLMVaccinationHistory](StructureDefinition-se-ehds-lm-vaccination-history.html) | GetVaccinationHistory | Patientöversikt |
+| [SEEHDSLMFunctionalStatus](StructureDefinition-se-ehds-lm-functional-status.html) | GetFunctionalStatus | Patientöversikt |
+| [SEEHDSLMMaternityMedicalHistory](StructureDefinition-se-ehds-lm-maternity-medical-history.html) | GetMaternityMedicalHistory | Patientöversikt |
+| [SEEHDSLMCarePlans](StructureDefinition-se-ehds-lm-care-plans.html) | GetCarePlans | Patientöversikt |
+| [SEEHDSLMCareContacts](StructureDefinition-se-ehds-lm-care-contacts.html) | GetCareContacts | Patientöversikt |
+| [SEEHDSLMCareDocumentation](StructureDefinition-se-ehds-lm-care-documentation.html) | GetCareDocumentation | Patientöversikt |
+| [SEEHDSLMLaboratoryOrderOutcome](StructureDefinition-se-ehds-lm-laboratory-order-outcome.html) | GetLaboratoryOrderOutcome | Laboratorie och diagnostik |
+| [SEEHDSLMImagingOutcome](StructureDefinition-se-ehds-lm-imaging-outcome.html) | GetImagingOutcome | Bilddiagnostik |
+| [SEEHDSLMReferralOutcome](StructureDefinition-se-ehds-lm-referral-outcome.html) | GetReferralOutcome | Remiss och process |
+| [SEEHDSLMRequestActivities](StructureDefinition-se-ehds-lm-request-activities.html) | GetRequestActivities | Remiss och process |
+| [SEEHDSLMObservations](StructureDefinition-se-ehds-lm-observations.html) | GetObservations | Tillväxtkurva barn |
+| [SEEHDSLMAccessLog](StructureDefinition-se-ehds-lm-access-log.html) | GetAccessLogForPatient | Logg |
 
 ---
 
-> **Guidance for authors:** Define logical models as FHIR `StructureDefinition` resources with `kind = logical` in FSH. Place them in `input/fsh/logicalmodels/`. Logical models should reflect agreed clinical or domain requirements and be reviewed by subject matter experts before the corresponding FHIR profiles are created.
+### Gemensamma headerelement
+
+Alla tjänstekontrakt med klinisk information delar ett headermönster (`PatientSummaryHeader` eller liknande) med dessa obligatoriska element:
+
+| Element | Typ | Beskrivning |
+|---|---|---|
+| `patientId` | Identifier | Personnummer, samordningsnummer eller reservnummer |
+| `sourceSystemHSAId` | string | Källsystemets HSA-id |
+| `documentTime` | dateTime | Registreringstidpunkt (YYYYMMDDHHMMSS, Europe/Stockholm) |
+| `accountableHealthcareProfessional` | Identifier | Ansvarig hälso- och sjukvårdspersonals HSA-id |
+| `careProviderHSAId` | string | Vårdgivarens HSA-id (yttre Sparr) |
+| `careUnitHSAId` | string | Vårdenhetens HSA-id (inre Sparr) |
+
+Se [Mappings](mappings.html) för hur dessa headerElement mappas till FHIR.
+
+> **Vägledning för författare:** Logiska modeller definieras som FHIR `StructureDefinition`-resurser med `kind = logical` i FSH. De finns i `input/fsh/logicalmodels/`.

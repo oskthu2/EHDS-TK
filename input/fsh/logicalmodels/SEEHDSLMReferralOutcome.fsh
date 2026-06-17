@@ -1,0 +1,26 @@
+Logical: SEEHDSLMReferralOutcome
+Id: se-ehds-lm-referral-outcome
+Title: "LM – Konsultationsremiss (GetReferralOutcome)"
+Description: "Logisk modell för konsultationsremisser och svar hämtad via GetReferralOutcome (clinicalprocess:healthcond:actoutcome v3.1)."
+
+* referralHeader 1..1 BackboneElement "Header med metadata"
+  * patientId 1..1 Identifier "Patientidentifierare"
+  * sourceSystemHSAId 1..1 string "Källsystemets HSA-id"
+  * documentTime 1..1 dateTime "Registreringstidpunkt"
+  * referralAuthor 1..1 Identifier "Remitterande läkares HSA-id"
+  * careProviderHSAId 1..1 string "Vårdgivarens HSA-id"
+  * careUnitHSAId 1..1 string "Vårdenhetens HSA-id"
+
+* referralType 0..1 CodeableConcept "Remisstyp (kv_remisstyp)"
+* referralStatus 1..1 CodeableConcept "Remissstatus"
+* referralPriority 0..1 CodeableConcept "Prioritet"
+* referralReason 1..1 string "Remissfrågeställning"
+* referralDiagnosis 0..* CodeableConcept "Diagnos/orsak för remiss"
+* referralBody 0..1 string "Remisstext"
+* referralReceiver 0..1 Identifier "Mottagande enhetens HSA-id"
+* referralOutcome 0..1 BackboneElement "Svar på remissen"
+  * referralOutcomeAuthor 0..1 Identifier "Svarandens HSA-id"
+  * outcomeTime 0..1 dateTime "Svarstidpunkt"
+  * referralOutcomeStatus 0..1 CodeableConcept "Svarstatus"
+  * referralOutcomeBody 0..1 string "Konsultationssvar/bedömning"
+  * referralOutcomeComment 0..1 string "Kommentar"
