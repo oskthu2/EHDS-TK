@@ -3,8 +3,8 @@
 ## 1. Förberedelse
 
 Innan mappning påbörjas behöver du:
-- Tjänstekontraktets WSDL/XSD och beskrivning från Ineras tjänstekatalog
-- Motsvarande FHIR R4-resurstyp
+- Logiska modeller och beskrivning från Ineras tjänstekatalog
+- Identifierad motsvarande FHIR R4-resurstyp
 - EU EPS obligations-profilen för resursen (paket `hl7.fhir.eu.eps`)
 - IPS-profilen för resursen (paket `hl7.fhir.uv.ips`)
 - HL7 Sweden basprofiler (paket `hl7se.fhir.base`, canonical `http://hl7.se/fhir/ig/base`)
@@ -16,7 +16,7 @@ Innan mappning påbörjas behöver du:
 - **Ärv från IPS-profilen** för resursen om en sådan finns (`Parent: Condition-uv-ips` etc.)
 - **EU EPS obligations-profilen** (`{resurs}-obl-eu-eps`) sätts i `meta.profile` vid runtime — den behöver inte vara `Parent` i FSH, men alla obligatoriska krav i den ska uppfyllas
 - **Frivilliga element** i EU EPS/IPS (rekommenderade kodverk, extensions, slicings) ska nyttjas om tjänstekontraktet har semantiskt motsvarande data
-- Varje producerad resurs bär **två profiler** i `meta.profile`: vår EHDS-brygga-profil + EU EPS obligations-profilen
+- Varje producerad resurs bär **två profiler** i `meta.profile`: vår EHDS-TK-profil + EU EPS obligations-profilen
 
 ---
 
