@@ -1,29 +1,26 @@
 id: inera.ehds.tk
 canonical: https://fhir.inera.se/ig/ehds-tk
 name: IneraEHDSTK
-title: "Inera EHDS Tjänstekontrakt – FHIR Implementation Guide"
-description: "FHIR IG som beskriver hur Ineras RIVTA-tjänstekontrakt mappas till FHIR för att informationsförsörja NPÖ och 1177 Journal."
+title: Inera EHDS Tjänstekontrakt – FHIR Implementation Guide
+description: >-
+  FHIR IG som beskriver hur Ineras RIVTA-tjänstekontrakt mappas till FHIR för
+  att informationsförsörja NPÖ och 1177 Journal.
 status: draft
-version: 0.1.0
+version: 0.2.0
 fhirVersion: 4.0.1
 copyrightYear: 2024+
 releaseLabel: ci-build
 license: CC0-1.0
-
 publisher:
   name: Inera AB
   url: https://www.inera.se
-
 jurisdiction: urn:iso:std:iso:3166#SE "Sweden"
-
 dependencies:
   hl7.fhir.uv.ips: 1.1.0
   hl7.fhir.eu.eps: current
-
 parameters:
   show-inherited-invariants: false
   usage-stats-opt-out: true
-
 pages:
   index.md:
     title: Introduction
