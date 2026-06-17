@@ -53,7 +53,7 @@ eller URL) – se Härledda fält nedan.
 
 | RIVTA-element | Kard. | FHIR-element | Kommentar |
 |---|---|---|---|
-| `careDocumentation.header.record.id` | 1..1 | `DocumentReference.masterIdentifier` | Källsystemets dokumentidentifierare (primär nyckel) |
+| `careDocumentation.header.record.recordId` | 1..1 | `DocumentReference.masterIdentifier` | Källsystemets dokumentidentifierare (primär nyckel) |
 | `careDocumentation.header.record.timestamp` | 1..1 | `DocumentReference.date` | Tidpunkt då journalposten skapades; YYYYMMDDHHMMSS → ISO 8601 (Europe/Stockholm), se [GENERAL-001](#öppna-frågor) |
 | `careDocumentation.header.sourceSystemId` | 1..1 | `DocumentReference.meta.source` | Format: `urn:oid:1.2.752.129.2.1.4.1#{hsaId}` |
 
@@ -61,7 +61,7 @@ eller URL) – se Härledda fält nedan.
 
 | RIVTA-element | Kard. | FHIR-element | Kommentar |
 |---|---|---|---|
-| `careDocumentation.header.author.id` | 0..1 | `DocumentReference.author` (Reference(PractitionerRole)) | Författarens HSA-id; logisk referens |
+| `careDocumentation.header.author.authorId` | 0..1 | `DocumentReference.author` (Reference(PractitionerRole)) | Författarens HSA-id; logisk referens |
 | `careDocumentation.header.author.name` | 0..1 | `PractitionerRole.practitioner.display` | Författarens visningsnamn |
 | `careDocumentation.header.author.timestamp` | 1..1 | `Provenance.recorded` | Tidpunkt för skapande av anteckning |
 | `careDocumentation.header.author.byRole` | 0..1 | `PractitionerRole.code` | Yrkesroll för författaren |
@@ -72,7 +72,7 @@ eller URL) – se Härledda fält nedan.
 
 | RIVTA-element | Kard. | FHIR-element | Kommentar |
 |---|---|---|---|
-| `careDocumentation.header.signature.id` | 0..1 | `DocumentReference.authenticator` (Reference(PractitionerRole)) | Signerarens HSA-id; logisk referens |
+| `careDocumentation.header.signature.signatureId` | 0..1 | `DocumentReference.authenticator` (Reference(PractitionerRole)) | Signerarens HSA-id; logisk referens |
 | `careDocumentation.header.signature.name` | 0..1 | `PractitionerRole.practitioner.display` | Signerarens visningsnamn |
 | `careDocumentation.header.signature.timestamp` | 1..1 | `DocumentReference.extension[signatureTime]` | Signeringstidpunkt; YYYYMMDDHHMMSS → ISO 8601 |
 | `careDocumentation.header.signature.byRole` | 0..1 | `PractitionerRole.code` | Yrkesroll för signeraren |

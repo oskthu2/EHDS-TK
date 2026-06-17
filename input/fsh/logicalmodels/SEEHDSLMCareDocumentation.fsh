@@ -83,7 +83,7 @@ Characteristics: #can-be-target
     Kardinalitet: Obligatorisk.
   """
 
-* careDocumentation.header.record.id 1..1 Identifier "Journaluppgiftens unika identifierare" """
+* careDocumentation.header.record.recordId 1..1 Identifier "Journaluppgiftens unika identifierare" """
     Unik och beständig identifierare för uppgift i patientjournal.
     Ska vara unik — samma id får inte förekomma flera gånger (XSD-regel).
     Kardinalitet: Obligatorisk.
@@ -99,7 +99,7 @@ Characteristics: #can-be-target
     Kardinalitet: Valfri.
   """
 
-* careDocumentation.header.author.id 0..1 Identifier "HSA-id för dokumentationsansvarig" """
+* careDocumentation.header.author.authorId 0..1 Identifier "HSA-id för dokumentationsansvarig" """
     HSA-id för hälso- och sjukvårdspersonal. Fältet root sätts till OID för HSA-id.
     Kardinalitet: Valfri.
   """
@@ -139,7 +139,7 @@ Characteristics: #can-be-target
     Kardinalitet: Valfri.
   """
 
-* careDocumentation.header.signature.id 0..1 Identifier "HSA-id för signerande person" """
+* careDocumentation.header.signature.signatureId 0..1 Identifier "HSA-id för signerande person" """
     HSA-id för hälso- och sjukvårdspersonal som signerat journaluppgiften.
     Kardinalitet: Valfri.
   """
