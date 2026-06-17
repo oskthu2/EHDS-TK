@@ -183,7 +183,6 @@ PDL-styrning utgår från `accountableHealthcareProfessional`-blocket i headern.
 |---|---|---|
 | `agent[custodian]` | Juridiskt ansvarig vårdgivare | `medicationMedicalRecordHeader.accountableHealthcareProfessional.healthcareProfessionalcareGiverHSAId` |
 | `agent[author]` | Informationsägande vårdenhet | `medicationMedicalRecordHeader.accountableHealthcareProfessional.healthcareProfessionalcareUnitHSAId` |
-| `agent[assembler]` | EHDS-bryggan | `EHDS_BRIDGE_HSA_ID` (env-variabel) |
 
 `Provenance.target` refererar `MedicationStatement` via `urn:uuid:{resurs.id}`.  
 `Provenance.recorded` = `medicationMedicalRecordHeader.accountableHealthcareProfessional.authorTime` (ISO 8601).

@@ -45,3 +45,5 @@ Alla tjänstekontrakt (utom GetAccessLogForPatient) delar ett headermönster som
 | `legalAuthenticator` | `{Resurs}.asserter` / `authenticator` | Logisk referens via HSA-id |
 | `careProviderHSAId` | `Provenance.agent[custodian].who.identifier` | Yttre Sparr |
 | `careUnitHSAId` | `Provenance.agent[author].who.identifier` | Inre Sparr |
+
+> **OBS om server-side filtrering:** Om den FHIR-server som tillhandahåller data själv hanterar åtkomstfiltrering baserat på anropande vårdpersonals kontext eller patientens e-hälsotjänst, behöver Provenance-spärr-agenterna och `approvedForPatient`-säkerhetsmärkning (se PDL-001) inte inkluderas i svaret — filtreringen sker då redan på servernivå.

@@ -30,7 +30,6 @@
 | `diagnosisHeader.careProviderHSAId` | `Provenance.agent[custodian].who.identifier` | Yttre Sparr |
 | `diagnosisHeader.careUnitHSAId` | `Provenance.agent[author].who.identifier` | Inre Sparr |
 | `diagnosisHeader.documentTime` | `Provenance.recorded` | Tidsstämpel för Provenance |
-| (bryggan, `EHDS_BRIDGE_HSA_ID`) | `Provenance.agent[assembler]` | EHDS-bryggan som sammansättande aktör |
 
 ---
 
@@ -109,7 +108,6 @@ OID:er utan känd URI-mappning bevaras som `urn:oid:{oid}`.
 |---|---|---|
 | `agent[custodian]` | Juridiskt ansvarig vårdgivare | `diagnosisHeader.careProviderHSAId` |
 | `agent[author]` | Informationsägande vårdenhet | `diagnosisHeader.careUnitHSAId` |
-| `agent[assembler]` | EHDS-bryggan | `EHDS_BRIDGE_HSA_ID` (env-variabel) |
 
 `Provenance.target` refererar Condition via `urn:uuid:{Condition.id}`.  
 `Provenance.recorded` = `diagnosisHeader.documentTime` (ISO 8601).

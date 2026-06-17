@@ -301,7 +301,6 @@ samtliga Observation-resurser producerade från det objektet.
 |---|---|---|
 | `agent[custodian]` | Juridiskt ansvarig vårdgivare | `maternityMedicalRecordHeader.accountableHealthcareProfessional.healthcareProfessionalCareGiverHSAId` |
 | `agent[author]` | Informationsägande vårdenhet | `maternityMedicalRecordHeader.accountableHealthcareProfessional.healthcareProfessionalCareUnitHSAId` |
-| `agent[assembler]` | EHDS-bryggan | `EHDS_BRIDGE_HSA_ID` (env-variabel) |
 
 `Provenance.target` refererar alla Observation-resurser från samma post via
 `urn:uuid:{Observation.id}`.  

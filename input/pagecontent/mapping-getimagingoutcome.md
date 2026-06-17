@@ -189,7 +189,6 @@ GetImagingOutcome v1.0 använder standardmönstret **PatientSummaryHeader** via 
 |---|---|---|
 | `agent[custodian]` | Juridiskt ansvarig vårdgivare | `imagingOutcomeHeader.accountableHealthcareProfessional.healthcareProfessionalCareGiverHSAId` |
 | `agent[author]` | Informationsägande vårdenhet | `imagingOutcomeHeader.accountableHealthcareProfessional.healthcareProfessionalCareUnitHSAId` |
-| `agent[assembler]` | EHDS-bryggan | `EHDS_BRIDGE_HSA_ID` (env-variabel) |
 
 `Provenance.target` refererar `DiagnosticReport` (och transitivt `ImagingStudy`-instanserna) via `urn:uuid:{DiagnosticReport.id}`.  
 `Provenance.recorded` = `imagingOutcomeHeader.accountableHealthcareProfessional.authorTime` (ISO 8601).  

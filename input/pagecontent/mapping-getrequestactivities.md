@@ -44,4 +44,3 @@
 |---|---|---|
 | `agent[custodian]` | Juridiskt ansvarig vårdgivare | `careProviderHSAId` |
 | `agent[author]` | Informationsägande vårdenhet | `careUnitHSAId` |
-| `agent[assembler]` | EHDS-bryggan | `EHDS_BRIDGE_HSA_ID` |

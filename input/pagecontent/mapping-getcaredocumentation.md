@@ -187,7 +187,6 @@ PatientSummaryHeader-baserade TK:er (DES-005):
 |---|---|---|
 | `agent[custodian]` | Juridiskt ansvarig vårdgivare | `careDocumentation.header.accessControlHeader.accountableHealthcareProvider` |
 | `agent[author]` | Informationsägande vårdenhet | `careDocumentation.header.accessControlHeader.accountableCareUnit` |
-| `agent[assembler]` | EHDS-bryggan | `EHDS_BRIDGE_HSA_ID` (env-variabel) |
 
 `Provenance.target` refererar `DocumentReference` via `urn:uuid:{resurs.id}`.  
 `Provenance.recorded` = `careDocumentation.header.author.timestamp` (ISO 8601).

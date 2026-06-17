@@ -156,7 +156,6 @@ PDL-styrning utgår från `accountableHealthCareProfessional`-blocket i headern.
 |---|---|---|
 | `agent[custodian]` | Juridiskt ansvarig vårdgivare | `vaccinationMedicalRecordHeader.accountableHealthCareProfessional.healthcareProfessionalCareGiverHSAId` |
 | `agent[author]` | Informationsägande vårdenhet | `vaccinationMedicalRecordHeader.accountableHealthCareProfessional.healthcareProfessionalCareUnitHSAId` |
-| `agent[assembler]` | EHDS-bryggan | `EHDS_BRIDGE_HSA_ID` (env-variabel) |
 
 `Provenance.target` refererar `Immunization` via `urn:uuid:{resurs.id}`.  
 `Provenance.recorded` = `vaccinationMedicalRecordHeader.accountableHealthCareProfessional.authorTime` (ISO 8601).

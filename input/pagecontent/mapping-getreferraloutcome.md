@@ -127,7 +127,6 @@ PDL-styrning i GetReferralOutcome utgår från `accountableHealthcareProfessiona
 |---|---|---|
 | `agent[custodian]` | Juridiskt ansvarig vårdgivare | `referralOutcomeHeader.accountableHealthcareProfessional.healthcareProfessionalCareGiverHSAId` |
 | `agent[author]` | Informationsägande vårdenhet | `referralOutcomeHeader.accountableHealthcareProfessional.healthcareProfessionalCareUnitHSAId` |
-| `agent[assembler]` | EHDS-bryggan | `EHDS_BRIDGE_HSA_ID` (env-variabel) |
 
 `Provenance.target` refererar `DiagnosticReport` via `urn:uuid:{resurs.id}`.  
 `Provenance.recorded` = `referralOutcomeHeader.accountableHealthcareProfessional.authorTime` (ISO 8601).

@@ -268,7 +268,6 @@ En `Provenance`-resurs skapas per `Observation`-resurs.
 |---|---|---|
 | `agent[custodian]` | Juridiskt ansvarig vårdgivare | `observationBody.participation` (se PDL-avsnitt) |
 | `agent[author]` | Informationsägande vårdenhet | `observationBody.participation` (se PDL-avsnitt) |
-| `agent[assembler]` | EHDS-bryggan | `EHDS_BRIDGE_HSA_ID` (env-variabel) |
 
 `Provenance.target` refererar `Observation` via `urn:uuid:{Observation.id}`.  
 `Provenance.recorded` = `observationBody.registrationTime` (konverterat till ISO 8601).

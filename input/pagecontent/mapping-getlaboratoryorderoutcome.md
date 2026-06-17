@@ -199,7 +199,6 @@ Observera att `accountableCareGiver` och `accountableCareUnit` är direkt under 
 |---|---|---|
 | `agent[custodian]` | Juridiskt ansvarig vårdgivare | `header.accessControlHeader.accountableCareGiver` |
 | `agent[author]` | Informationsägande vårdenhet | `header.accessControlHeader.accountableCareUnit` |
-| `agent[assembler]` | EHDS-bryggan | `EHDS_BRIDGE_HSA_ID` (env-variabel) |
 
 `Provenance.target` refererar `DiagnosticReport` (och transitivt alla `Observation`-instanser) via `urn:uuid:{DiagnosticReport.id}`.  
 `Provenance.recorded` = `header.record.timestamp` (ISO 8601).  

@@ -108,7 +108,6 @@ PDL-styrning i GetFunctionalStatus utgår från `accountableHealthcareProfession
 |---|---|---|
 | `agent[custodian]` | Juridiskt ansvarig vårdgivare | `functionalStatusAssessmentHeader.accountableHealthcareProfessional.healthcareProfessionalCareGiverHSAId` |
 | `agent[author]` | Informationsägande vårdenhet | `functionalStatusAssessmentHeader.accountableHealthcareProfessional.healthcareProfessionalCareUnitHSAId` |
-| `agent[assembler]` | EHDS-bryggan | `EHDS_BRIDGE_HSA_ID` (env-variabel) |
 
 `Provenance.target` refererar Condition via `urn:uuid:{Condition.id}`.  
 `Provenance.recorded` = `functionalStatusAssessmentHeader.accountableHealthcareProfessional.authorTime` (ISO 8601).

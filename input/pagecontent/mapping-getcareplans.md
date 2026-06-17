@@ -58,7 +58,6 @@ PDL-fälten `healthcareProfessionalCareUnitHSAId` och `healthcareProfessionalCar
 |---|---|---|
 | `agent[custodian]` | Juridiskt ansvarig vårdgivare | `healthcareProfessionalCareGiverHSAId` |
 | `agent[author]` | Informationsägande vårdenhet | `healthcareProfessionalCareUnitHSAId` |
-| `agent[assembler]` | EHDS-bryggan | `EHDS_BRIDGE_HSA_ID` |
 
 ---
 
