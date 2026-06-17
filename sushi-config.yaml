@@ -60,6 +60,8 @@ pages:
     title: GetObservations – Tillväxtkurva
   mapping-getaccesslogforpatient.md:
     title: GetAccessLogForPatient – Åtkomstloggar
+  mapping-issues.md:
+    title: Mappningsissues och Designbeslut
   profiles.md:
     title: Profiles
   terminology.md:
