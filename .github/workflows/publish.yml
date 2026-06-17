@@ -1,0 +1,136 @@
+name: Build and publish IG
+
+on:
+  push:
+    branches:
+      - main
+    tags:
+      - 'v*'
+  workflow_dispatch:
+
+concurrency:
+  group: pages-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+jobs:
+  build:
+    name: Build IG
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Set up Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+
+      - name: Set up Ruby and Jekyll
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.3'
+
+      - name: Install Jekyll
+        run: gem install jekyll
+
+      - name: Install SUSHI
+        run: npm install -g fsh-sushi
+
+      - name: Restore FHIR package cache
+        uses: actions/cache@v4
+        with:
+          path: ~/.fhir/packages
+          key: fhir-packages-${{ hashFiles('sushi-config.yaml') }}
+          restore-keys: fhir-packages-
+
+      - name: Restore IG Publisher cache
+        uses: actions/cache@v4
+        with:
+          path: input-cache/publisher.jar
+          key: ig-publisher-${{ hashFiles('ig.ini') }}
+
+      - name: Download IG Publisher
+        run: |
+          mkdir -p input-cache
+          if [ ! -f input-cache/publisher.jar ]; then
+            curl -sL https://github.com/HL7/fhir-ig-publisher/releases/latest/download/publisher.jar \
+              -o input-cache/publisher.jar
+          fi
+
+      - name: Build IG
+        run: |
+          java -jar input-cache/publisher.jar \
+            -ig ig.ini \
+            -tx https://tx.fhir.org/r4
+
+      # On a version tag (e.g. v1.2.3), add a versioned entry to package-list.json
+      # and commit it back so the registry always reflects published versions.
+      - name: Update package-list.json for tagged release
+        if: startsWith(github.ref, 'refs/tags/v')
+        env:
+          VERSION: ${{ github.ref_name }}
+          PAGES_URL: https://inera-ab.github.io/inerafhirtemplate
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          VERSION_NUM="${VERSION#v}"
+          DATE=$(date +%Y-%m-%d)
+          python3 - <<EOF
+          import json, os
+          v = os.environ['VERSION_NUM'] if 'VERSION_NUM' in os.environ else '${VERSION_NUM}'
+          date = '${DATE}'
+          url = '${PAGES_URL}'
+
+          with open('package-list.json') as f:
+              pl = json.load(f)
+
+          # Remove any existing entry for this version
+          pl['list'] = [e for e in pl['list'] if e.get('version') != v]
+
+          # Insert the new versioned entry after ci-build
+          pl['list'].append({
+              "version": v,
+              "desc": f"Release {v} ({date})",
+              "path": f"{url}/{v}",
+              "status": "draft",
+              "sequence": "STU 1",
+              "fhirversion": ["4.0.1"],
+              "current": False
+          })
+
+          with open('package-list.json', 'w') as f:
+              json.dump(pl, f, indent=2)
+              f.write('\n')
+          EOF
+
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add package-list.json
+          git commit -m "chore: add package-list entry for ${VERSION}"
+          git push origin HEAD:main
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: output/
+
+  deploy:
+    name: Deploy to GitHub Pages
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

@@ -1,0 +1,23 @@
+{
+  "packages": {
+    ".": {
+      "release-type": "simple",
+      "bump-minor-pre-major": true,
+      "changelog-sections": [
+        {"type": "feat",     "section": "Features"},
+        {"type": "fix",      "section": "Bug Fixes"},
+        {"type": "profile",  "section": "Profile Changes"},
+        {"type": "valueset", "section": "Terminology"},
+        {"type": "docs",     "section": "Documentation"},
+        {"type": "chore",    "section": "Maintenance", "hidden": true}
+      ],
+      "extra-files": [
+        {
+          "type": "yaml",
+          "path": "sushi-config.yaml",
+          "jsonpath": "$.version"
+        }
+      ]
+    }
+  }
+}

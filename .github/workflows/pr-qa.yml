@@ -1,0 +1,141 @@
+name: IG Publisher QA on PR
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+
+permissions:
+  contents: read
+  pull-requests: write
+
+jobs:
+  qa:
+    name: IG Publisher QA
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Set up Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+
+      - name: Set up Ruby and Jekyll
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.3'
+
+      - name: Install Jekyll
+        run: gem install jekyll
+
+      - name: Install SUSHI
+        run: npm install -g fsh-sushi
+
+      - name: Restore FHIR package cache
+        uses: actions/cache@v4
+        with:
+          path: ~/.fhir/packages
+          key: fhir-packages-${{ hashFiles('sushi-config.yaml') }}
+          restore-keys: fhir-packages-
+
+      - name: Restore IG Publisher cache
+        uses: actions/cache@v4
+        with:
+          path: input-cache/publisher.jar
+          key: ig-publisher-${{ hashFiles('ig.ini') }}
+
+      - name: Download IG Publisher
+        run: |
+          mkdir -p input-cache
+          if [ ! -f input-cache/publisher.jar ]; then
+            curl -sL https://github.com/HL7/fhir-ig-publisher/releases/latest/download/publisher.jar \
+              -o input-cache/publisher.jar
+          fi
+
+      - name: Run SUSHI
+        run: sushi .
+
+      - name: Build IG
+        id: build
+        continue-on-error: true
+        run: java -jar input-cache/publisher.jar -ig ig.ini 2>&1 | tee build.log
+
+      - name: Post QA comment
+        uses: actions/github-script@v7
+        if: always()
+        with:
+          script: |
+            const fs = require('fs');
+
+            let errors = 0, warnings = 0, hints = 0, rows = [];
+            try {
+              const qa = JSON.parse(fs.readFileSync('output/qa.json', 'utf8'));
+              const msgs = qa.messages || [];
+              errors   = msgs.filter(m => m.level === 'error').length;
+              warnings = msgs.filter(m => m.level === 'warning').length;
+              hints    = msgs.filter(m => m.level === 'information').length;
+              rows = msgs
+                .filter(m => m.level === 'error' || m.level === 'warning')
+                .slice(0, 15)
+                .map(m => {
+                  const icon = m.level === 'error' ? '🔴' : '🟡';
+                  const msg  = (m.message || '').replace(/\|/g, '\\|').substring(0, 150);
+                  const loc  = m.location ? `\`${m.location}\`` : '-';
+                  return `| ${icon} | ${loc} | ${msg} |`;
+                });
+            } catch (e) {
+              rows = ['> ⚠️ Could not parse qa.json — build may have failed'];
+            }
+
+            const buildFailed = '${{ steps.build.outcome }}' === 'failure';
+            const icon = buildFailed ? '❌' : errors > 0 ? '🔴' : warnings > 0 ? '🟡' : '✅';
+
+            const lines = [
+              `## ${icon} IG Publisher QA`,
+              '',
+              buildFailed ? '> ❌ **Build failed** — see workflow logs for details.' : '',
+              '',
+              `| | Count |`,
+              `|---|---|`,
+              `| 🔴 Errors | **${errors}** |`,
+              `| 🟡 Warnings | ${warnings} |`,
+              `| 💡 Hints | ${hints} |`,
+            ];
+
+            if (rows.length > 0) {
+              lines.push('', '### Issues', '', '| | Location | Message |', '|---|---|---|', ...rows);
+            }
+
+            lines.push('', `<sub>Commit ${context.payload.pull_request.head.sha.substring(0,7)}</sub>`);
+            const body = lines.join('\n');
+
+            const { data: comments } = await github.rest.issues.listComments({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.issue.number,
+            });
+            const existing = comments.find(c =>
+              c.user.type === 'Bot' && c.body.includes('IG Publisher QA')
+            );
+
+            if (existing) {
+              await github.rest.issues.updateComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                comment_id: existing.id,
+                body,
+              });
+            } else {
+              await github.rest.issues.createComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: context.issue.number,
+                body,
+              });
+            }
