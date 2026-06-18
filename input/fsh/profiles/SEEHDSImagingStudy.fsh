@@ -30,7 +30,7 @@ Description: "Profil för bilddiagnostiska undersökningar mappat från RIVTA-tj
 
 * series MS
 * series.uid MS
-* series.uid ^short = "Serie-UID (imagingOutcomeBody.imageRecording.imageDicomData.dicomSOP)"
+* series.uid ^short = "DICOM Series Instance UID (härledd/genererad; dicomSOP är SOP Instance UID på instansnivå)"
 * series.modality MS
 * series.modality ^short = "Serieens modalitet (imagingOutcomeBody.imageRecording.modalityData.typeOfModality)"
 * series.instance MS

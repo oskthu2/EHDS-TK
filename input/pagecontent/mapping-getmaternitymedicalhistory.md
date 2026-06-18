@@ -240,8 +240,8 @@ Sektionen skapar en Observation med `code = maternity-section#checkup`.
 
 | RIVTA-element | Kard. | FHIR-element | Kommentar |
 |---|---|---|---|
-| `pregnancyCheckupRecord.proteinuria` | 0..1 | `Observation.component[proteinuria].valueCodeableConcept` | Proteinuri; kodverk (negativ/spår/+/++/+++); LOINC `2888-6` |
-| `pregnancyCheckupRecord.glycosuria` | 0..1 | `Observation.component[glycosuria].valueCodeableConcept` | Glukosuri; kodverk negativ/positiv; LOINC `2349-9` |
+| `pregnancyCheckupRecord.proteinuria` | 0..1 | `Observation.component[proteinuria].valueCodeableConcept` | Proteinuri; semikvantitatif kod (negativ/spår/+/++/+++); LOINC `2888-6`. OBS: LM-typen är `Quantity` men klinisk praxis i Sverige är kodad skala – FHIR-mappningen använder `valueCodeableConcept` (se MAT-001 i issues) |
+| `pregnancyCheckupRecord.glycosuria` | 0..1 | `Observation.component[glycosuria].valueCodeableConcept` | Glukosuri; semikvantitatif kod (negativ/positiv); LOINC `2349-9`. OBS: LM-typen är `Quantity` men klinisk praxis är kodad skala – se proteinuri-not ovan |
 
 ### Fosterdata
 

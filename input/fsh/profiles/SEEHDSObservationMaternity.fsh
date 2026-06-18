@@ -25,7 +25,7 @@ Description: """
 * performer ^short = "Ansvarig personal/enhet (maternityMedicalRecordHeader.accountableHealthcareProfessional)"
 
 * issued MS
-* issued ^short = "Dokumentationstidpunkt (maternityMedicalRecordHeader.accountableHealthcareProfessional.authorTime)"
+* issued ^short = "Dokumentets registreringstidpunkt (maternityMedicalRecordHeader.documentTime)"
 
 * status 1..1 MS
 * status ^short = "Status"
@@ -37,7 +37,7 @@ Description: """
 * code ^short = "Sektionskod – diskriminator för vilken av de tre sektionerna som Observation representerar"
 
 * effective[x] MS
-* effective[x] ^short = "Sektionsspecifik tidpunkt (t.ex. pregnancyCheckupRecord.checkupDate)"
+* effective[x] ^short = "Tidpunkt för dokumentation (maternityMedicalRecordHeader.accountableHealthcareProfessional.authorTime)"
 
 * value[x] MS
 * value[x] ^short = "Sektionsspecifikt mätvärde (t.ex. pregnancyCheckupRecord.bloodPressure, postDeliveryRecord.birthWeight)"

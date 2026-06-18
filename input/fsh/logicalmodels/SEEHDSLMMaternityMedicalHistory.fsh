@@ -23,7 +23,7 @@ Characteristics: #can-be-target
 * maternityMedicalRecord.maternityMedicalRecordHeader.documentTime 1..1 instant "Dokumentets tidpunkt"
 * maternityMedicalRecord.maternityMedicalRecordHeader.patientId 1..1 Identifier "Patientens id"
 * maternityMedicalRecord.maternityMedicalRecordHeader.patientId.value 1..1 string "Patientens personnummer/samordningsnummer"
-* maternityMedicalRecord.maternityMedicalRecordHeader.patientId.system 1..1 uri "OID för identifierartyp"
+* maternityMedicalRecord.maternityMedicalRecordHeader.patientId.system 1..1 string "OID för identifierartyp"
 
 * maternityMedicalRecord.maternityMedicalRecordHeader.accountableHealthcareProfessional 1..1 BackboneElement "Ansvarig hälso- och sjukvårdspersonal"
 * maternityMedicalRecord.maternityMedicalRecordHeader.accountableHealthcareProfessional.authorTime 1..1 instant "Tidpunkt"
@@ -112,7 +112,7 @@ Characteristics: #can-be-target
 * maternityMedicalRecord.maternityMedicalRecordBody.postDeliveryRecord.motherPostDeliveryRecord.bloodPressureSystolic 0..1 Quantity "Systoliskt blodtryck"
 * maternityMedicalRecord.maternityMedicalRecordBody.postDeliveryRecord.motherPostDeliveryRecord.bloodPressureDiastolic 0..1 Quantity "Diastoliskt blodtryck"
 * maternityMedicalRecord.maternityMedicalRecordBody.postDeliveryRecord.motherPostDeliveryRecord.haemoglobin 0..1 Quantity "Hemoglobin"
-* maternityMedicalRecord.maternityMedicalRecordBody.postDeliveryRecord.motherPostDeliveryRecord.bodyTemperature 0..1 decimal "Kroppstemperatur"
+* maternityMedicalRecord.maternityMedicalRecordBody.postDeliveryRecord.motherPostDeliveryRecord.bodyTemperature 0..1 Quantity "Kroppstemperatur"
 * maternityMedicalRecord.maternityMedicalRecordBody.postDeliveryRecord.motherPostDeliveryRecord.scarsOK 0..1 boolean "Ärr OK"
 * maternityMedicalRecord.maternityMedicalRecordBody.postDeliveryRecord.motherPostDeliveryRecord.sutureRemoved 0..1 boolean "Suturer borttagna"
 * maternityMedicalRecord.maternityMedicalRecordBody.postDeliveryRecord.motherPostDeliveryRecord.perineumComfortable 0..1 boolean "Perineum OK"

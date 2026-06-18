@@ -16,7 +16,10 @@ Description: "Profil för bilddiagnostiska utlåtanden/fynd från GetImagingOutc
 * performer ^short = "Tolkande radiolog/enhet (imagingOutcomeHeader.accountableHealthcareProfessional)"
 
 * issued MS
-* issued ^short = "Resultattidpunkt (imagingOutcomeBody.resultTime)"
+* issued ^short = "Dokumentets tidpunkt (imagingOutcomeHeader.documentTime)"
+
+* effectiveDateTime MS
+* effectiveDateTime ^short = "Resultattidpunkt (imagingOutcomeBody.resultTime)"
 
 * status 1..1 MS
 * status ^short = "Härledd från imagingOutcomeBody.typeOfResult (PREL→preliminary, DEF→final, TILL→amended, nullified=true→entered-in-error, se IMG-001)"

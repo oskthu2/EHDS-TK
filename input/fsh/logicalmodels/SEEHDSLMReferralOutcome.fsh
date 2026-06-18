@@ -25,7 +25,7 @@ Characteristics: #can-be-target
 * referralOutcome.referralOutcomeHeader.documentTime 1..1 instant "Dokumentets tidpunkt"
 * referralOutcome.referralOutcomeHeader.patientId 1..1 Identifier "Patientens id"
 * referralOutcome.referralOutcomeHeader.patientId.value 1..1 string "Patientens personnummer/samordningsnummer"
-* referralOutcome.referralOutcomeHeader.patientId.system 1..1 uri "OID för typ av identifierare"
+* referralOutcome.referralOutcomeHeader.patientId.system 1..1 string "OID för typ av identifierare"
 
 * referralOutcome.referralOutcomeHeader.accountableHealthcareProfessional 1..1 BackboneElement "Ansvarig hälso- och sjukvårdspersonal"
 * referralOutcome.referralOutcomeHeader.accountableHealthcareProfessional.authorTime 1..1 instant "Tidpunkt för dokumentation"
@@ -50,7 +50,7 @@ Characteristics: #can-be-target
 
 * referralOutcome.referralOutcomeHeader.legalAuthenticator 0..1 BackboneElement "Juridiskt ansvarig"
 * referralOutcome.referralOutcomeHeader.legalAuthenticator.signatureTime 1..1 instant "Signeringstidpunkt"
-* referralOutcome.referralOutcomeHeader.legalAuthenticator.legalAuthenticatorHSAid 0..1 Identifier "HSA-id"
+* referralOutcome.referralOutcomeHeader.legalAuthenticator.legalAuthenticatorHSAId 0..1 Identifier "HSA-id"
 * referralOutcome.referralOutcomeHeader.legalAuthenticator.legalAuthenticatorName 0..1 string "Namn"
 
 * referralOutcome.referralOutcomeHeader.approvedForPatient 1..1 boolean "Godkänd för patientvisning"
