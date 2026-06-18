@@ -54,7 +54,7 @@ Characteristics: #can-be-target
     * approvedForPatient 1..1 boolean "Beslut om synlighet för patient (PDL-prövning)"
     * careContactId 0..1 string "Identitet för vård- och omsorgskontakt"
     * nullified 1..1 boolean "Anger om dokumentet makulerats i källsystemet"
-    * nullifiedReason 0..1 string "Orsak till makulering"
+    * nullifiedReason 0..1 string "Orsak till makulering. Villkor: Får ENBART anges om nullified = true."
   * vaccinationMedicalRecordBody 1..1 BackboneElement "Vaccinationsjournalens innehåll"
     * registrationRecord 1..1 BackboneElement "Administrativ information om vaccinationstillfället"
       * date 1..1 date "Datum då vaccination(er) gavs"
@@ -113,7 +113,7 @@ Characteristics: #can-be-target
       * vaccinationUniqueReference 0..1 Identifier "Unik referens till källsystemets vaccinationsinformation"
     * additionalPatientInformation 0..1 BackboneElement "Ytterligare patientinformation"
       * dateOfBirth 1..1 date "Patientens födelsedatum"
-      * gender 0..1 CodeableConcept "Patientens kön. KV Kön (OID 1.2.752.129.2.2.1.1) bör användas"
+      * gender 0..1 CodeableConcept "Patientens kön. KV Kön (OID 1.2.752.129.2.2.1.1) bör användas. CVType-begränsning (Regel): originalText är förbjudet (0..0) — code, codeSystem och displayName ska anges."
 * result 1..1 BackboneElement "Svarsstatus"
   * resultCode 1..1 code "OK, INFO eller ERROR"
   * resultCode from ResultCodeVS (required)

@@ -161,6 +161,12 @@ Characteristics: #can-be-target
     Bör tas från KV Uppmärksamhetstyp eller KV Informationstyp (OID 1.2.752.129.2.2.2.1).
     OID för KV Uppmärksamhetstyp saknas – använd KV Informationstyp som fallback.
     Kardinalitet: Obligatorisk.
+    Regel 2 (NPÖ): För att uppmärksamhetssignaler ska skickas till NPÖ måste en av följande
+    KV Informationstyp-koder anges: upp-ube, upp-ube-beh, upp-ube-lbe, upp-ube-kod, upp-uas,
+    upp-uas-sjd, upp-vbe, upp-vbe-vbe, upp-arb, upp-arb-smf, upp-arb-smf-vag, upp-arb-smf-sjd,
+    upp-est, upp-est-rub, upp-est-inh. Alternativt KV Uppmärksamhetstyp-koder: Överkänslighet,
+    Allvarlig sjukdom, Allvarlig behandling, Smittsam sjukdom, Vårdbegränsning,
+    Historisk varningsinformation.
   """
 
 * alertInformation.alertInformationBody.ascertainedDate 0..1 date "Datum för konstaterande" """
@@ -238,18 +244,23 @@ Characteristics: #can-be-target
     ATC-kod på minst treställig nivå ska anges vid livshotande/skadande allvarlighetsgrad.
     OID: 1.2.752.129.2.2.3.1.1.
     Kardinalitet: Valfri (villkorlig, se TKB).
+    CVType-begränsningar (TKB): codeSystem är fast 1.2.752.129.2.2.3.1.1 (ATC).
+    codeSystemName, codeSystemVersion och originalText är 0..0 (får ej anges).
+    code och displayName är 1..1 (obligatoriska) när atcSubstance anges.
   """
 
 * alertInformation.alertInformationBody.hypersensitivity.pharmaceuticalHypersensitivity.nonATCSubstance 0..1 string "Substans utan ATC-kod" """
     Benämning på aktiv substans utan ATC-kod.
     Ska anges om atcSubstance saknas.
     Kardinalitet: Valfri.
+    Villkor (TKB): nonATCSubstance och nonATCSubstanceComment ska BÅDA anges om atcSubstance saknas.
   """
 
 * alertInformation.alertInformationBody.hypersensitivity.pharmaceuticalHypersensitivity.nonATCSubstanceComment 0..1 string "Kommentar till avsaknad ATC-kod" """
     Förklaring till varför ATC-kod inte används.
     Ska anges om atcSubstance saknas.
     Kardinalitet: Valfri.
+    Villkor (TKB): Ska anges om atcSubstance saknas (tillsammans med nonATCSubstance).
   """
 
 * alertInformation.alertInformationBody.hypersensitivity.pharmaceuticalHypersensitivity.pharmaceuticalProductId 0..* CodeableConcept "Läkemedelsprodukt-id (CVType)" """

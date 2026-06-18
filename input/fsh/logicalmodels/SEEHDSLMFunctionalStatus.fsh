@@ -37,6 +37,10 @@ Characteristics: #can-be-target
     Kardinalitet: Obligatorisk.
   """
 
+* functionalStatusAssessment.functionalStatusAssessmentHeader.documentTitle 0..0 string "Titel (ej tillämpligt)" """
+    N/A — GetFunctionalStatus skickar inte documentTitle. Elementet är 0..0 per TKB.
+  """
+
 * functionalStatusAssessment.functionalStatusAssessmentHeader.documentTime 1..1 dateTime "Bedömningstidpunkt" """
     Bedömningstidpunkt/händelsetidpunkt. Format: YYYYMMDDhhmmss.
     Kardinalitet: Obligatorisk.
@@ -133,6 +137,14 @@ Characteristics: #can-be-target
     Kardinalitet: Valfri.
   """
 
+* functionalStatusAssessment.functionalStatusAssessmentHeader.nullified 0..0 boolean "Makulerat (ej tillämpligt)" """
+    N/A — GetFunctionalStatus stödjer inte nullified. Elementet är 0..0 per TKB.
+  """
+
+* functionalStatusAssessment.functionalStatusAssessmentHeader.nullifiedReason 0..0 string "Makuleringsskäl (ej tillämpligt)" """
+    N/A — GetFunctionalStatus stödjer inte nullifiedReason. Elementet är 0..0 per TKB.
+  """
+
 * functionalStatusAssessment.functionalStatusAssessmentBody 1..1 BackboneElement "Bedömningens innehåll" """
     FunctionalStatusAssessmentBodyType — bedömningens informationsinnehåll.
     Kardinalitet: Obligatorisk.
@@ -149,6 +161,7 @@ Characteristics: #can-be-target
 * functionalStatusAssessment.functionalStatusAssessmentBody.comment 0..1 string "Kommentar" """
     Kommentar till total bedömning.
     Kardinalitet: Valfri.
+    Villkor (Regel): Får ENDAST anges om assessmentCategory = 'pad-pad'.
   """
 
 * functionalStatusAssessment.functionalStatusAssessmentBody.padl 0..* BackboneElement "PADL-bedömning" """
@@ -159,6 +172,7 @@ Characteristics: #can-be-target
 * functionalStatusAssessment.functionalStatusAssessmentBody.padl.typeOfAssessment 1..1 CodeableConcept "Typ av PADL-bedömning" """
     Typ av PADL-bedömning. Kan anges med lämpligt kodsystem för PADL.
     Kardinalitet: Obligatorisk.
+    Regel 2 (TKB): Då attributet avser Personlig ADL ska ENBART ett av följande värden anges per post: 'personlig hygien', 'på/avklädning', 'förflyttning', 'toalettbesök', 'födointag'.
   """
 
 * functionalStatusAssessment.functionalStatusAssessmentBody.padl.assessment 1..1 string "Textuell PADL-bedömning" """
@@ -177,6 +191,7 @@ Characteristics: #can-be-target
     Kodsystem: ICF, OID 1.2.752.116.1.1.3.
     Exempelkod: b310 = röst- och talfunktioner.
     Kardinalitet: Obligatorisk.
+    CVType-begränsningar: codeSystemName och codeSystemVersion är 0..0 (får ej anges) per TKB. Om code anges ska codeSystem och displayName anges, ej originalText. Om originalText anges ska inga andra attribut anges.
   """
 
 * functionalStatusAssessment.functionalStatusAssessmentBody.disability.comment 0..1 string "Kommentar till funktionsnedsättning" """

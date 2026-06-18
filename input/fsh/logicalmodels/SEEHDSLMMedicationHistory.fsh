@@ -26,7 +26,7 @@ Characteristics: #can-be-target
       Vanligtvis ordinations-id eller ordinations-id kompletterat med löpnummer.
       """
     * sourceSystemHSAId 1..1 Identifier "Källsystemets HSA-id"
-    * documentTitle 0..1 string "Titel som beskriver informationen"
+    * documentTitle 0..0 string "Titel (ej tillämpligt — 0..0 per TKB)"
     * patientId 1..1 Identifier "Personidentifierare för patienten"
     * accountableHealthcareProfessional 1..1 BackboneElement "Dokumentationsansvarig"
       * authorTime 1..1 instant "Tidpunkt för dokumentation"
@@ -46,8 +46,17 @@ Characteristics: #can-be-target
       * signatureTime 1..1 instant "Tidpunkt för signering"
       * legalAuthenticatorHSAId 0..1 Identifier "HSA-id för signerande personal"
       * legalAuthenticatorName 0..1 string "Namn på signerande personal"
+      * legalAuthenticatorRoleCode 0..0 CodeableConcept "Signerandes befattning (ej tillämpligt)" """
+          N/A — legalAuthenticatorRoleCode är 0..0 per TKB för GetMedicationHistory.
+        """
     * approvedForPatient 1..1 boolean "Ansvarig vårdpersonals beslut om synlighet (PDL-prövning)"
     * careContactId 0..1 string "Identitet för vård- och omsorgskontakt"
+    * nullified 0..0 boolean "Makulerat (ej tillämpligt)" """
+        N/A — GetMedicationHistory stödjer inte nullified. Elementet är 0..0 per TKB.
+      """
+    * nullifiedReason 0..0 string "Makuleringsskäl (ej tillämpligt)" """
+        N/A — GetMedicationHistory stödjer inte nullifiedReason. Elementet är 0..0 per TKB.
+      """
   * medicationMedicalRecordBody 1..1 BackboneElement "Läkemedelshistorikens innehåll"
     * medicationPrescription 1..1 BackboneElement "Läkemedelsordination"
       * prescriptionId 1..1 Identifier "Ordinations-id"
@@ -82,6 +91,7 @@ Characteristics: #can-be-target
       * prescriber 0..1 BackboneElement "Ordinatör"
         """
         Icke att beblandas med accountableHealthcareProfessional (den som registrerat).
+        Villkor (Regel 1.8): Obligatorisk om selfMedication = false.
         """
         * authorTime 1..1 instant "Beslutstidpunkt/ordinationstidpunkt"
         * healthcareProfessionalHSAId 0..1 Identifier "Ordinatörens HSA-id"
@@ -103,7 +113,7 @@ Characteristics: #can-be-target
           * orgUnitHSAId 0..1 Identifier "HSA-id"
           * orgUnitName 0..1 string "Namn"
       * startOfFirstTreatment 0..1 instant "Första insättningstidpunkt (beräknad från ordinationskedjan)"
-      * startOfTreatment 0..1 instant "Insättningstidpunkt"
+      * startOfTreatment 0..1 instant "Insättningstidpunkt. Villkor (Regel 1.8): Obligatorisk om typeOfPrescription = 'I' (insättning)."
       * endOfTreatment 0..1 instant "Utsättningstidpunkt"
       * endOfTreatmentReason 0..1 CodeableConcept "Utsättningsorsak"
       * selfMedication 1..1 boolean "Anger om ordination är utfärdad av patienten själv"
@@ -153,23 +163,32 @@ Characteristics: #can-be-target
       * dispensationAuthorization 0..1 BackboneElement "Förskrivning"
         """
         Se XSD DispensationAuthorizationType för fullständig struktur.
-        // SAKNAS I KÄLLDOKUMENT - endast delvis extraherat — kontrollera manuellt
+        Nyckelfält: dispensationAuthorizationId (1..1), dispensationAuthorizer (1..1,
+        careUnitHSAId/careGiverHSAId=0..0), prescriptionSignatura (1..1),
+        drug (0..1 XOR: unstructured/merchandise/drugArticle/drug/generics, samma mönster som ordination),
+        totalAmount/packageUnit (båda eller ingetdera — Regel 1.8), validUntil (0..1),
+        nonReplaceable (0..1, enum Prescriber/Patient).
         """
       * administration 0..* BackboneElement "Information om administrering av läkemedel"
         """
         Bara administreringstillfällen som faktiskt ägt rum kan anges.
         Se XSD AdministrationType för fullständig struktur.
-        // SAKNAS I KÄLLDOKUMENT - endast delvis extraherat — kontrollera manuellt
+        Nyckelfält: administrationId (1..1), administrationTime (1..1, start/end —
+        minst ett av start/end — Regel 1.8), administeringHealthcareProfessional (1..1,
+        careUnitHSAId/careGiverHSAId=0..0), routeOfAdministration (0..1),
+        drug (0..1 XOR), administrationComment (0..1).
         """
       * relation 0..* BackboneElement "Sambandsklass"
         """
         Alla meddelandeposter som i ordinationen pekas ut med samma relationstyp.
         Se XSD RelationType för fullständig struktur.
-        // SAKNAS I KÄLLDOKUMENT - endast delvis extraherat — kontrollera manuellt
+        Nyckelfält: code (1..1 CVType), referredInformation (1..*:
+        id/IIType 1..1, type/CVType 1..1 originalText 'caa-ga'/'chb-go',
+        informationOwner/InformationOwnerType 1..1).
         """
     * additionalPatientInformation 0..1 BackboneElement "Ytterligare patientinformation"
       * dateOfBirth 1..1 date "Patientens födelsedatum"
-      * gender 0..1 CodeableConcept "Patientens kön. KV Kön (OID 1.2.752.129.2.2.1.1) bör användas"
+      * gender 0..1 CodeableConcept "Patientens kön. KV Kön (OID 1.2.752.129.2.2.1.1) bör användas. CVType-begränsning (Regel 1.6): originalText är förbjudet (0..0) för könsfältet — code, codeSystem och displayName ska anges."
 * result 1..1 BackboneElement "Svarsstatus"
   * resultCode 1..1 code "OK, INFO eller ERROR"
   * resultCode from ResultCodeVS (required)

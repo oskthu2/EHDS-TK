@@ -34,6 +34,14 @@ Characteristics: #can-be-target
     Kardinalitet: Obligatorisk.
   """
 
+* diagnosis.diagnosisHeader.documentTitle 0..0 string "Titel (ej tillämpligt)" """
+    N/A — GetDiagnosis skickar inte documentTitle. Elementet är 0..0 per TKB.
+  """
+
+* diagnosis.diagnosisHeader.documentTime 0..0 dateTime "Tidpunkt (ej tillämpligt)" """
+    N/A — GetDiagnosis skickar inte documentTime. Elementet är 0..0 per TKB.
+  """
+
 * diagnosis.diagnosisHeader.patientId 1..1 Identifier "Patientidentifierare" """
     Identifierare för patient. id = patientens identifierare (12 tecken).
     type = OID för typ av identifierare. För personnummer: 1.2.752.129.2.1.3.1.

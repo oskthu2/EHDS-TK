@@ -52,11 +52,16 @@ Characteristics: #can-be-target
 * carePlan.careContactId 0..1 string "Refererad vårdkontakt-id"
 
 // -- carePlanBody (CarePlanBodyType) --
-* carePlan.content 0..* BackboneElement "Innehåll i vård- och omsorgsplanen (MultimediaType, max 100 KB)"
+* carePlan.content 0..* BackboneElement "Innehåll i vård- och omsorgsplanen (MultimediaType)" """
+    MultimediaType-element med planens innehåll. Binärdata max 100 KB per TKB.
+  """
 * carePlan.content obeys getcareplans-content-xor
-* carePlan.content.mediaType 1..1 code "Mediatyp (MIME-typ): text/plain, text/html, image/jpeg, image/png, application/pdf"
+* carePlan.content.mediaType 1..1 code "Mediatyp (MIME-typ): text/plain, text/html, image/jpeg, image/png, image/tiff, application/pdf"
 * carePlan.content.value 0..1 base64Binary "Binärdata (base64) – XOR med reference"
 * carePlan.content.reference 0..1 url "Referens till extern fil (URL) – XOR med value"
+* carePlan.content.id 0..0 string "id (ej tillämpligt)" """
+    N/A — content.id är 0..0 per TKB för GetCarePlans.
+  """
 * carePlan.participatingCareUnitHSAId 0..* Identifier "Deltagande vårdenheters HSA-id (IIType)"
 * carePlan.typeOfCarePlan 0..1 CodeableConcept "Typ av vård- och omsorgsplan"
 * carePlan.typeOfCarePlan from TypeOfCarePlanVS (required)

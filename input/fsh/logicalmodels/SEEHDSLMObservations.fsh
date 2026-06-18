@@ -44,7 +44,8 @@ Characteristics: #can-be-target
         """
         Kod för den typ av observation, används då typen inte framgår av attributet värde.
         Exempel: "längd mätt utan skor" eller "huvuddiagnos".
-        Fälten codeSystemVersion (0..1) och displayName (1..1) ingår.
+        CVType-regler (TKB): displayName är 1..1 (obligatorisk om fältet anges).
+        codeSystemVersion är 0..1.
         Kardinalitet: Valfri (0..1).
         """
     * observationValue 1..1 BackboneElement "NI 2017 (Observation.värde) — det faktiska observerade hälsotillståndet."
@@ -55,15 +56,26 @@ Characteristics: #can-be-target
         """
       * cv 0..1 CodeableConcept "Kodat värde (CVType). Exempelvis diagnoskod ICD-10 eller Snomed CT."
       * pq 0..1 Quantity "Mätvärde (PQType). Exempelvis 174 cm eller 37,8 °C."
-      * ivlpq 0..1 Range "Intervall av mätvärden (PQIntervalType, RIV-TA: ivl_pq). Exempelvis 37,1-37,8 °C."
-      * ts 0..1 string "Tidpunkt med variabel precision (PartialTimeStampType). Format: ÅÅÅÅMMDDttmmss (varierande precision)."
-      * ivlts 0..1 Period "Tidsintervall med variabel precision (PartialTimePeriodType, RIV-TA: ivl_ts)."
+      * ivlpq 0..1 Range "Intervall av mätvärden (PQIntervalType, RIV-TA: ivl_pq). Exempelvis 37,1-37,8 °C." """
+          Villkor: Minst ett av low och high måste anges per TKB.
+        """
+      * ts 0..1 string "Tidpunkt med variabel precision (PartialTimeStampType)." """
+          Format: YYYY | YYYYMM | YYYYMMDD | YYYYMMDDhh | YYYYMMDDhhmm | YYYYMMDDhhmmss.
+          Precision är explicit i formatet. Se OBS-001 (beslutad mappning i FHIR).
+        """
+      * ivlts 0..1 Period "Tidsintervall med variabel precision (PartialTimePeriodType, RIV-TA: ivl_ts)." """
+          Villkor: Minst ett av start och end måste anges per TKB.
+        """
       * st 0..1 string "Textuell beskrivning."
-      * intValue 0..1 integer "Heltal (RIV-TA: int) — för skattningsskalor, ej för fysiskt uppmätta värden."
+      * intValue 0..1 integer "Heltal (RIV-TA: int)." """
+          Ska ENBART användas för skalvärden (t.ex. poäng på AUDIT-skalan).
+          Får INTE användas för fysiskt uppmätta värden (längd, vikt etc.) — använd pq för dessa.
+        """
     * scale 0..1 CodeableConcept "NI 2017 (Observation.skala) — den mätskala som värdet är uppmätt på."
         """
         Två huvudtyper: nominalskala (kategorisk) och ordinalskala (rangordnad).
         Exempel: AUDIT-skalan (0-40 poäng) eller AB0-blodgruppsystemet.
+        CVType-regler (TKB): displayName är 1..1 (obligatorisk om fältet anges).
         Kardinalitet: Valfri (0..1).
         """
     * observationStatus 1..1 CodeableConcept "NI 2017 (Observation.status) — observationens status."
@@ -71,8 +83,10 @@ Characteristics: #can-be-target
         Koder tillhandahålls av Socialstyrelsen som urval ur Snomed CT (urvals-id: 56431000052106).
         Snomed CT OID: 1.2.752.116.2.1.1.
         En instans av klassen observation kan inte byta status.
+        CVType-regler (TKB): displayName är 1..1 (obligatorisk).
         Kardinalitet: Obligatorisk (1..1).
         """
+    * observationStatus from SEObservationStatusVS (required)
     * targetSite 0..* CodeableConcept "NI 2017 (Observation.lokalisation) — lokalisation för observationen."
         """
         Används för att beskriva vad observationen avser gällande anatomi, funktion eller system.
@@ -92,8 +106,13 @@ Characteristics: #can-be-target
         Skiljer sig från registrationTime (dokumentationstidpunkt).
         Kardinalitet: Valfri (0..1).
         """
-      * ts 0..1 string "Tidpunkt med variabel precision."
-      * ivlts 0..1 Period "Tidsintervall med variabel precision (RIV-TA: ivl_ts)."
+      * ts 0..1 string "Tidpunkt med variabel precision." """
+          Format: YYYY | YYYYMM | YYYYMMDD | YYYYMMDDhh | YYYYMMDDhhmm | YYYYMMDDhhmmss.
+          Se OBS-001 (beslutad mappning i FHIR).
+        """
+      * ivlts 0..1 Period "Tidsintervall med variabel precision (RIV-TA: ivl_ts)." """
+          Villkor: Minst ett av start och end måste anges per TKB.
+        """
     * valueNegation 1..1 boolean "NI 2017 (Observation.negation) — negerar betydelsen av value."
         """
         Normalvärde: false (positiv utsaga).
@@ -119,7 +138,10 @@ Characteristics: #can-be-target
         * middleSurname 0..1 string "NI 2017 (Person.mellannamn)."
         * surname 0..1 string "NI 2017 (Person.efternamn)."
         * givenNameMarker 0..1 integer "NI 2017 (Person.tilltalsnamnsmarkering). Giltiga värden: 10-99."
-        * gender 0..1 CodeableConcept "NI 2017 (Person.kön). KV kön OID: 1.2.752.129.2.2.1.1. Koder: 0 okänt, 1 man, 2 kvinna, 9 ej tillämpligt."
+        * gender 0..1 CodeableConcept "NI 2017 (Person.kön). KV Kön OID: 1.2.752.129.2.2.1.1." """
+            Koder: 0=okänt, 1=man, 2=kvinna, 9=ej tillämpligt.
+            CVType-begränsning: originalText är förbjudet (0..0) för könsfältet per TKB.
+          """
         * dateOfBirth 0..1 date "NI 2017 (Person.födelsedatum). Format ÅÅÅÅMMDD."
         * confidentialityIndicator 1..1 boolean "NI 2017 (Person.sekretessmarkering). Defaultvärde: false."
         * maritalStatus 0..1 CodeableConcept "NI 2017 (Person.civilstånd)."
