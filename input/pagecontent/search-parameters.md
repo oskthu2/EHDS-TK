@@ -129,9 +129,48 @@ Detta täcker den vanligaste användningen i IoÖ Tillväxtkurva (se `SEEHDSObse
 |---|---|---|---|---|
 | `fromDate` | 0..1 | `date=ge{datum}` | `AuditEvent` | `AuditEvent.recorded` (händelsetidpunkt) |
 | `toDate` | 0..1 | `date=le{datum}` | `AuditEvent` | Kombineras med `fromDate` |
-| `careGiverId` | 0..1 | `agent.who.identifier` | `AuditEvent` | Filtrerar på den vårdgivare som utförde åtkomsten |
+| `careGiverId` | 0..1 | Se nedan | `Provenance` | Filtrerar på ansvarig vårdgivare (Sparr-nivå yttre); lagras i Provenance, inte direkt på AuditEvent |
 
-`AuditEvent.date`-sökparametern söker på `AuditEvent.recorded`. `careGiverId` kan sökas via `agent.who.identifier` om AuditEvent lagrar en agentidentifierare med HSA-id. Detta är en av de få TK:er där ett Sparr-liknande fält faktiskt kan sökas direkt på resursen, förutsatt att `AuditEvent.agent.who.identifier` populeras korrekt i bryggan.
+#### careGiverId – tre möjliga strategier
+
+`careGiverId` i GetAccessLogForPatient avser den juridiskt ansvariga vårdgivaren (yttre Sparr-nivå), konsekvent med hur `healthcareProfessionalCareGiverHSAId` hanteras i övriga kontrakt. I FHIR-mappningen lagras detta i `Provenance.agent[custodian].who.identifier` — inte på AuditEvent direkt.
+
+Tre strategier för att filtrera på `careGiverId` diskuteras:
+
+**Strategi 1 – Provenance-omvänd kedja (rekommenderas som standard)**
+
+Använd FHIR:s `_has`-parameter för att filtera `AuditEvent`-resurser vars associerade `Provenance` pekar på en viss vårdgivare:
+
+```
+GET /AuditEvent?patient.identifier=...&date=ge2024-01-01
+  &_has:Provenance:target:agent.who.identifier=urn:oid:1.2.752.129.2.1.4.1|SE2321000016-AB1C
+```
+
+Kräver att servern stöder `_has` (reverse chaining) och att Provenance-resurser konsekvent skapas per AuditEvent med korrekt `agent[custodian]`. Fungerar utan serverspecifika tillägg men `_has` implementeras ej i alla FHIR-servrar.
+
+**Strategi 2 – HSA-trädklättring**
+
+HSA-katalogen är hierarkisk: en vårdgivare (`careGiverId`) kan ha ett eller flera hundra HSA-id:n på underordnade enheter. Idén är att bryggan, innan sökningen, slår upp alla HSA-id:n under given vårdgivare i HSA och sedan filtrerar på enhetsnivå via `_source` (sourceSystemHSAId). Fördelen är att inga anpassade FHIR-parametrar behövs; nackdelen är ett externt beroende på HSA-tjänsten och potentiellt ett stort antal enhets-HSA-id:n att söka på.
+
+```
+# Pseudokod
+enhetslista = hsa.getUnitsUnder(careGiverId)
+GET /AuditEvent?patient.identifier=...&_source:in={enhetslista}
+```
+
+Kräver att `_source:in` (multi-value) eller upprepade `_source`-parametrar stöds av servern. Prestanda- och träffbarhetsöverväganden tillkommer beroende på HSA-strukturens storlek.
+
+**Strategi 3 – Multitenant FHIR-server**
+
+HAPI FHIR och andra servrar stöder multitenancy där varje tenant (t.ex. en vårdgivare) har en separat del i URL:en:
+
+```
+GET /{careGiverId}/fhir/AuditEvent?patient.identifier=...
+```
+
+Här är `careGiverId` implicit i URL-kontexten och behöver inte vara en sökparameter. Klienten vet vilken vårdgivare den söker mot via URL:ens bas. Fördelen är enkel söksyntax; nackdelen är att det kräver ett val av serverarkitektur och fungerar dåligt om en klient vill söka över flera vårdgivare i ett anrop.
+
+> **Jämförelse:** Strategi 1 är mest FHIR-standard men kräver `_has`-stöd. Strategi 2 minskar FHIR-serverkraven men lägger komplexitet i bryggan och skapar HSA-beroende. Strategi 3 passar bäst om varje installation alltid representerar exakt en vårdgivare (typiskt för en brygga per region). Beslutet är arkitekturellt och beroende av val av FHIR-serverprodukt — se SP-005.
 
 ---
 
@@ -165,3 +204,4 @@ GetCareDocumentation stöder implicit paginering via `hasMore`-flaggan i svaret.
 | SP-002 | **`_source`-sökparameter – implementationsstöd.** `_source` är standard i R4 men saknas i många FHIR-serverimplementationer. Ska en anpassad sökparameter definieras på `meta.source` som fallback? | Öppen |
 | SP-003 | **Datumparametrars semantik.** RIVTA:s `fromDateTime`/`toDateTime` avser i de flesta fall händelsetidpunkten (t.ex. `careContactTimePeriod.start`). Verifiering behövs att rätt FHIR `date`-fält söks per resurstyp (t.ex. `Encounter.period` vs. `Encounter.meta.lastUpdated`). | Öppen |
 | SP-004 | **Paginering GetCareDocumentation.** RIVTA `hasMore`-flaggans exakta semantik (hur många poster per sida, max-gräns) är ej specificerad i TKB:n. Behöver klarläggas för korrekt FHIR Bundle-paginering. | Öppen |
+| SP-005 | **`careGiverId`-filtrering i GetAccessLogForPatient saknar standardlösning.** Vårdgivare lagras i `Provenance.agent[custodian].who.identifier`, inte på AuditEvent direkt. Tre strategier diskuteras ovan (Provenance `_has` reverse chain, HSA-trädklättring, multitenant FHIR-server). Beslutet är arkitekturellt och beroende av val av FHIR-serverprodukt. | Öppen |
