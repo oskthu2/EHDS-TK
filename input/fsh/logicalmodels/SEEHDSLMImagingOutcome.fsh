@@ -119,7 +119,7 @@ Characteristics: #can-be-target
 * imagingOutcome.imagingOutcomeBody.referral.careContactId 0..1 string "Vårdkontaktid"
 * imagingOutcome.imagingOutcomeBody.referral.accountableHealthcareProfessional 1..1 BackboneElement "Remittent"
 * imagingOutcome.imagingOutcomeBody.referral.accountableHealthcareProfessional.authorTime 1..1 instant "Tidpunkt"
-* imagingOutcome.imagingOutcomeBody.referral.accountableHealthcareProfessional.healthcareProfessionalHSAid 0..1 Identifier "HSA-id"
+* imagingOutcome.imagingOutcomeBody.referral.accountableHealthcareProfessional.healthcareProfessionalHSAId 0..1 Identifier "HSA-id"
 * imagingOutcome.imagingOutcomeBody.referral.accountableHealthcareProfessional.healthcareProfessionalName 0..1 string "Namn"
 * imagingOutcome.imagingOutcomeBody.referral.accountableHealthcareProfessional.healthcareProfessionalRoleCode 0..1 CodeableConcept "Yrkesroll"
 * imagingOutcome.imagingOutcomeBody.referral.accountableHealthcareProfessional.healthcareProfessionalOrgUnit 1..1 BackboneElement "Org-enhet (obligatorisk i remissen)"

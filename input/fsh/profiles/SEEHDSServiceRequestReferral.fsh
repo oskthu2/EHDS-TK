@@ -4,7 +4,7 @@ Id: se-ehds-service-request-referral
 Title: "SE EHDS ServiceRequest – Konsultationsremiss (GetReferralOutcome)"
 Description: """
   Profil för konsultationsremisser mappat från RIVTA-tjänstekontraktet GetReferralOutcome
-  (clinicalprocess:healthcond:actoutcome v3.1). Täcker NPÖ 3.1 och 1177 Journal 3.1.
+  (clinicalprocess:healthcond:actoutcome v3.2). Täcker NPÖ 3.2 och 1177 Journal 3.2.
 
   Notera: GetReferralOutcome returnerar remissvaret, inte remissen i sig. Remissens
   metadata finns under referralOutcomeBody.referral och är begränsad till id, orsak,
@@ -34,5 +34,8 @@ Description: """
 
 * intent 1..1 MS
 
-* code 1..1 MS
-* code ^short = "Remissorsak (referralOutcomeBody.referral.referralReason)"
+* code MS
+* code ^short = "Ej direkt mappad – TKBn har inget kodat tjänstebegäransfält i remissblocket"
+
+* note MS
+* note ^short = "Remissorsak (referralOutcomeBody.referral.referralReason)"

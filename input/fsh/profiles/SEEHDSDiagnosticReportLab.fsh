@@ -2,7 +2,7 @@ Profile: SEEHDSDiagnosticReportLab
 Parent: DiagnosticReport
 Id: se-ehds-diagnostic-report-lab
 Title: "SE EHDS DiagnosticReport – Provsvar (GetLaboratoryOrderOutcome)"
-Description: "Profil för laboratorieresultat mappat från RIVTA-tjänstekontraktet GetLaboratoryOrderOutcome (clinicalprocess:healthcond:actoutcome v3.1, 4.1). Täcker NPÖ 3.1, 4.1 och 1177 Journal 3.1, 4.2."
+Description: "Profil för laboratorieresultat mappat från RIVTA-tjänstekontraktet GetLaboratoryOrderOutcome (clinicalprocess:healthcond:actoutcome v4.2). Täcker NPÖ v4.2 och 1177 Journal v4.2."
 
 * subject only Reference(SEEHDSPatient)
 * subject MS
@@ -28,7 +28,7 @@ Description: "Profil för laboratorieresultat mappat från RIVTA-tjänstekontrak
 * code ^short = "Beställningskod (laboratoryOrderOutcome.body.type)"
 
 * effectiveDateTime MS
-* effectiveDateTime ^short = "Provtagningstid (groupOfAnalyses.analysis.specimen.timestamp)"
+* effectiveDateTime ^short = "Kliniskt relevant tidpunkt (härledd; specimen.timestamp → Specimen.collection.collectedDateTime)"
 
 * result MS
 * result only Reference(SEEHDSObservationLab)

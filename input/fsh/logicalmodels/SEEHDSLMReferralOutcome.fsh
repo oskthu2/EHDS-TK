@@ -50,7 +50,7 @@ Characteristics: #can-be-target
 
 * referralOutcome.referralOutcomeHeader.legalAuthenticator 0..1 BackboneElement "Juridiskt ansvarig"
 * referralOutcome.referralOutcomeHeader.legalAuthenticator.signatureTime 1..1 instant "Signeringstidpunkt"
-* referralOutcome.referralOutcomeHeader.legalAuthenticator.legalAuthenticatorHSAid 0..1 Identifier "HSA-id"
+* referralOutcome.referralOutcomeHeader.legalAuthenticator.legalAuthenticatorHSAId 0..1 Identifier "HSA-id"
 * referralOutcome.referralOutcomeHeader.legalAuthenticator.legalAuthenticatorName 0..1 string "Namn"
 
 * referralOutcome.referralOutcomeHeader.approvedForPatient 1..1 boolean "Godkänd för patientvisning"

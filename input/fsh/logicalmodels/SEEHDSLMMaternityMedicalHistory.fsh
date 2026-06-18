@@ -112,7 +112,7 @@ Characteristics: #can-be-target
 * maternityMedicalRecord.maternityMedicalRecordBody.postDeliveryRecord.motherPostDeliveryRecord.bloodPressureSystolic 0..1 Quantity "Systoliskt blodtryck"
 * maternityMedicalRecord.maternityMedicalRecordBody.postDeliveryRecord.motherPostDeliveryRecord.bloodPressureDiastolic 0..1 Quantity "Diastoliskt blodtryck"
 * maternityMedicalRecord.maternityMedicalRecordBody.postDeliveryRecord.motherPostDeliveryRecord.haemoglobin 0..1 Quantity "Hemoglobin"
-* maternityMedicalRecord.maternityMedicalRecordBody.postDeliveryRecord.motherPostDeliveryRecord.bodyTemperature 0..1 decimal "Kroppstemperatur"
+* maternityMedicalRecord.maternityMedicalRecordBody.postDeliveryRecord.motherPostDeliveryRecord.bodyTemperature 0..1 Quantity "Kroppstemperatur"
 * maternityMedicalRecord.maternityMedicalRecordBody.postDeliveryRecord.motherPostDeliveryRecord.scarsOK 0..1 boolean "Ärr OK"
 * maternityMedicalRecord.maternityMedicalRecordBody.postDeliveryRecord.motherPostDeliveryRecord.sutureRemoved 0..1 boolean "Suturer borttagna"
 * maternityMedicalRecord.maternityMedicalRecordBody.postDeliveryRecord.motherPostDeliveryRecord.perineumComfortable 0..1 boolean "Perineum OK"
