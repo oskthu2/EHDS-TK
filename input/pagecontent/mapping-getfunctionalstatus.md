@@ -34,9 +34,15 @@ Inget explicit statusfält finns i TKB:n. Fälten härleds:
 | `Condition.clinicalStatus` | `active` | Posterna är aktiva bedömningar vid svarstillfället |
 | `Condition.verificationStatus` | `confirmed` | RIVTA-svar representerar bekräftade journaluppgifter |
 
-### PADL-poster utan dedikerat FHIR-element
+### PADL-poster (FUNC-001 – Beslutat)
 
-`padl`-blockets `typeOfAssessment` och `assessment` har inget naturligt hem i Condition-resursen. Dessa enkodas som `Condition.note`-poster i ordning. Se [FUNC-001](#öppna-frågor).
+`padl`-blockets `typeOfAssessment` och `assessment` mappas till `Condition.note` med formatet
+`[typeOfAssessment]: assessment` per post. `functionalStatusAssessmentBody.comment` mappas separat till
+`Condition.note[0]` (helbedömningskommentar); därefter en post per `padl`-element.
+
+Alternativet med separata `Observation`-resurser per PADL-post ger bättre strukturerbarhet
+men ökar resurskomplexiteten avsevärt. Det kan omprövas om strukturerad sökning på
+PADL-typ krävs.
 
 ---
 
@@ -61,7 +67,7 @@ Inget explicit statusfält finns i TKB:n. Fälten härleds:
 | `functionalStatusAssessmentHeader.legalAuthenticator.legalAuthenticatorHSAId` | 0..1 | `Condition.asserter` (Reference(PractitionerRole)) | Logisk referens via HSA-id |
 | `functionalStatusAssessmentHeader.legalAuthenticator.legalAuthenticatorName` | 0..1 | Ej mappad | Namn i klartext – HSA-id räcker för logisk referens |
 | `functionalStatusAssessmentHeader.legalAuthenticator.legalAuthenticatorRoleCode` | 0..1 | Ej mappad | Signerande persons befattning – ingen direkt FHIR-mappning utanför PractitionerRole; Condition.asserter är en Reference utan rollkod |
-| `functionalStatusAssessmentHeader.approvedForPatient` | 1..1 | `Condition.meta.security` | PDL-kontroll – se [PDL-001](#öppna-frågor) |
+| `functionalStatusAssessmentHeader.approvedForPatient` | 1..1 | `Condition.meta.security` | `false` → kod `NOPATIENT` från `http://terminology.hl7.org/CodeSystem/v3-ActCode`; se PDL-001 |
 | `functionalStatusAssessmentHeader.careContactId` | 0..1 | `Condition.encounter.identifier.value` | Logisk referens till vårdkontakt |
 
 ---
@@ -112,7 +118,7 @@ PDL-styrning i GetFunctionalStatus utgår från `accountableHealthcareProfession
 |---|---|---|
 | Yttre Sparr (vårdgivare) | `functionalStatusAssessmentHeader.accountableHealthcareProfessional.healthcareProfessionalCareGiverHSAId` | `Provenance.agent[custodian].who.identifier` |
 | Inre Sparr (vårdenhet) | `functionalStatusAssessmentHeader.accountableHealthcareProfessional.healthcareProfessionalCareUnitHSAId` | `Provenance.agent[author].who.identifier` |
-| Patientgodkännande | `functionalStatusAssessmentHeader.approvedForPatient` (boolean) | `Condition.meta.security`; se [PDL-001](#öppna-frågor) |
+| Patientgodkännande | `functionalStatusAssessmentHeader.approvedForPatient` (boolean) | `Condition.meta.security`; `false` → `NOPATIENT` (v3-ActCode) |
 
 ---
 
@@ -145,9 +151,9 @@ OID:er utan känd URI-mappning bevaras som `urn:oid:{oid}`.
 
 | ID | Fråga |
 |---|---|
-| FUNC-001 | **PADL-poster saknar dedikerat FHIR Condition-element.** `padl.typeOfAssessment` och `padl.assessment` har ingen naturlig placering i Condition. Nuvarande workaround är att enkoda varje PADL-post som en `Condition.note` med prefixat format `[typeOfAssessment]: assessment`. Alternativ: använda en separat Observation-resurs per PADL-post. Kräver designbeslut. |
-| PDL-001 | **`approvedForPatient` (boolean) saknar FHIR-motsvarighet.** Fältet finns i alla PatientSummaryHeader-kontrakt men `meta.security` i FHIR har inget standardkodsystem för detta begrepp. Behöver gemensamt beslut för alla TK:er. |
-| GENERAL-001 | **Tidsstämpelformat.** RIVTA använder `YYYYMMDDhhmmss` utan tidszon; FHIR kräver ISO 8601 med tidszon. Konvertering ska anta `Europe/Stockholm` (CET/CEST). Gäller alla tidsfält i alla tjänstekontrakt. |
+| FUNC-001 | **Beslutat:** PADL-poster kodas som `Condition.note` med format `[typeOfAssessment]: assessment`. Se avsnitt ovan. |
+| PDL-001 | **Beslutat:** `approvedForPatient = false` → `meta.security` kod `NOPATIENT` (v3-ActCode). Se README avsnitt 9. |
+| GENERAL-001 | **Öppen:** Tidsstämpelformat. RIVTA använder `YYYYMMDDhhmmss` utan tidszon; FHIR kräver ISO 8601 med tidszon. Konvertering ska anta `Europe/Stockholm` (CET/CEST). Gäller alla tidsfält i alla tjänstekontrakt. |
 
 ---
 

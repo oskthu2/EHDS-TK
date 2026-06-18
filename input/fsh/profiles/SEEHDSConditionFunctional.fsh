@@ -44,4 +44,14 @@ Description: """
 * verificationStatus ^short = "Alltid 'confirmed' – härledd (journaluppgifter anses bekräftade)"
 
 * note MS
-* note ^short = "Kommentar till total bedömning (functionalStatusAssessmentBody.comment)"
+* note ^short = """
+    Fritext och PADL-poster (FUNC-001):
+    note[0].text ← functionalStatusAssessmentBody.comment (helbedömningskommentar)
+    note[n].text ← varje padl-post formaterad som '[typeOfAssessment]: assessment'
+    Alternativ (ej valt): separata Observation-resurser per PADL-post med
+    Observation.code = typeOfAssessment och Observation.valueString = assessment.
+  """
+
+// FUNC-001: PADL-poster kodas som Condition.note med prefixformat '[typeOfAssessment]: assessment'.
+// Alternativet med separata Observation-resurser per PADL-post ger bättre strukturerbarhet men
+// ökar resurskomplexiteten. Beslutet kan omprövas vid behov av strukturerad sökning på PADL.

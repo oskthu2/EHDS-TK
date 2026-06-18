@@ -110,6 +110,7 @@ Alla tjänstekontrakt med `PatientSummaryHeader` (eller motsvarande header) mapp
 | `legalAuthenticator` (datum) | `{Resurs}.extension[assertedDate]` | YYYYMMDD → YYYY-MM-DD |
 | `careProviderHSAId` | `Provenance.agent[custodian].who.identifier` | Juridiskt ansvarig vårdgivare — yttre Sparr |
 | `careUnitHSAId` | `Provenance.agent[author].who.identifier` | Informationsägare vårdenhet — inre Sparr |
+| `approvedForPatient = false` | `{Resurs}.meta.security` kod `NOPATIENT` | PDL — information ej avsedd att visas för patient (se avsnitt 10) |
 
 > `recorder`/`asserter` används för Condition. `author`/`authenticator` används för DocumentReference. Välj det fält i FHIR-resursen som semantiskt bäst motsvarar rollen.
 
@@ -157,7 +158,73 @@ En `Provenance`-resurs skapas per FHIR-resurs och inkluderas i sökbundeln med `
 
 ---
 
-## 9. Checklista
+## 9. Fattade designbeslut
+
+Dessa beslut har fattats under implementationsarbetet och dokumenteras här som referens.
+
+### PDL-001 – approvedForPatient
+
+`approvedForPatient = false` (1..1 boolean i alla PatientSummaryHeader-kontrakt) mappas till `{Resurs}.meta.security` med kod `NOPATIENT` från `http://terminology.hl7.org/CodeSystem/v3-ActCode`. Kod `NOPATIENT` signalerar att resursen inte ska visas för patienten via t.ex. 1177.
+
+```json
+"meta": {
+  "security": [
+    {
+      "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+      "code": "NOPATIENT"
+    }
+  ]
+}
+```
+
+För GetObservations gäller samma semantik men med `confidentialityIndicator` som källa för skyddad identitet (se mappningssida).
+
+### OBS-001 – Variabelprecisions-tidsstämpel (ts)
+
+`observationBody.observationValue.ts` och `observationBody.time.ts` är RIVTA `ts`-strängar med variabel precision. Beslutad hantering:
+
+| Precision | Fält | FHIR-hantering |
+|---|---|---|
+| `YYYY` eller `YYYYMM` | `observationValue.ts` | `Observation.valueString` (behålls som sträng) |
+| `YYYYMMDD` | `observationValue.ts` | `Observation.valueDateTime` (konverteras till `YYYY-MM-DD`) |
+| `YYYYMMDDHHMMSS` | `observationValue.ts` | `Observation.valueDateTime` (ISO 8601 + Europe/Stockholm) |
+| `YYYYMMDD` eller fullständig | `time.ts` | `Observation.effectiveDateTime` |
+| `YYYY` eller `YYYYMM` | `time.ts` | `Observation.effectiveDateTime` med `_effectiveDateTime.extension[originalText]` för att bevara källsträngen |
+
+### OBS-002 – valueNegation
+
+`observationBody.valueNegation = true` mappas till `Observation.dataAbsentReason.coding.code = "not-detected"` från `http://terminology.hl7.org/CodeSystem/data-absent-reason`. `value[x]` utelämnas.
+
+### OBS-003 – observationStatus ConceptMap
+
+SNOMED CT-koder (urvals-id `56431000052106`) → FHIR `ObservationStatus`:
+
+| SNOMED CT | Display | FHIR |
+|---|---|---|
+| `385676005` | Under utförande | `preliminary` |
+| `385651009` | Slutlig | `final` |
+| `272393004` | Korrigerad | `amended` |
+| `59776000` | Avbeställd/annullerad | `cancelled` |
+| `444301002` | Avböjd av patient | `cancelled` |
+
+ConceptMap finns i `input/fsh/conceptmaps/ObservationStatusMap.fsh`. Okänd kod → `unknown` + `OperationOutcome`-varning.
+
+### OBS-004 – targetSite (0..*)
+
+`observationBody.targetSite` är `0..*` i TKB men `Observation.bodySite` är `0..1` i FHIR R4. Beslutad hantering:
+
+1. `targetSite[0]` → `Observation.bodySite`
+2. `targetSite[1..*]` → `Observation.extension[additionalBodySite]` (lokal extension)
+
+Extension `additionalBodySite` är en övergångslösning för FHIR R4. I FHIR R5 är `Observation.bodySite` `0..*` och extensionen behövs ej längre — ta bort vid R5-migration.
+
+### FUNC-001 – PADL-poster
+
+`functionalStatusAssessmentBody.padl[*]` mappas till `Condition.note` med formatet `[typeOfAssessment]: assessment` per post. Alternativet med separata `Observation`-resurser per PADL-post ger bättre strukturerbarhet men ökar resurskomplexiteten och kan omprövas vid behov av strukturerad PADL-sökning.
+
+---
+
+## 10. Checklista
 
 - [ ] SUSHI: 0 errors
 - [ ] `meta.profile` innehåller vår profil + EU EPS obligations-profil
@@ -168,4 +235,5 @@ En `Provenance`-resurs skapas per FHIR-resurs och inkluderas i sökbundeln med `
 - [ ] `recorder`/`asserter`/`author`/`authenticator only Reference(SEBasePractitionerRole)`
 - [ ] Provenance-mönstret med tre agenter är implementerat
 - [ ] Kardinalitet från RIVTA (1..1, 1..*) är överfört till profilen
+- [ ] `approvedForPatient = false` → `meta.security` kod `NOPATIENT` (se avsnitt 9)
 - [ ] ig.ini pekar på `ImplementationGuide-{id}.json` (filnamn genereras från `id`-fältet i sushi-config, inte `name`)

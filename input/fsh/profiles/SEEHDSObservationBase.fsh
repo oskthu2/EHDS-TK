@@ -34,7 +34,11 @@ Description: """
 * meta.source ^short = "Källsystem (header) – HSA-id för det system som tillgängliggör informationen"
 
 * meta.security MS
-* meta.security ^short = "Skyddad identitet (observationBody.patient.person.confidentialityIndicator=true → v3-Confidentiality#R)"
+* meta.security ^short = """
+    Säkerhetsmärkning:
+    confidentialityIndicator=true → v3-Confidentiality#R (skyddad identitet)
+    approvedForPatient=false      → ActCode#NOPATIENT (ej visas för patient, se PDL-001)
+  """
 
 // ─── Status ────────────────────────────────────────────────────────────────
 
@@ -87,22 +91,38 @@ Description: """
     cv       → valueCodeableConcept
     pq       → valueQuantity
     ivlpq    → valueRange
-    ts       → valueString (variabelprecision; kan ej alltid mappas till dateTime, se OBS-001)
+    ts       → valueDateTime (precision ≥ dag) eller valueString (precision < dag, se OBS-001)
     ivlts    → valuePeriod
     st       → valueString
     intValue → valueInteger
     Om valueNegation=true utelämnas value[x] och dataAbsentReason sätts (se OBS-002).
   """
 
+// OBS-001: ts-värden med variabelprecision (YYYYMM, YYYY) representeras som valueString.
+// ts med precision ≥ dag (YYYYMMDD eller YYYYMMDDHHMMSS) konverteras till valueDateTime.
+// För valueDateTime vid lägre precision än sekund: använd FHIR _valueDateTime-elementet med
+// extension http://hl7.org/fhir/StructureDefinition/originalText för att bevara källsträngen.
+
 // ─── Frånvaroreason ───────────────────────────────────────────────────────
 
 * dataAbsentReason MS
-* dataAbsentReason ^short = "Negation (observationBody.valueNegation=true → dataAbsentReason.code='not-applicable'); se OBS-002"
+* dataAbsentReason ^short = "Negation (observationBody.valueNegation=true → dataAbsentReason.code='not-detected'); se OBS-002"
+
+// OBS-002: Koden 'not-detected' från http://terminology.hl7.org/CodeSystem/data-absent-reason
+// används när valueNegation=true – det kliniska värdet är explicit frånvarande/negativt.
 
 // ─── Anatomisk lokalisation ───────────────────────────────────────────────
 
 * bodySite MS
-* bodySite ^short = "Anatomisk lokalisation (observationBody.targetSite[0]); TK är 0..* men FHIR R4 är 0..1; övriga lokal noteras i note (se OBS-004)"
+* bodySite ^short = """
+    Anatomisk lokalisation (observationBody.targetSite[0]).
+    Första målplatsen mappas till bodySite; TK är 0..* men FHIR R4 är 0..1.
+    Ytterligare platser (index ≥ 1) mappas till extension[additionalBodySite] (se OBS-004).
+    OBS: extension utgår i FHIR R5 där bodySite är 0..* – använd standard bodySite vid R5-migration.
+  """
+
+// OBS-004: extension[additionalBodySite] är en R4-övergångslösning för targetSite[1..*].
+// I FHIR R5 är Observation.bodySite 0..* och denna extension behövs ej längre.
 
 // ─── Metod/skala ──────────────────────────────────────────────────────────
 
