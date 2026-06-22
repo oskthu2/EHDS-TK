@@ -1,7 +1,7 @@
 # GetVaccinationHistory – Vaccinationshistorik
 
 **Tjänstekontrakt:** `clinicalprocess:activityprescription:actoutcome` GetVaccinationHistory v2.0  
-**FHIR-profiler:** [SEEHDSImmunization](StructureDefinition-se-ehds-immunization.html) | [SEEHDSDevice](StructureDefinition-se-ehds-device.html)  
+**FHIR-profiler:** [SEEHDSImmunization](StructureDefinition-se-ehds-immunization.html) | [SEEHDSDevice](StructureDefinition-se-ehds-device.html) | [SEEHDSOrganization](StructureDefinition-se-ehds-organization.html)  
 **Logisk modell:** [SEEHDSLMVaccinationHistory](StructureDefinition-se-ehds-lm-vaccination-history.html)  
 **Krävs för NPÖ:** Ja (v2.0) | **Krävs för 1177 Journal:** Ja (v1.0, 2.0)  
 **EHDS-koppling:** Patient Summary – Vaccinationer
@@ -22,9 +22,11 @@
 ```
 SEEHDSImmunization (1 per administrationRecord)
   ├── extension[registrationDevice] → SEEHDSDevice (registrationRecord.sourceSystem*)
-  ├── performer[0].actor → PractitionerRole (administrationRecord.performer)
-  ├── performer[1].actor → Organization (administrationRecord.performerOrg)
-  ├── performer[2].actor → Organization (registrationRecord.careGiverOrg)
+  ├── performer[administering].actor → PractitionerRole (administrationRecord.performer)
+  ├── performer[administering].actor → SEEHDSOrganization (administrationRecord.performerOrg)
+  │     └── identifier[smiId] = registrationRecord.careUnitSmiId
+  ├── performer[administering].actor → SEEHDSOrganization (registrationRecord.careGiverOrg)
+  ├── performer[ordering].actor   → PractitionerRole/SEEHDSOrganization (administrationRecord.prescriber*)
   └── protocolApplied[0] (vaccineTargetDisease, doseOrdinalNumber, numberOfPrescribedDoses)
 ```
 
@@ -81,7 +83,7 @@ i stället för enskilda extensions på Immunization.
 | `vaccinationMedicalRecordBody.registrationRecord.date` | 1..1 | `Immunization.recorded` | Datum då vaccination(er) dokumenterades (inte nödvändigtvis genomfördes) |
 | `vaccinationMedicalRecordBody.registrationRecord.patientPostalCode` | 0..1 | `Immunization.extension[patientPostalCode]` | Patientens postnummer vid vaccinationstillfället |
 | `vaccinationMedicalRecordBody.registrationRecord.vaccinationUnstructuredNote` | 0..1 | `Immunization.note[0].text` | Ostrukturerad anteckning om vaccinationsregistreringen |
-| `vaccinationMedicalRecordBody.registrationRecord.riskCategory` | 0..* | `Immunization.extension[riskCategory]` | Riskgrupp (CodeableConcept); inget standard Immunization-fält |
+| `vaccinationMedicalRecordBody.registrationRecord.riskCategory` | 0..* | `Immunization.programEligibility` | Riskgrupp/programbehörighet; standard R4-element för vaccinationsprogramseligibilitet |
 | `vaccinationMedicalRecordBody.registrationRecord.patientAdverseEffect` | 0..* | `Immunization.reaction[].detail` | Patientens biverkningar kopplade till registreringen |
 | `vaccinationMedicalRecordBody.registrationRecord.careGiverOrg.orgUnitHSAId` | 0..1 | `Immunization.performer[2].actor.identifier.value` | Juridisk vårdgivares HSA-id |
 | `vaccinationMedicalRecordBody.registrationRecord.careGiverOrg.orgUnitName` | 0..1 | `Immunization.performer[2].actor.display` | Juridisk vårdgivares namn |
@@ -96,7 +98,7 @@ i stället för enskilda extensions på Immunization.
 | `vaccinationMedicalRecordBody.registrationRecord.sourceSystemProductVersion` | 0..1 | `Device.version.value` | Källsystemets produktversion; se Device-tabell nedan |
 | `vaccinationMedicalRecordBody.registrationRecord.sourceSystemContact.actorId` | 0..1 | `Device.extension[sourceSystemContact].actorId` | Identifierare för källsystemsansvarig kontakt; se Device-tabell nedan |
 | `vaccinationMedicalRecordBody.registrationRecord.sourceSystemContact.actorName` | 0..1 | `Device.extension[sourceSystemContact].actorName` | Namn på källsystemsansvarig kontakt; se Device-tabell nedan |
-| `vaccinationMedicalRecordBody.registrationRecord.careUnitSmiId` | 0..1 | `Immunization.extension[careUnitSmiId]` | SMI-id för utförande vårdenhet (Folkhälsomyndigheten) |
+| `vaccinationMedicalRecordBody.registrationRecord.careUnitSmiId` | 0..1 | `SEEHDSOrganization.identifier[smiId]` | SMI-id läggs som identifierarslice på den utförande vårdenhetens Organization-resurs (`performer[administering].actor`) – se Designbeslut nedan |
 
 ---
 
@@ -122,10 +124,10 @@ En `Immunization`-resurs skapas för varje `administrationRecord`. Fält nedan m
 | RIVTA-element | Kard. | FHIR-element | Kommentar |
 |---|---|---|---|
 | `administrationRecord.vaccinationProgramName` | 0..1 | `Immunization.protocolApplied[0].series` | Vaccinationsprogrammets namn (t.ex. "Nationellt barnvaccinationsprogram") |
-| `administrationRecord.prescriberOrg.orgUnitHSAId` | 0..1 | `Immunization.extension[prescriber].orgHSAId` | Förskrivande vårdenhetens HSA-id |
-| `administrationRecord.prescriberOrg.orgUnitName` | 0..1 | `Immunization.extension[prescriber].orgName` | Förskrivande vårdenhetens namn |
-| `administrationRecord.prescriberPerson.actorId` | 0..1 | `Immunization.extension[prescriber].personId` | Förskrivande yrkesutövarens identifierare |
-| `administrationRecord.prescriberPerson.actorName` | 0..1 | `Immunization.extension[prescriber].personName` | Förskrivande yrkesutövarens namn |
+| `administrationRecord.prescriberOrg.orgUnitHSAId` | 0..1 | `Immunization.performer[ordering].actor.identifier` | Förskrivande vårdenhetens HSA-id; actor = SEEHDSOrganization; `function = OP` |
+| `administrationRecord.prescriberOrg.orgUnitName` | 0..1 | `Immunization.performer[ordering].actor.name` | Förskrivande vårdenhetens namn |
+| `administrationRecord.prescriberPerson.actorId` | 0..1 | `Immunization.performer[ordering].actor.identifier` | Förskrivande yrkesutövarens identifierare; actor = PractitionerRole; `function = OP` |
+| `administrationRecord.prescriberPerson.actorName` | 0..1 | `Immunization.performer[ordering].actor.display` | Förskrivande yrkesutövarens namn |
 | `administrationRecord.performerOrg.orgUnitHSAId` | 0..1 | `Immunization.performer[1].actor.identifier.value` | Administrerande vårdenhetens HSA-id |
 | `administrationRecord.performerOrg.orgUnitName` | 0..1 | `Immunization.performer[1].actor.display` | Administrerande vårdenhetens namn |
 | `administrationRecord.performer.actorId` | 0..1 | `Immunization.performer[0].actor.identifier.value` | Administrerande yrkesutövarens identifierare |
@@ -137,7 +139,7 @@ En `Immunization`-resurs skapas för varje `administrationRecord`. Fält nedan m
 | `administrationRecord.isDoseComplete` | 0..1 | `Immunization.extension[isDoseComplete]` | Anger om hela dosen administrerades (boolean) |
 | `administrationRecord.doseOrdinalNumber` | 0..1 | `Immunization.protocolApplied[0].doseNumberPositiveInt` | Ordningsnummer för denna dos i serien |
 | `administrationRecord.numberOfPrescribedDoses` | 0..1 | `Immunization.protocolApplied[0].seriesDosesPositiveInt` | Totalt antal ordinerade doser i serien |
-| `administrationRecord.sourceDescription` | 0..1 | `Immunization.extension[sourceDescription]` | Fritext om källa för efterregistrerad vaccinering |
+| `administrationRecord.sourceDescription` | 0..1 | `Immunization.reportOrigin.text` | Fritext om källa för efterregistrerad vaccinering; originaltext för eventuell kod. Sätter även `primarySource = false`. |
 | `administrationRecord.commentPrescription` | 0..1 | `Immunization.note[1].text` | Fritext: instruktioner från ordination |
 | `administrationRecord.commentAdministration` | 0..1 | `Immunization.note[0].text` | Fritext: kommentarer vid vaccinering |
 | `administrationRecord.patientAdverseEffect` | 0..* | `Immunization.reaction[].detail` | Biverkningar specifika för detta administreringstillfälle |
@@ -217,15 +219,42 @@ I stället för att lägga dessa som enskilda extensions direkt på Immunization
   väldefinierade Device-element (`deviceName`, `version`)
 - Möjliggör enkel sökning på källsystem: `Device.deviceName.name` är ett sökbart fält
 
-### performer-indexering
+### performer-slicing (function=AP/OP)
 
-Performer-platserna i Immunization.performer används på följande sätt:
+`Immunization.performer` slicas på `function` med koder från `http://terminology.hl7.org/CodeSystem/v2-0443`:
 
-| Index | Källa | Roll |
-|---|---|---|
-| `performer[0]` | `administrationRecord.performer` / `accountableHealthCareProfessional` | Ansvarig/administrerande yrkesutövare |
-| `performer[1]` | `administrationRecord.performerOrg` | Administrerande vårdenhet |
-| `performer[2]` | `registrationRecord.careGiverOrg` | Juridisk vårdgivare (registreringsansvarig) |
+| Slice | function | Källa | Actor-typ |
+|---|---|---|---|
+| `performer[administering]` | `AP` (Administering Provider) | `administrationRecord.performer` | PractitionerRole |
+| `performer[administering]` | `AP` | `administrationRecord.performerOrg` | SEEHDSOrganization (inkl. SMI-id) |
+| `performer[administering]` | `AP` | `registrationRecord.careGiverOrg` | SEEHDSOrganization |
+| `performer[ordering]` | `OP` (Ordering Provider) | `administrationRecord.prescriberPerson/prescriberOrg` | PractitionerRole / SEEHDSOrganization |
+
+`performer[administering]` är 0..* och täcker alla AP-roller.
+`performer[ordering]` är 0..1 och representerar prescriber.
+
+### careUnitSmiId → SEEHDSOrganization.identifier[smiId]
+
+`registrationRecord.careUnitSmiId` är SMI-id för den vårdenhet som administrerade vaccinet.
+I stället för en custom extension på Immunization läggs det som identifierarslice på
+`performer[administering].actor` (Organization) via `SEEHDSOrganization.identifier[smiId]`.
+Samma Organization bär även HSA-id via `identifier[hsaId]`.
+
+> OBS: SMI-id:ts OID (`urn:oid:1.2.752.194.10.1.1`) behöver verifieras mot Folkhälsomyndighetens  
+> faktiska NamingSystem – se [VAC-006](#öppna-frågor).
+
+### riskCategory → programEligibility
+
+`registrationRecord.riskCategory (0..*)`-koder mappar till `Immunization.programEligibility (0..*)`.
+`programEligibility` är FHIR R4:s standardelement för att ange vilken riskgrupp eller
+programmässig behörighet som motiverade vaccinationen.
+
+### sourceDescription → reportOrigin
+
+`administrationRecord.sourceDescription` (fritext) är källbeskrivningen för en efterregistrering.
+Den mappar till `Immunization.reportOrigin.text` – reportOrigin är ett CodeableConcept och
+`.text` är korrekt plats för en originaltext/fritext. Närvaro av sourceDescription innebär att
+`Immunization.primarySource` sätts till `false`.
 
 ---
 
@@ -274,6 +303,8 @@ OID:er utan känd URI-mappning bevaras som `urn:oid:{oid}`.
 | VAC-002 | **`documentTime` kontra `authorTime` som källa för `occurrenceDateTime`.** `documentTime 0..1` anger vaccinationshändelsens tidpunkt; `authorTime 1..1` anger dokumentationstidpunkten. Om båda är satta kan de skilja sig. Beslut: `documentTime` har prioritet; `authorTime` används som fallback. Behöver bekräftelse från domänexpert. |
 | PDL-001 | **`approvedForPatient` (boolean) saknar standardiserat FHIR-kodsystem.** Fältet mappas tentativt till `meta.security` men inget standardiserat kodsystem för detta begrepp finns. Behöver gemensamt beslut; se central issue i [mapping-issues](mapping-issues.html). |
 | GENERAL-001 | **Tidsstämpelformat.** RIVTA använder `YYYYMMDDhhmmss` utan tidszon; FHIR kräver ISO 8601 med tidszon. Konvertering ska anta `Europe/Stockholm` (CET/CEST). Gäller alla tidsfält. |
+
+| VAC-006 | **SMI-id OID behöver verifieras.** `SEEHDSOrganization.identifier[smiId].system` sätts preliminärt till `urn:oid:1.2.752.194.10.1.1`. Korrigera mot Folkhälsomyndighetens faktiska NamingSystem för vaccinationsregistret. |
 
 ## Föreslagna nya issues
 

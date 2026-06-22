@@ -8,17 +8,11 @@ Description: "Profil för vaccinationer mappat från RIVTA-tjänstekontraktet Ge
 * extension contains ImmunizationLegalAuthenticator named legalAuthenticator 0..1 MS
 * extension contains ImmunizationPatientPostalCode named patientPostalCode 0..1 MS
 
-// ─── registrationRecord-extensions ───────────────────────────────────────────
-* extension contains ImmunizationRiskCategory named riskCategory 0..* MS
-* extension contains ImmunizationCareUnitSmiId named careUnitSmiId 0..1 MS
-
 // ─── registrationRecord.sourceSystem* → Device-referens ─────────────────────
 * extension contains ImmunizationRegistrationDevice named registrationDevice 0..1 MS
 
 // ─── administrationRecord-extensions ─────────────────────────────────────────
 * extension contains ImmunizationIsDoseComplete named isDoseComplete 0..1 MS
-* extension contains ImmunizationSourceDescription named sourceDescription 0..1 MS
-* extension contains ImmunizationPrescriber named prescriber 0..1 MS
 
 // ─── Header-fält ─────────────────────────────────────────────────────────────
 
@@ -52,15 +46,40 @@ Description: "Profil för vaccinationer mappat från RIVTA-tjänstekontraktet Ge
 * note MS
 * note ^short = "Ostrukturerad anteckning (registrationRecord.vaccinationUnstructuredNote) / kommentar"
 
+// riskCategory → programEligibility (standardelement för vaccinationsprogramsbehörighet/riskgrupper)
+* programEligibility MS
+* programEligibility ^short = "Riskgrupp/programbehörighet (registrationRecord.riskCategory)"
+
 // ─── administrationRecord-fält ────────────────────────────────────────────────
 
 * occurrenceDateTime MS
 * occurrenceDateTime ^short = "Vaccinationstidpunkt: vaccinationMedicalRecordHeader.documentTime (primär) eller authorTime (fallback)"
 
-* performer MS
-* performer.actor only Reference(PractitionerRole or Organization)
-* performer.actor MS
-* performer.actor ^short = "Administrerande personal/enhet eller juridisk vårdgivare (administrationRecord.performer / performerOrg; registrationRecord.careGiverOrg)"
+// primarySource=false + reportOrigin.text = sourceDescription (källa för efterregistrering)
+* primarySource MS
+* primarySource ^short = "false om vaccinationen efterregistrerats (sourceDescription är satt)"
+* reportOrigin MS
+* reportOrigin ^short = "Källa för efterregistrerad vaccination (administrationRecord.sourceDescription) – fritext i reportOrigin.text; originaltext för eventuell kod"
+
+// Performer-slicing: AP (administrerande) och OP (förskrivande/prescriber)
+* performer ^slicing.discriminator[0].type = #pattern
+* performer ^slicing.discriminator[0].path = "function"
+* performer ^slicing.rules = #open
+* performer contains
+    administering 0..* MS and
+    ordering 0..1 MS
+
+* performer[administering].function = http://terminology.hl7.org/CodeSystem/v2-0443#AP
+* performer[administering].function MS
+* performer[administering].actor only Reference(PractitionerRole or SEEHDSOrganization)
+* performer[administering].actor MS
+* performer[administering].actor ^short = "Administrerande yrkesutövare/enhet (administrationRecord.performer / performerOrg; registrationRecord.careGiverOrg)"
+
+* performer[ordering].function = http://terminology.hl7.org/CodeSystem/v2-0443#OP
+* performer[ordering].function MS
+* performer[ordering].actor only Reference(PractitionerRole or SEEHDSOrganization)
+* performer[ordering].actor MS
+* performer[ordering].actor ^short = "Förskrivande yrkesutövare/enhet (administrationRecord.prescriberPerson / prescriberOrg)"
 
 * vaccineCode 1..1 MS
 * vaccineCode ^short = "Vaccin (administrationRecord.typeOfVaccine / administrationRecord.vaccineName)"
@@ -111,18 +130,6 @@ Title: "Patientens postnummer vid vaccination"
 Description: "Patientens postnummer vid vaccinationstillfället (registrationRecord.patientPostalCode)."
 * value[x] only string
 
-Extension: ImmunizationRiskCategory
-Id: immunization-risk-category
-Title: "Riskgrupp"
-Description: "Riskgrupp som patienten tillhör vid vaccinationstillfället (registrationRecord.riskCategory). Inget standard Immunization-fält finns för riskgrupp."
-* value[x] only CodeableConcept
-
-Extension: ImmunizationCareUnitSmiId
-Id: immunization-care-unit-smi-id
-Title: "SMI-id för utförande vårdenhet"
-Description: "Folkhälsomyndighetens SMI-id för den vårdenhet som administrerade vaccinet (registrationRecord.careUnitSmiId)."
-* value[x] only string
-
 Extension: ImmunizationRegistrationDevice
 Id: immunization-registration-device
 Title: "Källsystem för vaccinationsregistrering"
@@ -130,7 +137,6 @@ Description: """
   Referens till den Device-resurs som beskriver källsystemet varifrån
   vaccinationsregistreringen härstammar
   (registrationRecord.sourceSystemName/productName/productVersion/sourceSystemContact).
-  Ersätter extension[sourceSystem].* med en strukturerad Device-resurs (SEEHDSDevice).
 """
 * value[x] only Reference(SEEHDSDevice)
 
@@ -139,27 +145,3 @@ Id: immunization-is-dose-complete
 Title: "Fullständig dos administrerad"
 Description: "Anger om hela den ordinerade dosen administrerades (administrationRecord.isDoseComplete)."
 * value[x] only boolean
-
-Extension: ImmunizationSourceDescription
-Id: immunization-source-description
-Title: "Källbeskrivning för efterregistrering"
-Description: "Fritext om varifrån informationen om en efterregistrerad vaccinering härstammar (administrationRecord.sourceDescription)."
-* value[x] only string
-
-Extension: ImmunizationPrescriber
-Id: immunization-prescriber
-Title: "Förskrivande vårdenhet och person"
-Description: "Förskrivande organisations- och personinformation (administrationRecord.prescriberOrg/prescriberPerson)."
-* extension contains
-    orgHSAId 0..1 and
-    orgName 0..1 and
-    personId 0..1 and
-    personName 0..1
-* extension[orgHSAId].value[x] only string
-* extension[orgHSAId] ^short = "Förskrivande vårdenhetens HSA-id (prescriberOrg.orgUnitHSAId)"
-* extension[orgName].value[x] only string
-* extension[orgName] ^short = "Förskrivande vårdenhetens namn (prescriberOrg.orgUnitName)"
-* extension[personId].value[x] only string
-* extension[personId] ^short = "Förskrivande personens identifierare (prescriberPerson.actorId)"
-* extension[personName].value[x] only string
-* extension[personName] ^short = "Förskrivande personens namn (prescriberPerson.actorName)"
