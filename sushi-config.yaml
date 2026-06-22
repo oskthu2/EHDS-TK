@@ -6,7 +6,7 @@ description: >-
   FHIR IG som beskriver hur Ineras RIVTA-tjänstekontrakt mappas till FHIR för
   att informationsförsörja NPÖ och 1177 Journal.
 status: draft
-version: 0.3.1
+version: 0.4.0
 fhirVersion: 4.0.1
 copyrightYear: 2024+
 releaseLabel: ci-build
