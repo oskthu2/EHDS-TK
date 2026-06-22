@@ -7,7 +7,7 @@ Description: """
 
   Skapas ENBART när alertInformationBody = hypersensitivity.
   Den tillhörande SEEHDSFlag-resursen är alltid primär och pekar på denna
-  resurs via Flag.extension[allergyReference].
+  resurs via Flag.extension[flag-detail] (standard R4-extension; R5: supportingInfo).
 
   Populeras med klinisk information från hypersensitivity-blocket:
   - atcSubstance/hypersensitivityAgentCode → AllergyIntolerance.code

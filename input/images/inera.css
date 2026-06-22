@@ -194,7 +194,7 @@ h4 {
 
 a {
   color: var(--inera-link);
-  text-decoration: none;
+  text-decoration: underline;
   transition: color 0.3s ease;
 }
 
@@ -208,7 +208,7 @@ a:focus {
 a[href^="http"]:not([href*="inera.se"])::after {
   content: " ↗";
   font-size: 0.8em;
-  color: var(--inera-cyan);
+  color: var(--inera-cyan-dark);
 }
 
 /* ═══════════════════════════════════════════════════════════════════════════
@@ -562,7 +562,7 @@ ul.markdown-toc a:focus,
 
 /* Fokus-indikatorer */
 *:focus {
-  outline: 3px solid var(--inera-cyan);
+  outline: 3px solid var(--inera-primary-dark);
   outline-offset: 2px;
 }
 
