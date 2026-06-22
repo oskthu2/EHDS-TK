@@ -6,6 +6,18 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 Versions follow [Semantic Versioning](https://semver.org/).
 Commit messages follow [Conventional Commits](https://www.conventionalcommits.org/) — this changelog is generated automatically by [release-please](https://github.com/googleapis/release-please).
 
+## [0.4.0](https://github.com/oskthu2/EHDS-TK/compare/v0.3.1...v0.4.0) (2026-06-22)
+
+
+### Features
+
+* **vac:** sourceSystem-fält → SEEHDSDevice; komplettera Immunization-profil ([1256eb5](https://github.com/oskthu2/EHDS-TK/commit/1256eb5cff5abd8592d012ebf60078740f3fb98f))
+
+
+### Bug Fixes
+
+* **css:** WCAG 2.1/2.2 AA – tre kontrastfixar i inera.css ([7142171](https://github.com/oskthu2/EHDS-TK/commit/7142171c298c44091b1464c0e9ca4d40ccd662f1))
+
 ## [0.3.1](https://github.com/oskthu2/EHDS-TK/compare/v0.3.0...v0.3.1) (2026-06-18)
 
 
