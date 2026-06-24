@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<CodeSystem xmlns="http://hl7.org/fhir">
+  <id value="typeofprescription-cs"/>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Genererad berättande text: CodeSystem typeofprescription-cs</b></p><a name="typeofprescription-cs"> </a><a name="hctypeofprescription-cs"> </a><p>Detta  kodsystem <code>https://fhir.inera.se/CodeSystem/typeofprescription</code> definierar följande koder:</p><table class="codes"><tr><td style="white-space:nowrap"><b>Kod</b></td><td><b>Visning</b></td><td><b>Definition</b></td></tr><tr><td style="white-space:nowrap">I<a name="typeofprescription-cs-I"> </a></td><td>Insättningsordination</td><td>Ordination som innebär att läkemedelsbehandling påbörjas</td></tr><tr><td style="white-space:nowrap">U<a name="typeofprescription-cs-U"> </a></td><td>Utsättningsordination</td><td>Ordination som innebär att läkemedelsbehandling avslutas</td></tr></table></div>
+  </text>
+  <url value="https://fhir.inera.se/CodeSystem/typeofprescription"/>
+  <version value="0.1.0"/>
+  <name value="TypeOfPrescriptionCS"/>
+  <title value="TypeOfPrescription"/>
+  <status value="active"/>
+  <date value="2026-06-24T12:10:33+00:00"/>
+  <publisher value="Inera AB"/>
+  <contact>
+    <name value="Inera AB"/>
+    <telecom>
+      <system value="url"/>
+      <value value="https://www.inera.se"/>
+    </telecom>
+  </contact>
+  <description value="Kodverk för ordinationstyp i GetMedicationHistory. Anger om en ordination är en insättnings- eller utsättningsordination."/>
+  <jurisdiction>
+    <coding>
+      <system value="urn:iso:std:iso:3166"/>
+      <code value="SE"/>
+      <display value="Sweden"/>
+    </coding>
+  </jurisdiction>
+  <content value="complete"/>
+  <count value="2"/>
+  <concept>
+    <code value="I"/>
+    <display value="Insättningsordination"/>
+    <definition value="Ordination som innebär att läkemedelsbehandling påbörjas"/>
+  </concept>
+  <concept>
+    <code value="U"/>
+    <display value="Utsättningsordination"/>
+    <definition value="Ordination som innebär att läkemedelsbehandling avslutas"/>
+  </concept>
+</CodeSystem>

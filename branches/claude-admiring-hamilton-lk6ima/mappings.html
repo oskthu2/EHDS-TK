@@ -1,0 +1,447 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE HTML>
+<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
+    <title>Mappings - Inera EHDS Tjänstekontrakt – FHIR Implementation Guide v0.1.0</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="author" content="http://hl7.org/fhir"/>
+
+    <link href="fhir.css" rel="stylesheet"/>
+
+    <!-- Bootstrap core CSS -->
+    <link href="assets/css/bootstrap-fhir.css" rel="stylesheet"/>
+
+    <!-- Project extras -->
+    <link href="assets/css/project.css" rel="stylesheet"/>
+    <link href="assets/css/pygments-manni.css" rel="stylesheet"/>
+    <link href="assets/css/jquery-ui.css" rel="stylesheet"/>
+  	<link href="assets/css/prism.css" rel="stylesheet" />
+  	<link href="assets/css/cqf.css" rel="stylesheet" />
+    <link href="inera.css" rel="stylesheet"/>
+<link rel="icon" type="image/png" href="inera-thumbnail.png"/>
+<link rel="shortcut icon" href="inera-thumbnail.png"/>
+
+
+    <script type="text/javascript" src="fhir-table-scripts.js"> </script>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="assets/js/html5shiv.js"></script>
+    <script src="assets/js/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Favicons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/icon-fhir-144.png"/>
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/icon-fhir-114.png"/>
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/icon-fhir-72.png"/>
+    <link rel="apple-touch-icon-precomposed" href="assets/ico/icon-fhir-57.png"/>
+    <link rel="shortcut icon" href="assets/ico/favicon.png"/>
+  </head>
+  <body onload="document.body.style.opacity='1'">
+
+	  <script src="assets/js/prism.js"></script>
+    <script type="text/javascript" src="assets/js/mermaid.js"></script>
+    <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
+    <style type="text/css">h2{--heading-prefix:"4"}
+    h3,h4,h5,h6{--heading-prefix:"4"}</style>
+    <div id="segment-header" class="segment">  <!-- segment-header -->
+      <div class="container">  <!-- container -->
+
+        <div id="inera-nav">
+  <a id="inera-logo" data-no-external="true" href="https://www.inera.se">
+    <img height="50" alt="Inera" src="inera-logo-header.svg"/>
+  </a>
+</div>
+
+
+        <div id="ig-status">
+          <p><span style="font-size:12pt;font-weight:bold">Inera EHDS Tjänstekontrakt – FHIR Implementation Guide</span>
+            <br/>
+            <span style="display:inline-block;">0.1.0 - ci-build
+
+
+
+  <img alt="Sweden flag" src="assets/images/swe.svg" height="16" title="Sweden"/>
+
+
+            </span>
+          </p>
+        </div>
+      </div> <!-- /container -->
+    </div>  <!-- /segment-header -->
+
+    <div id="segment-navbar" class="segment">  <!-- segment-navbar -->
+      <div id="stripe"> </div>
+      <div class="container">  <!-- container -->
+        <!-- HEADER CONTENT -->
+
+        <nav class="navbar navbar-inverse">
+          <!--status-bar-->
+          <div class="container">
+            <button data-target=".navbar-inverse-collapse" class="navbar-toggle" data-toggle="collapse" type="button">
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+            </button>
+            <a class="navbar-brand hidden" href="http://hl7.org/fhir/R4/index.html">FHIR</a>
+            <div class="nav-collapse collapse navbar-inverse-collapse">
+              <div id="segment-navbar" class="segment">
+  <div id="stripe"> </div>
+  <div class="container">
+    <nav class="navbar navbar-inverse">
+      <div class="container">
+        <button data-target=".navbar-inverse-collapse" class="navbar-toggle" data-toggle="collapse" type="button">
+          <span class="icon-bar"> </span>
+          <span class="icon-bar"> </span>
+          <span class="icon-bar"> </span>
+        </button>
+        <a class="navbar-brand hidden" href="http://hl7.org/fhir/R4/index.html">FHIR</a>
+        <div class="nav-collapse collapse navbar-inverse-collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="index.html">Hem</a></li>
+            <li class="dropdown">
+              <a data-toggle="dropdown" href="#" class="dropdown-toggle">Bakgrund<b class="caret"> </b></a>
+              <ul class="dropdown-menu">
+                <li><a href="workflow.html">Workflow</a></li>
+                <li><a href="logical-models.html">Logiska modeller</a></li>
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a data-toggle="dropdown" href="#" class="dropdown-toggle">Mappningar<b class="caret"> </b></a>
+              <ul class="dropdown-menu">
+                <li><a href="mappings.html">Översikt</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="dropdown-header">Patientöversikt</li>
+                <li><a href="mapping-getdiagnosis.html">GetDiagnosis – Diagnoser</a></li>
+                <li><a href="mapping-getalertinformation.html">GetAlertInformation – Uppmärksamhet</a></li>
+                <li><a href="mapping-getmedicationhistory.html">GetMedicationHistory – Läkemedel</a></li>
+                <li><a href="mapping-getvaccinationhistory.html">GetVaccinationHistory – Vaccinationer</a></li>
+                <li><a href="mapping-getfunctionalstatus.html">GetFunctionalStatus – Funktionstillstånd</a></li>
+                <li><a href="mapping-getmaternitymedicalhistory.html">GetMaternityMedicalHistory – Mödravård</a></li>
+                <li><a href="mapping-getcareplans.html">GetCarePlans – Vårdplan</a></li>
+                <li><a href="mapping-getcarecontacts.html">GetCareContacts – Vårdkontakter</a></li>
+                <li><a href="mapping-getcaredocumentation.html">GetCareDocumentation – Anteckningar</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="dropdown-header">Laboratorie och diagnostik</li>
+                <li><a href="mapping-getlaboratoryorderoutcome.html">GetLaboratoryOrderOutcome – Provsvar</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="dropdown-header">Bilddiagnostik</li>
+                <li><a href="mapping-getimagingoutcome.html">GetImagingOutcome – Bilddiagnostik</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="dropdown-header">Remiss och process</li>
+                <li><a href="mapping-getreferraloutcome.html">GetReferralOutcome – Remisser</a></li>
+                <li><a href="mapping-getrequestactivities.html">GetRequestActivities – Remisstatus</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="dropdown-header">Tillväxtkurva barn</li>
+                <li><a href="mapping-getobservations.html">GetObservations – Tillväxtkurva</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="dropdown-header">Logg</li>
+                <li><a href="mapping-getaccesslogforpatient.html">GetAccessLogForPatient – Åtkomstloggar</a></li>
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a data-toggle="dropdown" href="#" class="dropdown-toggle">FHIR Artifacts<b class="caret"> </b></a>
+              <ul class="dropdown-menu">
+                <li><a href="profiles.html">Profiles</a></li>
+                <li><a href="terminology.html">Terminology</a></li>
+                <li><a href="examples.html">Examples</a></li>
+                <li><a href="artifacts.html">All Artifacts</a></li>
+              </ul>
+            </li>
+            <li><a href="search-parameters.html">Sökparametrar</a></li>
+            <li><a href="downloads.html">Downloads</a></li>
+            <li><a href="mapping-issues.html">Issues &amp; Beslut</a></li>
+            <li><a href="version-history.html">Version History</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </div>
+</div>
+
+            </div>  <!-- /.nav-collapse -->
+          </div>  <!-- /.container -->
+        </nav>  <!-- /.navbar -->
+      <!-- /HEADER CONTENT -->
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-navbar -->
+    <!--status-bar-->
+
+    <div id="segment-breadcrumb" class="segment">  <!-- segment-breadcrumb -->
+      <div class="container">  <!-- container -->
+        <ul class="breadcrumb">
+          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><b>Mappings</b></li>
+
+        </ul>
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-breadcrumb -->
+
+    <a name="top"> </a>
+    <div id="segment-content" class="segment">  <!-- segment-content -->
+      <div class="container">  <!-- container -->
+        <div class="row">
+          <div class="inner-wrapper">
+
+<style type="text/css">
+h2:before{color:silver;counter-increment:section;content:var(--heading-prefix) " ";}
+h3:before{color:silver;counter-increment:sub-section;content:var(--heading-prefix) "." counter(sub-section) " ";}
+h4:before{color:silver;counter-increment:composite;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) " ";}
+h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) " ";}
+h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
+</style>
+<div class="col-12">
+  <!--ReleaseHeader--><p id="publish-box">Inera EHDS Tjänstekontrakt – FHIR Implementation Guide - Lokal utvecklingsbygge (v0.1.0) byggt av FHIR (HL7® FHIR® Standard) Build Tools. Se <a href='https://fhir.inera.se/ig/ehds-tk/history.html'>katalogen över publicerade versioner</a></p><!--EndReleaseHeader-->
+  <h2>Mappings</h2>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+    <p><!-- white space is critical inside of capture --></p>
+<div class="markdown-toc">
+<ul id="markdown-toc">
+  <li><a href="#mappings" id="markdown-toc-mappings">Mappings</a>    <ul>
+      <li><a href="#syfte" id="markdown-toc-syfte">Syfte</a></li>
+      <li><a href="#översikt-per-tjänstekontrakt" id="markdown-toc-översikt-per-tjänstekontrakt">Översikt per tjänstekontrakt</a></li>
+      <li><a href="#gemensamt-headermönster" id="markdown-toc-gemensamt-headermönster">Gemensamt headermönster</a></li>
+    </ul>
+  </li>
+</ul>
+
+</div>
+<h1 id="mappings">Mappings</h1>
+
+<p>Denna sida ger en översikt över hur RIVTA-tjänstekontraktens element mappas till FHIR-profiler i denna IG. Detaljerade mappningstabeller finns på respektive tjänstekontrakts sida.</p>
+
+<hr />
+
+<h3 id="syfte">Syfte</h3>
+
+<p>Mappningarna spårar varje element i de logiska modellerna till det FHIR-profil-element som bär informationen. Detta möjliggör verifiering av täckning och vägleder implementörer som behöver förstå relationen mellan kliniska krav och teknisk representation.</p>
+
+<hr />
+
+<h3 id="översikt-per-tjänstekontrakt">Översikt per tjänstekontrakt</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>Tjänstekontrakt</th>
+      <th>Logisk modell</th>
+      <th>FHIR-profil(er)</th>
+      <th>Mappningssida</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>GetDiagnosis</td>
+      <td><a href="StructureDefinition-inera-ehds-lm-diagnosis.html">IneraEHDSLMDiagnosis</a></td>
+      <td><a href="StructureDefinition-inera-ehds-condition-diagnosis.html">IneraEHDSConditionDiagnosis</a></td>
+      <td><a href="mapping-getdiagnosis.html">mapping-getdiagnosis</a></td>
+    </tr>
+    <tr>
+      <td>GetAlertInformation</td>
+      <td><a href="StructureDefinition-inera-ehds-lm-alert-information.html">IneraEHDSLMAlertInformation</a></td>
+      <td><a href="StructureDefinition-inera-ehds-allergy-intolerance.html">IneraEHDSAllergyIntolerance</a> + <a href="StructureDefinition-inera-ehds-flag.html">IneraEHDSFlag</a></td>
+      <td><a href="mapping-getalertinformation.html">mapping-getalertinformation</a></td>
+    </tr>
+    <tr>
+      <td>GetMedicationHistory</td>
+      <td><a href="StructureDefinition-inera-ehds-lm-medication-history.html">IneraEHDSLMMedicationHistory</a></td>
+      <td><a href="StructureDefinition-inera-ehds-medication-statement.html">IneraEHDSMedicationStatement</a></td>
+      <td><a href="mapping-getmedicationhistory.html">mapping-getmedicationhistory</a></td>
+    </tr>
+    <tr>
+      <td>GetVaccinationHistory</td>
+      <td><a href="StructureDefinition-inera-ehds-lm-vaccination-history.html">IneraEHDSLMVaccinationHistory</a></td>
+      <td><a href="StructureDefinition-inera-ehds-immunization.html">IneraEHDSImmunization</a></td>
+      <td><a href="mapping-getvaccinationhistory.html">mapping-getvaccinationhistory</a></td>
+    </tr>
+    <tr>
+      <td>GetFunctionalStatus</td>
+      <td><a href="StructureDefinition-inera-ehds-lm-functional-status.html">IneraEHDSLMFunctionalStatus</a></td>
+      <td><a href="StructureDefinition-inera-ehds-condition-functional.html">IneraEHDSConditionFunctional</a></td>
+      <td><a href="mapping-getfunctionalstatus.html">mapping-getfunctionalstatus</a></td>
+    </tr>
+    <tr>
+      <td>GetMaternityMedicalHistory</td>
+      <td><a href="StructureDefinition-inera-ehds-lm-maternity-medical-history.html">IneraEHDSLMMaternityMedicalHistory</a></td>
+      <td><a href="StructureDefinition-inera-ehds-observation-maternity.html">IneraEHDSObservationMaternity</a></td>
+      <td><a href="mapping-getmaternitymedicalhistory.html">mapping-getmaternitymedicalhistory</a></td>
+    </tr>
+    <tr>
+      <td>GetCarePlans</td>
+      <td><a href="StructureDefinition-inera-ehds-lm-care-plans.html">IneraEHDSLMCarePlans</a></td>
+      <td><a href="StructureDefinition-inera-ehds-care-plan.html">IneraEHDSCarePlan</a></td>
+      <td><a href="mapping-getcareplans.html">mapping-getcareplans</a></td>
+    </tr>
+    <tr>
+      <td>GetCareContacts</td>
+      <td><a href="StructureDefinition-inera-ehds-lm-care-contacts.html">IneraEHDSLMCareContacts</a></td>
+      <td><a href="StructureDefinition-inera-ehds-encounter.html">IneraEHDSEncounter</a></td>
+      <td><a href="mapping-getcarecontacts.html">mapping-getcarecontacts</a></td>
+    </tr>
+    <tr>
+      <td>GetCareDocumentation</td>
+      <td><a href="StructureDefinition-inera-ehds-lm-care-documentation.html">IneraEHDSLMCareDocumentation</a></td>
+      <td><a href="StructureDefinition-inera-ehds-document-reference.html">IneraEHDSDocumentReference</a></td>
+      <td><a href="mapping-getcaredocumentation.html">mapping-getcaredocumentation</a></td>
+    </tr>
+    <tr>
+      <td>GetLaboratoryOrderOutcome</td>
+      <td><a href="StructureDefinition-inera-ehds-lm-laboratory-order-outcome.html">IneraEHDSLMLaboratoryOrderOutcome</a></td>
+      <td><a href="StructureDefinition-inera-ehds-diagnostic-report-lab.html">IneraEHDSDiagnosticReportLab</a> + <a href="StructureDefinition-inera-ehds-observation-lab.html">IneraEHDSObservationLab</a></td>
+      <td><a href="mapping-getlaboratoryorderoutcome.html">mapping-getlaboratoryorderoutcome</a></td>
+    </tr>
+    <tr>
+      <td>GetImagingOutcome</td>
+      <td><a href="StructureDefinition-inera-ehds-lm-imaging-outcome.html">IneraEHDSLMImagingOutcome</a></td>
+      <td><a href="StructureDefinition-inera-ehds-imaging-study.html">IneraEHDSImagingStudy</a> + <a href="StructureDefinition-inera-ehds-diagnostic-report-imaging.html">IneraEHDSDiagnosticReportImaging</a></td>
+      <td><a href="mapping-getimagingoutcome.html">mapping-getimagingoutcome</a></td>
+    </tr>
+    <tr>
+      <td>GetReferralOutcome</td>
+      <td><a href="StructureDefinition-inera-ehds-lm-referral-outcome.html">IneraEHDSLMReferralOutcome</a></td>
+      <td><a href="StructureDefinition-inera-ehds-service-request-referral.html">IneraEHDSServiceRequestReferral</a> + <a href="StructureDefinition-inera-ehds-diagnostic-report-referral.html">IneraEHDSDiagnosticReportReferral</a></td>
+      <td><a href="mapping-getreferraloutcome.html">mapping-getreferraloutcome</a></td>
+    </tr>
+    <tr>
+      <td>GetRequestActivities</td>
+      <td><a href="StructureDefinition-inera-ehds-lm-request-activities.html">IneraEHDSLMRequestActivities</a></td>
+      <td><a href="StructureDefinition-inera-ehds-task.html">IneraEHDSTask</a></td>
+      <td><a href="mapping-getrequestactivities.html">mapping-getrequestactivities</a></td>
+    </tr>
+    <tr>
+      <td>GetObservations</td>
+      <td><a href="StructureDefinition-inera-ehds-lm-observations.html">IneraEHDSLMObservations</a></td>
+      <td><a href="StructureDefinition-inera-ehds-observation-growth.html">IneraEHDSObservationGrowth</a></td>
+      <td><a href="mapping-getobservations.html">mapping-getobservations</a></td>
+    </tr>
+    <tr>
+      <td>GetAccessLogForPatient</td>
+      <td><a href="StructureDefinition-inera-ehds-lm-access-log.html">IneraEHDSLMAccessLog</a></td>
+      <td><a href="StructureDefinition-inera-ehds-audit-event.html">IneraEHDSAuditEvent</a></td>
+      <td><a href="mapping-getaccesslogforpatient.html">mapping-getaccesslogforpatient</a></td>
+    </tr>
+  </tbody>
+</table>
+
+<hr />
+
+<h3 id="gemensamt-headermönster">Gemensamt headermönster</h3>
+
+<p>Alla tjänstekontrakt (utom GetAccessLogForPatient) delar ett headermönster som mappas på följande sätt:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Header-element</th>
+      <th>FHIR-destination</th>
+      <th>Notering</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">patientId</code></td>
+      <td><code class="language-plaintext highlighter-rouge">{Resurs}.subject.identifier</code></td>
+      <td>OID→URI-konvertering krävs</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">sourceSystemHSAId</code></td>
+      <td><code class="language-plaintext highlighter-rouge">{Resurs}.meta.source</code></td>
+      <td>Format: <code class="language-plaintext highlighter-rouge">urn:oid:1.2.752.129.2.1.4.1#{hsaId}</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">documentTime</code></td>
+      <td><code class="language-plaintext highlighter-rouge">{Resurs}.recordedDate</code> (eller primär tidsstämpel)</td>
+      <td>YYYYMMDDHHMMSS → ISO 8601 (Europe/Stockholm)</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">accountableHealthcareProfessional</code></td>
+      <td><code class="language-plaintext highlighter-rouge">{Resurs}.recorder</code> / <code class="language-plaintext highlighter-rouge">author</code> / <code class="language-plaintext highlighter-rouge">performer</code></td>
+      <td>Logisk referens via HSA-id</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">legalAuthenticator</code></td>
+      <td><code class="language-plaintext highlighter-rouge">{Resurs}.asserter</code> / <code class="language-plaintext highlighter-rouge">authenticator</code></td>
+      <td>Logisk referens via HSA-id</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">careProviderHSAId</code></td>
+      <td><code class="language-plaintext highlighter-rouge">Provenance.agent[custodian].who.identifier</code></td>
+      <td>Yttre Sparr</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">careUnitHSAId</code></td>
+      <td><code class="language-plaintext highlighter-rouge">Provenance.agent[author].who.identifier</code></td>
+      <td>Inre Sparr</td>
+    </tr>
+  </tbody>
+</table>
+
+<blockquote>
+  <p><strong>OBS om server-side filtrering:</strong> Om den FHIR-server som tillhandahåller data själv hanterar åtkomstfiltrering baserat på anropande vårdpersonals kontext eller patientens e-hälsotjänst, behöver Provenance-spärr-agenterna och <code class="language-plaintext highlighter-rouge">approvedForPatient</code>-säkerhetsmärkning (se PDL-001) inte inkluderas i svaret — filtreringen sker då redan på servernivå.</p>
+</blockquote>
+
+
+
+
+</div>
+        </div>  <!-- /inner-wrapper -->
+      </div>  <!-- /row -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-content -->
+
+  <script type="text/javascript" src="assets/js/jquery.js"> </script>     <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+  <script type="text/javascript" src="assets/js/jquery-ui.min.js"> </script>
+
+  <script type="text/javascript" src="assets/js/window-hash.js"> </script>
+  <a name="bottom"> </a>
+  <div id="segment-footer" igtool="footer" class="segment">  <!-- segment-footer -->
+    <div class="container">  <!-- container -->
+
+      <div class="inner-wrapper">
+        <p>
+          IG &#169; 2024+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.inera.se">Inera AB</a>.  Package inera.ehds.tk#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Wed, Jun 24, 2026 12:10+0000">2026-06-24</span>
+          <br/>
+          <span style="color: var(--footer-highlight-text-color)">
+                      Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
+                 <a style="color: var(--footer-hyperlink-text-color)" href="qa.html">QA Report</a>
+                 
+                
+          </span>
+        </p>
+      </div>  <!-- /inner-wrapper -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-footer -->
+  
+  <div id="segment-post-footer" class="segment hidden">  <!-- segment-post-footer -->
+    <div class="container">  <!-- container -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-post-footer -->
+
+  <!-- JS and analytics only. -->
+  <!-- Bootstrap core JavaScript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script type="text/javascript" src="assets/js/bootstrap.min.js"> </script>
+  <script type="text/javascript" src="assets/js/respond.min.js"> </script>
+  <script type="text/javascript" src="assets/js/anchor.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard-btn.js"> </script>
+  <script type="text/javascript" src="assets/js/anchor-hover.js"> </script>
+  <!-- Analytics Below
+  ================================================== -->
+  </body>
+</html>
+

@@ -1,0 +1,3240 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Bundle xmlns="http://hl7.org/fhir">
+  <id value="2fdda460-a13c-4267-ba72-e51d953f6bc6"/>
+  <meta>
+    <lastUpdated value="2026-06-24T12:10:33.261+00:00"/>
+  </meta>
+  <type value="collection"/>
+  <entry>
+    <fullUrl value="https://fhir.inera.se/ig/ehds-tk/ValueSet/assessmentcategory-vs"/>
+    <resource>
+      <ValueSet>
+        <text>
+          <status value="generated"/>
+          <div xmlns="http://www.w3.org/1999/xhtml" data-fhir="generated">
+            <p class="res-header-id"/>
+            <p style="border: black 1px dotted; background-color: #EEEEEE; padding: 8px; margin-bottom: 8px">Expansion utförd internt baserad på 
+              <a href="CodeSystem-assessmentcategory-cs.html">codesystem AssessmentCategory v0.1.0 (CodeSystem)</a>
+              <span class="copy-text-inline">
+                <button data-clipboard-text="https://fhir.inera.se/clinicalprocess-healthcond-description/CodeSystem/assessmentcategory-cs|0.1.0" title="Klicka för att kopiera URL" class="btn-copy"> </button>
+              </span>
+            </p>
+            <p>Denna värdemängd innehåller 2 begrepp</p>
+            <table class="codes" data-fhir="generated">
+              <tr>
+                <td>
+                  <b>System</b>
+                </td>
+                <td style="white-space:nowrap">
+                  <b>Kod</b>
+                </td>
+                <td>
+                  <b>Visning (sv)</b>
+                </td>
+                <td>
+                  <b>Definition</b>
+                </td>
+                <td>
+                  <b>JSON</b>
+                </td>
+                <td>
+                  <b>XML</b>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <a name="x-https://fhir.inera.se/clinicalprocess-healthcond-description/CodeSystem/assessmentcategory-cs-pad-pad"> </a>
+                  <code>https://fhir.inera.se/clinicalprocess-healthcond-description/CodeSystem/assessmentcategory-cs</code>
+                </td>
+                <td style="white-space:nowrap">  
+                  <a href="CodeSystem-assessmentcategory-cs.html#assessmentcategory-cs-pad-pad">pad-pad</a>
+                </td>
+                <td/>
+                <td>PADL-bedömning</td>
+                <td>
+                  <span class="copy-text-inline">
+                    <button data-clipboard-text="{&quot;system&quot;: &quot;https://fhir.inera.se/clinicalprocess-healthcond-description/CodeSystem/assessmentcategory-cs&quot;, &quot;version&quot;: &quot;0.1.0&quot;, &quot;code&quot;: &quot;pad-pad&quot;}" title="Klicka för att kopiera som Coding" class="btn-copy"> </button>
+                  </span>
+                </td>
+                <td>
+                  <span class="copy-text-inline">
+                    <button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;https://fhir.inera.se/clinicalprocess-healthcond-description/CodeSystem/assessmentcategory-cs&quot;&gt;&lt;version value=&quot;0.1.0&quot;&gt;&lt;code value=&quot;pad-pad&quot;&gt;&lt;/coding&gt;" title="Klicka för att kopiera som Coding" class="btn-copy"> </button>
+                  </span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <a name="x-https://fhir.inera.se/clinicalprocess-healthcond-description/CodeSystem/assessmentcategory-cs-fun-fun"> </a>
+                  <code>https://fhir.inera.se/clinicalprocess-healthcond-description/CodeSystem/assessmentcategory-cs</code>
+                </td>
+                <td style="white-space:nowrap">  
+                  <a href="CodeSystem-assessmentcategory-cs.html#assessmentcategory-cs-fun-fun">fun-fun</a>
+                </td>
+                <td/>
+                <td>Funktionsnedsättningsbedömning</td>
+                <td>
+                  <span class="copy-text-inline">
+                    <button data-clipboard-text="{&quot;system&quot;: &quot;https://fhir.inera.se/clinicalprocess-healthcond-description/CodeSystem/assessmentcategory-cs&quot;, &quot;version&quot;: &quot;0.1.0&quot;, &quot;code&quot;: &quot;fun-fun&quot;}" title="Klicka för att kopiera som Coding" class="btn-copy"> </button>
+                  </span>
+                </td>
+                <td>
+                  <span class="copy-text-inline">
+                    <button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;https://fhir.inera.se/clinicalprocess-healthcond-description/CodeSystem/assessmentcategory-cs&quot;&gt;&lt;version value=&quot;0.1.0&quot;&gt;&lt;code value=&quot;fun-fun&quot;&gt;&lt;/coding&gt;" title="Klicka för att kopiera som Coding" class="btn-copy"> </button>
+                  </span>
+                </td>
+              </tr>
+            </table>
+          </div>
+        </text>
+        <url value="https://fhir.inera.se/ig/ehds-tk/ValueSet/assessmentcategory-vs"/>
+        <version value="0.1.0"/>
+        <name value="AssessmentCategoryVS"/>
+        <title value="AssessmentCategory — ValueSet"/>
+        <status value="active"/>
+        <date value="2026-06-24T12:10:33+00:00"/>
+        <jurisdiction>
+          <coding>
+            <system value="urn:iso:std:iso:3166"/>
+            <code value="SE"/>
+            <display value="Sweden"/>
+          </coding>
+        </jurisdiction>
+        <expansion>
+          <identifier value="urn:uuid:5519a263-7efd-4eef-ba85-c0c28b693f5f"/>
+          <timestamp value="2026-06-24T12:13:04+00:00"/>
+          <total value="2"/>
+          <offset value="0"/>
+          <parameter>
+            <name value="displayLanguage"/>
+            <valueCode value="sv"/>
+          </parameter>
+          <parameter>
+            <name value="count"/>
+            <valueInteger value="1000"/>
+          </parameter>
+          <parameter>
+            <name value="offset"/>
+            <valueInteger value="0"/>
+          </parameter>
+          <parameter>
+            <name value="excludeNested"/>
+            <valueBoolean value="false"/>
+          </parameter>
+          <parameter>
+            <name value="used-codesystem"/>
+            <valueUri value="https://fhir.inera.se/clinicalprocess-healthcond-description/CodeSystem/assessmentcategory-cs|0.1.0"/>
+          </parameter>
+          <contains>
+            <system value="https://fhir.inera.se/clinicalprocess-healthcond-description/CodeSystem/assessmentcategory-cs"/>
+            <code value="pad-pad"/>
+          </contains>
+          <contains>
+            <system value="https://fhir.inera.se/clinicalprocess-healthcond-description/CodeSystem/assessmentcategory-cs"/>
+            <code value="fun-fun"/>
+          </contains>
+        </expansion>
+      </ValueSet>
+    </resource>
+  </entry>
+  <entry>
+    <fullUrl value="https://fhir.inera.se/ig/ehds-tk/ValueSet/clinicaldocumentnotecode-vs"/>
+    <resource>
+      <ValueSet>
+        <text>
+          <status value="generated"/>
+          <div xmlns="http://www.w3.org/1999/xhtml" data-fhir="generated">
+            <p class="res-header-id"/>
+            <p style="border: black 1px dotted; background-color: #EEEEEE; padding: 8px; margin-bottom: 8px">Expansion utförd internt baserad på 
+              <a href="CodeSystem-clinicaldocumentnotecode-cs.html">codesystem KV Anteckningstyp v0.1.0 (CodeSystem)</a>
+              <span class="copy-text-inline">
+                <button data-clipboard-text="urn:oid:1.2.752.129.2.2.2.11|0.1.0" title="Klicka för att kopiera URL" class="btn-copy"> </button>
+              </span>
+            </p>
+            <p>Denna värdemängd innehåller 9 begrepp</p>
+            <table class="codes" data-fhir="generated">
+              <tr>
+                <td>
+                  <b>System</b>
+                </td>
+                <td style="white-space:nowrap">
+                  <b>Kod</b>
+                </td>
+                <td>
+                  <b>Visning (sv)</b>
+                </td>
+                <td>
+                  <b>Definition</b>
+                </td>
+                <td>
+                  <b>JSON</b>
+                </td>
+                <td>
+                  <b>XML</b>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <a name="x-urn:oid:1.2.752.129.2.2.2.11-utr"> </a>
+                  <code>urn:oid:1.2.752.129.2.2.2.11</code>
+                </td>
+                <td style="white-space:nowrap">  
+                  <a href="CodeSystem-clinicaldocumentnotecode-cs.html#clinicaldocumentnotecode-cs-utr">utr</a>
+                </td>
+                <td/>
+                <td>Utredning</td>
+                <td>
+                  <span class="copy-text-inline">
+                    <button data-clipboard-text="{&quot;system&quot;: &quot;urn:oid:1.2.752.129.2.2.2.11&quot;, &quot;version&quot;: &quot;0.1.0&quot;, &quot;code&quot;: &quot;utr&quot;}" title="Klicka för att kopiera som Coding" class="btn-copy"> </button>
+                  </span>
+                </td>
+                <td>
+                  <span class="copy-text-inline">
+                    <button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;urn:oid:1.2.752.129.2.2.2.11&quot;&gt;&lt;version value=&quot;0.1.0&quot;&gt;&lt;code value=&quot;utr&quot;&gt;&lt;/coding&gt;" title="Klicka för att kopiera som Coding" class="btn-copy"> </button>
+                  </span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <a name="x-urn:oid:1.2.752.129.2.2.2.11-atb"> </a>
+                  <code>urn:oid:1.2.752.129.2.2.2.11</code>
+                </td>
+                <td style="white-space:nowrap">  
+                  <a href="CodeSystem-clinicaldocumentnotecode-cs.html#clinicaldocumentnotecode-cs-atb">atb</a>
+                </td>
+                <td/>
+                <td>Åtgärd/Behandling</td>
+                <td>
+                  <span class="copy-text-inline">
+                    <button data-clipboard-text="{&quot;system&quot;: &quot;urn:oid:1.2.752.129.2.2.2.11&quot;, &quot;version&quot;: &quot;0.1.0&quot;, &quot;code&quot;: &quot;atb&quot;}" title="Klicka för att kopiera som Coding" class="btn-copy"> </button>
+                  </span>
+                </td>
+                <td>
+                  <span class="copy-text-inline">
+                    <button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;urn:oid:1.2.752.129.2.2.2.11&quot;&gt;&lt;version value=&quot;0.1.0&quot;&gt;&lt;code value=&quot;atb&quot;&gt;&lt;/coding&gt;" title="Klicka för att kopiera som Coding" class="btn-copy"> </button>
+                  </span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <a name="x-urn:oid:1.2.752.129.2.2.2.11-sam"> </a>
+                  <code>urn:oid:1.2.752.129.2.2.2.11</code>
+                </td>
+                <td style="white-space:nowrap">  
+                  <a href="CodeSystem-clinicaldocumentnotecode-cs.html#clinicaldocumentnotecode-cs-sam">sam</a>
+                </td>
+                <td/>
+                <td>Sammanfattning</td>
+                <td>
+                  <span class="copy-text-inline">
+                    <button data-clipboard-text="{&quot;system&quot;: &quot;urn:oid:1.2.752.129.2.2.2.11&quot;, &quot;version&quot;: &quot;0.1.0&quot;, &quot;code&quot;: &quot;sam&quot;}" title="Klicka för att kopiera som Coding" class="btn-copy"> </button>
+                  </span>
+                </td>
+                <td>
+                  <span class="copy-text-inline">
+                    <button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;urn:oid:1.2.752.129.2.2.2.11&quot;&gt;&lt;version value=&quot;0.1.0&quot;&gt;&lt;code value=&quot;sam&quot;&gt;&lt;/coding&gt;" title="Klicka för att kopiera som Coding" class="btn-copy"> </button>
+                  </span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <a name="x-urn:oid:1.2.752.129.2.2.2.11-sao"> </a>
+                  <code>urn:oid:1.2.752.129.2.2.2.11</code>
+                </td>
+                <td style="white-space:nowrap">  
+                  <a href="CodeSystem-clinicaldocumentnotecode-cs.html#clinicaldocumentnotecode-cs-sao">sao</a>
+                </td>
+                <td/>
+                <td>Samordning</td>
+                <td>
+                  <span class="copy-text-inline">
+                    <button data-clipboard-text="{&quot;system&quot;: &quot;urn:oid:1.2.752.129.2.2.2.11&quot;, &quot;version&quot;: &quot;0.1.0&quot;, &quot;code&quot;: &quot;sao&quot;}" title="Klicka för att kopiera som Coding" class="btn-copy"> </button>
+                  </span>
+                </td>
+                <td>
+                  <span class="copy-text-inline">
+                    <button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;urn:oid:1.2.752.129.2.2.2.11&quot;&gt;&lt;version value=&quot;0.1.0&quot;&gt;&lt;code value=&quot;sao&quot;&gt;&lt;/coding&gt;" title="Klicka för att kopiera som Coding" class="btn-copy"> </button>
+                  </span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <a name="x-urn:oid:1.2.752.129.2.2.2.11-ins"> </a>
+                  <code>urn:oid:1.2.752.129.2.2.2.11</code>
+                </td>
+                <td style="white-space:nowrap">  
+                  <a href="CodeSystem-clinicaldocumentnotecode-cs.html#clinicaldocumentnotecode-cs-ins">ins</a>
+                </td>
+                <td/>
+                <td>Inskrivning</td>
+                <td>
+                  <span class="copy-text-inline">
+                    <button data-clipboard-text="{&quot;system&quot;: &quot;urn:oid:1.2.752.129.2.2.2.11&quot;, &quot;version&quot;: &quot;0.1.0&quot;, &quot;code&quot;: &quot;ins&quot;}" title="Klicka för att kopiera som Coding" class="btn-copy"> </button>
+                  </span>
+                </td>
+                <td>
+                  <span class="copy-text-inline">
+                    <button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;urn:oid:1.2.752.129.2.2.2.11&quot;&gt;&lt;version value=&quot;0.1.0&quot;&gt;&lt;code value=&quot;ins&quot;&gt;&lt;/coding&gt;" title="Klicka för att kopiera som Coding" class="btn-copy"> </button>
+                  </span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <a name="x-urn:oid:1.2.752.129.2.2.2.11-slu"> </a>
+                  <code>urn:oid:1.2.752.129.2.2.2.11</code>
+                </td>
+                <td style="white-space:nowrap">  
+                  <a href="CodeSystem-clinicaldocumentnotecode-cs.html#clinicaldocumentnotecode-cs-slu">slu</a>
+                </td>
+                <td/>
+                <td>Slutanteckning</td>
+                <td>
+                  <span class="copy-text-inline">
+                    <button data-clipboard-text="{&quot;system&quot;: &quot;urn:oid:1.2.752.129.2.2.2.11&quot;, &quot;version&quot;: &quot;0.1.0&quot;, &quot;code&quot;: &quot;slu&quot;}" title="Klicka för att kopiera som Coding" class="btn-copy"> </button>
+                  </span>
+                </td>
+                <td>
+                  <span class="copy-text-inline">
+                    <button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;urn:oid:1.2.752.129.2.2.2.11&quot;&gt;&lt;version value=&quot;0.1.0&quot;&gt;&lt;code value=&quot;slu&quot;&gt;&lt;/coding&gt;" title="Klicka för att kopiera som Coding" class="btn-copy"> </button>
+                  </span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <a name="x-urn:oid:1.2.752.129.2.2.2.11-auf"> </a>
+                  <code>urn:oid:1.2.752.129.2.2.2.11</code>
+                </td>
+                <td style="white-space:nowrap">  
+                  <a href="CodeSystem-clinicaldocumentnotecode-cs.html#clinicaldocumentnotecode-cs-auf">auf</a>
+                </td>
+                <td/>
+                <td>Anteckning utan fysiskt möte</td>
+                <td>
+                  <span class="copy-text-inline">
+                    <button data-clipboard-text="{&quot;system&quot;: &quot;urn:oid:1.2.752.129.2.2.2.11&quot;, &quot;version&quot;: &quot;0.1.0&quot;, &quot;code&quot;: &quot;auf&quot;}" title="Klicka för att kopiera som Coding" class="btn-copy"> </button>
+                  </span>
+                </td>
+                <td>
+                  <span class="copy-text-inline">
+                    <button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;urn:oid:1.2.752.129.2.2.2.11&quot;&gt;&lt;version value=&quot;0.1.0&quot;&gt;&lt;code value=&quot;auf&quot;&gt;&lt;/coding&gt;" title="Klicka för att kopiera som Coding" class="btn-copy"> </button>
+                  </span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <a name="x-urn:oid:1.2.752.129.2.2.2.11-sva"> </a>
+                  <code>urn:oid:1.2.752.129.2.2.2.11</code>
+                </td>
+                <td style="white-space:nowrap">  
+                  <a href="CodeSystem-clinicaldocumentnotecode-cs.html#clinicaldocumentnotecode-cs-sva">sva</a>
+                </td>
+                <td/>
+                <td>Slutenvårdsanteckning</td>
+                <td>
+                  <span class="copy-text-inline">
+                    <button data-clipboard-text="{&quot;system&quot;: &quot;urn:oid:1.2.752.129.2.2.2.11&quot;, &quot;version&quot;: &quot;0.1.0&quot;, &quot;code&quot;: &quot;sva&quot;}" title="Klicka för att kopiera som Coding" class="btn-copy"> </button>
+                  </span>
+                </td>
+                <td>
+                  <span class="copy-text-inline">
+                    <button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;urn:oid:1.2.752.129.2.2.2.11&quot;&gt;&lt;version value=&quot;0.1.0&quot;&gt;&lt;code value=&quot;sva&quot;&gt;&lt;/coding&gt;" title="Klicka för att kopiera som Coding" class="btn-copy"> </button>
+                  </span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <a name="x-urn:oid:1.2.752.129.2.2.2.11-bes"> </a>
+                  <code>urn:oid:1.2.752.129.2.2.2.11</code>
+                </td>
+                <td style="white-space:nowrap">  
+                  <a href="CodeSystem-clinicaldocumentnotecode-cs.html#clinicaldocumentnotecode-cs-bes">bes</a>
+                </td>
+                <td/>
+                <td>Besöksanteckning</td>
+                <td>
+                  <span class="copy-text-inline">
+                    <button data-clipboard-text="{&quot;system&quot;: &quot;urn:oid:1.2.752.129.2.2.2.11&quot;, &quot;version&quot;: &quot;0.1.0&quot;, &quot;code&quot;: &quot;bes&quot;}" title="Klicka för att kopiera som Coding" class="btn-copy"> </button>
+                  </span>
+                </td>
+                <td>
+                  <span class="copy-text-inline">
+                    <button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;urn:oid:1.2.752.129.2.2.2.11&quot;&gt;&lt;version value=&quot;0.1.0&quot;&gt;&lt;code value=&quot;bes&quot;&gt;&lt;/coding&gt;" title="Klicka för att kopiera som Coding" class="btn-copy"> </button>
+                  </span>
+                </td>
+              </tr>
+            </table>
+          </div>
+        </text>
+        <url value="https://fhir.inera.se/ig/ehds-tk/ValueSet/clinicaldocumentnotecode-vs"/>
+        <version value="0.1.0"/>
+        <name value="ClinicalDocumentNoteCodeVS"/>
+        <title value="KV Anteckningstyp — ValueSet"/>
+        <status value="active"/>
+        <date value="2026-06-24T12:10:33+00:00"/>
+        <jurisdiction>
+          <coding>
+            <system value="urn:iso:std:iso:3166"/>
+            <code value="SE"/>
+            <display value="Sweden"/>
+          </coding>
+        </jurisdiction>
+        <expansion>
+          <identifier value="urn:uuid:936f7493-f21f-4866-8488-85996fb52290"/>
+          <timestamp value="2026-06-24T12:13:04+00:00"/>
+          <total value="9"/>
+          <offset value="0"/>
+          <parameter>
+            <name value="displayLanguage"/>
+            <valueCode value="sv"/>
+          </parameter>
+          <parameter>
+            <name value="count"/>
+            <valueInteger value="1000"/>
+          </parameter>
+          <parameter>
+            <name value="offset"/>
+            <valueInteger value="0"/>
+          </parameter>
+          <parameter>
+            <name value="excludeNested"/>
+            <valueBoolean value="false"/>
+          </parameter>
+          <parameter>
+            <name value="used-codesystem"/>
+            <valueUri value="urn:oid:1.2.752.129.2.2.2.11|0.1.0"/>
+          </parameter>
+          <contains>
+            <system value="urn:oid:1.2.752.129.2.2.2.11"/>
+            <code value="utr"/>
+          </contains>
+          <contains>
+            <system value="urn:oid:1.2.752.129.2.2.2.11"/>
+            <code value="atb"/>
+          </contains>
+          <contains>
+            <system value="urn:oid:1.2.752.129.2.2.2.11"/>
+            <code value="sam"/>
+          </contains>
+          <contains>
+            <system value="urn:oid:1.2.752.129.2.2.2.11"/>
+            <code value="sao"/>
+          </contains>
+          <contains>
+            <system value="urn:oid:1.2.752.129.2.2.2.11"/>
+            <code value="ins"/>
+          </contains>
+          <contains>
+            <system value="urn:oid:1.2.752.129.2.2.2.11"/>
+            <code value="slu"/>
+          </contains>
+          <contains>
+            <system value="urn:oid:1.2.752.129.2.2.2.11"/>
+            <code value="auf"/>
+          </contains>
+          <contains>
+            <system value="urn:oid:1.2.752.129.2.2.2.11"/>
+            <code value="sva"/>
+          </contains>
+          <contains>
+            <system value="urn:oid:1.2.752.129.2.2.2.11"/>
+            <code value="bes"/>
+          </contains>
+        </expansion>
+      </ValueSet>
+    </resource>
+  </entry>
+  <entry>
+    <fullUrl value="https://fhir.inera.se/ig/ehds-tk/ValueSet/deliverycode-vs"/>
+    <resource>
+      <ValueSet>
+        <text>
+          <status value="generated"/>
+          <div xmlns="http://www.w3.org/1999/xhtml" data-fhir="generated">
+            <p class="res-header-id"/>
+            <p style="border: black 1px dotted; background-color: #EEEEEE; padding: 8px; margin-bottom: 8px">Expansion utförd internt baserad på 
+              <a href="CodeSystem-deliverycode-cs.html">codesystem DeliveryCode v0.1.0 (CodeSystem)</a>
+              <span class="copy-text-inline">
+                <button data-clipboard-text="https://fhir.inera.se/CodeSystem/deliverycode|0.1.0" title="Klicka för att kopiera URL" class="btn-copy"> </button>
+              </span>
+            </p>
+            <p>Denna värdemängd innehåller 5 begrepp</p>
+            <table class="codes" data-fhir="generated">
+              <tr>
+                <td>
+                  <b>System</b>
+                </td>
+                <td style="white-space:nowrap">
+                  <b>Kod</b>
+                </td>
+                <td>
+                  <b>Visning (sv)</b>
+                </td>
+                <td>
+                  <b>Definition</b>
+                </td>
+                <td>
+                  <b>JSON</b>
+                </td>
+                <td>
+                  <b>XML</b>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <a name="x-https://fhir.inera.se/CodeSystem/deliverycode-0"> </a>
+                  <code>https://fhir.inera.se/CodeSystem/deliverycode</code>
+                </td>
+                <td style="white-space:nowrap">  
+                  <a href="CodeSystem-deliverycode-cs.html#deliverycode-cs-0">0</a>
+                </td>
+                <td/>
+                <td>Förlossningssätt ej angivet</td>
+                <td>
+                  <span class="copy-text-inline">
+                    <button data-clipboard-text="{&quot;system&quot;: &quot;https://fhir.inera.se/CodeSystem/deliverycode&quot;, &quot;version&quot;: &quot;0.1.0&quot;, &quot;code&quot;: &quot;0&quot;}" title="Klicka för att kopiera som Coding" class="btn-copy"> </button>
+                  </span>
+                </td>
+                <td>
+                  <span class="copy-text-inline">
+                    <button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;https://fhir.inera.se/CodeSystem/deliverycode&quot;&gt;&lt;version value=&quot;0.1.0&quot;&gt;&lt;code value=&quot;0&quot;&gt;&lt;/coding&gt;" title="Klicka för att kopiera som Coding" class="btn-copy"> </button>
+                  </span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <a name="x-https://fhir.inera.se/CodeSystem/deliverycode-1"> </a>
+                  <code>https://fhir.inera.se/CodeSystem/deliverycode</code>
+                </td>
+                <td style="white-space:nowrap">  
+                  <a href="CodeSystem-deliverycode-cs.html#deliverycode-cs-1">1</a>
+                </td>
+                <td/>
+                <td>X-gravid</td>
+                <td>
+                  <span class="copy-text-inline">
+                    <button data-clipboard-text="{&quot;system&quot;: &quot;https://fhir.inera.se/CodeSystem/deliverycode&quot;, &quot;version&quot;: &quot;0.1.0&quot;, &quot;code&quot;: &quot;1&quot;}" title="Klicka för att kopiera som Coding" class="btn-copy"> </button>
+                  </span>
+                </td>
+                <td>
+                  <span class="copy-text-inline">
+                    <button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;https://fhir.inera.se/CodeSystem/deliverycode&quot;&gt;&lt;version value=&quot;0.1.0&quot;&gt;&lt;code value=&quot;1&quot;&gt;&lt;/coding&gt;" title="Klicka för att kopiera som Coding" class="btn-copy"> </button>
+                  </span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <a name="x-https://fhir.inera.se/CodeSystem/deliverycode-2"> </a>
+                  <code>https://fhir.inera.se/CodeSystem/deliverycode</code>
+                </td>
+                <td style="white-space:nowrap">  
+                  <a href="CodeSystem-deliverycode-cs.html#deliverycode-cs-2">2</a>
+                </td>
+                <td/>
+                <td>Spontan abort</td>
+                <td>
+                  <span class="copy-text-inline">
+                    <button data-clipboard-text="{&quot;system&quot;: &quot;https://fhir.inera.se/CodeSystem/deliverycode&quot;, &quot;version&quot;: &quot;0.1.0&quot;, &quot;code&quot;: &quot;2&quot;}" title="Klicka för att kopiera som Coding" class="btn-copy"> </button>
+                  </span>
+                </td>
+                <td>
+                  <span class="copy-text-inline">
+                    <button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;https://fhir.inera.se/CodeSystem/deliverycode&quot;&gt;&lt;version value=&quot;0.1.0&quot;&gt;&lt;code value=&quot;2&quot;&gt;&lt;/coding&gt;" title="Klicka för att kopiera som Coding" class="btn-copy"> </button>
+                  </span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <a name="x-https://fhir.inera.se/CodeSystem/deliverycode-4"> </a>
+                  <code>https://fhir.inera.se/CodeSystem/deliverycode</code>
+                </td>
+                <td style="white-space:nowrap">  
+                  <a href="CodeSystem-deliverycode-cs.html#deliverycode-cs-4">4</a>
+                </td>
+                <td/>
+                <td>Dödfött barn</td>
+                <td>
+                  <span class="copy-text-inline">
+                    <button data-clipboard-text="{&quot;system&quot;: &quot;https://fhir.inera.se/CodeSystem/deliverycode&quot;, &quot;version&quot;: &quot;0.1.0&quot;, &quot;code&quot;: &quot;4&quot;}" title="Klicka för att kopiera som Coding" class="btn-copy"> </button>
+                  </span>
+                </td>
+                <td>
+                  <span class="copy-text-inline">
+                    <button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;https://fhir.inera.se/CodeSystem/deliverycode&quot;&gt;&lt;version value=&quot;0.1.0&quot;&gt;&lt;code value=&quot;4&quot;&gt;&lt;/coding&gt;" title="Klicka för att kopiera som Coding" class="btn-copy"> </button>
+                  </span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <a name="x-https://fhir.inera.se/CodeSystem/deliverycode-5"> </a>
+                  <code>https://fhir.inera.se/CodeSystem/deliverycode</code>
+                </td>
+                <td style="white-space:nowrap">  
+                  <a href="CodeSystem-deliverycode-cs.html#deliverycode-cs-5">5</a>
+                </td>
+                <td/>
+                <td>Levande fött barn</td>
+                <td>
+                  <span class="copy-text-inline">
+                    <button data-clipboard-text="{&quot;system&quot;: &quot;https://fhir.inera.se/CodeSystem/deliverycode&quot;, &quot;version&quot;: &quot;0.1.0&quot;, &quot;code&quot;: &quot;5&quot;}" title="Klicka för att kopiera som Coding" class="btn-copy"> </button>
+                  </span>
+                </td>
+                <td>
+                  <span class="copy-text-inline">
+                    <button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;https://fhir.inera.se/CodeSystem/deliverycode&quot;&gt;&lt;version value=&quot;0.1.0&quot;&gt;&lt;code value=&quot;5&quot;&gt;&lt;/coding&gt;" title="Klicka för att kopiera som Coding" class="btn-copy"> </button>
+                  </span>
+                </td>
+              </tr>
+            </table>
+          </div>
+        </text>
+        <url value="https://fhir.inera.se/ig/ehds-tk/ValueSet/deliverycode-vs"/>
+        <version value="0.1.0"/>
+        <name value="DeliveryCodeVS"/>
+        <title value="DeliveryCode — ValueSet"/>
+        <status value="active"/>
+        <date value="2026-06-24T12:10:33+00:00"/>
+        <jurisdiction>
+          <coding>
+            <system value="urn:iso:std:iso:3166"/>
+            <code value="SE"/>
+            <display value="Sweden"/>
+          </coding>
+        </jurisdiction>
+        <expansion>
+          <identifier value="urn:uuid:8a4b927c-972c-46f9-b7a6-58020e335891"/>
+          <timestamp value="2026-06-24T12:13:04+00:00"/>
+          <total value="5"/>
+          <offset value="0"/>
+          <parameter>
+            <name value="displayLanguage"/>
+            <valueCode value="sv"/>
+          </parameter>
+          <parameter>
+            <name value="count"/>
+            <valueInteger value="1000"/>
+          </parameter>
+          <parameter>
+            <name value="offset"/>
+            <valueInteger value="0"/>
+          </parameter>
+          <parameter>
+            <name value="excludeNested"/>
+            <valueBoolean value="false"/>
+          </parameter>
+          <parameter>
+            <name value="used-codesystem"/>
+            <valueUri value="https://fhir.inera.se/CodeSystem/deliverycode|0.1.0"/>
+          </parameter>
+          <contains>
+            <system value="https://fhir.inera.se/CodeSystem/deliverycode"/>
+            <code value="0"/>
+          </contains>
+          <contains>
+            <system value="https://fhir.inera.se/CodeSystem/deliverycode"/>
+            <code value="1"/>
+          </contains>
+          <contains>
+            <system value="https://fhir.inera.se/CodeSystem/deliverycode"/>
+            <code value="2"/>
+          </contains>
+          <contains>
+            <system value="https://fhir.inera.se/CodeSystem/deliverycode"/>
+            <code value="4"/>
+          </contains>
+          <contains>
+            <system value="https://fhir.inera.se/CodeSystem/deliverycode"/>
+            <code value="5"/>
+          </contains>
+        </expansion>
+      </ValueSet>
+    </resource>
+  </entry>
+  <entry>
+    <fullUrl value="https://fhir.inera.se/ig/ehds-tk/ValueSet/diagnosistype-vs"/>
+    <resource>
+      <ValueSet>
+        <text>
+          <status value="generated"/>
+          <div xmlns="http://www.w3.org/1999/xhtml" data-fhir="generated">
+            <p class="res-header-id"/>
+            <p style="border: black 1px dotted; background-color: #EEEEEE; padding: 8px; margin-bottom: 8px">Expansion utförd internt baserad på 
+              <a href="CodeSystem-diagnosistype-cs.html">codesystem DiagnosisType v0.1.0 (CodeSystem)</a>
+              <span class="copy-text-inline">
+                <button data-clipboard-text="https://fhir.inera.se/clinicalprocess-healthcond-description/CodeSystem/diagnosistype-cs|0.1.0" title="Klicka för att kopiera URL" class="btn-copy"> </button>
+              </span>
+            </p>
+            <p>Denna värdemängd innehåller 2 begrepp</p>
+            <table class="codes" data-fhir="generated">
+              <tr>
+                <td>
+                  <b>System</b>
+                </td>
+                <td style="white-space:nowrap">
+                  <b>Kod</b>
+                </td>
+                <td>
+                  <b>Visning (sv)</b>
+                </td>
+                <td>
+                  <b>Definition</b>
+                </td>
+                <td>
+                  <b>JSON</b>
+                </td>
+                <td>
+                  <b>XML</b>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <a name="x-https://fhir.inera.se/clinicalprocess-healthcond-description/CodeSystem/diagnosistype-cs-Huvuddiagnos"> </a>
+                  <code>https://fhir.inera.se/clinicalprocess-healthcond-description/CodeSystem/diagnosistype-cs</code>
+                </td>
+                <td style="white-space:nowrap">  
+                  <a href="CodeSystem-diagnosistype-cs.html#diagnosistype-cs-Huvuddiagnos">Huvuddiagnos</a>
+                </td>
+                <td/>
+                <td>Huvuddiagnos</td>
+                <td>
+                  <span class="copy-text-inline">
+                    <button data-clipboard-text="{&quot;system&quot;: &quot;https://fhir.inera.se/clinicalprocess-healthcond-description/CodeSystem/diagnosistype-cs&quot;, &quot;version&quot;: &quot;0.1.0&quot;, &quot;code&quot;: &quot;Huvuddiagnos&quot;}" title="Klicka för att kopiera som Coding" class="btn-copy"> </button>
+                  </span>
+                </td>
+                <td>
+                  <span class="copy-text-inline">
+                    <button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;https://fhir.inera.se/clinicalprocess-healthcond-description/CodeSystem/diagnosistype-cs&quot;&gt;&lt;version value=&quot;0.1.0&quot;&gt;&lt;code value=&quot;Huvuddiagnos&quot;&gt;&lt;/coding&gt;" title="Klicka för att kopiera som Coding" class="btn-copy"> </button>
+                  </span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <a name="x-https://fhir.inera.se/clinicalprocess-healthcond-description/CodeSystem/diagnosistype-cs-Bidiagnos"> </a>
+                  <code>https://fhir.inera.se/clinicalprocess-healthcond-description/CodeSystem/diagnosistype-cs</code>
+                </td>
+                <td style="white-space:nowrap">  
+                  <a href="CodeSystem-diagnosistype-cs.html#diagnosistype-cs-Bidiagnos">Bidiagnos</a>
+                </td>
+                <td/>
+                <td>Bidiagnos</td>
+                <td>
+                  <span class="copy-text-inline">
+                    <button data-clipboard-text="{&quot;system&quot;: &quot;https://fhir.inera.se/clinicalprocess-healthcond-description/CodeSystem/diagnosistype-cs&quot;, &quot;version&quot;: &quot;0.1.0&quot;, &quot;code&quot;: &quot;Bidiagnos&quot;}" title="Klicka för att kopiera som Coding" class="btn-copy"> </button>
+                  </span>
+                </td>
+                <td>
+                  <span class="copy-text-inline">
+                    <button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;https://fhir.inera.se/clinicalprocess-healthcond-description/CodeSystem/diagnosistype-cs&quot;&gt;&lt;version value=&quot;0.1.0&quot;&gt;&lt;code value=&quot;Bidiagnos&quot;&gt;&lt;/coding&gt;" title="Klicka för att kopiera som Coding" class="btn-copy"> </button>
+                  </span>
+                </td>
+              </tr>
+            </table>
+          </div>
+        </text>
+        <url value="https://fhir.inera.se/ig/ehds-tk/ValueSet/diagnosistype-vs"/>
+        <version value="0.1.0"/>
+        <name value="DiagnosisTypeVS"/>
+        <title value="DiagnosisType — ValueSet"/>
+        <status value="active"/>
+        <date value="2026-06-24T12:10:33+00:00"/>
+        <jurisdiction>
+          <coding>
+            <system value="urn:iso:std:iso:3166"/>
+            <code value="SE"/>
+            <display value="Sweden"/>
+          </coding>
+        </jurisdiction>
+        <expansion>
+          <identifier value="urn:uuid:9519aa1e-cf13-4d5a-8515-1bd18a24b9fa"/>
+          <timestamp value="2026-06-24T12:13:04+00:00"/>
+          <total value="2"/>
+          <offset value="0"/>
+          <parameter>
+            <name value="displayLanguage"/>
+            <valueCode value="sv"/>
+          </parameter>
+          <parameter>
+            <name value="count"/>
+            <valueInteger value="1000"/>
+          </parameter>
+          <parameter>
+            <name value="offset"/>
+            <valueInteger value="0"/>
+          </parameter>
+          <parameter>
+            <name value="excludeNested"/>
+            <valueBoolean value="false"/>
+          </parameter>
+          <parameter>
+            <name value="used-codesystem"/>
+            <valueUri value="https://fhir.inera.se/clinicalprocess-healthcond-description/CodeSystem/diagnosistype-cs|0.1.0"/>
+          </parameter>
+          <contains>
+            <system value="https://fhir.inera.se/clinicalprocess-healthcond-description/CodeSystem/diagnosistype-cs"/>
+            <code value="Huvuddiagnos"/>
+          </contains>
+          <contains>
+            <system value="https://fhir.inera.se/clinicalprocess-healthcond-description/CodeSystem/diagnosistype-cs"/>
+            <code value="Bidiagnos"/>
+          </contains>
+        </expansion>
+      </ValueSet>
+    </resource>
+  </entry>
+  <entry>
+    <fullUrl value="https://fhir.inera.se/ig/ehds-tk/ValueSet/errorcode-vs"/>
+    <resource>
+      <ValueSet>
+        <text>
+          <status value="generated"/>
+          <div xmlns="http://www.w3.org/1999/xhtml" data-fhir="generated">
+            <p class="res-header-id"/>
+            <p style="border: black 1px dotted; background-color: #EEEEEE; padding: 8px; margin-bottom: 8px">Expansion utförd internt baserad på 
+              <a href="CodeSystem-errorcode-cs.html">codesystem ErrorCode v0.1.0 (CodeSystem)</a>
+              <span class="copy-text-inline">
+                <button data-clipboard-text="https://fhir.inera.se/CodeSystem/errorcode-actoutcome|0.1.0" title="Klicka för att kopiera URL" class="btn-copy"> </button>
+              </span>
+            </p>
+            <p>Denna värdemängd innehåller 1 begrepp</p>
+            <table class="codes" data-fhir="generated">
+              <tr>
+                <td>
+                  <b>System</b>
+                </td>
+                <td style="white-space:nowrap">
+                  <b>Kod</b>
+                </td>
+                <td>
+                  <b>Visning (sv)</b>
+                </td>
+                <td>
+                  <b>Definition</b>
+                </td>
+                <td>
+                  <b>JSON</b>
+                </td>
+                <td>
+                  <b>XML</b>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <a name="x-https://fhir.inera.se/CodeSystem/errorcode-actoutcome-INVALID_REQUEST"> </a>
+                  <code>https://fhir.inera.se/CodeSystem/errorcode-actoutcome</code>
+                </td>
+                <td style="white-space:nowrap">  
+                  <a href="CodeSystem-errorcode-cs.html#errorcode-cs-INVALID_REQUEST">INVALID_REQUEST</a>
+                </td>
+                <td/>
+                <td>Begäran är felaktig eller saknar obligatoriska fält</td>
+                <td>
+                  <span class="copy-text-inline">
+                    <button data-clipboard-text="{&quot;system&quot;: &quot;https://fhir.inera.se/CodeSystem/errorcode-actoutcome&quot;, &quot;version&quot;: &quot;0.1.0&quot;, &quot;code&quot;: &quot;INVALID_REQUEST&quot;}" title="Klicka för att kopiera som Coding" class="btn-copy"> </button>
+                  </span>
+                </td>
+                <td>
+                  <span class="copy-text-inline">
+                    <button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;https://fhir.inera.se/CodeSystem/errorcode-actoutcome&quot;&gt;&lt;version value=&quot;0.1.0&quot;&gt;&lt;code value=&quot;INVALID_REQUEST&quot;&gt;&lt;/coding&gt;" title="Klicka för att kopiera som Coding" class="btn-copy"> </button>
+                  </span>
+                </td>
+              </tr>
+            </table>
+          </div>
+        </text>
+        <url value="https://fhir.inera.se/ig/ehds-tk/ValueSet/errorcode-vs"/>
+        <version value="0.1.0"/>
+        <name value="ErrorCodeVS"/>
+        <title value="ErrorCode — ValueSet"/>
+        <status value="active"/>
+        <date value="2026-06-24T12:10:33+00:00"/>
+        <jurisdiction>
+          <coding>
+            <system value="urn:iso:std:iso:3166"/>
+            <code value="SE"/>
+            <display value="Sweden"/>
+          </coding>
+        </jurisdiction>
+        <expansion>
+          <identifier value="urn:uuid:04ae9f90-b15a-4281-861f-663d2f69c75f"/>
+          <timestamp value="2026-06-24T12:13:04+00:00"/>
+          <total value="1"/>
+          <offset value="0"/>
+          <parameter>
+            <name value="displayLanguage"/>
+            <valueCode value="sv"/>
+          </parameter>
+          <parameter>
+            <name value="count"/>
+            <valueInteger value="1000"/>
+          </parameter>
+          <parameter>
+            <name value="offset"/>
+            <valueInteger value="0"/>
+          </parameter>
+          <parameter>
+            <name value="excludeNested"/>
+            <valueBoolean value="false"/>
+          </parameter>
+          <parameter>
+            <name value="used-codesystem"/>
+            <valueUri value="https://fhir.inera.se/CodeSystem/errorcode-actoutcome|0.1.0"/>
+          </parameter>
+          <contains>
+            <system value="https://fhir.inera.se/CodeSystem/errorcode-actoutcome"/>
+            <code value="INVALID_REQUEST"/>
+          </contains>
+        </expansion>
+      </ValueSet>
+    </resource>
+  </entry>
+  <entry>
+    <fullUrl value="https://fhir.inera.se/ig/ehds-tk/ValueSet/examinationstatuscode-vs"/>
+    <resource>
+      <ValueSet>
+        <text>
+          <status value="generated"/>
+          <div xmlns="http://www.w3.org/1999/xhtml" data-fhir="generated">
+            <p class="res-header-id"/>
+            <p style="border: black 1px dotted; background-color: #EEEEEE; padding: 8px; margin-bottom: 8px">Expansion utförd internt baserad på 
+              <a href="CodeSystem-examinationstatuscode-cs.html">codesystem ExaminationStatusCode v0.1.0 (CodeSystem)</a>
+              <span class="copy-text-inline">
+                <button data-clipboard-text="https://fhir.inera.se/CodeSystem/examinationstatuscode|0.1.0" title="Klicka för att kopiera URL" class="btn-copy"> </button>
+              </span>
+            </p>
+            <p>Denna värdemängd innehåller 11 begrepp</p>
+            <table class="codes" data-fhir="generated">
+              <tr>
+                <td>
+                  <b>System</b>
+                </td>
+                <td style="white-space:nowrap">
+                  <b>Kod</b>
+                </td>
+                <td>
+                  <b>Visning (sv)</b>
+                </td>
+                <td>
+                  <b>Definition</b>
+                </td>
+                <td>
+                  <b>JSON</b>
+                </td>
+                <td>
+                  <b>XML</b>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <a name="x-https://fhir.inera.se/CodeSystem/examinationstatuscode-Initierad"> </a>
+                  <code>https://fhir.inera.se/CodeSystem/examinationstatuscode</code>
+                </td>
+                <td style="white-space:nowrap">  
+                  <a href="CodeSystem-examinationstatuscode-cs.html#examinationstatuscode-cs-Initierad">Initierad</a>
+                </td>
+                <td/>
+                <td>Undersökning initierad</td>
+                <td>
+                  <span class="copy-text-inline">
+                    <button data-clipboard-text="{&quot;system&quot;: &quot;https://fhir.inera.se/CodeSystem/examinationstatuscode&quot;, &quot;version&quot;: &quot;0.1.0&quot;, &quot;code&quot;: &quot;Initierad&quot;}" title="Klicka för att kopiera som Coding" class="btn-copy"> </button>
+                  </span>
+                </td>
+                <td>
+                  <span class="copy-text-inline">
+                    <button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;https://fhir.inera.se/CodeSystem/examinationstatuscode&quot;&gt;&lt;version value=&quot;0.1.0&quot;&gt;&lt;code value=&quot;Initierad&quot;&gt;&lt;/coding&gt;" title="Klicka för att kopiera som Coding" class="btn-copy"> </button>
+                  </span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <a name="x-https://fhir.inera.se/CodeSystem/examinationstatuscode-Planerad"> </a>
+                  <code>https://fhir.inera.se/CodeSystem/examinationstatuscode</code>
+                </td>
+                <td style="white-space:nowrap">  
+                  <a href="CodeSystem-examinationstatuscode-cs.html#examinationstatuscode-cs-Planerad">Planerad</a>
+                </td>
+                <td/>
+                <td>Undersökning planerad</td>
+                <td>
+                  <span class="copy-text-inline">
+                    <button data-clipboard-text="{&quot;system&quot;: &quot;https://fhir.inera.se/CodeSystem/examinationstatuscode&quot;, &quot;version&quot;: &quot;0.1.0&quot;, &quot;code&quot;: &quot;Planerad&quot;}" title="Klicka för att kopiera som Coding" class="btn-copy"> </button>
+                  </span>
+                </td>
+                <td>
+                  <span class="copy-text-inline">
+                    <button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;https://fhir.inera.se/CodeSystem/examinationstatuscode&quot;&gt;&lt;version value=&quot;0.1.0&quot;&gt;&lt;code value=&quot;Planerad&quot;&gt;&lt;/coding&gt;" title="Klicka för att kopiera som Coding" class="btn-copy"> </button>
+                  </span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <a name="x-https://fhir.inera.se/CodeSystem/examinationstatuscode-Tidbokad"> </a>
+                  <code>https://fhir.inera.se/CodeSystem/examinationstatuscode</code>
+                </td>
+                <td style="white-space:nowrap">  
+                  <a href="CodeSystem-examinationstatuscode-cs.html#examinationstatuscode-cs-Tidbokad">Tidbokad</a>
+                </td>
+                <td/>
+                <td>Undersökning tidbokad</td>
+                <td>
+                  <span class="copy-text-inline">
+                    <button data-clipboard-text="{&quot;system&quot;: &quot;https://fhir.inera.se/CodeSystem/examinationstatuscode&quot;, &quot;version&quot;: &quot;0.1.0&quot;, &quot;code&quot;: &quot;Tidbokad&quot;}" title="Klicka för att kopiera som Coding" class="btn-copy"> </button>
+                  </span>
+                </td>
+                <td>
+                  <span class="copy-text-inline">
+                    <button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;https://fhir.inera.se/CodeSystem/examinationstatuscode&quot;&gt;&lt;version value=&quot;0.1.0&quot;&gt;&lt;code value=&quot;Tidbokad&quot;&gt;&lt;/coding&gt;" title="Klicka för att kopiera som Coding" class="btn-copy"> </button>
+                  </span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <a name="x-https://fhir.inera.se/CodeSystem/examinationstatuscode-Uppskjuten"> </a>
+                  <code>https://fhir.inera.se/CodeSystem/examinationstatuscode</code>
+                </td>
+                <td style="white-space:nowrap">  
+                  <a href="CodeSystem-examinationstatuscode-cs.html#examinationstatuscode-cs-Uppskjuten">Uppskjuten</a>
+                </td>
+                <td/>
+                <td>Undersökning uppskjuten</td>
+                <td>
+                  <span class="copy-text-inline">
+                    <button data-clipboard-text="{&quot;system&quot;: &quot;https://fhir.inera.se/CodeSystem/examinationstatuscode&quot;, &quot;version&quot;: &quot;0.1.0&quot;, &quot;code&quot;: &quot;Uppskjuten&quot;}" title="Klicka för att kopiera som Coding" class="btn-copy"> </button>
+                  </span>
+                </td>
+                <td>
+                  <span class="copy-text-inline">
+                    <button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;https://fhir.inera.se/CodeSystem/examinationstatuscode&quot;&gt;&lt;version value=&quot;0.1.0&quot;&gt;&lt;code value=&quot;Uppskjuten&quot;&gt;&lt;/coding&gt;" title="Klicka för att kopiera som Coding" class="btn-copy"> </button>
+                  </span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <a name="x-https://fhir.inera.se/CodeSystem/examinationstatuscode-Annullerad"> </a>
+                  <code>https://fhir.inera.se/CodeSystem/examinationstatuscode</code>
+                </td>
+                <td style="white-space:nowrap">  
+                  <a href="CodeSystem-examinationstatuscode-cs.html#examinationstatuscode-cs-Annullerad">Annullerad</a>
+                </td>
+                <td/>
+                <td>Undersökning annullerad</td>
+                <td>
+                  <span class="copy-text-inline">
+                    <button data-clipboard-text="{&quot;system&quot;: &quot;https://fhir.inera.se/CodeSystem/examinationstatuscode&quot;, &quot;version&quot;: &quot;0.1.0&quot;, &quot;code&quot;: &quot;Annullerad&quot;}" title="Klicka för att kopiera som Coding" class="btn-copy"> </button>
+                  </span>
+                </td>
+                <td>
+                  <span class="copy-text-inline">
+                    <button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;https://fhir.inera.se/CodeSystem/examinationstatuscode&quot;&gt;&lt;version value=&quot;0.1.0&quot;&gt;&lt;code value=&quot;Annullerad&quot;&gt;&lt;/coding&gt;" title="Klicka för att kopiera som Coding" class="btn-copy"> </button>
+                  </span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <a name="x-https://fhir.inera.se/CodeSystem/examinationstatuscode-Pagaende"> </a>
+                  <code>https://fhir.inera.se/CodeSystem/examinationstatuscode</code>
+                </td>
+                <td style="white-space:nowrap">  
+                  <a href="CodeSystem-examinationstatuscode-cs.html#examinationstatuscode-cs-Pagaende">Pagaende</a>
+                </td>
+                <td/>
+                <td>Undersökning pågående</td>
+                <td>
+                  <span class="copy-text-inline">
+                    <button data-clipboard-text="{&quot;system&quot;: &quot;https://fhir.inera.se/CodeSystem/examinationstatuscode&quot;, &quot;version&quot;: &quot;0.1.0&quot;, &quot;code&quot;: &quot;Pagaende&quot;}" title="Klicka för att kopiera som Coding" class="btn-copy"> </button>
+                  </span>
+                </td>
+                <td>
+                  <span class="copy-text-inline">
+                    <button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;https://fhir.inera.se/CodeSystem/examinationstatuscode&quot;&gt;&lt;version value=&quot;0.1.0&quot;&gt;&lt;code value=&quot;Pagaende&quot;&gt;&lt;/coding&gt;" title="Klicka för att kopiera som Coding" class="btn-copy"> </button>
+                  </span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <a name="x-https://fhir.inera.se/CodeSystem/examinationstatuscode-Avvakta"> </a>
+                  <code>https://fhir.inera.se/CodeSystem/examinationstatuscode</code>
+                </td>
+                <td style="white-space:nowrap">  
+                  <a href="CodeSystem-examinationstatuscode-cs.html#examinationstatuscode-cs-Avvakta">Avvakta</a>
+                </td>
+                <td/>
+                <td>Undersökning avvakta</td>
+                <td>
+                  <span class="copy-text-inline">
+                    <button data-clipboard-text="{&quot;system&quot;: &quot;https://fhir.inera.se/CodeSystem/examinationstatuscode&quot;, &quot;version&quot;: &quot;0.1.0&quot;, &quot;code&quot;: &quot;Avvakta&quot;}" title="Klicka för att kopiera som Coding" class="btn-copy"> </button>
+                  </span>
+                </td>
+                <td>
+                  <span class="copy-text-inline">
+                    <button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;https://fhir.inera.se/CodeSystem/examinationstatuscode&quot;&gt;&lt;version value=&quot;0.1.0&quot;&gt;&lt;code value=&quot;Avvakta&quot;&gt;&lt;/coding&gt;" title="Klicka för att kopiera som Coding" class="btn-copy"> </button>
+                  </span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <a name="x-https://fhir.inera.se/CodeSystem/examinationstatuscode-Avbruten"> </a>
+                  <code>https://fhir.inera.se/CodeSystem/examinationstatuscode</code>
+                </td>
+                <td style="white-space:nowrap">  
+                  <a href="CodeSystem-examinationstatuscode-cs.html#examinationstatuscode-cs-Avbruten">Avbruten</a>
+                </td>
+                <td/>
+                <td>Undersökning avbruten</td>
+                <td>
+                  <span class="copy-text-inline">
+                    <button data-clipboard-text="{&quot;system&quot;: &quot;https://fhir.inera.se/CodeSystem/examinationstatuscode&quot;, &quot;version&quot;: &quot;0.1.0&quot;, &quot;code&quot;: &quot;Avbruten&quot;}" title="Klicka för att kopiera som Coding" class="btn-copy"> </button>
+                  </span>
+                </td>
+                <td>
+                  <span class="copy-text-inline">
+                    <button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;https://fhir.inera.se/CodeSystem/examinationstatuscode&quot;&gt;&lt;version value=&quot;0.1.0&quot;&gt;&lt;code value=&quot;Avbruten&quot;&gt;&lt;/coding&gt;" title="Klicka för att kopiera som Coding" class="btn-copy"> </button>
+                  </span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <a name="x-https://fhir.inera.se/CodeSystem/examinationstatuscode-Avklarad"> </a>
+                  <code>https://fhir.inera.se/CodeSystem/examinationstatuscode</code>
+                </td>
+                <td style="white-space:nowrap">  
+                  <a href="CodeSystem-examinationstatuscode-cs.html#examinationstatuscode-cs-Avklarad">Avklarad</a>
+                </td>
+                <td/>
+                <td>Undersökning avklarad</td>
+                <td>
+                  <span class="copy-text-inline">
+                    <button data-clipboard-text="{&quot;system&quot;: &quot;https://fhir.inera.se/CodeSystem/examinationstatuscode&quot;, &quot;version&quot;: &quot;0.1.0&quot;, &quot;code&quot;: &quot;Avklarad&quot;}" title="Klicka för att kopiera som Coding" class="btn-copy"> </button>
+                  </span>
+                </td>
+                <td>
+                  <span class="copy-text-inline">
+                    <button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;https://fhir.inera.se/CodeSystem/examinationstatuscode&quot;&gt;&lt;version value=&quot;0.1.0&quot;&gt;&lt;code value=&quot;Avklarad&quot;&gt;&lt;/coding&gt;" title="Klicka för att kopiera som Coding" class="btn-copy"> </button>
+                  </span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <a name="x-https://fhir.inera.se/CodeSystem/examinationstatuscode-Inaktuell"> </a>
+                  <code>https://fhir.inera.se/CodeSystem/examinationstatuscode</code>
+                </td>
+                <td style="white-space:nowrap">  
+                  <a href="CodeSystem-examinationstatuscode-cs.html#examinationstatuscode-cs-Inaktuell">Inaktuell</a>
+                </td>
+                <td/>
+                <td>Undersökning inaktuell</td>
+                <td>
+                  <span class="copy-text-inline">
+                    <button data-clipboard-text="{&quot;system&quot;: &quot;https://fhir.inera.se/CodeSystem/examinationstatuscode&quot;, &quot;version&quot;: &quot;0.1.0&quot;, &quot;code&quot;: &quot;Inaktuell&quot;}" title="Klicka för att kopiera som Coding" class="btn-copy"> </button>
+                  </span>
+                </td>
+                <td>
+                  <span class="copy-text-inline">
+                    <button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;https://fhir.inera.se/CodeSystem/examinationstatuscode&quot;&gt;&lt;version value=&quot;0.1.0&quot;&gt;&lt;code value=&quot;Inaktuell&quot;&gt;&lt;/coding&gt;" title="Klicka för att kopiera som Coding" class="btn-copy"> </button>
+                  </span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <a name="x-https://fhir.inera.se/CodeSystem/examinationstatuscode-Makulerad"> </a>
+                  <code>https://fhir.inera.se/CodeSystem/examinationstatuscode</code>
+                </td>
+                <td style="white-space:nowrap">  
+                  <a href="CodeSystem-examinationstatuscode-cs.html#examinationstatuscode-cs-Makulerad">Makulerad</a>
+                </td>
+                <td/>
+                <td>Undersökning makulerad</td>
+                <td>
+                  <span class="copy-text-inline">
+                    <button data-clipboard-text="{&quot;system&quot;: &quot;https://fhir.inera.se/CodeSystem/examinationstatuscode&quot;, &quot;version&quot;: &quot;0.1.0&quot;, &quot;code&quot;: &quot;Makulerad&quot;}" title="Klicka för att kopiera som Coding" class="btn-copy"> </button>
+                  </span>
+                </td>
+                <td>
+                  <span class="copy-text-inline">
+                    <button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;https://fhir.inera.se/CodeSystem/examinationstatuscode&quot;&gt;&lt;version value=&quot;0.1.0&quot;&gt;&lt;code value=&quot;Makulerad&quot;&gt;&lt;/coding&gt;" title="Klicka för att kopiera som Coding" class="btn-copy"> </button>
+                  </span>
+                </td>
+              </tr>
+            </table>
+          </div>
+        </text>
+        <url value="https://fhir.inera.se/ig/ehds-tk/ValueSet/examinationstatuscode-vs"/>
+        <version value="0.1.0"/>
+        <name value="ExaminationStatusCodeVS"/>
+        <title value="ExaminationStatusCode — ValueSet"/>
+        <status value="active"/>
+        <date value="2026-06-24T12:10:33+00:00"/>
+        <jurisdiction>
+          <coding>
+            <system value="urn:iso:std:iso:3166"/>
+            <code value="SE"/>
+            <display value="Sweden"/>
+          </coding>
+        </jurisdiction>
+        <expansion>
+          <identifier value="urn:uuid:fbb9e3f9-4045-4c79-8026-2c2d127339e5"/>
+          <timestamp value="2026-06-24T12:13:04+00:00"/>
+          <total value="11"/>
+          <offset value="0"/>
+          <parameter>
+            <name value="displayLanguage"/>
+            <valueCode value="sv"/>
+          </parameter>
+          <parameter>
+            <name value="count"/>
+            <valueInteger value="1000"/>
+          </parameter>
+          <parameter>
+            <name value="offset"/>
+            <valueInteger value="0"/>
+          </parameter>
+          <parameter>
+            <name value="excludeNested"/>
+            <valueBoolean value="false"/>
+          </parameter>
+          <parameter>
+            <name value="used-codesystem"/>
+            <valueUri value="https://fhir.inera.se/CodeSystem/examinationstatuscode|0.1.0"/>
+          </parameter>
+          <contains>
+            <system value="https://fhir.inera.se/CodeSystem/examinationstatuscode"/>
+            <code value="Initierad"/>
+          </contains>
+          <contains>
+            <system value="https://fhir.inera.se/CodeSystem/examinationstatuscode"/>
+            <code value="Planerad"/>
+          </contains>
+          <contains>
+            <system value="https://fhir.inera.se/CodeSystem/examinationstatuscode"/>
+            <code value="Tidbokad"/>
+          </contains>
+          <contains>
+            <system value="https://fhir.inera.se/CodeSystem/examinationstatuscode"/>
+            <code value="Uppskjuten"/>
+          </contains>
+          <contains>
+            <system value="https://fhir.inera.se/CodeSystem/examinationstatuscode"/>
+            <code value="Annullerad"/>
+          </contains>
+          <contains>
+            <system value="https://fhir.inera.se/CodeSystem/examinationstatuscode"/>
+            <code value="Pagaende"/>
+          </contains>
+          <contains>
+            <system value="https://fhir.inera.se/CodeSystem/examinationstatuscode"/>
+            <code value="Avvakta"/>
+          </contains>
+          <contains>
+            <system value="https://fhir.inera.se/CodeSystem/examinationstatuscode"/>
+            <code value="Avbruten"/>
+          </contains>
+          <contains>
+            <system value="https://fhir.inera.se/CodeSystem/examinationstatuscode"/>
+            <code value="Avklarad"/>
+          </contains>
+          <contains>
+            <system value="https://fhir.inera.se/CodeSystem/examinationstatuscode"/>
+            <code value="Inaktuell"/>
+          </contains>
+          <contains>
+            <system value="https://fhir.inera.se/CodeSystem/examinationstatuscode"/>
+            <code value="Makulerad"/>
+          </contains>
+        </expansion>
+      </ValueSet>
+    </resource>
+  </entry>
+  <entry>
+    <fullUrl value="https://fhir.inera.se/ig/ehds-tk/ValueSet/fetalpositioncode-vs"/>
+    <resource>
+      <ValueSet>
+        <text>
+          <status value="generated"/>
+          <div xmlns="http://www.w3.org/1999/xhtml" data-fhir="generated">
+            <p class="res-header-id"/>
+            <p style="border: black 1px dotted; background-color: #EEEEEE; padding: 8px; margin-bottom: 8px">Expansion utförd internt baserad på 
+              <a href="CodeSystem-fetalpositioncode-cs.html">codesystem FetalPositionCode v0.1.0 (CodeSystem)</a>
+              <span class="copy-text-inline">
+                <button data-clipboard-text="https://fhir.inera.se/CodeSystem/fetalpositioncode|0.1.0" title="Klicka för att kopiera URL" class="btn-copy"> </button>
+              </span>
+            </p>
+            <p>Denna värdemängd innehåller 4 begrepp</p>
+            <table class="codes" data-fhir="generated">
+              <tr>
+                <td>
+                  <b>System</b>
+                </td>
+                <td style="white-space:nowrap">
+                  <b>Kod</b>
+                </td>
+                <td>
+                  <b>Visning (sv)</b>
+                </td>
+                <td>
+                  <b>Definition</b>
+                </td>
+                <td>
+                  <b>JSON</b>
+                </td>
+                <td>
+                  <b>XML</b>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <a name="x-https://fhir.inera.se/CodeSystem/fetalpositioncode-0"> </a>
+                  <code>https://fhir.inera.se/CodeSystem/fetalpositioncode</code>
+                </td>
+                <td style="white-space:nowrap">  
+                  <a href="CodeSystem-fetalpositioncode-cs.html#fetalpositioncode-cs-0">0</a>
+                </td>
+                <td/>
+                <td>Fostret ligger med huvudet nedåt</td>
+                <td>
+                  <span class="copy-text-inline">
+                    <button data-clipboard-text="{&quot;system&quot;: &quot;https://fhir.inera.se/CodeSystem/fetalpositioncode&quot;, &quot;version&quot;: &quot;0.1.0&quot;, &quot;code&quot;: &quot;0&quot;}" title="Klicka för att kopiera som Coding" class="btn-copy"> </button>
+                  </span>
+                </td>
+                <td>
+                  <span class="copy-text-inline">
+                    <button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;https://fhir.inera.se/CodeSystem/fetalpositioncode&quot;&gt;&lt;version value=&quot;0.1.0&quot;&gt;&lt;code value=&quot;0&quot;&gt;&lt;/coding&gt;" title="Klicka för att kopiera som Coding" class="btn-copy"> </button>
+                  </span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <a name="x-https://fhir.inera.se/CodeSystem/fetalpositioncode-1"> </a>
+                  <code>https://fhir.inera.se/CodeSystem/fetalpositioncode</code>
+                </td>
+                <td style="white-space:nowrap">  
+                  <a href="CodeSystem-fetalpositioncode-cs.html#fetalpositioncode-cs-1">1</a>
+                </td>
+                <td/>
+                <td>Fostret ligger med sätet nedåt</td>
+                <td>
+                  <span class="copy-text-inline">
+                    <button data-clipboard-text="{&quot;system&quot;: &quot;https://fhir.inera.se/CodeSystem/fetalpositioncode&quot;, &quot;version&quot;: &quot;0.1.0&quot;, &quot;code&quot;: &quot;1&quot;}" title="Klicka för att kopiera som Coding" class="btn-copy"> </button>
+                  </span>
+                </td>
+                <td>
+                  <span class="copy-text-inline">
+                    <button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;https://fhir.inera.se/CodeSystem/fetalpositioncode&quot;&gt;&lt;version value=&quot;0.1.0&quot;&gt;&lt;code value=&quot;1&quot;&gt;&lt;/coding&gt;" title="Klicka för att kopiera som Coding" class="btn-copy"> </button>
+                  </span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <a name="x-https://fhir.inera.se/CodeSystem/fetalpositioncode-2"> </a>
+                  <code>https://fhir.inera.se/CodeSystem/fetalpositioncode</code>
+                </td>
+                <td style="white-space:nowrap">  
+                  <a href="CodeSystem-fetalpositioncode-cs.html#fetalpositioncode-cs-2">2</a>
+                </td>
+                <td/>
+                <td>Fostret ligger snett</td>
+                <td>
+                  <span class="copy-text-inline">
+                    <button data-clipboard-text="{&quot;system&quot;: &quot;https://fhir.inera.se/CodeSystem/fetalpositioncode&quot;, &quot;version&quot;: &quot;0.1.0&quot;, &quot;code&quot;: &quot;2&quot;}" title="Klicka för att kopiera som Coding" class="btn-copy"> </button>
+                  </span>
+                </td>
+                <td>
+                  <span class="copy-text-inline">
+                    <button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;https://fhir.inera.se/CodeSystem/fetalpositioncode&quot;&gt;&lt;version value=&quot;0.1.0&quot;&gt;&lt;code value=&quot;2&quot;&gt;&lt;/coding&gt;" title="Klicka för att kopiera som Coding" class="btn-copy"> </button>
+                  </span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <a name="x-https://fhir.inera.se/CodeSystem/fetalpositioncode-3"> </a>
+                  <code>https://fhir.inera.se/CodeSystem/fetalpositioncode</code>
+                </td>
+                <td style="white-space:nowrap">  
+                  <a href="CodeSystem-fetalpositioncode-cs.html#fetalpositioncode-cs-3">3</a>
+                </td>
+                <td/>
+                <td>Fostret ligger tvärs</td>
+                <td>
+                  <span class="copy-text-inline">
+                    <button data-clipboard-text="{&quot;system&quot;: &quot;https://fhir.inera.se/CodeSystem/fetalpositioncode&quot;, &quot;version&quot;: &quot;0.1.0&quot;, &quot;code&quot;: &quot;3&quot;}" title="Klicka för att kopiera som Coding" class="btn-copy"> </button>
+                  </span>
+                </td>
+                <td>
+                  <span class="copy-text-inline">
+                    <button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;https://fhir.inera.se/CodeSystem/fetalpositioncode&quot;&gt;&lt;version value=&quot;0.1.0&quot;&gt;&lt;code value=&quot;3&quot;&gt;&lt;/coding&gt;" title="Klicka för att kopiera som Coding" class="btn-copy"> </button>
+                  </span>
+                </td>
+              </tr>
+            </table>
+          </div>
+        </text>
+        <url value="https://fhir.inera.se/ig/ehds-tk/ValueSet/fetalpositioncode-vs"/>
+        <version value="0.1.0"/>
+        <name value="FetalPositionCodeVS"/>
+        <title value="FetalPositionCode — ValueSet"/>
+        <status value="active"/>
+        <date value="2026-06-24T12:10:33+00:00"/>
+        <jurisdiction>
+          <coding>
+            <system value="urn:iso:std:iso:3166"/>
+            <code value="SE"/>
+            <display value="Sweden"/>
+          </coding>
+        </jurisdiction>
+        <expansion>
+          <identifier value="urn:uuid:86d9dd8e-f36b-4360-9299-f3ff5e11ce54"/>
+          <timestamp value="2026-06-24T12:13:04+00:00"/>
+          <total value="4"/>
+          <offset value="0"/>
+          <parameter>
+            <name value="displayLanguage"/>
+            <valueCode value="sv"/>
+          </parameter>
+          <parameter>
+            <name value="count"/>
+            <valueInteger value="1000"/>
+          </parameter>
+          <parameter>
+            <name value="offset"/>
+            <valueInteger value="0"/>
+          </parameter>
+          <parameter>
+            <name value="excludeNested"/>
+            <valueBoolean value="false"/>
+          </parameter>
+          <parameter>
+            <name value="used-codesystem"/>
+            <valueUri value="https://fhir.inera.se/CodeSystem/fetalpositioncode|0.1.0"/>
+          </parameter>
+          <contains>
+            <system value="https://fhir.inera.se/CodeSystem/fetalpositioncode"/>
+            <code value="0"/>
+          </contains>
+          <contains>
+            <system value="https://fhir.inera.se/CodeSystem/fetalpositioncode"/>
+            <code value="1"/>
+          </contains>
+          <contains>
+            <system value="https://fhir.inera.se/CodeSystem/fetalpositioncode"/>
+            <code value="2"/>
+          </contains>
+          <contains>
+            <system value="https://fhir.inera.se/CodeSystem/fetalpositioncode"/>
+            <code value="3"/>
+          </contains>
+        </expansion>
+      </ValueSet>
+    </resource>
+  </entry>
+  <entry>
+    <fullUrl value="https://fhir.inera.se/ig/ehds-tk/ValueSet/growth-observation-type-vs"/>
+    <resource>
+      <ValueSet>
+        <text>
+          <status value="generated"/>
+          <div xmlns="http://www.w3.org/1999/xhtml" data-fhir="generated">
+            <p class="res-header-id"/>
+            <p style="border: black 1px dotted; background-color: #EEEEEE; padding: 8px; margin-bottom: 8px">Expansion från tx.fhir.org baserad på SNOMED CT Internationell-utgåva 01-Feb 2025
+              <span class="copy-text-inline">
+                <button data-clipboard-text="http://snomed.info/sct|http://snomed.info/sct/900000000000207008/version/20250201" title="Klicka för att kopiera URL" class="btn-copy"> </button>
+              </span>
+            </p>
+            <p>Denna värdemängd innehåller 6 begrepp</p>
+            <table class="codes" data-fhir="generated">
+              <tr>
+                <td>
+                  <b>System</b>
+                </td>
+                <td style="white-space:nowrap">
+                  <b>Kod</b>
+                </td>
+                <td>
+                  <b>Visning (sv)</b>
+                </td>
+                <td>
+                  <b>Inaktiv</b>
+                </td>
+                <td>
+                  <b>
+                    <a href="http://hl7.org/fhir/concept-properties#status">status</a>
+                  </b>
+                </td>
+                <td>
+                  <b>JSON</b>
+                </td>
+                <td>
+                  <b>XML</b>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <a name="x-http://snomed.info/sct-1153637007"> </a>
+                  <code>http://snomed.info/sct</code>
+                </td>
+                <td style="white-space:nowrap">  
+                  <a href="http://snomed.info/id/1153637007">1153637007</a>
+                </td>
+                <td/>
+                <td/>
+                <td/>
+                <td>
+                  <span class="copy-text-inline">
+                    <button data-clipboard-text="{&quot;system&quot;: &quot;http://snomed.info/sct&quot;, &quot;version&quot;: &quot;http://snomed.info/sct/900000000000207008/version/20250201&quot;, &quot;code&quot;: &quot;1153637007&quot;}" title="Klicka för att kopiera som Coding" class="btn-copy"> </button>
+                  </span>
+                </td>
+                <td>
+                  <span class="copy-text-inline">
+                    <button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;http://snomed.info/sct&quot;&gt;&lt;version value=&quot;http://snomed.info/sct/900000000000207008/version/20250201&quot;&gt;&lt;code value=&quot;1153637007&quot;&gt;&lt;/coding&gt;" title="Klicka för att kopiera som Coding" class="btn-copy"> </button>
+                  </span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <a name="x-http://snomed.info/sct-50373000"> </a>
+                  <code>http://snomed.info/sct</code>
+                </td>
+                <td style="white-space:nowrap">  
+                  <a href="http://snomed.info/id/50373000">50373000</a>
+                </td>
+                <td/>
+                <td/>
+                <td/>
+                <td>
+                  <span class="copy-text-inline">
+                    <button data-clipboard-text="{&quot;system&quot;: &quot;http://snomed.info/sct&quot;, &quot;version&quot;: &quot;http://snomed.info/sct/900000000000207008/version/20250201&quot;, &quot;code&quot;: &quot;50373000&quot;}" title="Klicka för att kopiera som Coding" class="btn-copy"> </button>
+                  </span>
+                </td>
+                <td>
+                  <span class="copy-text-inline">
+                    <button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;http://snomed.info/sct&quot;&gt;&lt;version value=&quot;http://snomed.info/sct/900000000000207008/version/20250201&quot;&gt;&lt;code value=&quot;50373000&quot;&gt;&lt;/coding&gt;" title="Klicka för att kopiera som Coding" class="btn-copy"> </button>
+                  </span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <a name="x-http://snomed.info/sct-248334005"> </a>
+                  <code>http://snomed.info/sct</code>
+                </td>
+                <td style="white-space:nowrap">  
+                  <a href="http://snomed.info/id/248334005">248334005</a>
+                </td>
+                <td/>
+                <td>inaktiv</td>
+                <td>inactive</td>
+                <td>
+                  <span class="copy-text-inline">
+                    <button data-clipboard-text="{&quot;system&quot;: &quot;http://snomed.info/sct&quot;, &quot;version&quot;: &quot;http://snomed.info/sct/900000000000207008/version/20250201&quot;, &quot;code&quot;: &quot;248334005&quot;}" title="Klicka för att kopiera som Coding" class="btn-copy"> </button>
+                  </span>
+                </td>
+                <td>
+                  <span class="copy-text-inline">
+                    <button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;http://snomed.info/sct&quot;&gt;&lt;version value=&quot;http://snomed.info/sct/900000000000207008/version/20250201&quot;&gt;&lt;code value=&quot;248334005&quot;&gt;&lt;/coding&gt;" title="Klicka för att kopiera som Coding" class="btn-copy"> </button>
+                  </span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <a name="x-http://snomed.info/sct-27113001"> </a>
+                  <code>http://snomed.info/sct</code>
+                </td>
+                <td style="white-space:nowrap">  
+                  <a href="http://snomed.info/id/27113001">27113001</a>
+                </td>
+                <td/>
+                <td/>
+                <td/>
+                <td>
+                  <span class="copy-text-inline">
+                    <button data-clipboard-text="{&quot;system&quot;: &quot;http://snomed.info/sct&quot;, &quot;version&quot;: &quot;http://snomed.info/sct/900000000000207008/version/20250201&quot;, &quot;code&quot;: &quot;27113001&quot;}" title="Klicka för att kopiera som Coding" class="btn-copy"> </button>
+                  </span>
+                </td>
+                <td>
+                  <span class="copy-text-inline">
+                    <button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;http://snomed.info/sct&quot;&gt;&lt;version value=&quot;http://snomed.info/sct/900000000000207008/version/20250201&quot;&gt;&lt;code value=&quot;27113001&quot;&gt;&lt;/coding&gt;" title="Klicka för att kopiera som Coding" class="btn-copy"> </button>
+                  </span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <a name="x-http://snomed.info/sct-363812007"> </a>
+                  <code>http://snomed.info/sct</code>
+                </td>
+                <td style="white-space:nowrap">  
+                  <a href="http://snomed.info/id/363812007">363812007</a>
+                </td>
+                <td/>
+                <td/>
+                <td/>
+                <td>
+                  <span class="copy-text-inline">
+                    <button data-clipboard-text="{&quot;system&quot;: &quot;http://snomed.info/sct&quot;, &quot;version&quot;: &quot;http://snomed.info/sct/900000000000207008/version/20250201&quot;, &quot;code&quot;: &quot;363812007&quot;}" title="Klicka för att kopiera som Coding" class="btn-copy"> </button>
+                  </span>
+                </td>
+                <td>
+                  <span class="copy-text-inline">
+                    <button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;http://snomed.info/sct&quot;&gt;&lt;version value=&quot;http://snomed.info/sct/900000000000207008/version/20250201&quot;&gt;&lt;code value=&quot;363812007&quot;&gt;&lt;/coding&gt;" title="Klicka för att kopiera som Coding" class="btn-copy"> </button>
+                  </span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <a name="x-http://snomed.info/sct-412726003"> </a>
+                  <code>http://snomed.info/sct</code>
+                </td>
+                <td style="white-space:nowrap">  
+                  <a href="http://snomed.info/id/412726003">412726003</a>
+                </td>
+                <td/>
+                <td/>
+                <td/>
+                <td>
+                  <span class="copy-text-inline">
+                    <button data-clipboard-text="{&quot;system&quot;: &quot;http://snomed.info/sct&quot;, &quot;version&quot;: &quot;http://snomed.info/sct/900000000000207008/version/20250201&quot;, &quot;code&quot;: &quot;412726003&quot;}" title="Klicka för att kopiera som Coding" class="btn-copy"> </button>
+                  </span>
+                </td>
+                <td>
+                  <span class="copy-text-inline">
+                    <button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;http://snomed.info/sct&quot;&gt;&lt;version value=&quot;http://snomed.info/sct/900000000000207008/version/20250201&quot;&gt;&lt;code value=&quot;412726003&quot;&gt;&lt;/coding&gt;" title="Klicka för att kopiera som Coding" class="btn-copy"> </button>
+                  </span>
+                </td>
+              </tr>
+            </table>
+          </div>
+        </text>
+        <url value="https://fhir.inera.se/ig/ehds-tk/ValueSet/growth-observation-type-vs"/>
+        <version value="0.1.0"/>
+        <name value="GrowthObservationTypeVS"/>
+        <title value="Tillväxtkurva – observationstyper (IoÖ Tillväxtkurva v3)"/>
+        <status value="draft"/>
+        <date value="2026-06-24T12:10:33+00:00"/>
+        <jurisdiction>
+          <coding>
+            <system value="urn:iso:std:iso:3166"/>
+            <code value="SE"/>
+            <display value="Sweden"/>
+          </coding>
+        </jurisdiction>
+        <expansion>
+          <identifier value="urn:uuid:282f7429-66b1-4f81-85a0-f4e49dfa5f98"/>
+          <timestamp value="2026-06-24T12:13:00+00:00"/>
+          <total value="6"/>
+          <offset value="0"/>
+          <parameter>
+            <name value="displayLanguage"/>
+            <valueCode value="sv"/>
+          </parameter>
+          <parameter>
+            <name value="count"/>
+            <valueInteger value="1000"/>
+          </parameter>
+          <parameter>
+            <name value="offset"/>
+            <valueInteger value="0"/>
+          </parameter>
+          <parameter>
+            <name value="excludeNested"/>
+            <valueBoolean value="false"/>
+          </parameter>
+          <parameter>
+            <name value="used-valueset"/>
+            <valueUri value="null"/>
+          </parameter>
+          <parameter>
+            <name value="includeDefinition"/>
+            <valueBoolean value="false"/>
+          </parameter>
+          <parameter>
+            <name value="used-codesystem"/>
+            <valueUri value="http://snomed.info/sct|http://snomed.info/sct/900000000000207008/version/20250201"/>
+          </parameter>
+          <property>
+            <code value="status"/>
+            <uri value="http://hl7.org/fhir/concept-properties#status"/>
+          </property>
+          <contains>
+            <system value="http://snomed.info/sct"/>
+            <code value="1153637007"/>
+          </contains>
+          <contains>
+            <system value="http://snomed.info/sct"/>
+            <code value="50373000"/>
+          </contains>
+          <contains>
+            <system value="http://snomed.info/sct"/>
+            <inactive value="true"/>
+            <code value="248334005"/>
+            <property>
+              <code value="status"/>
+              <valueCode value="inactive"/>
+            </property>
+          </contains>
+          <contains>
+            <system value="http://snomed.info/sct"/>
+            <code value="27113001"/>
+          </contains>
+          <contains>
+            <system value="http://snomed.info/sct"/>
+            <code value="363812007"/>
+          </contains>
+          <contains>
+            <system value="http://snomed.info/sct"/>
+            <code value="412726003"/>
+          </contains>
+        </expansion>
+      </ValueSet>
+    </resource>
+  </entry>
+  <entry>
+    <fullUrl value="https://fhir.inera.se/ig/ehds-tk/ValueSet/prescriptionstatus-vs"/>
+    <resource>
+      <ValueSet>
+        <text>
+          <status value="generated"/>
+          <div xmlns="http://www.w3.org/1999/xhtml" data-fhir="generated">
+            <p class="res-header-id"/>
+            <p style="border: black 1px dotted; background-color: #EEEEEE; padding: 8px; margin-bottom: 8px">Expansion utförd internt baserad på 
+              <a href="CodeSystem-prescriptionstatus-cs.html">codesystem PrescriptionStatus v0.1.0 (CodeSystem)</a>
+              <span class="copy-text-inline">
+                <button data-clipboard-text="https://fhir.inera.se/CodeSystem/prescriptionstatus|0.1.0" title="Klicka för att kopiera URL" class="btn-copy"> </button>
+              </span>
+            </p>
+            <p>Denna värdemängd innehåller 2 begrepp</p>
+            <table class="codes" data-fhir="generated">
+              <tr>
+                <td>
+                  <b>System</b>
+                </td>
+                <td style="white-space:nowrap">
+                  <b>Kod</b>
+                </td>
+                <td>
+                  <b>Visning (sv)</b>
+                </td>
+                <td>
+                  <b>Definition</b>
+                </td>
+                <td>
+                  <b>JSON</b>
+                </td>
+                <td>
+                  <b>XML</b>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <a name="x-https://fhir.inera.se/CodeSystem/prescriptionstatus-Active"> </a>
+                  <code>https://fhir.inera.se/CodeSystem/prescriptionstatus</code>
+                </td>
+                <td style="white-space:nowrap">  
+                  <a href="CodeSystem-prescriptionstatus-cs.html#prescriptionstatus-cs-Active">Active</a>
+                </td>
+                <td/>
+                <td>Aktiv ordination — den sista i sin ordinationskedja. Representerar gällande behandling.</td>
+                <td>
+                  <span class="copy-text-inline">
+                    <button data-clipboard-text="{&quot;system&quot;: &quot;https://fhir.inera.se/CodeSystem/prescriptionstatus&quot;, &quot;version&quot;: &quot;0.1.0&quot;, &quot;code&quot;: &quot;Active&quot;}" title="Klicka för att kopiera som Coding" class="btn-copy"> </button>
+                  </span>
+                </td>
+                <td>
+                  <span class="copy-text-inline">
+                    <button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;https://fhir.inera.se/CodeSystem/prescriptionstatus&quot;&gt;&lt;version value=&quot;0.1.0&quot;&gt;&lt;code value=&quot;Active&quot;&gt;&lt;/coding&gt;" title="Klicka för att kopiera som Coding" class="btn-copy"> </button>
+                  </span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <a name="x-https://fhir.inera.se/CodeSystem/prescriptionstatus-Inactive"> </a>
+                  <code>https://fhir.inera.se/CodeSystem/prescriptionstatus</code>
+                </td>
+                <td style="white-space:nowrap">  
+                  <a href="CodeSystem-prescriptionstatus-cs.html#prescriptionstatus-cs-Inactive">Inactive</a>
+                </td>
+                <td/>
+                <td>Inaktiv ordination — inte den sista i sin ordinationskedja. Historisk ordination.</td>
+                <td>
+                  <span class="copy-text-inline">
+                    <button data-clipboard-text="{&quot;system&quot;: &quot;https://fhir.inera.se/CodeSystem/prescriptionstatus&quot;, &quot;version&quot;: &quot;0.1.0&quot;, &quot;code&quot;: &quot;Inactive&quot;}" title="Klicka för att kopiera som Coding" class="btn-copy"> </button>
+                  </span>
+                </td>
+                <td>
+                  <span class="copy-text-inline">
+                    <button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;https://fhir.inera.se/CodeSystem/prescriptionstatus&quot;&gt;&lt;version value=&quot;0.1.0&quot;&gt;&lt;code value=&quot;Inactive&quot;&gt;&lt;/coding&gt;" title="Klicka för att kopiera som Coding" class="btn-copy"> </button>
+                  </span>
+                </td>
+              </tr>
+            </table>
+          </div>
+        </text>
+        <url value="https://fhir.inera.se/ig/ehds-tk/ValueSet/prescriptionstatus-vs"/>
+        <version value="0.1.0"/>
+        <name value="PrescriptionStatusVS"/>
+        <title value="PrescriptionStatus — ValueSet"/>
+        <status value="active"/>
+        <date value="2026-06-24T12:10:33+00:00"/>
+        <jurisdiction>
+          <coding>
+            <system value="urn:iso:std:iso:3166"/>
+            <code value="SE"/>
+            <display value="Sweden"/>
+          </coding>
+        </jurisdiction>
+        <expansion>
+          <identifier value="urn:uuid:617b7c5f-00b1-4f62-a551-a5058ebb0d98"/>
+          <timestamp value="2026-06-24T12:13:04+00:00"/>
+          <total value="2"/>
+          <offset value="0"/>
+          <parameter>
+            <name value="displayLanguage"/>
+            <valueCode value="sv"/>
+          </parameter>
+          <parameter>
+            <name value="count"/>
+            <valueInteger value="1000"/>
+          </parameter>
+          <parameter>
+            <name value="offset"/>
+            <valueInteger value="0"/>
+          </parameter>
+          <parameter>
+            <name value="excludeNested"/>
+            <valueBoolean value="false"/>
+          </parameter>
+          <parameter>
+            <name value="used-codesystem"/>
+            <valueUri value="https://fhir.inera.se/CodeSystem/prescriptionstatus|0.1.0"/>
+          </parameter>
+          <contains>
+            <system value="https://fhir.inera.se/CodeSystem/prescriptionstatus"/>
+            <code value="Active"/>
+          </contains>
+          <contains>
+            <system value="https://fhir.inera.se/CodeSystem/prescriptionstatus"/>
+            <code value="Inactive"/>
+          </contains>
+        </expansion>
+      </ValueSet>
+    </resource>
+  </entry>
+  <entry>
+    <fullUrl value="https://fhir.inera.se/ig/ehds-tk/ValueSet/referraloutcometypecode-vs"/>
+    <resource>
+      <ValueSet>
+        <text>
+          <status value="generated"/>
+          <div xmlns="http://www.w3.org/1999/xhtml" data-fhir="generated">
+            <p class="res-header-id"/>
+            <p style="border: black 1px dotted; background-color: #EEEEEE; padding: 8px; margin-bottom: 8px">Expansion utförd internt baserad på 
+              <a href="CodeSystem-referraloutcometypecode-cs.html">codesystem ReferralOutcomeTypeCode v0.1.0 (CodeSystem)</a>
+              <span class="copy-text-inline">
+                <button data-clipboard-text="https://fhir.inera.se/CodeSystem/referraloutcometypecode|0.1.0" title="Klicka för att kopiera URL" class="btn-copy"> </button>
+              </span>
+            </p>
+            <p>Denna värdemängd innehåller 2 begrepp</p>
+            <table class="codes" data-fhir="generated">
+              <tr>
+                <td>
+                  <b>System</b>
+                </td>
+                <td style="white-space:nowrap">
+                  <b>Kod</b>
+                </td>
+                <td>
+                  <b>Visning (sv)</b>
+                </td>
+                <td>
+                  <b>Definition</b>
+                </td>
+                <td>
+                  <b>JSON</b>
+                </td>
+                <td>
+                  <b>XML</b>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <a name="x-https://fhir.inera.se/CodeSystem/referraloutcometypecode-SS"> </a>
+                  <code>https://fhir.inera.se/CodeSystem/referraloutcometypecode</code>
+                </td>
+                <td style="white-space:nowrap">  
+                  <a href="CodeSystem-referraloutcometypecode-cs.html#referraloutcometypecode-cs-SS">SS</a>
+                </td>
+                <td/>
+                <td>Slutsvar på remissfråga</td>
+                <td>
+                  <span class="copy-text-inline">
+                    <button data-clipboard-text="{&quot;system&quot;: &quot;https://fhir.inera.se/CodeSystem/referraloutcometypecode&quot;, &quot;version&quot;: &quot;0.1.0&quot;, &quot;code&quot;: &quot;SS&quot;}" title="Klicka för att kopiera som Coding" class="btn-copy"> </button>
+                  </span>
+                </td>
+                <td>
+                  <span class="copy-text-inline">
+                    <button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;https://fhir.inera.se/CodeSystem/referraloutcometypecode&quot;&gt;&lt;version value=&quot;0.1.0&quot;&gt;&lt;code value=&quot;SS&quot;&gt;&lt;/coding&gt;" title="Klicka för att kopiera som Coding" class="btn-copy"> </button>
+                  </span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <a name="x-https://fhir.inera.se/CodeSystem/referraloutcometypecode-SR"> </a>
+                  <code>https://fhir.inera.se/CodeSystem/referraloutcometypecode</code>
+                </td>
+                <td style="white-space:nowrap">  
+                  <a href="CodeSystem-referraloutcometypecode-cs.html#referraloutcometypecode-cs-SR">SR</a>
+                </td>
+                <td/>
+                <td>Svar på remissfråga</td>
+                <td>
+                  <span class="copy-text-inline">
+                    <button data-clipboard-text="{&quot;system&quot;: &quot;https://fhir.inera.se/CodeSystem/referraloutcometypecode&quot;, &quot;version&quot;: &quot;0.1.0&quot;, &quot;code&quot;: &quot;SR&quot;}" title="Klicka för att kopiera som Coding" class="btn-copy"> </button>
+                  </span>
+                </td>
+                <td>
+                  <span class="copy-text-inline">
+                    <button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;https://fhir.inera.se/CodeSystem/referraloutcometypecode&quot;&gt;&lt;version value=&quot;0.1.0&quot;&gt;&lt;code value=&quot;SR&quot;&gt;&lt;/coding&gt;" title="Klicka för att kopiera som Coding" class="btn-copy"> </button>
+                  </span>
+                </td>
+              </tr>
+            </table>
+          </div>
+        </text>
+        <url value="https://fhir.inera.se/ig/ehds-tk/ValueSet/referraloutcometypecode-vs"/>
+        <version value="0.1.0"/>
+        <name value="ReferralOutcomeTypeCodeVS"/>
+        <title value="ReferralOutcomeTypeCode — ValueSet"/>
+        <status value="active"/>
+        <date value="2026-06-24T12:10:33+00:00"/>
+        <jurisdiction>
+          <coding>
+            <system value="urn:iso:std:iso:3166"/>
+            <code value="SE"/>
+            <display value="Sweden"/>
+          </coding>
+        </jurisdiction>
+        <expansion>
+          <identifier value="urn:uuid:a11cd03a-6c21-4038-8d44-de9701177ffd"/>
+          <timestamp value="2026-06-24T12:13:04+00:00"/>
+          <total value="2"/>
+          <offset value="0"/>
+          <parameter>
+            <name value="displayLanguage"/>
+            <valueCode value="sv"/>
+          </parameter>
+          <parameter>
+            <name value="count"/>
+            <valueInteger value="1000"/>
+          </parameter>
+          <parameter>
+            <name value="offset"/>
+            <valueInteger value="0"/>
+          </parameter>
+          <parameter>
+            <name value="excludeNested"/>
+            <valueBoolean value="false"/>
+          </parameter>
+          <parameter>
+            <name value="used-codesystem"/>
+            <valueUri value="https://fhir.inera.se/CodeSystem/referraloutcometypecode|0.1.0"/>
+          </parameter>
+          <contains>
+            <system value="https://fhir.inera.se/CodeSystem/referraloutcometypecode"/>
+            <code value="SS"/>
+          </contains>
+          <contains>
+            <system value="https://fhir.inera.se/CodeSystem/referraloutcometypecode"/>
+            <code value="SR"/>
+          </contains>
+        </expansion>
+      </ValueSet>
+    </resource>
+  </entry>
+  <entry>
+    <fullUrl value="https://fhir.inera.se/ig/ehds-tk/ValueSet/resultcode-vs"/>
+    <resource>
+      <ValueSet>
+        <text>
+          <status value="generated"/>
+          <div xmlns="http://www.w3.org/1999/xhtml" data-fhir="generated">
+            <p class="res-header-id"/>
+            <p style="border: black 1px dotted; background-color: #EEEEEE; padding: 8px; margin-bottom: 8px">Expansion utförd internt baserad på 
+              <a href="CodeSystem-resultcode-cs.html">codesystem ResultCode v0.1.0 (CodeSystem)</a>
+              <span class="copy-text-inline">
+                <button data-clipboard-text="https://fhir.inera.se/CodeSystem/resultcode-actoutcome|0.1.0" title="Klicka för att kopiera URL" class="btn-copy"> </button>
+              </span>
+            </p>
+            <p>Denna värdemängd innehåller 3 begrepp</p>
+            <table class="codes" data-fhir="generated">
+              <tr>
+                <td>
+                  <b>System</b>
+                </td>
+                <td style="white-space:nowrap">
+                  <b>Kod</b>
+                </td>
+                <td>
+                  <b>Visning (sv)</b>
+                </td>
+                <td>
+                  <b>Definition</b>
+                </td>
+                <td>
+                  <b>JSON</b>
+                </td>
+                <td>
+                  <b>XML</b>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <a name="x-https://fhir.inera.se/CodeSystem/resultcode-actoutcome-OK"> </a>
+                  <code>https://fhir.inera.se/CodeSystem/resultcode-actoutcome</code>
+                </td>
+                <td style="white-space:nowrap">  
+                  <a href="CodeSystem-resultcode-cs.html#resultcode-cs-OK">OK</a>
+                </td>
+                <td/>
+                <td>Begäran genomfördes utan fel</td>
+                <td>
+                  <span class="copy-text-inline">
+                    <button data-clipboard-text="{&quot;system&quot;: &quot;https://fhir.inera.se/CodeSystem/resultcode-actoutcome&quot;, &quot;version&quot;: &quot;0.1.0&quot;, &quot;code&quot;: &quot;OK&quot;}" title="Klicka för att kopiera som Coding" class="btn-copy"> </button>
+                  </span>
+                </td>
+                <td>
+                  <span class="copy-text-inline">
+                    <button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;https://fhir.inera.se/CodeSystem/resultcode-actoutcome&quot;&gt;&lt;version value=&quot;0.1.0&quot;&gt;&lt;code value=&quot;OK&quot;&gt;&lt;/coding&gt;" title="Klicka för att kopiera som Coding" class="btn-copy"> </button>
+                  </span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <a name="x-https://fhir.inera.se/CodeSystem/resultcode-actoutcome-INFO"> </a>
+                  <code>https://fhir.inera.se/CodeSystem/resultcode-actoutcome</code>
+                </td>
+                <td style="white-space:nowrap">  
+                  <a href="CodeSystem-resultcode-cs.html#resultcode-cs-INFO">INFO</a>
+                </td>
+                <td/>
+                <td>Begäran genomfördes men med informationsmeddelande</td>
+                <td>
+                  <span class="copy-text-inline">
+                    <button data-clipboard-text="{&quot;system&quot;: &quot;https://fhir.inera.se/CodeSystem/resultcode-actoutcome&quot;, &quot;version&quot;: &quot;0.1.0&quot;, &quot;code&quot;: &quot;INFO&quot;}" title="Klicka för att kopiera som Coding" class="btn-copy"> </button>
+                  </span>
+                </td>
+                <td>
+                  <span class="copy-text-inline">
+                    <button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;https://fhir.inera.se/CodeSystem/resultcode-actoutcome&quot;&gt;&lt;version value=&quot;0.1.0&quot;&gt;&lt;code value=&quot;INFO&quot;&gt;&lt;/coding&gt;" title="Klicka för att kopiera som Coding" class="btn-copy"> </button>
+                  </span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <a name="x-https://fhir.inera.se/CodeSystem/resultcode-actoutcome-ERROR"> </a>
+                  <code>https://fhir.inera.se/CodeSystem/resultcode-actoutcome</code>
+                </td>
+                <td style="white-space:nowrap">  
+                  <a href="CodeSystem-resultcode-cs.html#resultcode-cs-ERROR">ERROR</a>
+                </td>
+                <td/>
+                <td>Begäran misslyckades med logiskt fel</td>
+                <td>
+                  <span class="copy-text-inline">
+                    <button data-clipboard-text="{&quot;system&quot;: &quot;https://fhir.inera.se/CodeSystem/resultcode-actoutcome&quot;, &quot;version&quot;: &quot;0.1.0&quot;, &quot;code&quot;: &quot;ERROR&quot;}" title="Klicka för att kopiera som Coding" class="btn-copy"> </button>
+                  </span>
+                </td>
+                <td>
+                  <span class="copy-text-inline">
+                    <button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;https://fhir.inera.se/CodeSystem/resultcode-actoutcome&quot;&gt;&lt;version value=&quot;0.1.0&quot;&gt;&lt;code value=&quot;ERROR&quot;&gt;&lt;/coding&gt;" title="Klicka för att kopiera som Coding" class="btn-copy"> </button>
+                  </span>
+                </td>
+              </tr>
+            </table>
+          </div>
+        </text>
+        <url value="https://fhir.inera.se/ig/ehds-tk/ValueSet/resultcode-vs"/>
+        <version value="0.1.0"/>
+        <name value="ResultCodeVS"/>
+        <title value="ResultCode — ValueSet"/>
+        <status value="active"/>
+        <date value="2026-06-24T12:10:33+00:00"/>
+        <jurisdiction>
+          <coding>
+            <system value="urn:iso:std:iso:3166"/>
+            <code value="SE"/>
+            <display value="Sweden"/>
+          </coding>
+        </jurisdiction>
+        <expansion>
+          <identifier value="urn:uuid:206a1296-9c72-444d-a70a-0e474f417beb"/>
+          <timestamp value="2026-06-24T12:13:04+00:00"/>
+          <total value="3"/>
+          <offset value="0"/>
+          <parameter>
+            <name value="displayLanguage"/>
+            <valueCode value="sv"/>
+          </parameter>
+          <parameter>
+            <name value="count"/>
+            <valueInteger value="1000"/>
+          </parameter>
+          <parameter>
+            <name value="offset"/>
+            <valueInteger value="0"/>
+          </parameter>
+          <parameter>
+            <name value="excludeNested"/>
+            <valueBoolean value="false"/>
+          </parameter>
+          <parameter>
+            <name value="used-codesystem"/>
+            <valueUri value="https://fhir.inera.se/CodeSystem/resultcode-actoutcome|0.1.0"/>
+          </parameter>
+          <contains>
+            <system value="https://fhir.inera.se/CodeSystem/resultcode-actoutcome"/>
+            <code value="OK"/>
+          </contains>
+          <contains>
+            <system value="https://fhir.inera.se/CodeSystem/resultcode-actoutcome"/>
+            <code value="INFO"/>
+          </contains>
+          <contains>
+            <system value="https://fhir.inera.se/CodeSystem/resultcode-actoutcome"/>
+            <code value="ERROR"/>
+          </contains>
+        </expansion>
+      </ValueSet>
+    </resource>
+  </entry>
+  <entry>
+    <fullUrl value="https://fhir.inera.se/ig/ehds-tk/ValueSet/se-observation-status-vs"/>
+    <resource>
+      <ValueSet>
+        <text>
+          <status value="generated"/>
+          <div xmlns="http://www.w3.org/1999/xhtml" data-fhir="generated">
+            <p class="res-header-id"/>
+            <p style="border: black 1px dotted; background-color: #EEEEEE; padding: 8px; margin-bottom: 8px">Expansion från tx.fhir.org baserad på SNOMED CT Internationell-utgåva 01-Feb 2025
+              <span class="copy-text-inline">
+                <button data-clipboard-text="http://snomed.info/sct|http://snomed.info/sct/900000000000207008/version/20250201" title="Klicka för att kopiera URL" class="btn-copy"> </button>
+              </span>
+            </p>
+            <p>Denna värdemängd innehåller 5 begrepp</p>
+            <table class="codes" data-fhir="generated">
+              <tr>
+                <td>
+                  <b>System</b>
+                </td>
+                <td style="white-space:nowrap">
+                  <b>Kod</b>
+                </td>
+                <td>
+                  <b>Visning (sv)</b>
+                </td>
+                <td>
+                  <b>Inaktiv</b>
+                </td>
+                <td>
+                  <b>
+                    <a href="http://hl7.org/fhir/concept-properties#status">status</a>
+                  </b>
+                </td>
+                <td>
+                  <b>JSON</b>
+                </td>
+                <td>
+                  <b>XML</b>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <a name="x-http://snomed.info/sct-385676005"> </a>
+                  <code>http://snomed.info/sct</code>
+                </td>
+                <td style="white-space:nowrap">  
+                  <a href="http://snomed.info/id/385676005">385676005</a>
+                </td>
+                <td/>
+                <td/>
+                <td/>
+                <td>
+                  <span class="copy-text-inline">
+                    <button data-clipboard-text="{&quot;system&quot;: &quot;http://snomed.info/sct&quot;, &quot;version&quot;: &quot;http://snomed.info/sct/900000000000207008/version/20250201&quot;, &quot;code&quot;: &quot;385676005&quot;}" title="Klicka för att kopiera som Coding" class="btn-copy"> </button>
+                  </span>
+                </td>
+                <td>
+                  <span class="copy-text-inline">
+                    <button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;http://snomed.info/sct&quot;&gt;&lt;version value=&quot;http://snomed.info/sct/900000000000207008/version/20250201&quot;&gt;&lt;code value=&quot;385676005&quot;&gt;&lt;/coding&gt;" title="Klicka för att kopiera som Coding" class="btn-copy"> </button>
+                  </span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <a name="x-http://snomed.info/sct-385651009"> </a>
+                  <code>http://snomed.info/sct</code>
+                </td>
+                <td style="white-space:nowrap">  
+                  <a href="http://snomed.info/id/385651009">385651009</a>
+                </td>
+                <td/>
+                <td/>
+                <td/>
+                <td>
+                  <span class="copy-text-inline">
+                    <button data-clipboard-text="{&quot;system&quot;: &quot;http://snomed.info/sct&quot;, &quot;version&quot;: &quot;http://snomed.info/sct/900000000000207008/version/20250201&quot;, &quot;code&quot;: &quot;385651009&quot;}" title="Klicka för att kopiera som Coding" class="btn-copy"> </button>
+                  </span>
+                </td>
+                <td>
+                  <span class="copy-text-inline">
+                    <button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;http://snomed.info/sct&quot;&gt;&lt;version value=&quot;http://snomed.info/sct/900000000000207008/version/20250201&quot;&gt;&lt;code value=&quot;385651009&quot;&gt;&lt;/coding&gt;" title="Klicka för att kopiera som Coding" class="btn-copy"> </button>
+                  </span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <a name="x-http://snomed.info/sct-272393004"> </a>
+                  <code>http://snomed.info/sct</code>
+                </td>
+                <td style="white-space:nowrap">  
+                  <a href="http://snomed.info/id/272393004">272393004</a>
+                </td>
+                <td/>
+                <td/>
+                <td/>
+                <td>
+                  <span class="copy-text-inline">
+                    <button data-clipboard-text="{&quot;system&quot;: &quot;http://snomed.info/sct&quot;, &quot;version&quot;: &quot;http://snomed.info/sct/900000000000207008/version/20250201&quot;, &quot;code&quot;: &quot;272393004&quot;}" title="Klicka för att kopiera som Coding" class="btn-copy"> </button>
+                  </span>
+                </td>
+                <td>
+                  <span class="copy-text-inline">
+                    <button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;http://snomed.info/sct&quot;&gt;&lt;version value=&quot;http://snomed.info/sct/900000000000207008/version/20250201&quot;&gt;&lt;code value=&quot;272393004&quot;&gt;&lt;/coding&gt;" title="Klicka för att kopiera som Coding" class="btn-copy"> </button>
+                  </span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <a name="x-http://snomed.info/sct-59776000"> </a>
+                  <code>http://snomed.info/sct</code>
+                </td>
+                <td style="white-space:nowrap">  
+                  <a href="http://snomed.info/id/59776000">59776000</a>
+                </td>
+                <td/>
+                <td/>
+                <td/>
+                <td>
+                  <span class="copy-text-inline">
+                    <button data-clipboard-text="{&quot;system&quot;: &quot;http://snomed.info/sct&quot;, &quot;version&quot;: &quot;http://snomed.info/sct/900000000000207008/version/20250201&quot;, &quot;code&quot;: &quot;59776000&quot;}" title="Klicka för att kopiera som Coding" class="btn-copy"> </button>
+                  </span>
+                </td>
+                <td>
+                  <span class="copy-text-inline">
+                    <button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;http://snomed.info/sct&quot;&gt;&lt;version value=&quot;http://snomed.info/sct/900000000000207008/version/20250201&quot;&gt;&lt;code value=&quot;59776000&quot;&gt;&lt;/coding&gt;" title="Klicka för att kopiera som Coding" class="btn-copy"> </button>
+                  </span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <a name="x-http://snomed.info/sct-444301002"> </a>
+                  <code>http://snomed.info/sct</code>
+                </td>
+                <td style="white-space:nowrap">  
+                  <a href="http://snomed.info/id/444301002">444301002</a>
+                </td>
+                <td/>
+                <td>inaktiv</td>
+                <td>inactive</td>
+                <td>
+                  <span class="copy-text-inline">
+                    <button data-clipboard-text="{&quot;system&quot;: &quot;http://snomed.info/sct&quot;, &quot;version&quot;: &quot;http://snomed.info/sct/900000000000207008/version/20250201&quot;, &quot;code&quot;: &quot;444301002&quot;}" title="Klicka för att kopiera som Coding" class="btn-copy"> </button>
+                  </span>
+                </td>
+                <td>
+                  <span class="copy-text-inline">
+                    <button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;http://snomed.info/sct&quot;&gt;&lt;version value=&quot;http://snomed.info/sct/900000000000207008/version/20250201&quot;&gt;&lt;code value=&quot;444301002&quot;&gt;&lt;/coding&gt;" title="Klicka för att kopiera som Coding" class="btn-copy"> </button>
+                  </span>
+                </td>
+              </tr>
+            </table>
+          </div>
+        </text>
+        <url value="https://fhir.inera.se/ig/ehds-tk/ValueSet/se-observation-status-vs"/>
+        <version value="0.1.0"/>
+        <name value="SEObservationStatusVS"/>
+        <title value="SE Observation Status (SNOMED CT urval 56431000052106)"/>
+        <status value="active"/>
+        <experimental value="false"/>
+        <date value="2026-06-24T12:10:33+00:00"/>
+        <jurisdiction>
+          <coding>
+            <system value="urn:iso:std:iso:3166"/>
+            <code value="SE"/>
+            <display value="Sweden"/>
+          </coding>
+        </jurisdiction>
+        <expansion>
+          <identifier value="urn:uuid:63a55a88-7121-4235-b5d1-1039b177bba9"/>
+          <timestamp value="2026-06-24T12:12:59+00:00"/>
+          <total value="5"/>
+          <offset value="0"/>
+          <parameter>
+            <name value="displayLanguage"/>
+            <valueCode value="sv"/>
+          </parameter>
+          <parameter>
+            <name value="count"/>
+            <valueInteger value="1000"/>
+          </parameter>
+          <parameter>
+            <name value="offset"/>
+            <valueInteger value="0"/>
+          </parameter>
+          <parameter>
+            <name value="excludeNested"/>
+            <valueBoolean value="false"/>
+          </parameter>
+          <parameter>
+            <name value="used-valueset"/>
+            <valueUri value="null"/>
+          </parameter>
+          <parameter>
+            <name value="includeDefinition"/>
+            <valueBoolean value="false"/>
+          </parameter>
+          <parameter>
+            <name value="used-codesystem"/>
+            <valueUri value="http://snomed.info/sct|http://snomed.info/sct/900000000000207008/version/20250201"/>
+          </parameter>
+          <property>
+            <code value="status"/>
+            <uri value="http://hl7.org/fhir/concept-properties#status"/>
+          </property>
+          <contains>
+            <system value="http://snomed.info/sct"/>
+            <code value="385676005"/>
+          </contains>
+          <contains>
+            <system value="http://snomed.info/sct"/>
+            <code value="385651009"/>
+          </contains>
+          <contains>
+            <system value="http://snomed.info/sct"/>
+            <code value="272393004"/>
+          </contains>
+          <contains>
+            <system value="http://snomed.info/sct"/>
+            <code value="59776000"/>
+          </contains>
+          <contains>
+            <system value="http://snomed.info/sct"/>
+            <inactive value="true"/>
+            <code value="444301002"/>
+            <property>
+              <code value="status"/>
+              <valueCode value="inactive"/>
+            </property>
+          </contains>
+        </expansion>
+      </ValueSet>
+    </resource>
+  </entry>
+  <entry>
+    <fullUrl value="https://fhir.inera.se/ig/ehds-tk/ValueSet/sexcode-vs"/>
+    <resource>
+      <ValueSet>
+        <text>
+          <status value="generated"/>
+          <div xmlns="http://www.w3.org/1999/xhtml" data-fhir="generated">
+            <p class="res-header-id"/>
+            <p style="border: black 1px dotted; background-color: #EEEEEE; padding: 8px; margin-bottom: 8px">Expansion utförd internt baserad på 
+              <a href="CodeSystem-sexcode-cs.html">codesystem SexCode v0.1.0 (CodeSystem)</a>
+              <span class="copy-text-inline">
+                <button data-clipboard-text="https://fhir.inera.se/CodeSystem/sexcode|0.1.0" title="Klicka för att kopiera URL" class="btn-copy"> </button>
+              </span>
+            </p>
+            <p>Denna värdemängd innehåller 4 begrepp</p>
+            <table class="codes" data-fhir="generated">
+              <tr>
+                <td>
+                  <b>System</b>
+                </td>
+                <td style="white-space:nowrap">
+                  <b>Kod</b>
+                </td>
+                <td>
+                  <b>Visning (sv)</b>
+                </td>
+                <td>
+                  <b>Definition</b>
+                </td>
+                <td>
+                  <b>JSON</b>
+                </td>
+                <td>
+                  <b>XML</b>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <a name="x-https://fhir.inera.se/CodeSystem/sexcode-0"> </a>
+                  <code>https://fhir.inera.se/CodeSystem/sexcode</code>
+                </td>
+                <td style="white-space:nowrap">  
+                  <a href="CodeSystem-sexcode-cs.html#sexcode-cs-0">0</a>
+                </td>
+                <td/>
+                <td>Kön okänt</td>
+                <td>
+                  <span class="copy-text-inline">
+                    <button data-clipboard-text="{&quot;system&quot;: &quot;https://fhir.inera.se/CodeSystem/sexcode&quot;, &quot;version&quot;: &quot;0.1.0&quot;, &quot;code&quot;: &quot;0&quot;}" title="Klicka för att kopiera som Coding" class="btn-copy"> </button>
+                  </span>
+                </td>
+                <td>
+                  <span class="copy-text-inline">
+                    <button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;https://fhir.inera.se/CodeSystem/sexcode&quot;&gt;&lt;version value=&quot;0.1.0&quot;&gt;&lt;code value=&quot;0&quot;&gt;&lt;/coding&gt;" title="Klicka för att kopiera som Coding" class="btn-copy"> </button>
+                  </span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <a name="x-https://fhir.inera.se/CodeSystem/sexcode-1"> </a>
+                  <code>https://fhir.inera.se/CodeSystem/sexcode</code>
+                </td>
+                <td style="white-space:nowrap">  
+                  <a href="CodeSystem-sexcode-cs.html#sexcode-cs-1">1</a>
+                </td>
+                <td/>
+                <td>Man</td>
+                <td>
+                  <span class="copy-text-inline">
+                    <button data-clipboard-text="{&quot;system&quot;: &quot;https://fhir.inera.se/CodeSystem/sexcode&quot;, &quot;version&quot;: &quot;0.1.0&quot;, &quot;code&quot;: &quot;1&quot;}" title="Klicka för att kopiera som Coding" class="btn-copy"> </button>
+                  </span>
+                </td>
+                <td>
+                  <span class="copy-text-inline">
+                    <button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;https://fhir.inera.se/CodeSystem/sexcode&quot;&gt;&lt;version value=&quot;0.1.0&quot;&gt;&lt;code value=&quot;1&quot;&gt;&lt;/coding&gt;" title="Klicka för att kopiera som Coding" class="btn-copy"> </button>
+                  </span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <a name="x-https://fhir.inera.se/CodeSystem/sexcode-2"> </a>
+                  <code>https://fhir.inera.se/CodeSystem/sexcode</code>
+                </td>
+                <td style="white-space:nowrap">  
+                  <a href="CodeSystem-sexcode-cs.html#sexcode-cs-2">2</a>
+                </td>
+                <td/>
+                <td>Kvinna</td>
+                <td>
+                  <span class="copy-text-inline">
+                    <button data-clipboard-text="{&quot;system&quot;: &quot;https://fhir.inera.se/CodeSystem/sexcode&quot;, &quot;version&quot;: &quot;0.1.0&quot;, &quot;code&quot;: &quot;2&quot;}" title="Klicka för att kopiera som Coding" class="btn-copy"> </button>
+                  </span>
+                </td>
+                <td>
+                  <span class="copy-text-inline">
+                    <button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;https://fhir.inera.se/CodeSystem/sexcode&quot;&gt;&lt;version value=&quot;0.1.0&quot;&gt;&lt;code value=&quot;2&quot;&gt;&lt;/coding&gt;" title="Klicka för att kopiera som Coding" class="btn-copy"> </button>
+                  </span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <a name="x-https://fhir.inera.se/CodeSystem/sexcode-9"> </a>
+                  <code>https://fhir.inera.se/CodeSystem/sexcode</code>
+                </td>
+                <td style="white-space:nowrap">  
+                  <a href="CodeSystem-sexcode-cs.html#sexcode-cs-9">9</a>
+                </td>
+                <td/>
+                <td>Kön ej tillämpligt</td>
+                <td>
+                  <span class="copy-text-inline">
+                    <button data-clipboard-text="{&quot;system&quot;: &quot;https://fhir.inera.se/CodeSystem/sexcode&quot;, &quot;version&quot;: &quot;0.1.0&quot;, &quot;code&quot;: &quot;9&quot;}" title="Klicka för att kopiera som Coding" class="btn-copy"> </button>
+                  </span>
+                </td>
+                <td>
+                  <span class="copy-text-inline">
+                    <button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;https://fhir.inera.se/CodeSystem/sexcode&quot;&gt;&lt;version value=&quot;0.1.0&quot;&gt;&lt;code value=&quot;9&quot;&gt;&lt;/coding&gt;" title="Klicka för att kopiera som Coding" class="btn-copy"> </button>
+                  </span>
+                </td>
+              </tr>
+            </table>
+          </div>
+        </text>
+        <url value="https://fhir.inera.se/ig/ehds-tk/ValueSet/sexcode-vs"/>
+        <version value="0.1.0"/>
+        <name value="SexCodeVS"/>
+        <title value="SexCode — ValueSet"/>
+        <status value="active"/>
+        <date value="2026-06-24T12:10:33+00:00"/>
+        <jurisdiction>
+          <coding>
+            <system value="urn:iso:std:iso:3166"/>
+            <code value="SE"/>
+            <display value="Sweden"/>
+          </coding>
+        </jurisdiction>
+        <expansion>
+          <identifier value="urn:uuid:7c6ca849-bbaa-42a5-9e93-f1d5ac76be2e"/>
+          <timestamp value="2026-06-24T12:13:04+00:00"/>
+          <total value="4"/>
+          <offset value="0"/>
+          <parameter>
+            <name value="displayLanguage"/>
+            <valueCode value="sv"/>
+          </parameter>
+          <parameter>
+            <name value="count"/>
+            <valueInteger value="1000"/>
+          </parameter>
+          <parameter>
+            <name value="offset"/>
+            <valueInteger value="0"/>
+          </parameter>
+          <parameter>
+            <name value="excludeNested"/>
+            <valueBoolean value="false"/>
+          </parameter>
+          <parameter>
+            <name value="used-codesystem"/>
+            <valueUri value="https://fhir.inera.se/CodeSystem/sexcode|0.1.0"/>
+          </parameter>
+          <contains>
+            <system value="https://fhir.inera.se/CodeSystem/sexcode"/>
+            <code value="0"/>
+          </contains>
+          <contains>
+            <system value="https://fhir.inera.se/CodeSystem/sexcode"/>
+            <code value="1"/>
+          </contains>
+          <contains>
+            <system value="https://fhir.inera.se/CodeSystem/sexcode"/>
+            <code value="2"/>
+          </contains>
+          <contains>
+            <system value="https://fhir.inera.se/CodeSystem/sexcode"/>
+            <code value="9"/>
+          </contains>
+        </expansion>
+      </ValueSet>
+    </resource>
+  </entry>
+  <entry>
+    <fullUrl value="https://fhir.inera.se/ig/ehds-tk/ValueSet/typeofcareplan-vs"/>
+    <resource>
+      <ValueSet>
+        <text>
+          <status value="generated"/>
+          <div xmlns="http://www.w3.org/1999/xhtml" data-fhir="generated">
+            <p class="res-header-id"/>
+            <p style="border: black 1px dotted; background-color: #EEEEEE; padding: 8px; margin-bottom: 8px">Expansion utförd internt baserad på 
+              <a href="CodeSystem-typeofcareplan-cs.html">codesystem TypeOfCarePlan v0.1.0 (CodeSystem)</a>
+              <span class="copy-text-inline">
+                <button data-clipboard-text="https://fhir.inera.se/CodeSystem/typeofcareplan-cs|0.1.0" title="Klicka för att kopiera URL" class="btn-copy"> </button>
+              </span>
+            </p>
+            <p>Denna värdemängd innehåller 8 begrepp</p>
+            <table class="codes" data-fhir="generated">
+              <tr>
+                <td>
+                  <b>System</b>
+                </td>
+                <td style="white-space:nowrap">
+                  <b>Kod</b>
+                </td>
+                <td>
+                  <b>Visning (sv)</b>
+                </td>
+                <td>
+                  <b>Definition</b>
+                </td>
+                <td>
+                  <b>JSON</b>
+                </td>
+                <td>
+                  <b>XML</b>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <a name="x-https://fhir.inera.se/CodeSystem/typeofcareplan-cs-SIP"> </a>
+                  <code>https://fhir.inera.se/CodeSystem/typeofcareplan-cs</code>
+                </td>
+                <td style="white-space:nowrap">  
+                  <a href="CodeSystem-typeofcareplan-cs.html#typeofcareplan-cs-SIP">SIP</a>
+                </td>
+                <td/>
+                <td>Samordnad individuell plan</td>
+                <td>
+                  <span class="copy-text-inline">
+                    <button data-clipboard-text="{&quot;system&quot;: &quot;https://fhir.inera.se/CodeSystem/typeofcareplan-cs&quot;, &quot;version&quot;: &quot;0.1.0&quot;, &quot;code&quot;: &quot;SIP&quot;}" title="Klicka för att kopiera som Coding" class="btn-copy"> </button>
+                  </span>
+                </td>
+                <td>
+                  <span class="copy-text-inline">
+                    <button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;https://fhir.inera.se/CodeSystem/typeofcareplan-cs&quot;&gt;&lt;version value=&quot;0.1.0&quot;&gt;&lt;code value=&quot;SIP&quot;&gt;&lt;/coding&gt;" title="Klicka för att kopiera som Coding" class="btn-copy"> </button>
+                  </span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <a name="x-https://fhir.inera.se/CodeSystem/typeofcareplan-cs-SPLPTLRV"> </a>
+                  <code>https://fhir.inera.se/CodeSystem/typeofcareplan-cs</code>
+                </td>
+                <td style="white-space:nowrap">  
+                  <a href="CodeSystem-typeofcareplan-cs.html#typeofcareplan-cs-SPLPTLRV">SPLPTLRV</a>
+                </td>
+                <td/>
+                <td>Samordnad plan enligt LPT och LRV</td>
+                <td>
+                  <span class="copy-text-inline">
+                    <button data-clipboard-text="{&quot;system&quot;: &quot;https://fhir.inera.se/CodeSystem/typeofcareplan-cs&quot;, &quot;version&quot;: &quot;0.1.0&quot;, &quot;code&quot;: &quot;SPLPTLRV&quot;}" title="Klicka för att kopiera som Coding" class="btn-copy"> </button>
+                  </span>
+                </td>
+                <td>
+                  <span class="copy-text-inline">
+                    <button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;https://fhir.inera.se/CodeSystem/typeofcareplan-cs&quot;&gt;&lt;version value=&quot;0.1.0&quot;&gt;&lt;code value=&quot;SPLPTLRV&quot;&gt;&lt;/coding&gt;" title="Klicka för att kopiera som Coding" class="btn-copy"> </button>
+                  </span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <a name="x-https://fhir.inera.se/CodeSystem/typeofcareplan-cs-SPU"> </a>
+                  <code>https://fhir.inera.se/CodeSystem/typeofcareplan-cs</code>
+                </td>
+                <td style="white-space:nowrap">  
+                  <a href="CodeSystem-typeofcareplan-cs.html#typeofcareplan-cs-SPU">SPU</a>
+                </td>
+                <td/>
+                <td>Samordnad plan vid utskrivning</td>
+                <td>
+                  <span class="copy-text-inline">
+                    <button data-clipboard-text="{&quot;system&quot;: &quot;https://fhir.inera.se/CodeSystem/typeofcareplan-cs&quot;, &quot;version&quot;: &quot;0.1.0&quot;, &quot;code&quot;: &quot;SPU&quot;}" title="Klicka för att kopiera som Coding" class="btn-copy"> </button>
+                  </span>
+                </td>
+                <td>
+                  <span class="copy-text-inline">
+                    <button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;https://fhir.inera.se/CodeSystem/typeofcareplan-cs&quot;&gt;&lt;version value=&quot;0.1.0&quot;&gt;&lt;code value=&quot;SPU&quot;&gt;&lt;/coding&gt;" title="Klicka för att kopiera som Coding" class="btn-copy"> </button>
+                  </span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <a name="x-https://fhir.inera.se/CodeSystem/typeofcareplan-cs-VP"> </a>
+                  <code>https://fhir.inera.se/CodeSystem/typeofcareplan-cs</code>
+                </td>
+                <td style="white-space:nowrap">  
+                  <a href="CodeSystem-typeofcareplan-cs.html#typeofcareplan-cs-VP">VP</a>
+                </td>
+                <td/>
+                <td>Vårdplan</td>
+                <td>
+                  <span class="copy-text-inline">
+                    <button data-clipboard-text="{&quot;system&quot;: &quot;https://fhir.inera.se/CodeSystem/typeofcareplan-cs&quot;, &quot;version&quot;: &quot;0.1.0&quot;, &quot;code&quot;: &quot;VP&quot;}" title="Klicka för att kopiera som Coding" class="btn-copy"> </button>
+                  </span>
+                </td>
+                <td>
+                  <span class="copy-text-inline">
+                    <button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;https://fhir.inera.se/CodeSystem/typeofcareplan-cs&quot;&gt;&lt;version value=&quot;0.1.0&quot;&gt;&lt;code value=&quot;VP&quot;&gt;&lt;/coding&gt;" title="Klicka för att kopiera som Coding" class="btn-copy"> </button>
+                  </span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <a name="x-https://fhir.inera.se/CodeSystem/typeofcareplan-cs-HP"> </a>
+                  <code>https://fhir.inera.se/CodeSystem/typeofcareplan-cs</code>
+                </td>
+                <td style="white-space:nowrap">  
+                  <a href="CodeSystem-typeofcareplan-cs.html#typeofcareplan-cs-HP">HP</a>
+                </td>
+                <td/>
+                <td>Habiliteringsplan</td>
+                <td>
+                  <span class="copy-text-inline">
+                    <button data-clipboard-text="{&quot;system&quot;: &quot;https://fhir.inera.se/CodeSystem/typeofcareplan-cs&quot;, &quot;version&quot;: &quot;0.1.0&quot;, &quot;code&quot;: &quot;HP&quot;}" title="Klicka för att kopiera som Coding" class="btn-copy"> </button>
+                  </span>
+                </td>
+                <td>
+                  <span class="copy-text-inline">
+                    <button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;https://fhir.inera.se/CodeSystem/typeofcareplan-cs&quot;&gt;&lt;version value=&quot;0.1.0&quot;&gt;&lt;code value=&quot;HP&quot;&gt;&lt;/coding&gt;" title="Klicka för att kopiera som Coding" class="btn-copy"> </button>
+                  </span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <a name="x-https://fhir.inera.se/CodeSystem/typeofcareplan-cs-RP"> </a>
+                  <code>https://fhir.inera.se/CodeSystem/typeofcareplan-cs</code>
+                </td>
+                <td style="white-space:nowrap">  
+                  <a href="CodeSystem-typeofcareplan-cs.html#typeofcareplan-cs-RP">RP</a>
+                </td>
+                <td/>
+                <td>Rehabiliteringsplan</td>
+                <td>
+                  <span class="copy-text-inline">
+                    <button data-clipboard-text="{&quot;system&quot;: &quot;https://fhir.inera.se/CodeSystem/typeofcareplan-cs&quot;, &quot;version&quot;: &quot;0.1.0&quot;, &quot;code&quot;: &quot;RP&quot;}" title="Klicka för att kopiera som Coding" class="btn-copy"> </button>
+                  </span>
+                </td>
+                <td>
+                  <span class="copy-text-inline">
+                    <button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;https://fhir.inera.se/CodeSystem/typeofcareplan-cs&quot;&gt;&lt;version value=&quot;0.1.0&quot;&gt;&lt;code value=&quot;RP&quot;&gt;&lt;/coding&gt;" title="Klicka för att kopiera som Coding" class="btn-copy"> </button>
+                  </span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <a name="x-https://fhir.inera.se/CodeSystem/typeofcareplan-cs-GP"> </a>
+                  <code>https://fhir.inera.se/CodeSystem/typeofcareplan-cs</code>
+                </td>
+                <td style="white-space:nowrap">  
+                  <a href="CodeSystem-typeofcareplan-cs.html#typeofcareplan-cs-GP">GP</a>
+                </td>
+                <td/>
+                <td>Genomförandeplan</td>
+                <td>
+                  <span class="copy-text-inline">
+                    <button data-clipboard-text="{&quot;system&quot;: &quot;https://fhir.inera.se/CodeSystem/typeofcareplan-cs&quot;, &quot;version&quot;: &quot;0.1.0&quot;, &quot;code&quot;: &quot;GP&quot;}" title="Klicka för att kopiera som Coding" class="btn-copy"> </button>
+                  </span>
+                </td>
+                <td>
+                  <span class="copy-text-inline">
+                    <button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;https://fhir.inera.se/CodeSystem/typeofcareplan-cs&quot;&gt;&lt;version value=&quot;0.1.0&quot;&gt;&lt;code value=&quot;GP&quot;&gt;&lt;/coding&gt;" title="Klicka för att kopiera som Coding" class="btn-copy"> </button>
+                  </span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <a name="x-https://fhir.inera.se/CodeSystem/typeofcareplan-cs-SVP"> </a>
+                  <code>https://fhir.inera.se/CodeSystem/typeofcareplan-cs</code>
+                </td>
+                <td style="white-space:nowrap">  
+                  <a href="CodeSystem-typeofcareplan-cs.html#typeofcareplan-cs-SVP">SVP</a>
+                </td>
+                <td/>
+                <td>Standardiserad vårdplan</td>
+                <td>
+                  <span class="copy-text-inline">
+                    <button data-clipboard-text="{&quot;system&quot;: &quot;https://fhir.inera.se/CodeSystem/typeofcareplan-cs&quot;, &quot;version&quot;: &quot;0.1.0&quot;, &quot;code&quot;: &quot;SVP&quot;}" title="Klicka för att kopiera som Coding" class="btn-copy"> </button>
+                  </span>
+                </td>
+                <td>
+                  <span class="copy-text-inline">
+                    <button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;https://fhir.inera.se/CodeSystem/typeofcareplan-cs&quot;&gt;&lt;version value=&quot;0.1.0&quot;&gt;&lt;code value=&quot;SVP&quot;&gt;&lt;/coding&gt;" title="Klicka för att kopiera som Coding" class="btn-copy"> </button>
+                  </span>
+                </td>
+              </tr>
+            </table>
+          </div>
+        </text>
+        <url value="https://fhir.inera.se/ig/ehds-tk/ValueSet/typeofcareplan-vs"/>
+        <version value="0.1.0"/>
+        <name value="TypeOfCarePlanVS"/>
+        <title value="TypeOfCarePlan — ValueSet"/>
+        <status value="active"/>
+        <date value="2026-06-24T12:10:33+00:00"/>
+        <jurisdiction>
+          <coding>
+            <system value="urn:iso:std:iso:3166"/>
+            <code value="SE"/>
+            <display value="Sweden"/>
+          </coding>
+        </jurisdiction>
+        <expansion>
+          <identifier value="urn:uuid:f67ab7d8-58fa-4a44-83d1-d98e5bccc912"/>
+          <timestamp value="2026-06-24T12:13:04+00:00"/>
+          <total value="8"/>
+          <offset value="0"/>
+          <parameter>
+            <name value="displayLanguage"/>
+            <valueCode value="sv"/>
+          </parameter>
+          <parameter>
+            <name value="count"/>
+            <valueInteger value="1000"/>
+          </parameter>
+          <parameter>
+            <name value="offset"/>
+            <valueInteger value="0"/>
+          </parameter>
+          <parameter>
+            <name value="excludeNested"/>
+            <valueBoolean value="false"/>
+          </parameter>
+          <parameter>
+            <name value="used-codesystem"/>
+            <valueUri value="https://fhir.inera.se/CodeSystem/typeofcareplan-cs|0.1.0"/>
+          </parameter>
+          <contains>
+            <system value="https://fhir.inera.se/CodeSystem/typeofcareplan-cs"/>
+            <code value="SIP"/>
+          </contains>
+          <contains>
+            <system value="https://fhir.inera.se/CodeSystem/typeofcareplan-cs"/>
+            <code value="SPLPTLRV"/>
+          </contains>
+          <contains>
+            <system value="https://fhir.inera.se/CodeSystem/typeofcareplan-cs"/>
+            <code value="SPU"/>
+          </contains>
+          <contains>
+            <system value="https://fhir.inera.se/CodeSystem/typeofcareplan-cs"/>
+            <code value="VP"/>
+          </contains>
+          <contains>
+            <system value="https://fhir.inera.se/CodeSystem/typeofcareplan-cs"/>
+            <code value="HP"/>
+          </contains>
+          <contains>
+            <system value="https://fhir.inera.se/CodeSystem/typeofcareplan-cs"/>
+            <code value="RP"/>
+          </contains>
+          <contains>
+            <system value="https://fhir.inera.se/CodeSystem/typeofcareplan-cs"/>
+            <code value="GP"/>
+          </contains>
+          <contains>
+            <system value="https://fhir.inera.se/CodeSystem/typeofcareplan-cs"/>
+            <code value="SVP"/>
+          </contains>
+        </expansion>
+      </ValueSet>
+    </resource>
+  </entry>
+  <entry>
+    <fullUrl value="https://fhir.inera.se/ig/ehds-tk/ValueSet/typeofleavecode-vs"/>
+    <resource>
+      <ValueSet>
+        <text>
+          <status value="generated"/>
+          <div xmlns="http://www.w3.org/1999/xhtml" data-fhir="generated">
+            <p class="res-header-id"/>
+            <p style="border: black 1px dotted; background-color: #EEEEEE; padding: 8px; margin-bottom: 8px">Expansion utförd internt baserad på 
+              <a href="CodeSystem-typeofleavecode-cs.html">codesystem TypeOfLeaveCode v0.1.0 (CodeSystem)</a>
+              <span class="copy-text-inline">
+                <button data-clipboard-text="https://fhir.inera.se/CodeSystem/typeofleavecode|0.1.0" title="Klicka för att kopiera URL" class="btn-copy"> </button>
+              </span>
+            </p>
+            <p>Denna värdemängd innehåller 3 begrepp</p>
+            <table class="codes" data-fhir="generated">
+              <tr>
+                <td>
+                  <b>System</b>
+                </td>
+                <td style="white-space:nowrap">
+                  <b>Kod</b>
+                </td>
+                <td>
+                  <b>Visning (sv)</b>
+                </td>
+                <td>
+                  <b>Definition</b>
+                </td>
+                <td>
+                  <b>JSON</b>
+                </td>
+                <td>
+                  <b>XML</b>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <a name="x-https://fhir.inera.se/CodeSystem/typeofleavecode-0"> </a>
+                  <code>https://fhir.inera.se/CodeSystem/typeofleavecode</code>
+                </td>
+                <td style="white-space:nowrap">  
+                  <a href="CodeSystem-typeofleavecode-cs.html#typeofleavecode-cs-0">0</a>
+                </td>
+                <td/>
+                <td>Sjukskrivning under graviditet</td>
+                <td>
+                  <span class="copy-text-inline">
+                    <button data-clipboard-text="{&quot;system&quot;: &quot;https://fhir.inera.se/CodeSystem/typeofleavecode&quot;, &quot;version&quot;: &quot;0.1.0&quot;, &quot;code&quot;: &quot;0&quot;}" title="Klicka för att kopiera som Coding" class="btn-copy"> </button>
+                  </span>
+                </td>
+                <td>
+                  <span class="copy-text-inline">
+                    <button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;https://fhir.inera.se/CodeSystem/typeofleavecode&quot;&gt;&lt;version value=&quot;0.1.0&quot;&gt;&lt;code value=&quot;0&quot;&gt;&lt;/coding&gt;" title="Klicka för att kopiera som Coding" class="btn-copy"> </button>
+                  </span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <a name="x-https://fhir.inera.se/CodeSystem/typeofleavecode-1"> </a>
+                  <code>https://fhir.inera.se/CodeSystem/typeofleavecode</code>
+                </td>
+                <td style="white-space:nowrap">  
+                  <a href="CodeSystem-typeofleavecode-cs.html#typeofleavecode-cs-1">1</a>
+                </td>
+                <td/>
+                <td>Havandekapsledighet</td>
+                <td>
+                  <span class="copy-text-inline">
+                    <button data-clipboard-text="{&quot;system&quot;: &quot;https://fhir.inera.se/CodeSystem/typeofleavecode&quot;, &quot;version&quot;: &quot;0.1.0&quot;, &quot;code&quot;: &quot;1&quot;}" title="Klicka för att kopiera som Coding" class="btn-copy"> </button>
+                  </span>
+                </td>
+                <td>
+                  <span class="copy-text-inline">
+                    <button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;https://fhir.inera.se/CodeSystem/typeofleavecode&quot;&gt;&lt;version value=&quot;0.1.0&quot;&gt;&lt;code value=&quot;1&quot;&gt;&lt;/coding&gt;" title="Klicka för att kopiera som Coding" class="btn-copy"> </button>
+                  </span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <a name="x-https://fhir.inera.se/CodeSystem/typeofleavecode-2"> </a>
+                  <code>https://fhir.inera.se/CodeSystem/typeofleavecode</code>
+                </td>
+                <td style="white-space:nowrap">  
+                  <a href="CodeSystem-typeofleavecode-cs.html#typeofleavecode-cs-2">2</a>
+                </td>
+                <td/>
+                <td>Föräldrarledighet</td>
+                <td>
+                  <span class="copy-text-inline">
+                    <button data-clipboard-text="{&quot;system&quot;: &quot;https://fhir.inera.se/CodeSystem/typeofleavecode&quot;, &quot;version&quot;: &quot;0.1.0&quot;, &quot;code&quot;: &quot;2&quot;}" title="Klicka för att kopiera som Coding" class="btn-copy"> </button>
+                  </span>
+                </td>
+                <td>
+                  <span class="copy-text-inline">
+                    <button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;https://fhir.inera.se/CodeSystem/typeofleavecode&quot;&gt;&lt;version value=&quot;0.1.0&quot;&gt;&lt;code value=&quot;2&quot;&gt;&lt;/coding&gt;" title="Klicka för att kopiera som Coding" class="btn-copy"> </button>
+                  </span>
+                </td>
+              </tr>
+            </table>
+          </div>
+        </text>
+        <url value="https://fhir.inera.se/ig/ehds-tk/ValueSet/typeofleavecode-vs"/>
+        <version value="0.1.0"/>
+        <name value="TypeOfLeaveCodeVS"/>
+        <title value="TypeOfLeaveCode — ValueSet"/>
+        <status value="active"/>
+        <date value="2026-06-24T12:10:33+00:00"/>
+        <jurisdiction>
+          <coding>
+            <system value="urn:iso:std:iso:3166"/>
+            <code value="SE"/>
+            <display value="Sweden"/>
+          </coding>
+        </jurisdiction>
+        <expansion>
+          <identifier value="urn:uuid:5ca0f07f-52af-4cb2-bd73-d8c0c139f73a"/>
+          <timestamp value="2026-06-24T12:13:04+00:00"/>
+          <total value="3"/>
+          <offset value="0"/>
+          <parameter>
+            <name value="displayLanguage"/>
+            <valueCode value="sv"/>
+          </parameter>
+          <parameter>
+            <name value="count"/>
+            <valueInteger value="1000"/>
+          </parameter>
+          <parameter>
+            <name value="offset"/>
+            <valueInteger value="0"/>
+          </parameter>
+          <parameter>
+            <name value="excludeNested"/>
+            <valueBoolean value="false"/>
+          </parameter>
+          <parameter>
+            <name value="used-codesystem"/>
+            <valueUri value="https://fhir.inera.se/CodeSystem/typeofleavecode|0.1.0"/>
+          </parameter>
+          <contains>
+            <system value="https://fhir.inera.se/CodeSystem/typeofleavecode"/>
+            <code value="0"/>
+          </contains>
+          <contains>
+            <system value="https://fhir.inera.se/CodeSystem/typeofleavecode"/>
+            <code value="1"/>
+          </contains>
+          <contains>
+            <system value="https://fhir.inera.se/CodeSystem/typeofleavecode"/>
+            <code value="2"/>
+          </contains>
+        </expansion>
+      </ValueSet>
+    </resource>
+  </entry>
+  <entry>
+    <fullUrl value="https://fhir.inera.se/ig/ehds-tk/ValueSet/typeofprescription-vs"/>
+    <resource>
+      <ValueSet>
+        <text>
+          <status value="generated"/>
+          <div xmlns="http://www.w3.org/1999/xhtml" data-fhir="generated">
+            <p class="res-header-id"/>
+            <p style="border: black 1px dotted; background-color: #EEEEEE; padding: 8px; margin-bottom: 8px">Expansion utförd internt baserad på 
+              <a href="CodeSystem-typeofprescription-cs.html">codesystem TypeOfPrescription v0.1.0 (CodeSystem)</a>
+              <span class="copy-text-inline">
+                <button data-clipboard-text="https://fhir.inera.se/CodeSystem/typeofprescription|0.1.0" title="Klicka för att kopiera URL" class="btn-copy"> </button>
+              </span>
+            </p>
+            <p>Denna värdemängd innehåller 2 begrepp</p>
+            <table class="codes" data-fhir="generated">
+              <tr>
+                <td>
+                  <b>System</b>
+                </td>
+                <td style="white-space:nowrap">
+                  <b>Kod</b>
+                </td>
+                <td>
+                  <b>Visning (sv)</b>
+                </td>
+                <td>
+                  <b>Definition</b>
+                </td>
+                <td>
+                  <b>JSON</b>
+                </td>
+                <td>
+                  <b>XML</b>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <a name="x-https://fhir.inera.se/CodeSystem/typeofprescription-I"> </a>
+                  <code>https://fhir.inera.se/CodeSystem/typeofprescription</code>
+                </td>
+                <td style="white-space:nowrap">  
+                  <a href="CodeSystem-typeofprescription-cs.html#typeofprescription-cs-I">I</a>
+                </td>
+                <td/>
+                <td>Ordination som innebär att läkemedelsbehandling påbörjas</td>
+                <td>
+                  <span class="copy-text-inline">
+                    <button data-clipboard-text="{&quot;system&quot;: &quot;https://fhir.inera.se/CodeSystem/typeofprescription&quot;, &quot;version&quot;: &quot;0.1.0&quot;, &quot;code&quot;: &quot;I&quot;}" title="Klicka för att kopiera som Coding" class="btn-copy"> </button>
+                  </span>
+                </td>
+                <td>
+                  <span class="copy-text-inline">
+                    <button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;https://fhir.inera.se/CodeSystem/typeofprescription&quot;&gt;&lt;version value=&quot;0.1.0&quot;&gt;&lt;code value=&quot;I&quot;&gt;&lt;/coding&gt;" title="Klicka för att kopiera som Coding" class="btn-copy"> </button>
+                  </span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <a name="x-https://fhir.inera.se/CodeSystem/typeofprescription-U"> </a>
+                  <code>https://fhir.inera.se/CodeSystem/typeofprescription</code>
+                </td>
+                <td style="white-space:nowrap">  
+                  <a href="CodeSystem-typeofprescription-cs.html#typeofprescription-cs-U">U</a>
+                </td>
+                <td/>
+                <td>Ordination som innebär att läkemedelsbehandling avslutas</td>
+                <td>
+                  <span class="copy-text-inline">
+                    <button data-clipboard-text="{&quot;system&quot;: &quot;https://fhir.inera.se/CodeSystem/typeofprescription&quot;, &quot;version&quot;: &quot;0.1.0&quot;, &quot;code&quot;: &quot;U&quot;}" title="Klicka för att kopiera som Coding" class="btn-copy"> </button>
+                  </span>
+                </td>
+                <td>
+                  <span class="copy-text-inline">
+                    <button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;https://fhir.inera.se/CodeSystem/typeofprescription&quot;&gt;&lt;version value=&quot;0.1.0&quot;&gt;&lt;code value=&quot;U&quot;&gt;&lt;/coding&gt;" title="Klicka för att kopiera som Coding" class="btn-copy"> </button>
+                  </span>
+                </td>
+              </tr>
+            </table>
+          </div>
+        </text>
+        <url value="https://fhir.inera.se/ig/ehds-tk/ValueSet/typeofprescription-vs"/>
+        <version value="0.1.0"/>
+        <name value="TypeOfPrescriptionVS"/>
+        <title value="TypeOfPrescription — ValueSet"/>
+        <status value="active"/>
+        <date value="2026-06-24T12:10:33+00:00"/>
+        <jurisdiction>
+          <coding>
+            <system value="urn:iso:std:iso:3166"/>
+            <code value="SE"/>
+            <display value="Sweden"/>
+          </coding>
+        </jurisdiction>
+        <expansion>
+          <identifier value="urn:uuid:2cceb934-7e0d-4873-918e-3b1662b497de"/>
+          <timestamp value="2026-06-24T12:13:04+00:00"/>
+          <total value="2"/>
+          <offset value="0"/>
+          <parameter>
+            <name value="displayLanguage"/>
+            <valueCode value="sv"/>
+          </parameter>
+          <parameter>
+            <name value="count"/>
+            <valueInteger value="1000"/>
+          </parameter>
+          <parameter>
+            <name value="offset"/>
+            <valueInteger value="0"/>
+          </parameter>
+          <parameter>
+            <name value="excludeNested"/>
+            <valueBoolean value="false"/>
+          </parameter>
+          <parameter>
+            <name value="used-codesystem"/>
+            <valueUri value="https://fhir.inera.se/CodeSystem/typeofprescription|0.1.0"/>
+          </parameter>
+          <contains>
+            <system value="https://fhir.inera.se/CodeSystem/typeofprescription"/>
+            <code value="I"/>
+          </contains>
+          <contains>
+            <system value="https://fhir.inera.se/CodeSystem/typeofprescription"/>
+            <code value="U"/>
+          </contains>
+        </expansion>
+      </ValueSet>
+    </resource>
+  </entry>
+  <entry>
+    <fullUrl value="https://fhir.inera.se/ig/ehds-tk/ValueSet/typeofresultcode-vs"/>
+    <resource>
+      <ValueSet>
+        <text>
+          <status value="generated"/>
+          <div xmlns="http://www.w3.org/1999/xhtml" data-fhir="generated">
+            <p class="res-header-id"/>
+            <p style="border: black 1px dotted; background-color: #EEEEEE; padding: 8px; margin-bottom: 8px">Expansion utförd internt baserad på 
+              <a href="CodeSystem-typeofresultcode-cs.html">codesystem TypeOfResultCode v0.1.0 (CodeSystem)</a>
+              <span class="copy-text-inline">
+                <button data-clipboard-text="https://fhir.inera.se/CodeSystem/typeofresultcode|0.1.0" title="Klicka för att kopiera URL" class="btn-copy"> </button>
+              </span>
+            </p>
+            <p>Denna värdemängd innehåller 3 begrepp</p>
+            <table class="codes" data-fhir="generated">
+              <tr>
+                <td>
+                  <b>System</b>
+                </td>
+                <td style="white-space:nowrap">
+                  <b>Kod</b>
+                </td>
+                <td>
+                  <b>Visning (sv)</b>
+                </td>
+                <td>
+                  <b>Definition</b>
+                </td>
+                <td>
+                  <b>JSON</b>
+                </td>
+                <td>
+                  <b>XML</b>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <a name="x-https://fhir.inera.se/CodeSystem/typeofresultcode-PREL"> </a>
+                  <code>https://fhir.inera.se/CodeSystem/typeofresultcode</code>
+                </td>
+                <td style="white-space:nowrap">  
+                  <a href="CodeSystem-typeofresultcode-cs.html#typeofresultcode-cs-PREL">PREL</a>
+                </td>
+                <td/>
+                <td>Preliminärt svar</td>
+                <td>
+                  <span class="copy-text-inline">
+                    <button data-clipboard-text="{&quot;system&quot;: &quot;https://fhir.inera.se/CodeSystem/typeofresultcode&quot;, &quot;version&quot;: &quot;0.1.0&quot;, &quot;code&quot;: &quot;PREL&quot;}" title="Klicka för att kopiera som Coding" class="btn-copy"> </button>
+                  </span>
+                </td>
+                <td>
+                  <span class="copy-text-inline">
+                    <button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;https://fhir.inera.se/CodeSystem/typeofresultcode&quot;&gt;&lt;version value=&quot;0.1.0&quot;&gt;&lt;code value=&quot;PREL&quot;&gt;&lt;/coding&gt;" title="Klicka för att kopiera som Coding" class="btn-copy"> </button>
+                  </span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <a name="x-https://fhir.inera.se/CodeSystem/typeofresultcode-DEF"> </a>
+                  <code>https://fhir.inera.se/CodeSystem/typeofresultcode</code>
+                </td>
+                <td style="white-space:nowrap">  
+                  <a href="CodeSystem-typeofresultcode-cs.html#typeofresultcode-cs-DEF">DEF</a>
+                </td>
+                <td/>
+                <td>Definitivt svar</td>
+                <td>
+                  <span class="copy-text-inline">
+                    <button data-clipboard-text="{&quot;system&quot;: &quot;https://fhir.inera.se/CodeSystem/typeofresultcode&quot;, &quot;version&quot;: &quot;0.1.0&quot;, &quot;code&quot;: &quot;DEF&quot;}" title="Klicka för att kopiera som Coding" class="btn-copy"> </button>
+                  </span>
+                </td>
+                <td>
+                  <span class="copy-text-inline">
+                    <button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;https://fhir.inera.se/CodeSystem/typeofresultcode&quot;&gt;&lt;version value=&quot;0.1.0&quot;&gt;&lt;code value=&quot;DEF&quot;&gt;&lt;/coding&gt;" title="Klicka för att kopiera som Coding" class="btn-copy"> </button>
+                  </span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <a name="x-https://fhir.inera.se/CodeSystem/typeofresultcode-TILL"> </a>
+                  <code>https://fhir.inera.se/CodeSystem/typeofresultcode</code>
+                </td>
+                <td style="white-space:nowrap">  
+                  <a href="CodeSystem-typeofresultcode-cs.html#typeofresultcode-cs-TILL">TILL</a>
+                </td>
+                <td/>
+                <td>Tilläggssvar</td>
+                <td>
+                  <span class="copy-text-inline">
+                    <button data-clipboard-text="{&quot;system&quot;: &quot;https://fhir.inera.se/CodeSystem/typeofresultcode&quot;, &quot;version&quot;: &quot;0.1.0&quot;, &quot;code&quot;: &quot;TILL&quot;}" title="Klicka för att kopiera som Coding" class="btn-copy"> </button>
+                  </span>
+                </td>
+                <td>
+                  <span class="copy-text-inline">
+                    <button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;https://fhir.inera.se/CodeSystem/typeofresultcode&quot;&gt;&lt;version value=&quot;0.1.0&quot;&gt;&lt;code value=&quot;TILL&quot;&gt;&lt;/coding&gt;" title="Klicka för att kopiera som Coding" class="btn-copy"> </button>
+                  </span>
+                </td>
+              </tr>
+            </table>
+          </div>
+        </text>
+        <url value="https://fhir.inera.se/ig/ehds-tk/ValueSet/typeofresultcode-vs"/>
+        <version value="0.1.0"/>
+        <name value="TypeOfResultCodeVS"/>
+        <title value="TypeOfResultCode — ValueSet"/>
+        <status value="active"/>
+        <date value="2026-06-24T12:10:33+00:00"/>
+        <jurisdiction>
+          <coding>
+            <system value="urn:iso:std:iso:3166"/>
+            <code value="SE"/>
+            <display value="Sweden"/>
+          </coding>
+        </jurisdiction>
+        <expansion>
+          <identifier value="urn:uuid:ed8160cd-a3b2-47d7-bd18-6f4cad5e24ae"/>
+          <timestamp value="2026-06-24T12:13:04+00:00"/>
+          <total value="3"/>
+          <offset value="0"/>
+          <parameter>
+            <name value="displayLanguage"/>
+            <valueCode value="sv"/>
+          </parameter>
+          <parameter>
+            <name value="count"/>
+            <valueInteger value="1000"/>
+          </parameter>
+          <parameter>
+            <name value="offset"/>
+            <valueInteger value="0"/>
+          </parameter>
+          <parameter>
+            <name value="excludeNested"/>
+            <valueBoolean value="false"/>
+          </parameter>
+          <parameter>
+            <name value="used-codesystem"/>
+            <valueUri value="https://fhir.inera.se/CodeSystem/typeofresultcode|0.1.0"/>
+          </parameter>
+          <contains>
+            <system value="https://fhir.inera.se/CodeSystem/typeofresultcode"/>
+            <code value="PREL"/>
+          </contains>
+          <contains>
+            <system value="https://fhir.inera.se/CodeSystem/typeofresultcode"/>
+            <code value="DEF"/>
+          </contains>
+          <contains>
+            <system value="https://fhir.inera.se/CodeSystem/typeofresultcode"/>
+            <code value="TILL"/>
+          </contains>
+        </expansion>
+      </ValueSet>
+    </resource>
+  </entry>
+</Bundle>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ValueSet xmlns="http://hl7.org/fhir">
+  <id value="growth-observation-type-vs"/>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Genererad berättande text: ValueSet growth-observation-type-vs</b></p><a name="growth-observation-type-vs"> </a><a name="hcgrowth-observation-type-vs"> </a><ul><li>Include dessa koder enligt definitionen i <a href="http://www.snomed.org/"><code>http://snomed.info/sct</code></a><span title="Versionen är inte uttryckligen angiven. Ingen matchande Kodsystem hittades"> version Ej angiven (använd senaste från terminologiserver)</span><table class="none"><tr><td style="white-space:nowrap"><b>Kod</b></td><td><b>Visning</b></td></tr><tr><td><a href="http://snomed.info/id/1153637007">1153637007</a></td><td>Kroppslängd</td></tr><tr><td><a href="http://snomed.info/id/50373000">50373000</a></td><td>Mått på kroppslängd</td></tr><tr><td><a href="http://snomed.info/id/248334005">248334005</a></td><td>Längd i liggande (bakåtkompatibel – ej för nyanslutning)</td></tr><tr><td><a href="http://snomed.info/id/27113001">27113001</a></td><td>Kroppsvikt</td></tr><tr><td><a href="http://snomed.info/id/363812007">363812007</a></td><td>Huvudomfång</td></tr><tr><td><a href="http://snomed.info/id/412726003">412726003</a></td><td>Graviditetslängd vid födelse</td></tr></table></li></ul></div>
+  </text>
+  <url value="https://fhir.inera.se/ig/ehds-tk/ValueSet/growth-observation-type-vs"/>
+  <version value="0.1.0"/>
+  <name value="GrowthObservationTypeVS"/>
+  <title value="Tillväxtkurva – observationstyper (IoÖ Tillväxtkurva v3)"/>
+  <status value="draft"/>
+  <date value="2026-06-24T12:10:33+00:00"/>
+  <publisher value="Inera AB"/>
+  <contact>
+    <name value="Inera AB"/>
+    <telecom>
+      <system value="url"/>
+      <value value="https://www.inera.se"/>
+    </telecom>
+  </contact>
+  <description value="SNOMED CT-koder för tillväxtmätningar enligt Interaktionsöverenskommelse&#xA;Tillväxtkurva för barn och ungdom v3 (Inera, 2023-05-15).&#xA;&#xA;Alla koder från kodsystemet SNOMED CT SE (OID 1.2.752.116.2.1.1).&#xA;&#xA;Koder:&#xA;- 1153637007 | Kroppslängd | (primärkod för längd)&#xA;- 50373000   | Mått på kroppslängd | (alternativkod för längd)&#xA;- 248334005  | Längd i liggande | (bakåtkompatibel – ej för nyanslutning)&#xA;- 27113001   | Kroppsvikt |&#xA;- 363812007  | Huvudomfång |&#xA;- 412726003  | Graviditetslängd vid födelse |"/>
+  <jurisdiction>
+    <coding>
+      <system value="urn:iso:std:iso:3166"/>
+      <code value="SE"/>
+      <display value="Sweden"/>
+    </coding>
+  </jurisdiction>
+  <compose>
+    <include>
+      <system value="http://snomed.info/sct"/>
+      <concept>
+        <code value="1153637007"/>
+        <display value="Kroppslängd"/>
+      </concept>
+      <concept>
+        <code value="50373000"/>
+        <display value="Mått på kroppslängd"/>
+      </concept>
+      <concept>
+        <code value="248334005"/>
+        <display value="Längd i liggande (bakåtkompatibel – ej för nyanslutning)"/>
+      </concept>
+      <concept>
+        <code value="27113001"/>
+        <display value="Kroppsvikt"/>
+      </concept>
+      <concept>
+        <code value="363812007"/>
+        <display value="Huvudomfång"/>
+      </concept>
+      <concept>
+        <code value="412726003"/>
+        <display value="Graviditetslängd vid födelse"/>
+      </concept>
+    </include>
+  </compose>
+</ValueSet>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<CodeSystem xmlns="http://hl7.org/fhir">
+  <id value="resultcode-cs"/>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Genererad berättande text: CodeSystem resultcode-cs</b></p><a name="resultcode-cs"> </a><a name="hcresultcode-cs"> </a><p>Detta  kodsystem <code>https://fhir.inera.se/CodeSystem/resultcode-actoutcome</code> definierar följande koder:</p><table class="codes"><tr><td style="white-space:nowrap"><b>Kod</b></td><td><b>Visning</b></td><td><b>Definition</b></td></tr><tr><td style="white-space:nowrap">OK<a name="resultcode-cs-OK"> </a></td><td>OK</td><td>Begäran genomfördes utan fel</td></tr><tr><td style="white-space:nowrap">INFO<a name="resultcode-cs-INFO"> </a></td><td>Info</td><td>Begäran genomfördes men med informationsmeddelande</td></tr><tr><td style="white-space:nowrap">ERROR<a name="resultcode-cs-ERROR"> </a></td><td>Fel</td><td>Begäran misslyckades med logiskt fel</td></tr></table></div>
+  </text>
+  <url value="https://fhir.inera.se/CodeSystem/resultcode-actoutcome"/>
+  <version value="0.1.0"/>
+  <name value="ResultCodeCS"/>
+  <title value="ResultCode"/>
+  <status value="active"/>
+  <date value="2026-06-24T12:10:33+00:00"/>
+  <publisher value="Inera AB"/>
+  <contact>
+    <name value="Inera AB"/>
+    <telecom>
+      <system value="url"/>
+      <value value="https://www.inera.se"/>
+    </telecom>
+  </contact>
+  <description value="Kodverk för resultatkod i svar från tjänstekontrakten i domänen clinicalprocess:activityprescription:actoutcome."/>
+  <jurisdiction>
+    <coding>
+      <system value="urn:iso:std:iso:3166"/>
+      <code value="SE"/>
+      <display value="Sweden"/>
+    </coding>
+  </jurisdiction>
+  <content value="complete"/>
+  <count value="3"/>
+  <concept>
+    <code value="OK"/>
+    <display value="OK"/>
+    <definition value="Begäran genomfördes utan fel"/>
+  </concept>
+  <concept>
+    <code value="INFO"/>
+    <display value="Info"/>
+    <definition value="Begäran genomfördes men med informationsmeddelande"/>
+  </concept>
+  <concept>
+    <code value="ERROR"/>
+    <display value="Fel"/>
+    <definition value="Begäran misslyckades med logiskt fel"/>
+  </concept>
+</CodeSystem>

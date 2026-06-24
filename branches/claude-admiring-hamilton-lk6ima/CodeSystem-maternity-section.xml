@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<CodeSystem xmlns="http://hl7.org/fhir">
+  <id value="maternity-section"/>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Genererad berättande text: CodeSystem maternity-section</b></p><a name="maternity-section"> </a><a name="hcmaternity-section"> </a><p>Detta case-sensitive kodsystem <code>https://fhir.inera.se/ig/ehds-tk/CodeSystem/maternity-section</code> definierar följande koder:</p><table class="codes"><tr><td style="white-space:nowrap"><b>Kod</b></td><td><b>Visning</b></td><td><b>Definition</b></td></tr><tr><td style="white-space:nowrap">registration<a name="maternity-section-registration"> </a></td><td>Inskrivning mödravård</td><td>Inskrivningsuppgifter (maternityMedicalRecordBody.registrationRecord)</td></tr><tr><td style="white-space:nowrap">checkup<a name="maternity-section-checkup"> </a></td><td>Graviditetskontroll</td><td>Graviditetskontrolldata (maternityMedicalRecordBody.pregnancyCheckupRecord)</td></tr><tr><td style="white-space:nowrap">post-delivery<a name="maternity-section-post-delivery"> </a></td><td>Eftervård</td><td>Eftervårdsdata (maternityMedicalRecordBody.postDeliveryRecord)</td></tr></table></div>
+  </text>
+  <url value="https://fhir.inera.se/ig/ehds-tk/CodeSystem/maternity-section"/>
+  <version value="0.1.0"/>
+  <name value="MaternityMedicalSectionCS"/>
+  <title value="MaternityMedicalSection"/>
+  <status value="active"/>
+  <date value="2026-06-24T12:10:33+00:00"/>
+  <publisher value="Inera AB"/>
+  <contact>
+    <name value="Inera AB"/>
+    <telecom>
+      <system value="url"/>
+      <value value="https://www.inera.se"/>
+    </telecom>
+  </contact>
+  <description value="Diskriminatorkoder för de tre sektionerna i mödravårdsjournalen (GetMaternityMedicalHistory v2.0). Varje Observation-resurs som skapas ur ett maternityMedicalRecord sätter Observation.code till en av dessa koder."/>
+  <jurisdiction>
+    <coding>
+      <system value="urn:iso:std:iso:3166"/>
+      <code value="SE"/>
+      <display value="Sweden"/>
+    </coding>
+  </jurisdiction>
+  <caseSensitive value="true"/>
+  <content value="complete"/>
+  <count value="3"/>
+  <concept>
+    <code value="registration"/>
+    <display value="Inskrivning mödravård"/>
+    <definition value="Inskrivningsuppgifter (maternityMedicalRecordBody.registrationRecord)"/>
+  </concept>
+  <concept>
+    <code value="checkup"/>
+    <display value="Graviditetskontroll"/>
+    <definition value="Graviditetskontrolldata (maternityMedicalRecordBody.pregnancyCheckupRecord)"/>
+  </concept>
+  <concept>
+    <code value="post-delivery"/>
+    <display value="Eftervård"/>
+    <definition value="Eftervårdsdata (maternityMedicalRecordBody.postDeliveryRecord)"/>
+  </concept>
+</CodeSystem>

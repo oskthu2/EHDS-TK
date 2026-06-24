@@ -1,0 +1,56 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://fhir.inera.se/ig/ehds-tk/CodeSystem/maternity-section> a fhir:CodeSystem ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "maternity-section"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Genererad berättande text: CodeSystem maternity-section</b></p><a name=\"maternity-section\"> </a><a name=\"hcmaternity-section\"> </a><p>Detta case-sensitive kodsystem <code>https://fhir.inera.se/ig/ehds-tk/CodeSystem/maternity-section</code> definierar följande koder:</p><table class=\"codes\"><tr><td style=\"white-space:nowrap\"><b>Kod</b></td><td><b>Visning</b></td><td><b>Definition</b></td></tr><tr><td style=\"white-space:nowrap\">registration<a name=\"maternity-section-registration\"> </a></td><td>Inskrivning mödravård</td><td>Inskrivningsuppgifter (maternityMedicalRecordBody.registrationRecord)</td></tr><tr><td style=\"white-space:nowrap\">checkup<a name=\"maternity-section-checkup\"> </a></td><td>Graviditetskontroll</td><td>Graviditetskontrolldata (maternityMedicalRecordBody.pregnancyCheckupRecord)</td></tr><tr><td style=\"white-space:nowrap\">post-delivery<a name=\"maternity-section-post-delivery\"> </a></td><td>Eftervård</td><td>Eftervårdsdata (maternityMedicalRecordBody.postDeliveryRecord)</td></tr></table></div>"^^rdf:XMLLiteral ]
+  ] ; # 
+  fhir:url [ fhir:v "https://fhir.inera.se/ig/ehds-tk/CodeSystem/maternity-section"^^xsd:anyURI] ; # 
+  fhir:version [ fhir:v "0.1.0"] ; # 
+  fhir:name [ fhir:v "MaternityMedicalSectionCS"] ; # 
+  fhir:title [ fhir:v "MaternityMedicalSection"] ; # 
+  fhir:status [ fhir:v "active"] ; # 
+  fhir:date [ fhir:v "2026-06-24T12:10:33+00:00"^^xsd:dateTime] ; # 
+  fhir:publisher [ fhir:v "Inera AB"] ; # 
+  fhir:contact ( [
+     fhir:name [ fhir:v "Inera AB" ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "url" ] ;
+       fhir:value [ fhir:v "https://www.inera.se" ]
+     ] )
+  ] ) ; # 
+  fhir:description [ fhir:v "Diskriminatorkoder för de tre sektionerna i mödravårdsjournalen (GetMaternityMedicalHistory v2.0). Varje Observation-resurs som skapas ur ett maternityMedicalRecord sätter Observation.code till en av dessa koder."] ; # 
+  fhir:jurisdiction ( [
+     fhir:coding ( [
+       fhir:system [ fhir:v "urn:iso:std:iso:3166"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "SE" ] ;
+       fhir:display [ fhir:v "Sweden" ]
+     ] )
+  ] ) ; # 
+  fhir:caseSensitive [ fhir:v true] ; # 
+  fhir:content [ fhir:v "complete"] ; # 
+  fhir:count [ fhir:v "3"^^xsd:nonNegativeInteger] ; # 
+  fhir:concept ( [
+     fhir:code [ fhir:v "registration" ] ;
+     fhir:display [ fhir:v "Inskrivning mödravård" ] ;
+     fhir:definition [ fhir:v "Inskrivningsuppgifter (maternityMedicalRecordBody.registrationRecord)" ]
+  ] [
+     fhir:code [ fhir:v "checkup" ] ;
+     fhir:display [ fhir:v "Graviditetskontroll" ] ;
+     fhir:definition [ fhir:v "Graviditetskontrolldata (maternityMedicalRecordBody.pregnancyCheckupRecord)" ]
+  ] [
+     fhir:code [ fhir:v "post-delivery" ] ;
+     fhir:display [ fhir:v "Eftervård" ] ;
+     fhir:definition [ fhir:v "Eftervårdsdata (maternityMedicalRecordBody.postDeliveryRecord)" ]
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

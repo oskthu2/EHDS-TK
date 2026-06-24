@@ -1,0 +1,48 @@
+{
+  "resourceType" : "CodeSystem",
+  "id" : "maternity-section",
+  "text" : {
+    "status" : "generated",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Genererad berättande text: CodeSystem maternity-section</b></p><a name=\"maternity-section\"> </a><a name=\"hcmaternity-section\"> </a><p>Detta case-sensitive kodsystem <code>https://fhir.inera.se/ig/ehds-tk/CodeSystem/maternity-section</code> definierar följande koder:</p><table class=\"codes\"><tr><td style=\"white-space:nowrap\"><b>Kod</b></td><td><b>Visning</b></td><td><b>Definition</b></td></tr><tr><td style=\"white-space:nowrap\">registration<a name=\"maternity-section-registration\"> </a></td><td>Inskrivning mödravård</td><td>Inskrivningsuppgifter (maternityMedicalRecordBody.registrationRecord)</td></tr><tr><td style=\"white-space:nowrap\">checkup<a name=\"maternity-section-checkup\"> </a></td><td>Graviditetskontroll</td><td>Graviditetskontrolldata (maternityMedicalRecordBody.pregnancyCheckupRecord)</td></tr><tr><td style=\"white-space:nowrap\">post-delivery<a name=\"maternity-section-post-delivery\"> </a></td><td>Eftervård</td><td>Eftervårdsdata (maternityMedicalRecordBody.postDeliveryRecord)</td></tr></table></div>"
+  },
+  "url" : "https://fhir.inera.se/ig/ehds-tk/CodeSystem/maternity-section",
+  "version" : "0.1.0",
+  "name" : "MaternityMedicalSectionCS",
+  "title" : "MaternityMedicalSection",
+  "status" : "active",
+  "date" : "2026-06-24T12:10:33+00:00",
+  "publisher" : "Inera AB",
+  "contact" : [{
+    "name" : "Inera AB",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "https://www.inera.se"
+    }]
+  }],
+  "description" : "Diskriminatorkoder för de tre sektionerna i mödravårdsjournalen (GetMaternityMedicalHistory v2.0). Varje Observation-resurs som skapas ur ett maternityMedicalRecord sätter Observation.code till en av dessa koder.",
+  "jurisdiction" : [{
+    "coding" : [{
+      "system" : "urn:iso:std:iso:3166",
+      "code" : "SE",
+      "display" : "Sweden"
+    }]
+  }],
+  "caseSensitive" : true,
+  "content" : "complete",
+  "count" : 3,
+  "concept" : [{
+    "code" : "registration",
+    "display" : "Inskrivning mödravård",
+    "definition" : "Inskrivningsuppgifter (maternityMedicalRecordBody.registrationRecord)"
+  },
+  {
+    "code" : "checkup",
+    "display" : "Graviditetskontroll",
+    "definition" : "Graviditetskontrolldata (maternityMedicalRecordBody.pregnancyCheckupRecord)"
+  },
+  {
+    "code" : "post-delivery",
+    "display" : "Eftervård",
+    "definition" : "Eftervårdsdata (maternityMedicalRecordBody.postDeliveryRecord)"
+  }]
+}

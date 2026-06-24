@@ -1,0 +1,89 @@
+{
+  "resourceType" : "ConceptMap",
+  "id" : "observation-status-map",
+  "text" : {
+    "status" : "generated",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Genererad berättande text: ConceptMap observation-status-map</b></p><a name=\"observation-status-map\"> </a><a name=\"hcobservation-status-map\"> </a><p>Mappning från <a href=\"http://hl7.org/fhir/R4/codesystem-snomedct.html\">http://snomed.info/sct</a> till <a href=\"http://hl7.org/fhir/R4/codesystem-observation-status.html\">http://hl7.org/fhir/observation-status</a></p><br/><p>Mappning från <a href=\"http://hl7.org/fhir/R4/codesystem-snomedct.html\">SNOMED CT (all versions)</a> to <a href=\"http://hl7.org/fhir/R4/codesystem-observation-status.html\">ObservationStatus</a></p><table class=\"grid\"><tr><td><b>Källkod</b></td><td><b>Relation</b></td><td><b>Målkod</b></td><td><b>Kommentar</b></td></tr><tr><td>385676005 (Under utförande)</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>preliminary</td><td/></tr><tr><td>385651009 (Slutlig)</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>final</td><td/></tr><tr><td>272393004 (Korrigerad)</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>amended</td><td/></tr><tr><td>59776000 (Avbeställd/annullerad)</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>cancelled</td><td>Avbeställd/annullerad – observationen utfördes aldrig</td></tr><tr><td>444301002 (Avböjd av patient)</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#narrower\" title=\"narrower\">narrower</a></td><td>cancelled</td><td>Avböjd av patient – semantiken specificeras med dataAbsentReason om värderelevant</td></tr></table></div>"
+  },
+  "url" : "https://fhir.inera.se/ConceptMap/observation-status-map",
+  "version" : "0.1.0",
+  "name" : "ObservationStatusMap",
+  "title" : "GetObservations observationStatus → FHIR ObservationStatus",
+  "status" : "active",
+  "experimental" : false,
+  "date" : "2025-01-01",
+  "publisher" : "Inera AB",
+  "contact" : [{
+    "name" : "Inera AB",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "https://www.inera.se"
+    }]
+  }],
+  "description" : "Mappar SNOMED CT-koder från urvals-id 56431000052106 till FHIR ObservationStatus.",
+  "jurisdiction" : [{
+    "coding" : [{
+      "system" : "urn:iso:std:iso:3166",
+      "code" : "SE",
+      "display" : "Sweden"
+    }]
+  }],
+  "sourceUri" : "http://snomed.info/sct",
+  "targetUri" : "http://hl7.org/fhir/observation-status",
+  "group" : [{
+    "source" : "http://snomed.info/sct",
+    "target" : "http://hl7.org/fhir/observation-status",
+    "element" : [{
+      "code" : "385676005",
+      "display" : "Under utförande",
+      "target" : [{
+        "code" : "preliminary",
+        "display" : "Preliminary",
+        "equivalence" : "equivalent"
+      }]
+    },
+    {
+      "code" : "385651009",
+      "display" : "Slutlig",
+      "target" : [{
+        "code" : "final",
+        "display" : "Final",
+        "equivalence" : "equivalent"
+      }]
+    },
+    {
+      "code" : "272393004",
+      "display" : "Korrigerad",
+      "target" : [{
+        "code" : "amended",
+        "display" : "Amended",
+        "equivalence" : "equivalent"
+      }]
+    },
+    {
+      "code" : "59776000",
+      "display" : "Avbeställd/annullerad",
+      "target" : [{
+        "code" : "cancelled",
+        "display" : "Cancelled",
+        "equivalence" : "equivalent",
+        "comment" : "Avbeställd/annullerad – observationen utfördes aldrig"
+      }]
+    },
+    {
+      "code" : "444301002",
+      "display" : "Avböjd av patient",
+      "target" : [{
+        "code" : "cancelled",
+        "display" : "Cancelled",
+        "equivalence" : "narrower",
+        "comment" : "Avböjd av patient – semantiken specificeras med dataAbsentReason om värderelevant"
+      }]
+    }],
+    "unmapped" : {
+      "mode" : "fixed",
+      "code" : "unknown",
+      "display" : "Unknown"
+    }
+  }]
+}

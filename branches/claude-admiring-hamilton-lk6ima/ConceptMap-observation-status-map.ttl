@@ -1,0 +1,101 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://fhir.inera.se/ig/ehds-tk/ConceptMap/observation-status-map> a fhir:ConceptMap ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "observation-status-map"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Genererad berättande text: ConceptMap observation-status-map</b></p><a name=\"observation-status-map\"> </a><a name=\"hcobservation-status-map\"> </a><p>Mappning från <a href=\"http://hl7.org/fhir/R4/codesystem-snomedct.html\">http://snomed.info/sct</a> till <a href=\"http://hl7.org/fhir/R4/codesystem-observation-status.html\">http://hl7.org/fhir/observation-status</a></p><br/><p>Mappning från <a href=\"http://hl7.org/fhir/R4/codesystem-snomedct.html\">SNOMED CT (all versions)</a> to <a href=\"http://hl7.org/fhir/R4/codesystem-observation-status.html\">ObservationStatus</a></p><table class=\"grid\"><tr><td><b>Källkod</b></td><td><b>Relation</b></td><td><b>Målkod</b></td><td><b>Kommentar</b></td></tr><tr><td>385676005 (Under utförande)</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>preliminary</td><td/></tr><tr><td>385651009 (Slutlig)</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>final</td><td/></tr><tr><td>272393004 (Korrigerad)</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>amended</td><td/></tr><tr><td>59776000 (Avbeställd/annullerad)</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>cancelled</td><td>Avbeställd/annullerad – observationen utfördes aldrig</td></tr><tr><td>444301002 (Avböjd av patient)</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#narrower\" title=\"narrower\">narrower</a></td><td>cancelled</td><td>Avböjd av patient – semantiken specificeras med dataAbsentReason om värderelevant</td></tr></table></div>"^^rdf:XMLLiteral ]
+  ] ; # 
+  fhir:url [ fhir:v "https://fhir.inera.se/ConceptMap/observation-status-map"^^xsd:anyURI] ; # 
+  fhir:version [ fhir:v "0.1.0"] ; # 
+  fhir:name [ fhir:v "ObservationStatusMap"] ; # 
+  fhir:title [ fhir:v "GetObservations observationStatus → FHIR ObservationStatus"] ; # 
+  fhir:status [ fhir:v "active"] ; # 
+  fhir:experimental [ fhir:v false] ; # 
+  fhir:date [ fhir:v "2025-01-01"^^xsd:date] ; # 
+  fhir:publisher [ fhir:v "Inera AB"] ; # 
+  fhir:contact ( [
+     fhir:name [ fhir:v "Inera AB" ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "url" ] ;
+       fhir:value [ fhir:v "https://www.inera.se" ]
+     ] )
+  ] ) ; # 
+  fhir:description [ fhir:v "Mappar SNOMED CT-koder från urvals-id 56431000052106 till FHIR ObservationStatus."] ; # 
+  fhir:jurisdiction ( [
+     fhir:coding ( [
+       fhir:system [ fhir:v "urn:iso:std:iso:3166"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "SE" ] ;
+       fhir:display [ fhir:v "Sweden" ]
+     ] )
+  ] ) ; # 
+  fhir:source [
+     a fhir:uri ;
+     fhir:v "http://snomed.info/sct"^^xsd:anyURI
+  ] ; # 
+  fhir:target [
+     a fhir:uri ;
+     fhir:v "http://hl7.org/fhir/observation-status"^^xsd:anyURI
+  ] ; # 
+  fhir:group ( [
+     fhir:source [ fhir:v "http://snomed.info/sct"^^xsd:anyURI ] ;
+     fhir:target [ fhir:v "http://hl7.org/fhir/observation-status"^^xsd:anyURI ] ;
+     fhir:element ( [
+       fhir:code [ fhir:v "385676005" ] ;
+       fhir:display [ fhir:v "Under utförande" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "preliminary" ] ;
+         fhir:display [ fhir:v "Preliminary" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "385651009" ] ;
+       fhir:display [ fhir:v "Slutlig" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "final" ] ;
+         fhir:display [ fhir:v "Final" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "272393004" ] ;
+       fhir:display [ fhir:v "Korrigerad" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "amended" ] ;
+         fhir:display [ fhir:v "Amended" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "59776000" ] ;
+       fhir:display [ fhir:v "Avbeställd/annullerad" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "cancelled" ] ;
+         fhir:display [ fhir:v "Cancelled" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ] ;
+         fhir:comment [ fhir:v "Avbeställd/annullerad – observationen utfördes aldrig" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "444301002" ] ;
+       fhir:display [ fhir:v "Avböjd av patient" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "cancelled" ] ;
+         fhir:display [ fhir:v "Cancelled" ] ;
+         fhir:equivalence [ fhir:v "narrower" ] ;
+         fhir:comment [ fhir:v "Avböjd av patient – semantiken specificeras med dataAbsentReason om värderelevant" ]
+       ] )
+     ] ) ;
+     fhir:unmapped [
+       fhir:mode [ fhir:v "fixed" ] ;
+       fhir:code [ fhir:v "unknown" ] ;
+       fhir:display [ fhir:v "Unknown" ]
+     ]
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

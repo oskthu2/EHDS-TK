@@ -1,0 +1,1408 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE HTML>
+<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
+    <title>Artifacts Summary - Inera EHDS Tjänstekontrakt – FHIR Implementation Guide v0.1.0</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="author" content="http://hl7.org/fhir"/>
+
+    <link href="fhir.css" rel="stylesheet"/>
+
+    <!-- Bootstrap core CSS -->
+    <link href="assets/css/bootstrap-fhir.css" rel="stylesheet"/>
+
+    <!-- Project extras -->
+    <link href="assets/css/project.css" rel="stylesheet"/>
+    <link href="assets/css/pygments-manni.css" rel="stylesheet"/>
+    <link href="assets/css/jquery-ui.css" rel="stylesheet"/>
+  	<link href="assets/css/prism.css" rel="stylesheet" />
+  	<link href="assets/css/cqf.css" rel="stylesheet" />
+    <link href="inera.css" rel="stylesheet"/>
+<link rel="icon" type="image/png" href="inera-thumbnail.png"/>
+<link rel="shortcut icon" href="inera-thumbnail.png"/>
+
+
+    <script type="text/javascript" src="fhir-table-scripts.js"> </script>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="assets/js/html5shiv.js"></script>
+    <script src="assets/js/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Favicons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/icon-fhir-144.png"/>
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/icon-fhir-114.png"/>
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/icon-fhir-72.png"/>
+    <link rel="apple-touch-icon-precomposed" href="assets/ico/icon-fhir-57.png"/>
+    <link rel="shortcut icon" href="assets/ico/favicon.png"/>
+  </head>
+  <body onload="document.body.style.opacity='1'">
+
+	  <script src="assets/js/prism.js"></script>
+    <script type="text/javascript" src="assets/js/mermaid.js"></script>
+    <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
+    <style type="text/css">h2{--heading-prefix:"27"}
+    h3,h4,h5,h6{--heading-prefix:"27.0"}</style>
+    <div id="segment-header" class="segment">  <!-- segment-header -->
+      <div class="container">  <!-- container -->
+
+        <div id="inera-nav">
+  <a id="inera-logo" data-no-external="true" href="https://www.inera.se">
+    <img height="50" alt="Inera" src="inera-logo-header.svg"/>
+  </a>
+</div>
+
+
+        <div id="ig-status">
+          <p><span style="font-size:12pt;font-weight:bold">Inera EHDS Tjänstekontrakt – FHIR Implementation Guide</span>
+            <br/>
+            <span style="display:inline-block;">0.1.0 - ci-build
+
+
+
+  <img alt="Sweden flag" src="assets/images/swe.svg" height="16" title="Sweden"/>
+
+
+            </span>
+          </p>
+        </div>
+      </div> <!-- /container -->
+    </div>  <!-- /segment-header -->
+
+    <div id="segment-navbar" class="segment">  <!-- segment-navbar -->
+      <div id="stripe"> </div>
+      <div class="container">  <!-- container -->
+        <!-- HEADER CONTENT -->
+
+        <nav class="navbar navbar-inverse">
+          <!--status-bar-->
+          <div class="container">
+            <button data-target=".navbar-inverse-collapse" class="navbar-toggle" data-toggle="collapse" type="button">
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+            </button>
+            <a class="navbar-brand hidden" href="http://hl7.org/fhir/R4/index.html">FHIR</a>
+            <div class="nav-collapse collapse navbar-inverse-collapse">
+              <div id="segment-navbar" class="segment">
+  <div id="stripe"> </div>
+  <div class="container">
+    <nav class="navbar navbar-inverse">
+      <div class="container">
+        <button data-target=".navbar-inverse-collapse" class="navbar-toggle" data-toggle="collapse" type="button">
+          <span class="icon-bar"> </span>
+          <span class="icon-bar"> </span>
+          <span class="icon-bar"> </span>
+        </button>
+        <a class="navbar-brand hidden" href="http://hl7.org/fhir/R4/index.html">FHIR</a>
+        <div class="nav-collapse collapse navbar-inverse-collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="index.html">Hem</a></li>
+            <li class="dropdown">
+              <a data-toggle="dropdown" href="#" class="dropdown-toggle">Bakgrund<b class="caret"> </b></a>
+              <ul class="dropdown-menu">
+                <li><a href="workflow.html">Workflow</a></li>
+                <li><a href="logical-models.html">Logiska modeller</a></li>
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a data-toggle="dropdown" href="#" class="dropdown-toggle">Mappningar<b class="caret"> </b></a>
+              <ul class="dropdown-menu">
+                <li><a href="mappings.html">Översikt</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="dropdown-header">Patientöversikt</li>
+                <li><a href="mapping-getdiagnosis.html">GetDiagnosis – Diagnoser</a></li>
+                <li><a href="mapping-getalertinformation.html">GetAlertInformation – Uppmärksamhet</a></li>
+                <li><a href="mapping-getmedicationhistory.html">GetMedicationHistory – Läkemedel</a></li>
+                <li><a href="mapping-getvaccinationhistory.html">GetVaccinationHistory – Vaccinationer</a></li>
+                <li><a href="mapping-getfunctionalstatus.html">GetFunctionalStatus – Funktionstillstånd</a></li>
+                <li><a href="mapping-getmaternitymedicalhistory.html">GetMaternityMedicalHistory – Mödravård</a></li>
+                <li><a href="mapping-getcareplans.html">GetCarePlans – Vårdplan</a></li>
+                <li><a href="mapping-getcarecontacts.html">GetCareContacts – Vårdkontakter</a></li>
+                <li><a href="mapping-getcaredocumentation.html">GetCareDocumentation – Anteckningar</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="dropdown-header">Laboratorie och diagnostik</li>
+                <li><a href="mapping-getlaboratoryorderoutcome.html">GetLaboratoryOrderOutcome – Provsvar</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="dropdown-header">Bilddiagnostik</li>
+                <li><a href="mapping-getimagingoutcome.html">GetImagingOutcome – Bilddiagnostik</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="dropdown-header">Remiss och process</li>
+                <li><a href="mapping-getreferraloutcome.html">GetReferralOutcome – Remisser</a></li>
+                <li><a href="mapping-getrequestactivities.html">GetRequestActivities – Remisstatus</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="dropdown-header">Tillväxtkurva barn</li>
+                <li><a href="mapping-getobservations.html">GetObservations – Tillväxtkurva</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="dropdown-header">Logg</li>
+                <li><a href="mapping-getaccesslogforpatient.html">GetAccessLogForPatient – Åtkomstloggar</a></li>
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a data-toggle="dropdown" href="#" class="dropdown-toggle">FHIR Artifacts<b class="caret"> </b></a>
+              <ul class="dropdown-menu">
+                <li><a href="profiles.html">Profiles</a></li>
+                <li><a href="terminology.html">Terminology</a></li>
+                <li><a href="examples.html">Examples</a></li>
+                <li><a href="artifacts.html">All Artifacts</a></li>
+              </ul>
+            </li>
+            <li><a href="search-parameters.html">Sökparametrar</a></li>
+            <li><a href="downloads.html">Downloads</a></li>
+            <li><a href="mapping-issues.html">Issues &amp; Beslut</a></li>
+            <li><a href="version-history.html">Version History</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </div>
+</div>
+
+            </div>  <!-- /.nav-collapse -->
+          </div>  <!-- /.container -->
+        </nav>  <!-- /.navbar -->
+      <!-- /HEADER CONTENT -->
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-navbar -->
+    <!--status-bar-->
+
+    <div id="segment-breadcrumb" class="segment">  <!-- segment-breadcrumb -->
+      <div class="container">  <!-- container -->
+        <ul class="breadcrumb">
+          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><b>Artifacts Summary</b></li>
+
+        </ul>
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-breadcrumb -->
+
+    <a name="top"> </a>
+    <div id="segment-content" class="segment">  <!-- segment-content -->
+      <div class="container">  <!-- container -->
+        <div class="row">
+          <div class="inner-wrapper">
+
+<style type="text/css">
+h2:before{color:silver;counter-increment:section;content:var(--heading-prefix) " ";}
+h3:before{color:silver;counter-increment:sub-section;content:var(--heading-prefix) "." counter(sub-section) " ";}
+h4:before{color:silver;counter-increment:composite;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) " ";}
+h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) " ";}
+h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
+</style>
+<div class="col-12">
+  <!--ReleaseHeader--><p id="publish-box">Inera EHDS Tjänstekontrakt – FHIR Implementation Guide - Lokal utvecklingsbygge (v0.1.0) byggt av FHIR (HL7® FHIR® Standard) Build Tools. Se <a href='https://fhir.inera.se/ig/ehds-tk/history.html'>katalogen över publicerade versioner</a></p><!--EndReleaseHeader-->
+  <h2>Artifacts Summary</h2>
+  
+  
+  
+  <!--DO NOT EDIT THIS FILE - It is generated by https://github.com/HL7/ig-template-base/blob/master/scripts/createArtifactSummary.xslt and any changes made will be overwritten--><div xmlns="http://www.w3.org/1999/xhtml"
+     xmlns:f="http://hl7.org/fhir"
+     xmlns:html="http://www.w3.org/1999/xhtml"
+     class="markdown-toc">
+   <p>Contents:</p>
+   <ul>
+      <li>
+         <a href="#1">Structures: Logical Models</a>
+      </li>
+      <li>
+         <a href="#2">Structures: Resource Profiles</a>
+      </li>
+      <li>
+         <a href="#3">Structures: Extension Definitions</a>
+      </li>
+      <li>
+         <a href="#4">Terminology: Value Sets</a>
+      </li>
+      <li>
+         <a href="#5">Terminology: Code Systems</a>
+      </li>
+      <li>
+         <a href="#6">Terminology: Concept Maps</a>
+      </li>
+   </ul>
+</div>
+<div xmlns="http://www.w3.org/1999/xhtml"
+     xmlns:f="http://hl7.org/fhir"
+     xmlns:html="http://www.w3.org/1999/xhtml">
+   <p>This page provides a list of the FHIR artifacts defined as part of this implementation guide.</p>
+   <a name="1"> </a>
+   <h3>Structures: Logical Models </h3>
+    <p>These define data models that represent the domain covered by this implementation guide in more business-friendly terms than the underlying FHIR resources.</p>
+<table class="grid">
+      <col style="width:20%"/>
+      <tbody>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-inera-ehds-lm-access-log.html"
+                  title="StructureDefinition/inera-ehds-lm-access-log">GetAccessLogForPatient</a>
+            </td>
+            <td>
+<p>Logisk modell för patientens åtkomstloggar hämtad via GetAccessLogForPatient (informationsecurity:auditing:log v1.1, 2.0). Krävs för 1177 Journal 1.1, 2.0 men ej för NPÖ.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-inera-ehds-lm-alert-information.html"
+                  title="StructureDefinition/inera-ehds-lm-alert-information">GetAlertInformation</a>
+            </td>
+            <td>
+<p>Logisk modell för tjänstekontraktet GetAlertInformation
+(RIV-TA urn:riv:clinicalprocess:healthcond:description:GetAlertInformationResponder:2).
+Representerar responsens informationsstruktur: uppmärksamhetsinformation för en patient,
+exempelvis överkänslighet mot läkemedel, allvarlig sjukdom, behandling, smittsam sjukdom,
+vårdbegränsning eller historisk varning.</p>
+
+<p>Body-strukturen är XOR – exakt en av hypersensitivity, seriousDisease, treatment,
+communicableDisease, restrictionOfCare, unstructuredAlertInformation ska anges per post.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-inera-ehds-lm-care-contacts.html"
+                  title="StructureDefinition/inera-ehds-lm-care-contacts">GetCareContacts</a>
+            </td>
+            <td>
+<p>Logisk modell för tjänstekontraktet GetCareContacts
+(RIV-TA urn:riv:clinicalprocess:logistics:logistics:GetCareContacts:3).
+Representerar responsens informationsstruktur (GetCareContactsResponseType).
+En lista med CareContactType returneras.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-inera-ehds-lm-care-documentation.html"
+                  title="StructureDefinition/inera-ehds-lm-care-documentation">GetCareDocumentation</a>
+            </td>
+            <td>
+<p>Logisk modell för tjänstekontraktet GetCareDocumentation
+(RIV-TA urn:riv:clinicalprocess:healthcond:description:GetCareDocumentationResponder:3).
+Representerar responsens informationsstruktur: journalanteckningar för en patient.
+Anteckningstyper: utredning, åtgärd/behandling, sammanfattning, samordning, inskrivning,
+slutanteckning, anteckning utan fysiskt möte, slutenvårdsanteckning och besöksanteckning.
+Meddelandeformatet är kompatibelt med HL7 v3 CDA v2.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-inera-ehds-lm-care-plans.html"
+                  title="StructureDefinition/inera-ehds-lm-care-plans">GetCarePlans</a>
+            </td>
+            <td>
+<p>Logisk modell för tjänstekontraktet GetCarePlans
+(RIV-TA urn:riv:clinicalprocess:logistics:logistics:GetCarePlans:2).
+Representerar responsens informationsstruktur (GetCarePlansResponseType).
+En lista med CarePlanType returneras, var och en med header- och body-element.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-inera-ehds-lm-diagnosis.html"
+                  title="StructureDefinition/inera-ehds-lm-diagnosis">GetDiagnosis</a>
+            </td>
+            <td>
+<p>Logisk modell för tjänstekontraktet GetDiagnosis
+(RIV-TA urn:riv:clinicalprocess:healthcond:description:GetDiagnosisResponder:2).
+Representerar responsens informationsstruktur: registrerade diagnoser för en patient
+inklusive diagnoskod per ursprungligt diagnosticeringstillfälle.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-inera-ehds-lm-functional-status.html"
+                  title="StructureDefinition/inera-ehds-lm-functional-status">GetFunctionalStatus</a>
+            </td>
+            <td>
+<p>Logisk modell för tjänstekontraktet GetFunctionalStatus
+(RIV-TA urn:riv:clinicalprocess:healthcond:description:GetFunctionalStatusResponder:2).
+Representerar responsens informationsstruktur: dokumenterade bedömningar av
+funktionsnedsättningar och/eller aktivitetsförmåga (PADL) för en patient.
+Bedömningskategori styrs av assessmentCategory: 'pad-pad' (PADL) eller 'fun-fun' (funktionsnedsättning).
+En tjänsteproducent måste använda samma värde för categorization i engagemangsindex som
+för assessmentCategory i svaret.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-inera-ehds-lm-imaging-outcome.html"
+                  title="StructureDefinition/inera-ehds-lm-imaging-outcome">GetImagingOutcome</a>
+            </td>
+            <td>
+<p>Logisk modell för tjänstekontraktet GetImagingOutcome
+(RIV-TA urn:riv:clinicalprocess:healthcond:actoutcome:GetImagingOutcome:1).
+Representerar responsens informationsstruktur — bilddiagnostiska resultat
+för en patient. Baseras på NPÖ RIV 2.2.0-specifikation.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-inera-ehds-lm-laboratory-order-outcome.html"
+                  title="StructureDefinition/inera-ehds-lm-laboratory-order-outcome">GetLaboratoryOrderOutcome</a>
+            </td>
+            <td>
+<p>Logisk modell för tjänstekontraktet GetLaboratoryOrderOutcome
+(RIV-TA urn:riv:clinicalprocess:healthcond:actoutcome:GetLaboratoryOrderOutcome:4).
+Representerar responsens informationsstruktur — multidisciplinära laboratoriesvar
+för en patient.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-inera-ehds-lm-maternity-medical-history.html"
+                  title="StructureDefinition/inera-ehds-lm-maternity-medical-history">GetMaternityMedicalHistory</a>
+            </td>
+            <td>
+<p>Logisk modell för tjänstekontraktet GetMaternityMedicalHistory
+(RIV-TA urn:riv:clinicalprocess:healthcond:actoutcome:GetMaternityMedicalHistory:2).
+Representerar responsens informationsstruktur — mödravårdsjournal för en patient.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-inera-ehds-lm-medication-history.html"
+                  title="StructureDefinition/inera-ehds-lm-medication-history">GetMedicationHistory</a>
+            </td>
+            <td>
+<p>Logisk modell för tjänstekontraktet GetMedicationHistory
+(RIV-TA urn:riv:clinicalprocess:activityprescription:actoutcome:GetMedicationHistoryResponder:2).
+Representerar responsens informationsstruktur — läkemedelshistorik per patient.</p>
+
+<p>OBS: Kontraktet är tämligen omfattande. Se tillämpningsanvisningen
+(AB_clinicalprocess_activityprescription_actoutcome.docx) för implementationsdetaljer.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-inera-ehds-lm-observations.html"
+                  title="StructureDefinition/inera-ehds-lm-observations">GetObservations</a>
+            </td>
+            <td>
+<p>Logisk modell för tjänstekontraktet GetObservations
+(RIV-TA urn:riv:clinicalprocess:healthcond:basic:GetObservationsInteraction:2).
+Representerar responsens informationsstruktur — en samling observationer som
+matchar sökkriterier i begäran, inklusive header-information.
+Meddelandemodellen från avsnitt 5.1 V-MIM — Observationer i TKB motsvarar
+en observation i svarsmeddelandet.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-inera-ehds-lm-referral-outcome.html"
+                  title="StructureDefinition/inera-ehds-lm-referral-outcome">GetReferralOutcome</a>
+            </td>
+            <td>
+<p>Logisk modell för tjänstekontraktet GetReferralOutcome
+(RIV-TA urn:riv:clinicalprocess:healthcond:actoutcome:GetReferralOutcome:3).
+Representerar responsens informationsstruktur — svar på konsultationsremiss
+och begäran om övertagande av vårdansvar. Meddelandeformatet är kompatibelt
+med HL7v3 CDA v.2.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-inera-ehds-lm-request-activities.html"
+                  title="StructureDefinition/inera-ehds-lm-request-activities">GetRequestActivities</a>
+            </td>
+            <td>
+<p>Logisk modell för remisstatus och processaktiviteter hämtad via GetRequestActivities (crm:requeststatus v2.0).</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-inera-ehds-lm-vaccination-history.html"
+                  title="StructureDefinition/inera-ehds-lm-vaccination-history">GetVaccinationHistory</a>
+            </td>
+            <td>
+<p>Logisk modell för tjänstekontraktet GetVaccinationHistory
+(RIV-TA urn:riv:clinicalprocess:activityprescription:actoutcome:GetVaccinationHistoryResponder:2).
+Representerar responsens informationsstruktur — vaccinationsjournal per patient.</p>
+</td>
+         </tr>
+      </tbody>
+   </table>
+   <a name="2"> </a>
+   <h3>Structures: Resource Profiles </h3>
+    <p>These define constraints on FHIR resources for systems conforming to this implementation guide.</p>
+<table class="grid">
+      <col style="width:20%"/>
+      <tbody>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-inera-ehds-allergy-intolerance.html"
+                  title="StructureDefinition/inera-ehds-allergy-intolerance">SE EHDS AllergyIntolerance – Allergi/överkänslighet (GetAlertInformation)</a>
+            </td>
+            <td>
+<p>Sekundär profil för allergier och överkänslighet från GetAlertInformation.</p>
+
+<p>Skapas ENBART när alertInformationBody = hypersensitivity.
+Den tillhörande IneraEHDSFlag-resursen är alltid primär och pekar på denna
+resurs via Flag.extension[flag-detail] (standard R4-extension; R5: supportingInfo).</p>
+
+<p>Populeras med klinisk information från hypersensitivity-blocket:</p>
+<ul>
+  <li>atcSubstance/hypersensitivityAgentCode → AllergyIntolerance.code</li>
+  <li>degreeOfSeverity → AllergyIntolerance.reaction.severity</li>
+  <li>degreeOfCertainty → AllergyIntolerance.verificationStatus (se ALERT-004)</li>
+  <li>ascertainedDate → AllergyIntolerance.onsetDateTime</li>
+  <li>alertInformationComment → AllergyIntolerance.note</li>
+  <li>pharmaceuticalProductId → AllergyIntolerance.reaction.substance.coding (NPL-id)</li>
+</ul>
+
+<p>Täcker NPÖ 2.0 och 1177 Journal 2.0.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-inera-ehds-audit-event.html"
+                  title="StructureDefinition/inera-ehds-audit-event">SE EHDS AuditEvent – Åtkomstloggar (GetAccessLogForPatient)</a>
+            </td>
+            <td>
+<p>Profil för åtkomstloggar mappat från RIVTA-tjänstekontraktet GetAccessLogForPatient (informationsecurity:auditing:log v1.1, 2.0). Täcker 1177 Journal 1.1, 2.0. Krävs ej för NPÖ.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-inera-ehds-care-plan.html"
+                  title="StructureDefinition/inera-ehds-care-plan">SE EHDS CarePlan – Vårdplan (GetCarePlans)</a>
+            </td>
+            <td>
+<p>Profil för vård- och omsorgsplaner mappat från RIVTA-tjänstekontraktet GetCarePlans (clinicalprocess:logistics:logistics v2.0). Täcker NPÖ 2.0 och 1177 Journal 2.0.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-inera-ehds-condition-diagnosis.html"
+                  title="StructureDefinition/inera-ehds-condition-diagnosis">SE EHDS Condition – Diagnos (GetDiagnosis)</a>
+            </td>
+            <td>
+<p>Profil för diagnos/problem mappat från RIVTA-tjänstekontraktet GetDiagnosis (clinicalprocess:healthcond:description v2.0). Täcker NPÖ 2.0 och 1177 Journal 2.0.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-inera-ehds-condition-functional.html"
+                  title="StructureDefinition/inera-ehds-condition-functional">SE EHDS Condition – Funktionstillstånd och ADL (GetFunctionalStatus)</a>
+            </td>
+            <td>
+<p>Profil för funktionstillstånd och ADL-bedömningar mappat från RIVTA-tjänstekontraktet
+GetFunctionalStatus (clinicalprocess:healthcond:description v2.0).
+Täcker NPÖ 2.0 och 1177 Journal 2.0.</p>
+
+<p>TKBn har två bedömningskategorier: 'pad-pad' (PADL-bedömning) och 'fun-fun'
+(funktionsnedsättningsbedömning med ICF-kod). Condition.code mappas mot
+assessmentCategory (för PADL) eller disability.disabilityAssessment (ICF-kod).
+Inget statusfält, tidperiod eller svårighetsgradfält finns i TKBn – dessa är härleddda.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-inera-ehds-device.html"
+                  title="StructureDefinition/inera-ehds-device">SE EHDS Device – Källsystem (GetVaccinationHistory registrationRecord)</a>
+            </td>
+            <td>
+<p>Profil för det källsystem som registrerat en vaccination i GetVaccinationHistory v2.0.</p>
+
+<p>Representerar vaccinationMedicalRecordBody.registrationRecord.sourceSystem*
+och sourceSystemContact. Refereras från IneraEHDSImmunization via
+extension[registrationDevice].</p>
+
+<p>deviceName[systemName]  = sourceSystemName     (1..1, obligatorisk)
+deviceName[productName] = sourceSystemProductName (0..1)
+version                 = sourceSystemProductVersion (0..1)
+extension[sourceSystemContact] = sourceSystemContact.actorId/actorName (0..1)</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-inera-ehds-diagnostic-report-imaging.html"
+                  title="StructureDefinition/inera-ehds-diagnostic-report-imaging">SE EHDS DiagnosticReport – Bilddiagnostiskt utlåtande (GetImagingOutcome)</a>
+            </td>
+            <td>
+<p>Profil för bilddiagnostiska utlåtanden/fynd från GetImagingOutcome. Används tillsammans med IneraEHDSImagingStudy för att representera både undersökning och svar.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-inera-ehds-diagnostic-report-referral.html"
+                  title="StructureDefinition/inera-ehds-diagnostic-report-referral">SE EHDS DiagnosticReport – Konsultationssvar (GetReferralOutcome)</a>
+            </td>
+            <td>
+<p>Profil för konsultationssvar (outcome) från GetReferralOutcome. Används tillsammans med IneraEHDSServiceRequestReferral.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-inera-ehds-diagnostic-report-lab.html"
+                  title="StructureDefinition/inera-ehds-diagnostic-report-lab">SE EHDS DiagnosticReport – Provsvar (GetLaboratoryOrderOutcome)</a>
+            </td>
+            <td>
+<p>Profil för laboratorieresultat mappat från RIVTA-tjänstekontraktet GetLaboratoryOrderOutcome (clinicalprocess:healthcond:actoutcome v4.2). Täcker NPÖ v4.2 och 1177 Journal v4.2.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-inera-ehds-document-reference.html"
+                  title="StructureDefinition/inera-ehds-document-reference">SE EHDS DocumentReference – Anteckningar (GetCareDocumentation)</a>
+            </td>
+            <td>
+<p>Profil för vårdanteckningar mappat från RIVTA-tjänstekontraktet GetCareDocumentation
+(clinicalprocess:healthcond:description v3.0). Täcker NPÖ 3.0 och 1177 Journal 3.0.</p>
+
+<p>Använder JoL-header v2.2 (ej PatientSummaryHeader): accessControlHeader för PDL,
+record för journaluppgift-metadata, author för dokumentationsansvarig,
+signature för signeringsinformation.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-inera-ehds-encounter.html"
+                  title="StructureDefinition/inera-ehds-encounter">SE EHDS Encounter – Vårdkontakter (GetCareContacts)</a>
+            </td>
+            <td>
+<p>Profil för vårdkontakter mappat från RIVTA-tjänstekontraktet GetCareContacts (clinicalprocess:logistics:logistics v3.0). Täcker NPÖ 2.0, 3.0 och 1177 Journal 2.0, 3.0.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-inera-ehds-flag.html"
+                  title="StructureDefinition/inera-ehds-flag">SE EHDS Flag – Uppmärksamhetsinformation (GetAlertInformation)</a>
+            </td>
+            <td>
+<p>Primär profil för ALL uppmärksamhetsinformation från GetAlertInformation
+(clinicalprocess:healthcond:description v2.0).</p>
+
+<p>Varje alertInformation-post ger alltid en Flag-resurs.
+Om typeOfAlertInformation anger allergi/överkänslighet (body = hypersensitivity)
+skapas dessutom en IneraEHDSAllergyIntolerance-resurs som pekas ut via
+extension[flag-detail] (standard R4-extension; kallas supportingInfo i R5).</p>
+
+<p>Body-strukturen är XOR: exakt en av hypersensitivity, seriousDisease, treatment,
+communicableDisease, restrictionOfCare, unstructuredAlertInformation anges per post.</p>
+
+<p>Flag.category[alertType]           = typeOfAlertInformation (obligatorisk).
+Flag.category[hypersensitivityType] = typeOfHypersensitivity (när body = hypersensitivity).
+Flag.code                           = den kliniska koden specifik för body-typen.</p>
+
+<p>Täcker NPÖ 2.0 och 1177 Journal 2.0.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-inera-ehds-imaging-study.html"
+                  title="StructureDefinition/inera-ehds-imaging-study">SE EHDS ImagingStudy – Bilddiagnostik (GetImagingOutcome)</a>
+            </td>
+            <td>
+<p>Profil för bilddiagnostiska undersökningar mappat från RIVTA-tjänstekontraktet GetImagingOutcome (clinicalprocess:healthcond:actoutcome v1.0). Täcker NPÖ 1.0 och 1177 Journal 1.0.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-inera-ehds-immunization.html"
+                  title="StructureDefinition/inera-ehds-immunization">SE EHDS Immunization – Vaccinationer (GetVaccinationHistory)</a>
+            </td>
+            <td>
+<p>Profil för vaccinationer mappat från RIVTA-tjänstekontraktet GetVaccinationHistory (clinicalprocess:activityprescription:actoutcome v2.0). Täcker NPÖ 2.0 och 1177 Journal 1.0, 2.0.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-inera-ehds-medication-statement.html"
+                  title="StructureDefinition/inera-ehds-medication-statement">SE EHDS MedicationStatement – Läkemedel (GetMedicationHistory)</a>
+            </td>
+            <td>
+<p>Profil för läkemedelsordinationer, förskrivningar och administrerade läkemedel mappat från RIVTA-tjänstekontraktet GetMedicationHistory (clinicalprocess:activityprescription:actoutcome v2.2). Täcker NPÖ 2.2 och 1177 Journal 2.2.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-inera-ehds-observation-base.html"
+                  title="StructureDefinition/inera-ehds-observation-base">SE EHDS Observation Base – GetObservations</a>
+            </td>
+            <td>
+<p>Basprofil för alla observationer från GetObservations
+(clinicalprocess:healthcond:basic v2.0).</p>
+
+<p>Profilen fångar den generella TK-mappningen och används som förälder av
+domänspecifika profiler (t.ex. IneraEHDSObservationGrowth för tillväxtkurva).</p>
+
+<p>Nyckeldesignbeslut:</p>
+<ul>
+  <li>observationBody.observationValue är XOR-union av sju värdetyper (cv/pq/ivlpq/ts/ivlts/st/int).
+Varje gren mappas till respektive FHIR value[x]-variant.</li>
+  <li>Om valueNegation=true utelämnas value[x] och dataAbsentReason sätts.</li>
+  <li>observationBody.time (ts/ivlts) → effective[x]; registrationTime → issued.</li>
+  <li>participation är polymorf (healthcareProfessional/patient/otherPerson/locationRole/resource/organisation).
+Välj FHIR-element per deltagartyp (se mappningssida).</li>
+  <li>PDL-fält (Sparr) hanteras via Provenance och meta.security (se mappningssida).</li>
+</ul>
+
+<p>Täcker NPÖ 1.2 och 1177 Journal 1.2.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-inera-ehds-observation-lab.html"
+                  title="StructureDefinition/inera-ehds-observation-lab">SE EHDS Observation – Laboratoriesvar (GetLaboratoryOrderOutcome)</a>
+            </td>
+            <td>
+<p>Profil för enskilda laboratorieresultat/analyser mappat från GetLaboratoryOrderOutcome. Används i kombination med IneraEHDSDiagnosticReportLab.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-inera-ehds-observation-maternity.html"
+                  title="StructureDefinition/inera-ehds-observation-maternity">SE EHDS Observation – Mödravård (GetMaternityMedicalHistory)</a>
+            </td>
+            <td>
+<p>Generisk profil för medicinsk historik inom mödravård mappat från RIVTA-tjänstekontraktet
+GetMaternityMedicalHistory (clinicalprocess:healthcond:actoutcome v2.0).
+Täcker NPÖ 2.0 och 1177 Journal 2.0.</p>
+
+<p>OBS: TKBn har tre separata sektioner (registrationRecord, pregnancyCheckupRecord,
+postDeliveryRecord) med egna sektionsspecifika fält. En Observation skapas per sektion
+med Observation.code som diskriminator (se MAT-001 i mapping-issues). Fältnamnen
+i ^short nedan refererar till sektionsspecifika element – implementatören väljer rätt
+sektionselement baserat på Observation.code.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-inera-ehds-observation-growth.html"
+                  title="StructureDefinition/inera-ehds-observation-growth">SE EHDS Observation – Tillväxtkurva (GetObservations + IoÖ v3)</a>
+            </td>
+            <td>
+<p>Profil för tillväxtobservationer (längd, vikt, huvudomfång, beräknad
+graviditetslängd) för barn och ungdom, baserad på:</p>
+<ul>
+  <li>GetObservations (clinicalprocess:healthcond:basic v2.0)</li>
+  <li>Interaktionsöverenskommelse Tillväxtkurva för barn och ungdom v3 (Inera, 2023-05-15)</li>
+</ul>
+
+<p>Ärver IneraEHDSObservationBase och lägger till:</p>
+<ul>
+  <li>code bunden till GrowthObservationTypeVS (IoÖ-specificerade SNOMED CT-koder)</li>
+  <li>value[x] begränsad till Quantity (pq-grenen; IoÖ anger alltid PQ-värden)</li>
+  <li>Enhet (UCUM) per mättyp: cm (längd/hC), kg (vikt), d (gestationslängd)</li>
+  <li>LOINC-kod-slice på code.coding för EHDS/EPS-interoperabilitet</li>
+  <li>category = vital-signs</li>
+</ul>
+
+<p>Kodsystem för observationType.type: SNOMED CT SE, OID 1.2.752.116.2.1.1.</p>
+
+<p>Täcker NPÖ 1.2 och 1177 Journal 1.2.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-inera-ehds-organization.html"
+                  title="StructureDefinition/inera-ehds-organization">SE EHDS Organization – Organisationsenhet</a>
+            </td>
+            <td>
+<p>Profil för organisationsenheter i EHDS-TK-mappningar (vårdenheter, juridiska vårdgivare m.fl.).</p>
+
+<p>Identifier-slicen ger stöd för HSA-id och SMI-id (Folkhälsomyndighetens
+id för vaccinationsenheter i det nationella vaccinationsregistret).
+Namn, kontaktuppgifter och adress mappar fält som annars inte har plats
+i resurserna de refereras ifrån.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-inera-ehds-patient.html"
+                  title="StructureDefinition/inera-ehds-patient">SE EHDS Patient</a>
+            </td>
+            <td>
+<p>Patientprofil för EHDS-TK IG. Ärver från IPS Patient och lägger till svenska identifierarslicar.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-inera-ehds-provenance.html"
+                  title="StructureDefinition/inera-ehds-provenance">SE EHDS Provenance</a>
+            </td>
+            <td>
+<p>Provenance-profil för EHDS-TK. Varje klinisk resurs åtföljs av en Provenance
+med två agenter som speglar spärr-hierarkin enligt PDL:</p>
+<ul>
+  <li>custodian (yttre Sparr) — den juridiskt ansvariga vårdgivaren</li>
+  <li>author (inre Sparr) — den informationsägande vårdenheten</li>
+</ul>
+
+<p>OBS: Om den FHIR-server som tillhandahåller data själv hanterar åtkomstfiltrering
+baserat på anropande vårdpersonals kontext eller patientens e-hälsotjänst, behöver
+Provenance-agenterna för spärr och <code class="language-plaintext highlighter-rouge">meta.security</code> för <code class="language-plaintext highlighter-rouge">approvedForPatient</code> inte
+inkluderas i svaret — filtreringen sker då redan på servernivå.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-inera-ehds-service-request-referral.html"
+                  title="StructureDefinition/inera-ehds-service-request-referral">SE EHDS ServiceRequest – Konsultationsremiss (GetReferralOutcome)</a>
+            </td>
+            <td>
+<p>Profil för konsultationsremisser mappat från RIVTA-tjänstekontraktet GetReferralOutcome
+(clinicalprocess:healthcond:actoutcome v3.2). Täcker NPÖ 3.2 och 1177 Journal 3.2.</p>
+
+<p>Notera: GetReferralOutcome returnerar remissvaret, inte remissen i sig. Remissens
+metadata finns under referralOutcomeBody.referral och är begränsad till id, orsak,
+tid och avsändare. Inget mottagarfält, prioritet, typ eller diagnos finns i TKBn
+för remissens del.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-inera-ehds-task.html"
+                  title="StructureDefinition/inera-ehds-task">SE EHDS Task – Remisstatus (GetRequestActivities)</a>
+            </td>
+            <td>
+<p>Profil för remisstatus och processaktiviteter mappat från RIVTA-tjänstekontraktet GetRequestActivities (crm:requeststatus v2.0). Täcker NPÖ 2.0 och 1177 Journal 1.0, 2.0.</p>
+</td>
+         </tr>
+      </tbody>
+   </table>
+   <a name="3"> </a>
+   <h3>Structures: Extension Definitions </h3>
+    <p>These define constraints on FHIR data types for systems conforming to this implementation guide.</p>
+<table class="grid">
+      <col style="width:20%"/>
+      <tbody>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-alert-degree-of-severity.html"
+                  title="StructureDefinition/alert-degree-of-severity">Allvarlighetsgrad för överkänslighet</a>
+            </td>
+            <td>
+<p>Bedömning av överkänslighetens allvarlighetsgrad (alertInformationBody.hypersensitivity.degreeOfSeverity). KV Allvarlighetsgrad 1.2.752.129.2.2.3.3.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-alert-treatment-description.html"
+                  title="StructureDefinition/alert-treatment-description">Behandlingsbeskrivning</a>
+            </td>
+            <td>
+<p>Beskrivning av allvarlig behandling som patienten genomgår (alertInformationBody.treatment.treatmentDescription). Behandlingskod läggs i Flag.code.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-alert-ascertained-date.html"
+                  title="StructureDefinition/alert-ascertained-date">Datum för konstaterande</a>
+            </td>
+            <td>
+<p>Datum då förhållandet som föranledde uppmärksamhetssignalen konstaterades (alertInformationBody.ascertainedDate).</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-immunization-is-dose-complete.html"
+                  title="StructureDefinition/immunization-is-dose-complete">Fullständig dos administrerad</a>
+            </td>
+            <td>
+<p>Anger om hela den ordinerade dosen administrerades (administrationRecord.isDoseComplete).</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-approved-for-patient.html"
+                  title="StructureDefinition/approved-for-patient">Godkänd för patient</a>
+            </td>
+            <td>
+<p>Anger om information är godkänd för delning med patient (approvedForPatient, Regel 3).</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-alert-asserter.html"
+                  title="StructureDefinition/alert-asserter">Juridisk äkthetsintygsgivare för uppmärksamhetssignal</a>
+            </td>
+            <td>
+<p>HSA-id för juridisk äkthetsintygsgivare (alertInformationHeader.legalAuthenticator.legalAuthenticatorHSAId).</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-immunization-legal-authenticator.html"
+                  title="StructureDefinition/immunization-legal-authenticator">Juridisk äkthetsintygsgivare för vaccination</a>
+            </td>
+            <td>
+<p>Signeringstidpunkt och HSA-id för juridisk äkthetsintygsgivare (vaccinationMedicalRecordHeader.legalAuthenticator).</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-alert-restriction-of-care-comment.html"
+                  title="StructureDefinition/alert-restriction-of-care-comment">Kommentar om vårdbegränsning</a>
+            </td>
+            <td>
+<p>Information om uppmärksammat förhållande som inte avser överkänslighet, sjukdom eller behandling (alertInformationBody.restrictionOfCare.restrictionOfCareComment).</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-alert-information-comment.html"
+                  title="StructureDefinition/alert-information-comment">Kommentar till uppmärksamhetssignal</a>
+            </td>
+            <td>
+<p>Kommentar angående uppmärksamhetssignalen (alertInformationBody.alertInformationComment).
+Om obsoleteComment är angivet konkateneras det med prefix 'Inaktiveringskommentar: {obsoleteComment}'.
+För body = unstructuredAlertInformation: unstructuredAlertInformationContent läggs här.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-immunization-registration-device.html"
+                  title="StructureDefinition/immunization-registration-device">Källsystem för vaccinationsregistrering</a>
+            </td>
+            <td>
+<p>Referens till den Device-resurs som beskriver källsystemet varifrån
+vaccinationsregistreringen härstammar
+(registrationRecord.sourceSystemName/productName/productVersion/sourceSystemContact).</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-device-source-system-contact.html"
+                  title="StructureDefinition/device-source-system-contact">Källsystemskontakt</a>
+            </td>
+            <td>
+<p>Ansvarig kontaktperson för källsystemet (registrationRecord.sourceSystemContact.actorId/actorName).</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-alert-pharmaceutical-treatment.html"
+                  title="StructureDefinition/alert-pharmaceutical-treatment">Läkemedel vid behandling</a>
+            </td>
+            <td>
+<p>Läkemedel som används vid uppmärksammad behandling, ATC-kod rekommenderas (alertInformationBody.treatment.pharmaceuticalTreatment). Lista med 0..* – ryms ej i Flag.code (1..1).</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-alert-pharmaceutical-hypersensitivity.html"
+                  title="StructureDefinition/alert-pharmaceutical-hypersensitivity">Läkemedelsöverkänslighet – substansdetaljer</a>
+            </td>
+            <td>
+<p>Kompletterande substansdetaljer för läkemedelsöverkänslighet
+(alertInformationBody.hypersensitivity.pharmaceuticalHypersensitivity).
+Primär substans: atcSubstance → Flag.code.coding; nonATCSubstance → Flag.code.text.
+Denna extension bär kvarvarande detaljer: nonATCSubstanceComment och pharmaceuticalProductId.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-immunization-patient-postal-code.html"
+                  title="StructureDefinition/immunization-patient-postal-code">Patientens postnummer vid vaccination</a>
+            </td>
+            <td>
+<p>Patientens postnummer vid vaccinationstillfället (registrationRecord.patientPostalCode).</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-related-alert-information.html"
+                  title="StructureDefinition/related-alert-information">Relaterad uppmärksamhetssignal</a>
+            </td>
+            <td>
+<p>Information om samband med andra uppmärksamhetssignaler (alertInformationBody.relatedAlertInformation).</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-alert-asserted-date.html"
+                  title="StructureDefinition/alert-asserted-date">Signeringstidpunkt för uppmärksamhetssignal</a>
+            </td>
+            <td>
+<p>Tidpunkt för signering av uppmärksamhetsinformation (alertInformationHeader.legalAuthenticator.signatureTime).</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-alert-route-of-transmission.html"
+                  title="StructureDefinition/alert-route-of-transmission">Smittväg</a>
+            </td>
+            <td>
+<p>Kod för hur sjukdomen smittar (alertInformationBody.communicableDisease.routeOfTransmission). KV Smittväg.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-alert-verified-time.html"
+                  title="StructureDefinition/alert-verified-time">Tidpunkt för verifiering</a>
+            </td>
+            <td>
+<p>Tidpunkt då uppmärksamhetssignalen verifierades i det lokala systemet (alertInformationBody.verifiedTime).</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-alert-degree-of-certainty.html"
+                  title="StructureDefinition/alert-degree-of-certainty">Visshet för överkänslighet</a>
+            </td>
+            <td>
+<p>Visshetsgrad för överkänsligheten (alertInformationBody.hypersensitivity.degreeOfCertainty). KV Visshetsgrad 1.2.752.129.2.2.3.11.</p>
+</td>
+         </tr>
+      </tbody>
+   </table>
+   <a name="4"> </a>
+   <h3>Terminology: Value Sets </h3>
+    <p>These define sets of codes used by systems conforming to this implementation guide.</p>
+<table class="grid">
+      <col style="width:20%"/>
+      <tbody>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ValueSet-assessmentcategory-vs.html"
+                  title="ValueSet/assessmentcategory-vs">AssessmentCategory — ValueSet</a>
+            </td>
+            <td>
+<p>Tillåtna värden för fältet assessmentCategory i GetFunctionalStatus.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ValueSet-deliverycode-vs.html" title="ValueSet/deliverycode-vs">DeliveryCode — ValueSet</a>
+            </td>
+            <td>
+<p>Tillåtna värden för förlossningssätt i GetMaternityMedicalHistory.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ValueSet-diagnosistype-vs.html" title="ValueSet/diagnosistype-vs">DiagnosisType — ValueSet</a>
+            </td>
+            <td>
+<p>Tillåtna värden för fältet typeOfDiagnosis i GetDiagnosis.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ValueSet-errorcode-vs.html" title="ValueSet/errorcode-vs">ErrorCode — ValueSet</a>
+            </td>
+            <td>
+<p>Tillåtna värden för errorCode i svar.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ValueSet-examinationstatuscode-vs.html"
+                  title="ValueSet/examinationstatuscode-vs">ExaminationStatusCode — ValueSet</a>
+            </td>
+            <td>
+<p>Tillåtna värden för examinationStatus i GetImagingOutcome.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ValueSet-fetalpositioncode-vs.html"
+                  title="ValueSet/fetalpositioncode-vs">FetalPositionCode — ValueSet</a>
+            </td>
+            <td>
+<p>Tillåtna värden för fosterläge i GetMaternityMedicalHistory.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ValueSet-clinicaldocumentnotecode-vs.html"
+                  title="ValueSet/clinicaldocumentnotecode-vs">KV Anteckningstyp — ValueSet</a>
+            </td>
+            <td>
+<p>Tillåtna värden för fältet clinicalDocumentNoteCode i GetCareDocumentation enligt KV Anteckningstyp (OID: 1.2.752.129.2.2.2.11).</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ValueSet-prescriptionstatus-vs.html"
+                  title="ValueSet/prescriptionstatus-vs">PrescriptionStatus — ValueSet</a>
+            </td>
+            <td>
+<p>Tillåtna värden för prescriptionStatus i GetMedicationHistory.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ValueSet-referraloutcometypecode-vs.html"
+                  title="ValueSet/referraloutcometypecode-vs">ReferralOutcomeTypeCode — ValueSet</a>
+            </td>
+            <td>
+<p>Tillåtna värden för referralOutcomeTypeCode i GetReferralOutcome.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ValueSet-resultcode-vs.html" title="ValueSet/resultcode-vs">ResultCode — ValueSet</a>
+            </td>
+            <td>
+<p>Tillåtna värden för resultCode i svar.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ValueSet-se-observation-status-vs.html"
+                  title="ValueSet/se-observation-status-vs">SE Observation Status (SNOMED CT urval 56431000052106)</a>
+            </td>
+            <td>
+<p>Tillåtna statusvärden för GetObservations observationStatus.
+Urvals-id 56431000052106, SNOMED CT SE (OID 1.2.752.116.2.1.1).
+Mappning till FHIR ObservationStatus via ConceptMap observation-status-map.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ValueSet-sexcode-vs.html" title="ValueSet/sexcode-vs">SexCode — ValueSet</a>
+            </td>
+            <td>
+<p>Tillåtna värden för kön i GetMaternityMedicalHistory.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ValueSet-growth-observation-type-vs.html"
+                  title="ValueSet/growth-observation-type-vs">Tillväxtkurva – observationstyper (IoÖ Tillväxtkurva v3)</a>
+            </td>
+            <td>
+<p>SNOMED CT-koder för tillväxtmätningar enligt Interaktionsöverenskommelse
+Tillväxtkurva för barn och ungdom v3 (Inera, 2023-05-15).</p>
+
+<p>Alla koder från kodsystemet SNOMED CT SE (OID 1.2.752.116.2.1.1).</p>
+
+<p>Koder:</p>
+<ul>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>1153637007</td>
+          <td>Kroppslängd</td>
+          <td>(primärkod för längd)</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>50373000</td>
+          <td>Mått på kroppslängd</td>
+          <td>(alternativkod för längd)</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>248334005</td>
+          <td>Längd i liggande</td>
+          <td>(bakåtkompatibel – ej för nyanslutning)</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>27113001</td>
+          <td>Kroppsvikt</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>363812007</td>
+          <td>Huvudomfång</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>412726003</td>
+          <td>Graviditetslängd vid födelse</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+</ul>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ValueSet-typeofcareplan-vs.html"
+                  title="ValueSet/typeofcareplan-vs">TypeOfCarePlan — ValueSet</a>
+            </td>
+            <td>
+<p>Tillåtna värden för typeOfCarePlan i GetCarePlans enligt clinicalprocess:logistics:logistics.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ValueSet-typeofleavecode-vs.html"
+                  title="ValueSet/typeofleavecode-vs">TypeOfLeaveCode — ValueSet</a>
+            </td>
+            <td>
+<p>Tillåtna värden för typ av ledighet i GetMaternityMedicalHistory.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ValueSet-typeofprescription-vs.html"
+                  title="ValueSet/typeofprescription-vs">TypeOfPrescription — ValueSet</a>
+            </td>
+            <td>
+<p>Tillåtna värden för typeOfPrescription i GetMedicationHistory.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ValueSet-typeofresultcode-vs.html"
+                  title="ValueSet/typeofresultcode-vs">TypeOfResultCode — ValueSet</a>
+            </td>
+            <td>
+<p>Tillåtna värden för typeOfResult i GetImagingOutcome.</p>
+</td>
+         </tr>
+      </tbody>
+   </table>
+   <a name="5"> </a>
+   <h3>Terminology: Code Systems </h3>
+    <p>These define new code systems used by systems conforming to this implementation guide.</p>
+<table class="grid">
+      <col style="width:20%"/>
+      <tbody>
+         <tr>
+            <td style="column-width:30%">
+               <a href="CodeSystem-assessmentcategory-cs.html"
+                  title="CodeSystem/assessmentcategory-cs">AssessmentCategory</a>
+            </td>
+            <td>
+<p>Bedömningskategori för funktionsstatus. Tillåtna värden är 'pad-pad' (PADL-bedömning) och 'fun-fun' (funktionsnedsättningsbedömning). Definierat i enum XSD v2.1 för domänen.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="CodeSystem-deliverycode-cs.html"
+                  title="CodeSystem/deliverycode-cs">DeliveryCode</a>
+            </td>
+            <td>
+<p>Kodverk för förlossningssätt (DeliveryCodeEnum). Används i GetMaternityMedicalHistory.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="CodeSystem-diagnosistype-cs.html"
+                  title="CodeSystem/diagnosistype-cs">DiagnosisType</a>
+            </td>
+            <td>
+<p>Kodverk för typ av diagnos (huvud- respektive bidiagnos). Definierat i XSD för domänen.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="CodeSystem-errorcode-cs.html" title="CodeSystem/errorcode-cs">ErrorCode</a>
+            </td>
+            <td>
+<p>Kodverk för felkoder i svar från tjänstekontrakten i domänen clinicalprocess:activityprescription:actoutcome.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="CodeSystem-examinationstatuscode-cs.html"
+                  title="CodeSystem/examinationstatuscode-cs">ExaminationStatusCode</a>
+            </td>
+            <td>
+<p>Kodverk för undersökningsstatus (ExaminationStatusCodeEnum). Används i GetImagingOutcome.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="CodeSystem-fetalpositioncode-cs.html"
+                  title="CodeSystem/fetalpositioncode-cs">FetalPositionCode</a>
+            </td>
+            <td>
+<p>Kodverk för fosterläge (FetalPositionCodeEnum). Används i GetMaternityMedicalHistory.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="CodeSystem-clinicaldocumentnotecode-cs.html"
+                  title="CodeSystem/clinicaldocumentnotecode-cs">KV Anteckningstyp</a>
+            </td>
+            <td>
+<p>Kodverk för typ av journalanteckning enligt KV Anteckningstyp. OID: 1.2.752.129.2.2.2.11.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="CodeSystem-maternity-section.html"
+                  title="CodeSystem/maternity-section">MaternityMedicalSection</a>
+            </td>
+            <td>
+<p>Diskriminatorkoder för de tre sektionerna i mödravårdsjournalen (GetMaternityMedicalHistory v2.0). Varje Observation-resurs som skapas ur ett maternityMedicalRecord sätter Observation.code till en av dessa koder.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="CodeSystem-nonreplaceable-cs.html"
+                  title="CodeSystem/nonreplaceable-cs">NonReplaceable</a>
+            </td>
+            <td>
+<p>Kodverk för aktör som har angett att ett läkemedel inte är utbytbart i GetMedicationHistory (DispensationAuthorizationType).</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="CodeSystem-prescriptionstatus-cs.html"
+                  title="CodeSystem/prescriptionstatus-cs">PrescriptionStatus</a>
+            </td>
+            <td>
+<p>Kodverk för ordinationsstatus i GetMedicationHistory. Anger om en ordination är aktiv eller inaktiv.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="CodeSystem-referraloutcometypecode-cs.html"
+                  title="CodeSystem/referraloutcometypecode-cs">ReferralOutcomeTypeCode</a>
+            </td>
+            <td>
+<p>Kodverk för typ av remissvar (ReferralOutcomeTypeCodeEnum). Används i GetReferralOutcome.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="CodeSystem-resultcode-cs.html" title="CodeSystem/resultcode-cs">ResultCode</a>
+            </td>
+            <td>
+<p>Kodverk för resultatkod i svar från tjänstekontrakten i domänen clinicalprocess:activityprescription:actoutcome.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="CodeSystem-sexcode-cs.html" title="CodeSystem/sexcode-cs">SexCode</a>
+            </td>
+            <td>
+<p>Kodverk för kön (SexCodeEnum). Används i GetMaternityMedicalHistory för barnets kön. OBS: Överväg att använda HL7 AdministrativeGender istället.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="CodeSystem-typeofcareplan-cs.html"
+                  title="CodeSystem/typeofcareplan-cs">TypeOfCarePlan</a>
+            </td>
+            <td>
+<p>Typ av vård- och omsorgsplan enligt clinicalprocess:logistics:logistics v3.0. Definierad i clinicalprocess_logistics_logistics_enum_3.0.xsd.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="CodeSystem-typeofleavecode-cs.html"
+                  title="CodeSystem/typeofleavecode-cs">TypeOfLeaveCode</a>
+            </td>
+            <td>
+<p>Kodverk för typ av ledighet (TypeOfLeaveCodeEnum). Används i GetMaternityMedicalHistory.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="CodeSystem-typeofprescription-cs.html"
+                  title="CodeSystem/typeofprescription-cs">TypeOfPrescription</a>
+            </td>
+            <td>
+<p>Kodverk för ordinationstyp i GetMedicationHistory. Anger om en ordination är en insättnings- eller utsättningsordination.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="CodeSystem-typeofresultcode-cs.html"
+                  title="CodeSystem/typeofresultcode-cs">TypeOfResultCode</a>
+            </td>
+            <td>
+<p>Kodverk för typ av resultat (TypeOfResultCodeEnum). Används i GetImagingOutcome och GetReferralOutcome.</p>
+</td>
+         </tr>
+      </tbody>
+   </table>
+   <a name="6"> </a>
+   <h3>Terminology: Concept Maps </h3>
+    <p>These define transformations to convert between codes by systems conforming with this implementation guide.</p>
+<table class="grid">
+      <col style="width:20%"/>
+      <tbody>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ConceptMap-observation-status-map.html"
+                  title="ConceptMap/observation-status-map">GetObservations – observationStatus (SNOMED CT) → FHIR ObservationStatus</a>
+            </td>
+            <td>
+<p>Mappning från RIVTA GetObservations observationStatus-koder (SNOMED CT,
+urvals-id 56431000052106) till FHIR R4 ObservationStatus (OBS-003).</p>
+
+<p>Kodsystem: SNOMED CT SE, OID 1.2.752.116.2.1.1 → URI http://snomed.info/sct.
+Om en okänd kod tas emot sätts status till 'unknown' och en OperationOutcome-varning
+genereras av bryggan.</p>
+</td>
+         </tr>
+      </tbody>
+   </table>
+</div>
+
+</div>
+        </div>  <!-- /inner-wrapper -->
+      </div>  <!-- /row -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-content -->
+
+  <script type="text/javascript" src="assets/js/jquery.js"> </script>     <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+  <script type="text/javascript" src="assets/js/jquery-ui.min.js"> </script>
+
+  <script type="text/javascript" src="assets/js/window-hash.js"> </script>
+  <a name="bottom"> </a>
+  <div id="segment-footer" igtool="footer" class="segment">  <!-- segment-footer -->
+    <div class="container">  <!-- container -->
+
+      <div class="inner-wrapper">
+        <p>
+          IG &#169; 2024+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.inera.se">Inera AB</a>.  Package inera.ehds.tk#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Wed, Jun 24, 2026 12:10+0000">2026-06-24</span>
+          <br/>
+          <span style="color: var(--footer-highlight-text-color)">
+                      Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
+                 <a style="color: var(--footer-hyperlink-text-color)" href="qa.html">QA Report</a>
+                 
+                
+          </span>
+        </p>
+      </div>  <!-- /inner-wrapper -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-footer -->
+  
+  <div id="segment-post-footer" class="segment hidden">  <!-- segment-post-footer -->
+    <div class="container">  <!-- container -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-post-footer -->
+
+  <!-- JS and analytics only. -->
+  <!-- Bootstrap core JavaScript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script type="text/javascript" src="assets/js/bootstrap.min.js"> </script>
+  <script type="text/javascript" src="assets/js/respond.min.js"> </script>
+  <script type="text/javascript" src="assets/js/anchor.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard-btn.js"> </script>
+  <script type="text/javascript" src="assets/js/anchor-hover.js"> </script>
+  <!-- Analytics Below
+  ================================================== -->
+  </body>
+</html>
+

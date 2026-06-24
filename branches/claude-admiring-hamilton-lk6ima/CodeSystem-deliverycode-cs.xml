@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<CodeSystem xmlns="http://hl7.org/fhir">
+  <id value="deliverycode-cs"/>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Genererad berättande text: CodeSystem deliverycode-cs</b></p><a name="deliverycode-cs"> </a><a name="hcdeliverycode-cs"> </a><p>Detta case-sensitive kodsystem <code>https://fhir.inera.se/CodeSystem/deliverycode</code> definierar följande koder:</p><table class="codes"><tr><td style="white-space:nowrap"><b>Kod</b></td><td><b>Visning</b></td><td><b>Definition</b></td></tr><tr><td style="white-space:nowrap">0<a name="deliverycode-cs-0"> </a></td><td>Ej angivet</td><td>Förlossningssätt ej angivet</td></tr><tr><td style="white-space:nowrap">1<a name="deliverycode-cs-1"> </a></td><td>X-gravid</td><td>X-gravid</td></tr><tr><td style="white-space:nowrap">2<a name="deliverycode-cs-2"> </a></td><td>Spontan abort</td><td>Spontan abort</td></tr><tr><td style="white-space:nowrap">4<a name="deliverycode-cs-4"> </a></td><td>Dödfött</td><td>Dödfött barn</td></tr><tr><td style="white-space:nowrap">5<a name="deliverycode-cs-5"> </a></td><td>Levande fött</td><td>Levande fött barn</td></tr></table></div>
+  </text>
+  <url value="https://fhir.inera.se/CodeSystem/deliverycode"/>
+  <version value="0.1.0"/>
+  <name value="DeliveryCodeCS"/>
+  <title value="DeliveryCode"/>
+  <status value="active"/>
+  <date value="2026-06-24T12:10:33+00:00"/>
+  <publisher value="Inera AB"/>
+  <contact>
+    <name value="Inera AB"/>
+    <telecom>
+      <system value="url"/>
+      <value value="https://www.inera.se"/>
+    </telecom>
+  </contact>
+  <description value="Kodverk för förlossningssätt (DeliveryCodeEnum). Används i GetMaternityMedicalHistory."/>
+  <jurisdiction>
+    <coding>
+      <system value="urn:iso:std:iso:3166"/>
+      <code value="SE"/>
+      <display value="Sweden"/>
+    </coding>
+  </jurisdiction>
+  <caseSensitive value="true"/>
+  <content value="complete"/>
+  <count value="5"/>
+  <concept>
+    <code value="0"/>
+    <display value="Ej angivet"/>
+    <definition value="Förlossningssätt ej angivet"/>
+  </concept>
+  <concept>
+    <code value="1"/>
+    <display value="X-gravid"/>
+    <definition value="X-gravid"/>
+  </concept>
+  <concept>
+    <code value="2"/>
+    <display value="Spontan abort"/>
+    <definition value="Spontan abort"/>
+  </concept>
+  <concept>
+    <code value="4"/>
+    <display value="Dödfött"/>
+    <definition value="Dödfött barn"/>
+  </concept>
+  <concept>
+    <code value="5"/>
+    <display value="Levande fött"/>
+    <definition value="Levande fött barn"/>
+  </concept>
+</CodeSystem>

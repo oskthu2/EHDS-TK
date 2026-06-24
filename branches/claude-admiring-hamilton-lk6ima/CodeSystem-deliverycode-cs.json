@@ -1,0 +1,58 @@
+{
+  "resourceType" : "CodeSystem",
+  "id" : "deliverycode-cs",
+  "text" : {
+    "status" : "generated",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Genererad berättande text: CodeSystem deliverycode-cs</b></p><a name=\"deliverycode-cs\"> </a><a name=\"hcdeliverycode-cs\"> </a><p>Detta case-sensitive kodsystem <code>https://fhir.inera.se/CodeSystem/deliverycode</code> definierar följande koder:</p><table class=\"codes\"><tr><td style=\"white-space:nowrap\"><b>Kod</b></td><td><b>Visning</b></td><td><b>Definition</b></td></tr><tr><td style=\"white-space:nowrap\">0<a name=\"deliverycode-cs-0\"> </a></td><td>Ej angivet</td><td>Förlossningssätt ej angivet</td></tr><tr><td style=\"white-space:nowrap\">1<a name=\"deliverycode-cs-1\"> </a></td><td>X-gravid</td><td>X-gravid</td></tr><tr><td style=\"white-space:nowrap\">2<a name=\"deliverycode-cs-2\"> </a></td><td>Spontan abort</td><td>Spontan abort</td></tr><tr><td style=\"white-space:nowrap\">4<a name=\"deliverycode-cs-4\"> </a></td><td>Dödfött</td><td>Dödfött barn</td></tr><tr><td style=\"white-space:nowrap\">5<a name=\"deliverycode-cs-5\"> </a></td><td>Levande fött</td><td>Levande fött barn</td></tr></table></div>"
+  },
+  "url" : "https://fhir.inera.se/CodeSystem/deliverycode",
+  "version" : "0.1.0",
+  "name" : "DeliveryCodeCS",
+  "title" : "DeliveryCode",
+  "status" : "active",
+  "date" : "2026-06-24T12:10:33+00:00",
+  "publisher" : "Inera AB",
+  "contact" : [{
+    "name" : "Inera AB",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "https://www.inera.se"
+    }]
+  }],
+  "description" : "Kodverk för förlossningssätt (DeliveryCodeEnum). Används i GetMaternityMedicalHistory.",
+  "jurisdiction" : [{
+    "coding" : [{
+      "system" : "urn:iso:std:iso:3166",
+      "code" : "SE",
+      "display" : "Sweden"
+    }]
+  }],
+  "caseSensitive" : true,
+  "content" : "complete",
+  "count" : 5,
+  "concept" : [{
+    "code" : "0",
+    "display" : "Ej angivet",
+    "definition" : "Förlossningssätt ej angivet"
+  },
+  {
+    "code" : "1",
+    "display" : "X-gravid",
+    "definition" : "X-gravid"
+  },
+  {
+    "code" : "2",
+    "display" : "Spontan abort",
+    "definition" : "Spontan abort"
+  },
+  {
+    "code" : "4",
+    "display" : "Dödfött",
+    "definition" : "Dödfött barn"
+  },
+  {
+    "code" : "5",
+    "display" : "Levande fött",
+    "definition" : "Levande fött barn"
+  }]
+}

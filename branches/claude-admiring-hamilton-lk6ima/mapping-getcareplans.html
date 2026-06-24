@@ -1,0 +1,848 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE HTML>
+<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
+    <title>GetCarePlans – Vårdplan - Inera EHDS Tjänstekontrakt – FHIR Implementation Guide v0.1.0</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="author" content="http://hl7.org/fhir"/>
+
+    <link href="fhir.css" rel="stylesheet"/>
+
+    <!-- Bootstrap core CSS -->
+    <link href="assets/css/bootstrap-fhir.css" rel="stylesheet"/>
+
+    <!-- Project extras -->
+    <link href="assets/css/project.css" rel="stylesheet"/>
+    <link href="assets/css/pygments-manni.css" rel="stylesheet"/>
+    <link href="assets/css/jquery-ui.css" rel="stylesheet"/>
+  	<link href="assets/css/prism.css" rel="stylesheet" />
+  	<link href="assets/css/cqf.css" rel="stylesheet" />
+    <link href="inera.css" rel="stylesheet"/>
+<link rel="icon" type="image/png" href="inera-thumbnail.png"/>
+<link rel="shortcut icon" href="inera-thumbnail.png"/>
+
+
+    <script type="text/javascript" src="fhir-table-scripts.js"> </script>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="assets/js/html5shiv.js"></script>
+    <script src="assets/js/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Favicons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/icon-fhir-144.png"/>
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/icon-fhir-114.png"/>
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/icon-fhir-72.png"/>
+    <link rel="apple-touch-icon-precomposed" href="assets/ico/icon-fhir-57.png"/>
+    <link rel="shortcut icon" href="assets/ico/favicon.png"/>
+  </head>
+  <body onload="document.body.style.opacity='1'">
+
+	  <script src="assets/js/prism.js"></script>
+    <script type="text/javascript" src="assets/js/mermaid.js"></script>
+    <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
+    <style type="text/css">h2{--heading-prefix:"11"}
+    h3,h4,h5,h6{--heading-prefix:"11"}</style>
+    <div id="segment-header" class="segment">  <!-- segment-header -->
+      <div class="container">  <!-- container -->
+
+        <div id="inera-nav">
+  <a id="inera-logo" data-no-external="true" href="https://www.inera.se">
+    <img height="50" alt="Inera" src="inera-logo-header.svg"/>
+  </a>
+</div>
+
+
+        <div id="ig-status">
+          <p><span style="font-size:12pt;font-weight:bold">Inera EHDS Tjänstekontrakt – FHIR Implementation Guide</span>
+            <br/>
+            <span style="display:inline-block;">0.1.0 - ci-build
+
+
+
+  <img alt="Sweden flag" src="assets/images/swe.svg" height="16" title="Sweden"/>
+
+
+            </span>
+          </p>
+        </div>
+      </div> <!-- /container -->
+    </div>  <!-- /segment-header -->
+
+    <div id="segment-navbar" class="segment">  <!-- segment-navbar -->
+      <div id="stripe"> </div>
+      <div class="container">  <!-- container -->
+        <!-- HEADER CONTENT -->
+
+        <nav class="navbar navbar-inverse">
+          <!--status-bar-->
+          <div class="container">
+            <button data-target=".navbar-inverse-collapse" class="navbar-toggle" data-toggle="collapse" type="button">
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+            </button>
+            <a class="navbar-brand hidden" href="http://hl7.org/fhir/R4/index.html">FHIR</a>
+            <div class="nav-collapse collapse navbar-inverse-collapse">
+              <div id="segment-navbar" class="segment">
+  <div id="stripe"> </div>
+  <div class="container">
+    <nav class="navbar navbar-inverse">
+      <div class="container">
+        <button data-target=".navbar-inverse-collapse" class="navbar-toggle" data-toggle="collapse" type="button">
+          <span class="icon-bar"> </span>
+          <span class="icon-bar"> </span>
+          <span class="icon-bar"> </span>
+        </button>
+        <a class="navbar-brand hidden" href="http://hl7.org/fhir/R4/index.html">FHIR</a>
+        <div class="nav-collapse collapse navbar-inverse-collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="index.html">Hem</a></li>
+            <li class="dropdown">
+              <a data-toggle="dropdown" href="#" class="dropdown-toggle">Bakgrund<b class="caret"> </b></a>
+              <ul class="dropdown-menu">
+                <li><a href="workflow.html">Workflow</a></li>
+                <li><a href="logical-models.html">Logiska modeller</a></li>
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a data-toggle="dropdown" href="#" class="dropdown-toggle">Mappningar<b class="caret"> </b></a>
+              <ul class="dropdown-menu">
+                <li><a href="mappings.html">Översikt</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="dropdown-header">Patientöversikt</li>
+                <li><a href="mapping-getdiagnosis.html">GetDiagnosis – Diagnoser</a></li>
+                <li><a href="mapping-getalertinformation.html">GetAlertInformation – Uppmärksamhet</a></li>
+                <li><a href="mapping-getmedicationhistory.html">GetMedicationHistory – Läkemedel</a></li>
+                <li><a href="mapping-getvaccinationhistory.html">GetVaccinationHistory – Vaccinationer</a></li>
+                <li><a href="mapping-getfunctionalstatus.html">GetFunctionalStatus – Funktionstillstånd</a></li>
+                <li><a href="mapping-getmaternitymedicalhistory.html">GetMaternityMedicalHistory – Mödravård</a></li>
+                <li><a href="mapping-getcareplans.html">GetCarePlans – Vårdplan</a></li>
+                <li><a href="mapping-getcarecontacts.html">GetCareContacts – Vårdkontakter</a></li>
+                <li><a href="mapping-getcaredocumentation.html">GetCareDocumentation – Anteckningar</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="dropdown-header">Laboratorie och diagnostik</li>
+                <li><a href="mapping-getlaboratoryorderoutcome.html">GetLaboratoryOrderOutcome – Provsvar</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="dropdown-header">Bilddiagnostik</li>
+                <li><a href="mapping-getimagingoutcome.html">GetImagingOutcome – Bilddiagnostik</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="dropdown-header">Remiss och process</li>
+                <li><a href="mapping-getreferraloutcome.html">GetReferralOutcome – Remisser</a></li>
+                <li><a href="mapping-getrequestactivities.html">GetRequestActivities – Remisstatus</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="dropdown-header">Tillväxtkurva barn</li>
+                <li><a href="mapping-getobservations.html">GetObservations – Tillväxtkurva</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="dropdown-header">Logg</li>
+                <li><a href="mapping-getaccesslogforpatient.html">GetAccessLogForPatient – Åtkomstloggar</a></li>
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a data-toggle="dropdown" href="#" class="dropdown-toggle">FHIR Artifacts<b class="caret"> </b></a>
+              <ul class="dropdown-menu">
+                <li><a href="profiles.html">Profiles</a></li>
+                <li><a href="terminology.html">Terminology</a></li>
+                <li><a href="examples.html">Examples</a></li>
+                <li><a href="artifacts.html">All Artifacts</a></li>
+              </ul>
+            </li>
+            <li><a href="search-parameters.html">Sökparametrar</a></li>
+            <li><a href="downloads.html">Downloads</a></li>
+            <li><a href="mapping-issues.html">Issues &amp; Beslut</a></li>
+            <li><a href="version-history.html">Version History</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </div>
+</div>
+
+            </div>  <!-- /.nav-collapse -->
+          </div>  <!-- /.container -->
+        </nav>  <!-- /.navbar -->
+      <!-- /HEADER CONTENT -->
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-navbar -->
+    <!--status-bar-->
+
+    <div id="segment-breadcrumb" class="segment">  <!-- segment-breadcrumb -->
+      <div class="container">  <!-- container -->
+        <ul class="breadcrumb">
+          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><b>GetCarePlans – Vårdplan</b></li>
+
+        </ul>
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-breadcrumb -->
+
+    <a name="top"> </a>
+    <div id="segment-content" class="segment">  <!-- segment-content -->
+      <div class="container">  <!-- container -->
+        <div class="row">
+          <div class="inner-wrapper">
+
+<style type="text/css">
+h2:before{color:silver;counter-increment:section;content:var(--heading-prefix) " ";}
+h3:before{color:silver;counter-increment:sub-section;content:var(--heading-prefix) "." counter(sub-section) " ";}
+h4:before{color:silver;counter-increment:composite;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) " ";}
+h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) " ";}
+h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
+</style>
+<div class="col-12">
+  <!--ReleaseHeader--><p id="publish-box">Inera EHDS Tjänstekontrakt – FHIR Implementation Guide - Lokal utvecklingsbygge (v0.1.0) byggt av FHIR (HL7® FHIR® Standard) Build Tools. Se <a href='https://fhir.inera.se/ig/ehds-tk/history.html'>katalogen över publicerade versioner</a></p><!--EndReleaseHeader-->
+  <h2>GetCarePlans – Vårdplan</h2>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+    <p><!-- white space is critical inside of capture --></p>
+<div class="markdown-toc">
+<ul id="markdown-toc">
+  <li><a href="#getcareplans--vårdplan" id="markdown-toc-getcareplans--vårdplan">GetCarePlans – Vårdplan</a>    <ul>
+      <li><a href="#struktur" id="markdown-toc-struktur">Struktur</a></li>
+      <li><a href="#mappningstabell" id="markdown-toc-mappningstabell">Mappningstabell</a>        <ul>
+          <li><a href="#header--identitet-och-patient" id="markdown-toc-header--identitet-och-patient">Header – identitet och patient</a></li>
+          <li><a href="#header--dokumenttid" id="markdown-toc-header--dokumenttid">Header – dokumenttid</a></li>
+          <li><a href="#header--ansvarig-personal-accountablehealthcareprofessional" id="markdown-toc-header--ansvarig-personal-accountablehealthcareprofessional">Header – ansvarig personal (accountableHealthcareProfessional)</a></li>
+          <li><a href="#header--ansvarig-personal--organisationsenhet" id="markdown-toc-header--ansvarig-personal--organisationsenhet">Header – ansvarig personal – organisationsenhet</a></li>
+          <li><a href="#header--pdlsparr" id="markdown-toc-header--pdlsparr">Header – PDL/Sparr</a></li>
+          <li><a href="#header--signerare-legalauthenticator" id="markdown-toc-header--signerare-legalauthenticator">Header – signerare (legalAuthenticator)</a></li>
+          <li><a href="#header--relaterad-vårdkontakt" id="markdown-toc-header--relaterad-vårdkontakt">Header – relaterad vårdkontakt</a></li>
+          <li><a href="#body--plantyp-och-deltagare" id="markdown-toc-body--plantyp-och-deltagare">Body – plantyp och deltagare</a></li>
+          <li><a href="#body--innehåll-multimediatype" id="markdown-toc-body--innehåll-multimediatype">Body – innehåll (MultimediaType)</a></li>
+          <li><a href="#tekniska-responsfält-result" id="markdown-toc-tekniska-responsfält-result">Tekniska responsfält (result)</a></li>
+        </ul>
+      </li>
+      <li><a href="#pdl-och-sparr" id="markdown-toc-pdl-och-sparr">PDL och Sparr</a></li>
+      <li><a href="#provenance" id="markdown-toc-provenance">Provenance</a></li>
+      <li><a href="#typeofcareplan--kodverk" id="markdown-toc-typeofcareplan--kodverk">TypeOfCarePlan – kodverk</a></li>
+      <li><a href="#oid-till-uri-tabell" id="markdown-toc-oid-till-uri-tabell">OID-till-URI-tabell</a></li>
+      <li><a href="#föreslagna-nya-issues" id="markdown-toc-föreslagna-nya-issues">Föreslagna nya issues</a></li>
+    </ul>
+  </li>
+</ul>
+
+</div>
+<h1 id="getcareplans--vårdplan">GetCarePlans – Vårdplan</h1>
+
+<p><strong>Tjänstekontrakt:</strong> <code class="language-plaintext highlighter-rouge">clinicalprocess:logistics:logistics</code> GetCarePlans v2.0<br />
+<strong>FHIR-profil:</strong> <a href="StructureDefinition-inera-ehds-care-plan.html">IneraEHDSCarePlan</a><br />
+<strong>Logisk modell:</strong> <a href="StructureDefinition-inera-ehds-lm-care-plans.html">IneraEHDSLMCarePlans</a><br />
+<strong>Krävs för NPÖ:</strong> Ja (v2.0) | <strong>Krävs för 1177 Journal:</strong> Ja (v2.0)</p>
+
+<hr />
+
+<h2 id="struktur">Struktur</h2>
+
+<p>GetCarePlans returnerar en lista <code class="language-plaintext highlighter-rouge">carePlan</code> (0..*) med en flat struktur – alla fält finns direkt på <code class="language-plaintext highlighter-rouge">carePlan</code>, utan separata header/body-undernivåer i TKB.</p>
+
+<hr />
+
+<h2 id="mappningstabell">Mappningstabell</h2>
+
+<h3 id="header--identitet-och-patient">Header – identitet och patient</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>RIVTA-element</th>
+      <th>Kard.</th>
+      <th>FHIR-element</th>
+      <th>Kommentar</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">carePlan.documentId</code></td>
+      <td>1..1</td>
+      <td><code class="language-plaintext highlighter-rouge">CarePlan.identifier[0].value</code></td>
+      <td>Källsystemets dokumentidentitet; unik inom källsystemet</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">carePlan.sourceSystemHSAId</code></td>
+      <td>1..1</td>
+      <td><code class="language-plaintext highlighter-rouge">CarePlan.meta.source</code></td>
+      <td>Format: <code class="language-plaintext highlighter-rouge">urn:oid:1.2.752.129.2.1.4.1#{hsaId}</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">carePlan.patientId.extension</code></td>
+      <td>1..1</td>
+      <td><code class="language-plaintext highlighter-rouge">CarePlan.subject.identifier.value</code></td>
+      <td>Personnummer eller samordningsnummer</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">carePlan.patientId.root</code></td>
+      <td>1..1</td>
+      <td><code class="language-plaintext highlighter-rouge">CarePlan.subject.identifier.system</code></td>
+      <td>OID→URI-konvertering (se OID-tabell nedan)</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="header--dokumenttid">Header – dokumenttid</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>RIVTA-element</th>
+      <th>Kard.</th>
+      <th>FHIR-element</th>
+      <th>Kommentar</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">carePlan.documentTitle</code></td>
+      <td>1..1</td>
+      <td><code class="language-plaintext highlighter-rouge">CarePlan.title</code></td>
+      <td>Obligatorisk (1..1 i profilen)</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">carePlan.documentTime</code></td>
+      <td>0..1</td>
+      <td><code class="language-plaintext highlighter-rouge">CarePlan.created</code></td>
+      <td>YYYYMMDDHHMMSS → ISO 8601</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="header--ansvarig-personal-accountablehealthcareprofessional">Header – ansvarig personal (accountableHealthcareProfessional)</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>RIVTA-element</th>
+      <th>Kard.</th>
+      <th>FHIR-element</th>
+      <th>Kommentar</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">carePlan.accountableHealthcareProfessional.authorTime</code></td>
+      <td>1..1</td>
+      <td><code class="language-plaintext highlighter-rouge">CarePlan.meta.lastUpdated</code></td>
+      <td>Tidpunkt för registrering; YYYYMMDDHHMMSS → ISO 8601</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">carePlan.accountableHealthcareProfessional.healthcareProfessionalHSAId</code></td>
+      <td>0..1</td>
+      <td><code class="language-plaintext highlighter-rouge">PractitionerRole.identifier.value</code></td>
+      <td>Via <code class="language-plaintext highlighter-rouge">CarePlan.author</code>-referens</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">carePlan.accountableHealthcareProfessional.healthcareProfessionalName</code></td>
+      <td>0..1</td>
+      <td><code class="language-plaintext highlighter-rouge">PractitionerRole.practitioner.display</code></td>
+      <td>Valfritt komplement till HSA-id</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">carePlan.accountableHealthcareProfessional.healthcareProfessionalRoleCode</code></td>
+      <td>0..1</td>
+      <td><code class="language-plaintext highlighter-rouge">PractitionerRole.code</code></td>
+      <td>Befattningskod (KV Befattning OID 1.2.752.129.2.2.1.4)</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="header--ansvarig-personal--organisationsenhet">Header – ansvarig personal – organisationsenhet</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>RIVTA-element</th>
+      <th>Kard.</th>
+      <th>FHIR-element</th>
+      <th>Kommentar</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">carePlan.accountableHealthcareProfessional.healthcareProfessionalOrgUnit.orgUnitHSAId</code></td>
+      <td>0..1</td>
+      <td><code class="language-plaintext highlighter-rouge">PractitionerRole.organization.identifier</code></td>
+      <td>HSA-id för organisationsenhet</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">carePlan.accountableHealthcareProfessional.healthcareProfessionalOrgUnit.orgUnitName</code></td>
+      <td>0..1</td>
+      <td><code class="language-plaintext highlighter-rouge">PractitionerRole.organization.display</code></td>
+      <td>Namn på organisationsenhet</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">carePlan.accountableHealthcareProfessional.healthcareProfessionalOrgUnit.orgUnitTelecom</code></td>
+      <td>0..1</td>
+      <td>Ej mappad</td>
+      <td>Telefonnummer till org.enhet – ingår ej i PractitionerRole.organization; kan lagras i Organization.telecom om Organization-resurs skapas</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">carePlan.accountableHealthcareProfessional.healthcareProfessionalOrgUnit.orgUnitEmail</code></td>
+      <td>0..1</td>
+      <td>Ej mappad</td>
+      <td>E-post till org.enhet – se <code class="language-plaintext highlighter-rouge">orgUnitTelecom</code> ovan</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">carePlan.accountableHealthcareProfessional.healthcareProfessionalOrgUnit.orgUnitAddress</code></td>
+      <td>0..1</td>
+      <td>Ej mappad</td>
+      <td>Postadress till org.enhet – ingår ej i PractitionerRole; kan lagras i Organization.address om Organization-resurs skapas</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">carePlan.accountableHealthcareProfessional.healthcareProfessionalOrgUnit.orgUnitLocation</code></td>
+      <td>0..1</td>
+      <td>Ej mappad</td>
+      <td>Fritextplats för org.enhet – ingen standardiserad FHIR-plats i CarePlan/PractitionerRole</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="header--pdlsparr">Header – PDL/Sparr</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>RIVTA-element</th>
+      <th>Kard.</th>
+      <th>FHIR-element</th>
+      <th>Kommentar</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">carePlan.accountableHealthcareProfessional.healthcareProfessionalCareUnitHSAId</code></td>
+      <td>0..1</td>
+      <td><code class="language-plaintext highlighter-rouge">Provenance.agent[author].who.identifier</code></td>
+      <td>Inre Sparr – vårdenhet (Regel 1)</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">carePlan.accountableHealthcareProfessional.healthcareProfessionalCareGiverHSAId</code></td>
+      <td>0..1</td>
+      <td><code class="language-plaintext highlighter-rouge">Provenance.agent[custodian].who.identifier</code></td>
+      <td>Yttre Sparr – vårdgivare (Regel 1)</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">carePlan.approvedForPatient</code></td>
+      <td>1..1</td>
+      <td><code class="language-plaintext highlighter-rouge">CarePlan.meta.security</code></td>
+      <td>PDL-kontroll (Regel 3) – se PDL-001 i mapping-issues</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="header--signerare-legalauthenticator">Header – signerare (legalAuthenticator)</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>RIVTA-element</th>
+      <th>Kard.</th>
+      <th>FHIR-element</th>
+      <th>Kommentar</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">carePlan.legalAuthenticator.signatureTime</code></td>
+      <td>1..1 (om legalAuthenticator anges)</td>
+      <td><code class="language-plaintext highlighter-rouge">CarePlan.extension[assertedDate]</code></td>
+      <td>Signeringstidpunkt; YYYYMMDDHHMMSS → ISO 8601</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">carePlan.legalAuthenticator.legalAuthenticatorHSAId</code></td>
+      <td>0..1</td>
+      <td><code class="language-plaintext highlighter-rouge">CarePlan.asserter.identifier</code></td>
+      <td>Via asserter-referens</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">carePlan.legalAuthenticator.legalAuthenticatorName</code></td>
+      <td>0..1</td>
+      <td>Ej mappad</td>
+      <td>Namn i klartext – HSA-id räcker för logisk referens</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="header--relaterad-vårdkontakt">Header – relaterad vårdkontakt</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>RIVTA-element</th>
+      <th>Kard.</th>
+      <th>FHIR-element</th>
+      <th>Kommentar</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">carePlan.careContactId</code></td>
+      <td>0..1</td>
+      <td><code class="language-plaintext highlighter-rouge">CarePlan.encounter.identifier</code></td>
+      <td>Logisk referens till Encounter</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="body--plantyp-och-deltagare">Body – plantyp och deltagare</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>RIVTA-element</th>
+      <th>Kard.</th>
+      <th>FHIR-element</th>
+      <th>Kommentar</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">carePlan.typeOfCarePlan</code></td>
+      <td>0..1</td>
+      <td><code class="language-plaintext highlighter-rouge">CarePlan.category</code></td>
+      <td>Bunden till TypeOfCarePlanVS (required)</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">carePlan.participatingCareUnitHSAId</code></td>
+      <td>0..*</td>
+      <td><code class="language-plaintext highlighter-rouge">CarePlan.contributor</code></td>
+      <td>Deltagande vårdenheters HSA-id (IIType); en referens per enhet</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="body--innehåll-multimediatype">Body – innehåll (MultimediaType)</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>RIVTA-element</th>
+      <th>Kard.</th>
+      <th>FHIR-element</th>
+      <th>Kommentar</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">carePlan.content</code></td>
+      <td>0..*</td>
+      <td>Extension (MultimediaType)</td>
+      <td>FHIR R4 CarePlan har inget inbyggt multimedia-fält; kräver extension vid implementering</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">carePlan.content.mediaType</code></td>
+      <td>1..1</td>
+      <td>Extension.mediaType</td>
+      <td>MIME-typ: text/plain, text/html, image/jpeg, image/png, image/tiff, application/pdf</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">carePlan.content.id</code></td>
+      <td>0..0</td>
+      <td>N/A</td>
+      <td>Ej tillämpligt för detta TK per TKB (markerat 0..0 i logisk modell)</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">carePlan.content.value</code></td>
+      <td>0..1</td>
+      <td>Extension.value (base64Binary)</td>
+      <td>Binärdata (base64) – XOR med reference; max 100 KB per post</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">carePlan.content.reference</code></td>
+      <td>0..1</td>
+      <td>Extension.reference (url)</td>
+      <td>Referens till extern fil (URL) – XOR med value</td>
+    </tr>
+  </tbody>
+</table>
+
+<blockquote>
+  <p><strong>OBS – Innehåll:</strong> Text-innehåll (<code class="language-plaintext highlighter-rouge">text/plain</code>, <code class="language-plaintext highlighter-rouge">text/html</code>) kan även lagras i <code class="language-plaintext highlighter-rouge">CarePlan.note.text</code> som alternativ till extension, men förlorar då MIME-typinformation. Binärt innehåll kräver separat extension.</p>
+</blockquote>
+
+<blockquote>
+  <p><strong>Invariant:</strong> <code class="language-plaintext highlighter-rouge">carePlan.content</code> – antingen <code class="language-plaintext highlighter-rouge">value</code> eller <code class="language-plaintext highlighter-rouge">reference</code> måste anges, ej båda (<code class="language-plaintext highlighter-rouge">getcareplans-content-xor</code> i logisk modell).</p>
+</blockquote>
+
+<h3 id="tekniska-responsfält-result">Tekniska responsfält (result)</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>RIVTA-element</th>
+      <th>Kard.</th>
+      <th>FHIR-element</th>
+      <th>Kommentar</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">result.resultCode</code></td>
+      <td>1..1</td>
+      <td>Ej mappad</td>
+      <td>Teknisk responskod – hanteras av transportlagret</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">result.errorCode</code></td>
+      <td>0..1</td>
+      <td>Ej mappad</td>
+      <td>Teknisk felkod – hanteras av transportlagret</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">result.logId</code></td>
+      <td>1..1</td>
+      <td>Ej mappad</td>
+      <td>Teknisk spårnings-UUID – hanteras av transportlagret</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">result.subCode</code></td>
+      <td>0..1</td>
+      <td>Ej mappad</td>
+      <td>Teknisk subkod – hanteras av transportlagret</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">result.message</code></td>
+      <td>0..1</td>
+      <td>Ej mappad</td>
+      <td>Teknisk felbeskrivning – hanteras av transportlagret</td>
+    </tr>
+  </tbody>
+</table>
+
+<hr />
+
+<h2 id="pdl-och-sparr">PDL och Sparr</h2>
+
+<p>PDL-fälten <code class="language-plaintext highlighter-rouge">healthcareProfessionalCareUnitHSAId</code> och <code class="language-plaintext highlighter-rouge">healthcareProfessionalCareGiverHSAId</code> är <strong>inte</strong> toppnivå-header-fält utan finns under <code class="language-plaintext highlighter-rouge">carePlan.accountableHealthcareProfessional</code>. De är valfria i kontraktet men krävs av Regel 1 för korrekt Sparr-hantering.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>RIVTA PDL-element</th>
+      <th>FHIR-destination</th>
+      <th>Sparr-nivå</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">carePlan.accountableHealthcareProfessional.healthcareProfessionalCareGiverHSAId</code></td>
+      <td><code class="language-plaintext highlighter-rouge">Provenance.agent[custodian].who.identifier</code></td>
+      <td>Yttre Sparr</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">carePlan.accountableHealthcareProfessional.healthcareProfessionalCareUnitHSAId</code></td>
+      <td><code class="language-plaintext highlighter-rouge">Provenance.agent[author].who.identifier</code></td>
+      <td>Inre Sparr</td>
+    </tr>
+  </tbody>
+</table>
+
+<hr />
+
+<h2 id="provenance">Provenance</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Agent</th>
+      <th>Roll</th>
+      <th>Källa</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">agent[custodian]</code></td>
+      <td>Juridiskt ansvarig vårdgivare</td>
+      <td><code class="language-plaintext highlighter-rouge">healthcareProfessionalCareGiverHSAId</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">agent[author]</code></td>
+      <td>Informationsägande vårdenhet</td>
+      <td><code class="language-plaintext highlighter-rouge">healthcareProfessionalCareUnitHSAId</code></td>
+    </tr>
+  </tbody>
+</table>
+
+<hr />
+
+<h2 id="typeofcareplan--kodverk">TypeOfCarePlan – kodverk</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Kod</th>
+      <th>Display</th>
+      <th>Beskrivning</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">SIP</code></td>
+      <td>SIP</td>
+      <td>Samordnad individuell plan</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">SPLPTLRV</code></td>
+      <td>SPLPTLRV</td>
+      <td>Samordnad plan enligt LPT och LRV</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">SPU</code></td>
+      <td>SPU</td>
+      <td>Samordnad plan vid utskrivning</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">VP</code></td>
+      <td>VP</td>
+      <td>Vårdplan</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">HP</code></td>
+      <td>HP</td>
+      <td>Habiliteringsplan</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">RP</code></td>
+      <td>RP</td>
+      <td>Rehabiliteringsplan</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">GP</code></td>
+      <td>GP</td>
+      <td>Genomförandeplan</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">SVP</code></td>
+      <td>SVP</td>
+      <td>Standardiserad vårdplan</td>
+    </tr>
+  </tbody>
+</table>
+
+<hr />
+
+<h2 id="oid-till-uri-tabell">OID-till-URI-tabell</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>OID</th>
+      <th>URI</th>
+      <th>Beskrivning</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">1.2.752.129.2.1.3.1</code></td>
+      <td><code class="language-plaintext highlighter-rouge">http://electronichealth.se/identifier/personnummer</code></td>
+      <td>Personnummer</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">1.2.752.129.2.1.3.3</code></td>
+      <td><code class="language-plaintext highlighter-rouge">http://electronichealth.se/identifier/samordningsnummer</code></td>
+      <td>Samordningsnummer</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">1.2.752.129.2.1.4.1</code></td>
+      <td><code class="language-plaintext highlighter-rouge">urn:oid:1.2.752.129.2.1.4.1</code></td>
+      <td>HSA-id (Inera NTjP)</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>OID:er utan känd URI-mappning bevaras som <code class="language-plaintext highlighter-rouge">urn:oid:{oid}</code>.</p>
+
+<hr />
+
+<h2 id="föreslagna-nya-issues">Föreslagna nya issues</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>Fråga</th>
+      <th>Status</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>CP-001</td>
+      <td><code class="language-plaintext highlighter-rouge">carePlan.content</code> (MultimediaType) saknar standardiserat FHIR R4-uttryck i CarePlan. Bör en lokal extension definieras i profilen med fälten <code class="language-plaintext highlighter-rouge">mediaType</code>, <code class="language-plaintext highlighter-rouge">value</code> (base64Binary) och <code class="language-plaintext highlighter-rouge">reference</code> (url), eller ska <code class="language-plaintext highlighter-rouge">DocumentReference</code> användas som alternativ resurs?</td>
+      <td>Föreslagen</td>
+    </tr>
+    <tr>
+      <td>CP-002</td>
+      <td><code class="language-plaintext highlighter-rouge">carePlan.participatingCareUnitHSAId</code> mappas till <code class="language-plaintext highlighter-rouge">CarePlan.contributor</code> (Reference(CareTeam|Organization|Patient|Practitioner|RelatedPerson)). Organization är lämpligast för enhetsnivå. Bör logisk referens via identifier tillåtas utan att Organization-resurs skapas?</td>
+      <td>Föreslagen</td>
+    </tr>
+    <tr>
+      <td>CP-003</td>
+      <td>OrgUnit-kontaktdetaljer (<code class="language-plaintext highlighter-rouge">orgUnitTelecom</code>, <code class="language-plaintext highlighter-rouge">orgUnitEmail</code>, <code class="language-plaintext highlighter-rouge">orgUnitAddress</code>, <code class="language-plaintext highlighter-rouge">orgUnitLocation</code>) under <code class="language-plaintext highlighter-rouge">accountableHealthcareProfessional.healthcareProfessionalOrgUnit</code> är ej mappade i FHIR CarePlan/PractitionerRole. Ska dessa fält ignoreras eller kräver de skapande av en fullständig Organization-resurs?</td>
+      <td>Föreslagen</td>
+    </tr>
+  </tbody>
+</table>
+
+
+
+
+</div>
+        </div>  <!-- /inner-wrapper -->
+      </div>  <!-- /row -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-content -->
+
+  <script type="text/javascript" src="assets/js/jquery.js"> </script>     <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+  <script type="text/javascript" src="assets/js/jquery-ui.min.js"> </script>
+
+  <script type="text/javascript" src="assets/js/window-hash.js"> </script>
+  <a name="bottom"> </a>
+  <div id="segment-footer" igtool="footer" class="segment">  <!-- segment-footer -->
+    <div class="container">  <!-- container -->
+
+      <div class="inner-wrapper">
+        <p>
+          IG &#169; 2024+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.inera.se">Inera AB</a>.  Package inera.ehds.tk#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Wed, Jun 24, 2026 12:10+0000">2026-06-24</span>
+          <br/>
+          <span style="color: var(--footer-highlight-text-color)">
+                      Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
+                 <a style="color: var(--footer-hyperlink-text-color)" href="qa.html">QA Report</a>
+                 
+                
+          </span>
+        </p>
+      </div>  <!-- /inner-wrapper -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-footer -->
+  
+  <div id="segment-post-footer" class="segment hidden">  <!-- segment-post-footer -->
+    <div class="container">  <!-- container -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-post-footer -->
+
+  <!-- JS and analytics only. -->
+  <!-- Bootstrap core JavaScript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script type="text/javascript" src="assets/js/bootstrap.min.js"> </script>
+  <script type="text/javascript" src="assets/js/respond.min.js"> </script>
+  <script type="text/javascript" src="assets/js/anchor.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard-btn.js"> </script>
+  <script type="text/javascript" src="assets/js/anchor-hover.js"> </script>
+  <!-- Analytics Below
+  ================================================== -->
+  </body>
+</html>
+

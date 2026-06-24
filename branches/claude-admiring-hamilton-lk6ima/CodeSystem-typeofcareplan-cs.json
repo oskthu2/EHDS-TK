@@ -1,0 +1,72 @@
+{
+  "resourceType" : "CodeSystem",
+  "id" : "typeofcareplan-cs",
+  "text" : {
+    "status" : "generated",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Genererad berättande text: CodeSystem typeofcareplan-cs</b></p><a name=\"typeofcareplan-cs\"> </a><a name=\"hctypeofcareplan-cs\"> </a><p>Detta  kodsystem <code>https://fhir.inera.se/CodeSystem/typeofcareplan-cs</code> definierar följande koder:</p><table class=\"codes\"><tr><td style=\"white-space:nowrap\"><b>Kod</b></td><td><b>Definition</b></td></tr><tr><td style=\"white-space:nowrap\">SIP<a name=\"typeofcareplan-cs-SIP\"> </a></td><td>Samordnad individuell plan</td></tr><tr><td style=\"white-space:nowrap\">SPLPTLRV<a name=\"typeofcareplan-cs-SPLPTLRV\"> </a></td><td>Samordnad plan enligt LPT och LRV</td></tr><tr><td style=\"white-space:nowrap\">SPU<a name=\"typeofcareplan-cs-SPU\"> </a></td><td>Samordnad plan vid utskrivning</td></tr><tr><td style=\"white-space:nowrap\">VP<a name=\"typeofcareplan-cs-VP\"> </a></td><td>Vårdplan</td></tr><tr><td style=\"white-space:nowrap\">HP<a name=\"typeofcareplan-cs-HP\"> </a></td><td>Habiliteringsplan</td></tr><tr><td style=\"white-space:nowrap\">RP<a name=\"typeofcareplan-cs-RP\"> </a></td><td>Rehabiliteringsplan</td></tr><tr><td style=\"white-space:nowrap\">GP<a name=\"typeofcareplan-cs-GP\"> </a></td><td>Genomförandeplan</td></tr><tr><td style=\"white-space:nowrap\">SVP<a name=\"typeofcareplan-cs-SVP\"> </a></td><td>Standardiserad vårdplan</td></tr></table></div>"
+  },
+  "url" : "https://fhir.inera.se/CodeSystem/typeofcareplan-cs",
+  "version" : "0.1.0",
+  "name" : "TypeOfCarePlanCS",
+  "title" : "TypeOfCarePlan",
+  "status" : "active",
+  "date" : "2026-06-24T12:10:33+00:00",
+  "publisher" : "Inera AB",
+  "contact" : [{
+    "name" : "Inera AB",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "https://www.inera.se"
+    }]
+  }],
+  "description" : "Typ av vård- och omsorgsplan enligt clinicalprocess:logistics:logistics v3.0. Definierad i clinicalprocess_logistics_logistics_enum_3.0.xsd.",
+  "jurisdiction" : [{
+    "coding" : [{
+      "system" : "urn:iso:std:iso:3166",
+      "code" : "SE",
+      "display" : "Sweden"
+    }]
+  }],
+  "content" : "complete",
+  "count" : 8,
+  "concept" : [{
+    "code" : "SIP",
+    "display" : "SIP",
+    "definition" : "Samordnad individuell plan"
+  },
+  {
+    "code" : "SPLPTLRV",
+    "display" : "SPLPTLRV",
+    "definition" : "Samordnad plan enligt LPT och LRV"
+  },
+  {
+    "code" : "SPU",
+    "display" : "SPU",
+    "definition" : "Samordnad plan vid utskrivning"
+  },
+  {
+    "code" : "VP",
+    "display" : "VP",
+    "definition" : "Vårdplan"
+  },
+  {
+    "code" : "HP",
+    "display" : "HP",
+    "definition" : "Habiliteringsplan"
+  },
+  {
+    "code" : "RP",
+    "display" : "RP",
+    "definition" : "Rehabiliteringsplan"
+  },
+  {
+    "code" : "GP",
+    "display" : "GP",
+    "definition" : "Genomförandeplan"
+  },
+  {
+    "code" : "SVP",
+    "display" : "SVP",
+    "definition" : "Standardiserad vårdplan"
+  }]
+}

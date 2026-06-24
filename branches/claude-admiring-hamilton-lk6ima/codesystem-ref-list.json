@@ -1,0 +1,194 @@
+{
+  "codeSystems" : [{
+    "url" : "http://hl7.org/fhir/observation-status",
+    "version" : "4.0.1",
+    "status" : "active",
+    "name" : "ObservationStatus",
+    "title" : "ObservationStatus",
+    "description" : "Codes providing the status of an observation.",
+    "oids" : ["2.16.840.1.113883.4.642.4.401"],
+    "uses" : {
+    },
+    "ConceptMap-observation-status-map.html" : "GetObservations observationStatus → FHIR ObservationStatus"
+  },
+  {
+    "url" : "http://snomed.info/sct",
+    "version" : null,
+    "status" : "active",
+    "name" : "SNOMED_CT",
+    "title" : "SNOMED CT (all versions)",
+    "description" : "SNOMED CT is the most comprehensive and precise clinical health terminology product in the world, owned and distributed around the world by The International Health Terminology Standards Development Organisation (IHTSDO).",
+    "oids" : ["2.16.840.1.113883.6.96"],
+    "uses" : {
+    },
+    "ValueSet-se-observation-status-vs.html" : "SE Observation Status (SNOMED CT urval 56431000052106)",
+    "ValueSet-growth-observation-type-vs.html" : "Tillväxtkurva – observationstyper (IoÖ Tillväxtkurva v3)",
+    "ConceptMap-observation-status-map.html" : "GetObservations observationStatus → FHIR ObservationStatus"
+  },
+  {
+    "url" : "https://fhir.inera.se/CodeSystem/deliverycode",
+    "version" : "0.1.0",
+    "status" : "active",
+    "name" : "DeliveryCodeCS",
+    "title" : "DeliveryCode",
+    "description" : "Kodverk för förlossningssätt (DeliveryCodeEnum). Används i GetMaternityMedicalHistory.",
+    "uses" : {
+    },
+    "ValueSet-deliverycode-vs.html" : "DeliveryCode — ValueSet"
+  },
+  {
+    "url" : "https://fhir.inera.se/CodeSystem/errorcode-actoutcome",
+    "version" : "0.1.0",
+    "status" : "active",
+    "name" : "ErrorCodeCS",
+    "title" : "ErrorCode",
+    "description" : "Kodverk för felkoder i svar från tjänstekontrakten i domänen clinicalprocess:activityprescription:actoutcome.",
+    "uses" : {
+    },
+    "ValueSet-errorcode-vs.html" : "ErrorCode — ValueSet"
+  },
+  {
+    "url" : "https://fhir.inera.se/CodeSystem/examinationstatuscode",
+    "version" : "0.1.0",
+    "status" : "active",
+    "name" : "ExaminationStatusCodeCS",
+    "title" : "ExaminationStatusCode",
+    "description" : "Kodverk för undersökningsstatus (ExaminationStatusCodeEnum). Används i GetImagingOutcome.",
+    "uses" : {
+    },
+    "ValueSet-examinationstatuscode-vs.html" : "ExaminationStatusCode — ValueSet"
+  },
+  {
+    "url" : "https://fhir.inera.se/CodeSystem/fetalpositioncode",
+    "version" : "0.1.0",
+    "status" : "active",
+    "name" : "FetalPositionCodeCS",
+    "title" : "FetalPositionCode",
+    "description" : "Kodverk för fosterläge (FetalPositionCodeEnum). Används i GetMaternityMedicalHistory.",
+    "uses" : {
+    },
+    "ValueSet-fetalpositioncode-vs.html" : "FetalPositionCode — ValueSet"
+  },
+  {
+    "url" : "https://fhir.inera.se/CodeSystem/prescriptionstatus",
+    "version" : "0.1.0",
+    "status" : "active",
+    "name" : "PrescriptionStatusCS",
+    "title" : "PrescriptionStatus",
+    "description" : "Kodverk för ordinationsstatus i GetMedicationHistory. Anger om en ordination är aktiv eller inaktiv.",
+    "uses" : {
+    },
+    "ValueSet-prescriptionstatus-vs.html" : "PrescriptionStatus — ValueSet"
+  },
+  {
+    "url" : "https://fhir.inera.se/CodeSystem/referraloutcometypecode",
+    "version" : "0.1.0",
+    "status" : "active",
+    "name" : "ReferralOutcomeTypeCodeCS",
+    "title" : "ReferralOutcomeTypeCode",
+    "description" : "Kodverk för typ av remissvar (ReferralOutcomeTypeCodeEnum). Används i GetReferralOutcome.",
+    "uses" : {
+    },
+    "ValueSet-referraloutcometypecode-vs.html" : "ReferralOutcomeTypeCode — ValueSet"
+  },
+  {
+    "url" : "https://fhir.inera.se/CodeSystem/resultcode-actoutcome",
+    "version" : "0.1.0",
+    "status" : "active",
+    "name" : "ResultCodeCS",
+    "title" : "ResultCode",
+    "description" : "Kodverk för resultatkod i svar från tjänstekontrakten i domänen clinicalprocess:activityprescription:actoutcome.",
+    "uses" : {
+    },
+    "ValueSet-resultcode-vs.html" : "ResultCode — ValueSet"
+  },
+  {
+    "url" : "https://fhir.inera.se/CodeSystem/sexcode",
+    "version" : "0.1.0",
+    "status" : "active",
+    "name" : "SexCodeCS",
+    "title" : "SexCode",
+    "description" : "Kodverk för kön (SexCodeEnum). Används i GetMaternityMedicalHistory för barnets kön. OBS: Överväg att använda HL7 AdministrativeGender istället.",
+    "uses" : {
+    },
+    "ValueSet-sexcode-vs.html" : "SexCode — ValueSet"
+  },
+  {
+    "url" : "https://fhir.inera.se/CodeSystem/typeofcareplan-cs",
+    "version" : "0.1.0",
+    "status" : "active",
+    "name" : "TypeOfCarePlanCS",
+    "title" : "TypeOfCarePlan",
+    "description" : "Typ av vård- och omsorgsplan enligt clinicalprocess:logistics:logistics v3.0. Definierad i clinicalprocess_logistics_logistics_enum_3.0.xsd.",
+    "uses" : {
+    },
+    "ValueSet-typeofcareplan-vs.html" : "TypeOfCarePlan — ValueSet"
+  },
+  {
+    "url" : "https://fhir.inera.se/CodeSystem/typeofleavecode",
+    "version" : "0.1.0",
+    "status" : "active",
+    "name" : "TypeOfLeaveCodeCS",
+    "title" : "TypeOfLeaveCode",
+    "description" : "Kodverk för typ av ledighet (TypeOfLeaveCodeEnum). Används i GetMaternityMedicalHistory.",
+    "uses" : {
+    },
+    "ValueSet-typeofleavecode-vs.html" : "TypeOfLeaveCode — ValueSet"
+  },
+  {
+    "url" : "https://fhir.inera.se/CodeSystem/typeofprescription",
+    "version" : "0.1.0",
+    "status" : "active",
+    "name" : "TypeOfPrescriptionCS",
+    "title" : "TypeOfPrescription",
+    "description" : "Kodverk för ordinationstyp i GetMedicationHistory. Anger om en ordination är en insättnings- eller utsättningsordination.",
+    "uses" : {
+    },
+    "ValueSet-typeofprescription-vs.html" : "TypeOfPrescription — ValueSet"
+  },
+  {
+    "url" : "https://fhir.inera.se/CodeSystem/typeofresultcode",
+    "version" : "0.1.0",
+    "status" : "active",
+    "name" : "TypeOfResultCodeCS",
+    "title" : "TypeOfResultCode",
+    "description" : "Kodverk för typ av resultat (TypeOfResultCodeEnum). Används i GetImagingOutcome och GetReferralOutcome.",
+    "uses" : {
+    },
+    "ValueSet-typeofresultcode-vs.html" : "TypeOfResultCode — ValueSet"
+  },
+  {
+    "url" : "https://fhir.inera.se/clinicalprocess-healthcond-description/CodeSystem/assessmentcategory-cs",
+    "version" : "0.1.0",
+    "status" : "active",
+    "name" : "AssessmentCategoryCS",
+    "title" : "AssessmentCategory",
+    "description" : "Bedömningskategori för funktionsstatus. Tillåtna värden är 'pad-pad' (PADL-bedömning) och 'fun-fun' (funktionsnedsättningsbedömning). Definierat i enum XSD v2.1 för domänen.",
+    "uses" : {
+    },
+    "ValueSet-assessmentcategory-vs.html" : "AssessmentCategory — ValueSet"
+  },
+  {
+    "url" : "https://fhir.inera.se/clinicalprocess-healthcond-description/CodeSystem/diagnosistype-cs",
+    "version" : "0.1.0",
+    "status" : "active",
+    "name" : "DiagnosisTypeCS",
+    "title" : "DiagnosisType",
+    "description" : "Kodverk för typ av diagnos (huvud- respektive bidiagnos). Definierat i XSD för domänen.",
+    "uses" : {
+    },
+    "ValueSet-diagnosistype-vs.html" : "DiagnosisType — ValueSet"
+  },
+  {
+    "url" : "urn:oid:1.2.752.129.2.2.2.11",
+    "version" : "0.1.0",
+    "status" : "active",
+    "name" : "ClinicalDocumentNoteCodeCS",
+    "title" : "KV Anteckningstyp",
+    "description" : "Kodverk för typ av journalanteckning enligt KV Anteckningstyp. OID: 1.2.752.129.2.2.2.11.",
+    "oids" : ["1.2.752.129.2.2.2.11"],
+    "uses" : {
+    },
+    "ValueSet-clinicaldocumentnotecode-vs.html" : "KV Anteckningstyp — ValueSet"
+  }]
+}

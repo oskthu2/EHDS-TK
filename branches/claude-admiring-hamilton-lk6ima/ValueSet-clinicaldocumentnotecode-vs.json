@@ -1,0 +1,35 @@
+{
+  "resourceType" : "ValueSet",
+  "id" : "clinicaldocumentnotecode-vs",
+  "text" : {
+    "status" : "generated",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Genererad berättande text: ValueSet clinicaldocumentnotecode-vs</b></p><a name=\"clinicaldocumentnotecode-vs\"> </a><a name=\"hcclinicaldocumentnotecode-vs\"> </a><ul><li>Include alla koder som definieras i <a href=\"CodeSystem-clinicaldocumentnotecode-cs.html\"><code>urn:oid:1.2.752.129.2.2.2.11</code></a><span title=\"Versionen är inte uttryckligen angiven, vilket innebär att den är fast till den version som tillhandahålls i denna specifikation\"> version &#x1F4E6;0.1.0</span></li></ul></div>"
+  },
+  "url" : "https://fhir.inera.se/ig/ehds-tk/ValueSet/clinicaldocumentnotecode-vs",
+  "version" : "0.1.0",
+  "name" : "ClinicalDocumentNoteCodeVS",
+  "title" : "KV Anteckningstyp — ValueSet",
+  "status" : "active",
+  "date" : "2026-06-24T12:10:33+00:00",
+  "publisher" : "Inera AB",
+  "contact" : [{
+    "name" : "Inera AB",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "https://www.inera.se"
+    }]
+  }],
+  "description" : "Tillåtna värden för fältet clinicalDocumentNoteCode i GetCareDocumentation enligt KV Anteckningstyp (OID: 1.2.752.129.2.2.2.11).",
+  "jurisdiction" : [{
+    "coding" : [{
+      "system" : "urn:iso:std:iso:3166",
+      "code" : "SE",
+      "display" : "Sweden"
+    }]
+  }],
+  "compose" : {
+    "include" : [{
+      "system" : "urn:oid:1.2.752.129.2.2.2.11"
+    }]
+  }
+}

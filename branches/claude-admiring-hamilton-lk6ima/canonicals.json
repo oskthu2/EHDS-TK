@@ -1,0 +1,658 @@
+[{
+  "id" : "deliverycode-cs",
+  "type" : "CodeSystem",
+  "url" : "https://fhir.inera.se/CodeSystem/deliverycode",
+  "version" : "0.1.0",
+  "name" : "DeliveryCodeCS"
+},
+{
+  "id" : "errorcode-cs",
+  "type" : "CodeSystem",
+  "url" : "https://fhir.inera.se/CodeSystem/errorcode-actoutcome",
+  "version" : "0.1.0",
+  "name" : "ErrorCodeCS"
+},
+{
+  "id" : "examinationstatuscode-cs",
+  "type" : "CodeSystem",
+  "url" : "https://fhir.inera.se/CodeSystem/examinationstatuscode",
+  "version" : "0.1.0",
+  "name" : "ExaminationStatusCodeCS"
+},
+{
+  "id" : "fetalpositioncode-cs",
+  "type" : "CodeSystem",
+  "url" : "https://fhir.inera.se/CodeSystem/fetalpositioncode",
+  "version" : "0.1.0",
+  "name" : "FetalPositionCodeCS"
+},
+{
+  "id" : "nonreplaceable-cs",
+  "type" : "CodeSystem",
+  "url" : "https://fhir.inera.se/CodeSystem/nonreplaceable-actoutcome",
+  "version" : "0.1.0",
+  "name" : "NonReplaceableCS"
+},
+{
+  "id" : "prescriptionstatus-cs",
+  "type" : "CodeSystem",
+  "url" : "https://fhir.inera.se/CodeSystem/prescriptionstatus",
+  "version" : "0.1.0",
+  "name" : "PrescriptionStatusCS"
+},
+{
+  "id" : "referraloutcometypecode-cs",
+  "type" : "CodeSystem",
+  "url" : "https://fhir.inera.se/CodeSystem/referraloutcometypecode",
+  "version" : "0.1.0",
+  "name" : "ReferralOutcomeTypeCodeCS"
+},
+{
+  "id" : "resultcode-cs",
+  "type" : "CodeSystem",
+  "url" : "https://fhir.inera.se/CodeSystem/resultcode-actoutcome",
+  "version" : "0.1.0",
+  "name" : "ResultCodeCS"
+},
+{
+  "id" : "sexcode-cs",
+  "type" : "CodeSystem",
+  "url" : "https://fhir.inera.se/CodeSystem/sexcode",
+  "version" : "0.1.0",
+  "name" : "SexCodeCS"
+},
+{
+  "id" : "typeofcareplan-cs",
+  "type" : "CodeSystem",
+  "url" : "https://fhir.inera.se/CodeSystem/typeofcareplan-cs",
+  "version" : "0.1.0",
+  "name" : "TypeOfCarePlanCS"
+},
+{
+  "id" : "typeofleavecode-cs",
+  "type" : "CodeSystem",
+  "url" : "https://fhir.inera.se/CodeSystem/typeofleavecode",
+  "version" : "0.1.0",
+  "name" : "TypeOfLeaveCodeCS"
+},
+{
+  "id" : "typeofprescription-cs",
+  "type" : "CodeSystem",
+  "url" : "https://fhir.inera.se/CodeSystem/typeofprescription",
+  "version" : "0.1.0",
+  "name" : "TypeOfPrescriptionCS"
+},
+{
+  "id" : "typeofresultcode-cs",
+  "type" : "CodeSystem",
+  "url" : "https://fhir.inera.se/CodeSystem/typeofresultcode",
+  "version" : "0.1.0",
+  "name" : "TypeOfResultCodeCS"
+},
+{
+  "id" : "observation-status-map",
+  "type" : "ConceptMap",
+  "url" : "https://fhir.inera.se/ConceptMap/observation-status-map",
+  "version" : "0.1.0",
+  "name" : "ObservationStatusMap"
+},
+{
+  "id" : "assessmentcategory-cs",
+  "type" : "CodeSystem",
+  "url" : "https://fhir.inera.se/clinicalprocess-healthcond-description/CodeSystem/assessmentcategory-cs",
+  "version" : "0.1.0",
+  "name" : "AssessmentCategoryCS"
+},
+{
+  "id" : "diagnosistype-cs",
+  "type" : "CodeSystem",
+  "url" : "https://fhir.inera.se/clinicalprocess-healthcond-description/CodeSystem/diagnosistype-cs",
+  "version" : "0.1.0",
+  "name" : "DiagnosisTypeCS"
+},
+{
+  "id" : "maternity-section",
+  "type" : "CodeSystem",
+  "url" : "https://fhir.inera.se/ig/ehds-tk/CodeSystem/maternity-section",
+  "version" : "0.1.0",
+  "name" : "MaternityMedicalSectionCS"
+},
+{
+  "id" : "inera.ehds.tk",
+  "type" : "ImplementationGuide",
+  "url" : "https://fhir.inera.se/ig/ehds-tk/ImplementationGuide/inera.ehds.tk",
+  "version" : "0.1.0",
+  "name" : "IneraEHDSTK"
+},
+{
+  "id" : "alert-ascertained-date",
+  "type" : "StructureDefinition",
+  "url" : "https://fhir.inera.se/ig/ehds-tk/StructureDefinition/alert-ascertained-date",
+  "version" : "0.1.0",
+  "name" : "AlertAscertainedDate"
+},
+{
+  "id" : "alert-asserted-date",
+  "type" : "StructureDefinition",
+  "url" : "https://fhir.inera.se/ig/ehds-tk/StructureDefinition/alert-asserted-date",
+  "version" : "0.1.0",
+  "name" : "AlertAssertedDate"
+},
+{
+  "id" : "alert-asserter",
+  "type" : "StructureDefinition",
+  "url" : "https://fhir.inera.se/ig/ehds-tk/StructureDefinition/alert-asserter",
+  "version" : "0.1.0",
+  "name" : "AlertAsserter"
+},
+{
+  "id" : "alert-degree-of-certainty",
+  "type" : "StructureDefinition",
+  "url" : "https://fhir.inera.se/ig/ehds-tk/StructureDefinition/alert-degree-of-certainty",
+  "version" : "0.1.0",
+  "name" : "AlertDegreeOfCertainty"
+},
+{
+  "id" : "alert-degree-of-severity",
+  "type" : "StructureDefinition",
+  "url" : "https://fhir.inera.se/ig/ehds-tk/StructureDefinition/alert-degree-of-severity",
+  "version" : "0.1.0",
+  "name" : "AlertDegreeOfSeverity"
+},
+{
+  "id" : "alert-information-comment",
+  "type" : "StructureDefinition",
+  "url" : "https://fhir.inera.se/ig/ehds-tk/StructureDefinition/alert-information-comment",
+  "version" : "0.1.0",
+  "name" : "AlertInformationComment"
+},
+{
+  "id" : "alert-pharmaceutical-hypersensitivity",
+  "type" : "StructureDefinition",
+  "url" : "https://fhir.inera.se/ig/ehds-tk/StructureDefinition/alert-pharmaceutical-hypersensitivity",
+  "version" : "0.1.0",
+  "name" : "AlertPharmaceuticalHypersensitivity"
+},
+{
+  "id" : "alert-pharmaceutical-treatment",
+  "type" : "StructureDefinition",
+  "url" : "https://fhir.inera.se/ig/ehds-tk/StructureDefinition/alert-pharmaceutical-treatment",
+  "version" : "0.1.0",
+  "name" : "AlertPharmaceuticalTreatment"
+},
+{
+  "id" : "alert-restriction-of-care-comment",
+  "type" : "StructureDefinition",
+  "url" : "https://fhir.inera.se/ig/ehds-tk/StructureDefinition/alert-restriction-of-care-comment",
+  "version" : "0.1.0",
+  "name" : "AlertRestrictionOfCareComment"
+},
+{
+  "id" : "alert-route-of-transmission",
+  "type" : "StructureDefinition",
+  "url" : "https://fhir.inera.se/ig/ehds-tk/StructureDefinition/alert-route-of-transmission",
+  "version" : "0.1.0",
+  "name" : "AlertRouteOfTransmission"
+},
+{
+  "id" : "alert-treatment-description",
+  "type" : "StructureDefinition",
+  "url" : "https://fhir.inera.se/ig/ehds-tk/StructureDefinition/alert-treatment-description",
+  "version" : "0.1.0",
+  "name" : "AlertTreatmentDescription"
+},
+{
+  "id" : "alert-verified-time",
+  "type" : "StructureDefinition",
+  "url" : "https://fhir.inera.se/ig/ehds-tk/StructureDefinition/alert-verified-time",
+  "version" : "0.1.0",
+  "name" : "AlertVerifiedTime"
+},
+{
+  "id" : "approved-for-patient",
+  "type" : "StructureDefinition",
+  "url" : "https://fhir.inera.se/ig/ehds-tk/StructureDefinition/approved-for-patient",
+  "version" : "0.1.0",
+  "name" : "ApprovedForPatient"
+},
+{
+  "id" : "device-source-system-contact",
+  "type" : "StructureDefinition",
+  "url" : "https://fhir.inera.se/ig/ehds-tk/StructureDefinition/device-source-system-contact",
+  "version" : "0.1.0",
+  "name" : "DeviceSourceSystemContact"
+},
+{
+  "id" : "immunization-is-dose-complete",
+  "type" : "StructureDefinition",
+  "url" : "https://fhir.inera.se/ig/ehds-tk/StructureDefinition/immunization-is-dose-complete",
+  "version" : "0.1.0",
+  "name" : "ImmunizationIsDoseComplete"
+},
+{
+  "id" : "immunization-legal-authenticator",
+  "type" : "StructureDefinition",
+  "url" : "https://fhir.inera.se/ig/ehds-tk/StructureDefinition/immunization-legal-authenticator",
+  "version" : "0.1.0",
+  "name" : "ImmunizationLegalAuthenticator"
+},
+{
+  "id" : "immunization-patient-postal-code",
+  "type" : "StructureDefinition",
+  "url" : "https://fhir.inera.se/ig/ehds-tk/StructureDefinition/immunization-patient-postal-code",
+  "version" : "0.1.0",
+  "name" : "ImmunizationPatientPostalCode"
+},
+{
+  "id" : "immunization-registration-device",
+  "type" : "StructureDefinition",
+  "url" : "https://fhir.inera.se/ig/ehds-tk/StructureDefinition/immunization-registration-device",
+  "version" : "0.1.0",
+  "name" : "ImmunizationRegistrationDevice"
+},
+{
+  "id" : "inera-ehds-allergy-intolerance",
+  "type" : "StructureDefinition",
+  "url" : "https://fhir.inera.se/ig/ehds-tk/StructureDefinition/inera-ehds-allergy-intolerance",
+  "version" : "0.1.0",
+  "name" : "IneraEHDSAllergyIntolerance"
+},
+{
+  "id" : "inera-ehds-audit-event",
+  "type" : "StructureDefinition",
+  "url" : "https://fhir.inera.se/ig/ehds-tk/StructureDefinition/inera-ehds-audit-event",
+  "version" : "0.1.0",
+  "name" : "IneraEHDSAuditEvent"
+},
+{
+  "id" : "inera-ehds-care-plan",
+  "type" : "StructureDefinition",
+  "url" : "https://fhir.inera.se/ig/ehds-tk/StructureDefinition/inera-ehds-care-plan",
+  "version" : "0.1.0",
+  "name" : "IneraEHDSCarePlan"
+},
+{
+  "id" : "inera-ehds-condition-diagnosis",
+  "type" : "StructureDefinition",
+  "url" : "https://fhir.inera.se/ig/ehds-tk/StructureDefinition/inera-ehds-condition-diagnosis",
+  "version" : "0.1.0",
+  "name" : "IneraEHDSConditionDiagnosis"
+},
+{
+  "id" : "inera-ehds-condition-functional",
+  "type" : "StructureDefinition",
+  "url" : "https://fhir.inera.se/ig/ehds-tk/StructureDefinition/inera-ehds-condition-functional",
+  "version" : "0.1.0",
+  "name" : "IneraEHDSConditionFunctional"
+},
+{
+  "id" : "inera-ehds-device",
+  "type" : "StructureDefinition",
+  "url" : "https://fhir.inera.se/ig/ehds-tk/StructureDefinition/inera-ehds-device",
+  "version" : "0.1.0",
+  "name" : "IneraEHDSDevice"
+},
+{
+  "id" : "inera-ehds-diagnostic-report-imaging",
+  "type" : "StructureDefinition",
+  "url" : "https://fhir.inera.se/ig/ehds-tk/StructureDefinition/inera-ehds-diagnostic-report-imaging",
+  "version" : "0.1.0",
+  "name" : "IneraEHDSDiagnosticReportImaging"
+},
+{
+  "id" : "inera-ehds-diagnostic-report-lab",
+  "type" : "StructureDefinition",
+  "url" : "https://fhir.inera.se/ig/ehds-tk/StructureDefinition/inera-ehds-diagnostic-report-lab",
+  "version" : "0.1.0",
+  "name" : "IneraEHDSDiagnosticReportLab"
+},
+{
+  "id" : "inera-ehds-diagnostic-report-referral",
+  "type" : "StructureDefinition",
+  "url" : "https://fhir.inera.se/ig/ehds-tk/StructureDefinition/inera-ehds-diagnostic-report-referral",
+  "version" : "0.1.0",
+  "name" : "IneraEHDSDiagnosticReportReferral"
+},
+{
+  "id" : "inera-ehds-document-reference",
+  "type" : "StructureDefinition",
+  "url" : "https://fhir.inera.se/ig/ehds-tk/StructureDefinition/inera-ehds-document-reference",
+  "version" : "0.1.0",
+  "name" : "IneraEHDSDocumentReference"
+},
+{
+  "id" : "inera-ehds-encounter",
+  "type" : "StructureDefinition",
+  "url" : "https://fhir.inera.se/ig/ehds-tk/StructureDefinition/inera-ehds-encounter",
+  "version" : "0.1.0",
+  "name" : "IneraEHDSEncounter"
+},
+{
+  "id" : "inera-ehds-flag",
+  "type" : "StructureDefinition",
+  "url" : "https://fhir.inera.se/ig/ehds-tk/StructureDefinition/inera-ehds-flag",
+  "version" : "0.1.0",
+  "name" : "IneraEHDSFlag"
+},
+{
+  "id" : "inera-ehds-imaging-study",
+  "type" : "StructureDefinition",
+  "url" : "https://fhir.inera.se/ig/ehds-tk/StructureDefinition/inera-ehds-imaging-study",
+  "version" : "0.1.0",
+  "name" : "IneraEHDSImagingStudy"
+},
+{
+  "id" : "inera-ehds-immunization",
+  "type" : "StructureDefinition",
+  "url" : "https://fhir.inera.se/ig/ehds-tk/StructureDefinition/inera-ehds-immunization",
+  "version" : "0.1.0",
+  "name" : "IneraEHDSImmunization"
+},
+{
+  "id" : "inera-ehds-lm-access-log",
+  "type" : "StructureDefinition",
+  "url" : "https://fhir.inera.se/ig/ehds-tk/StructureDefinition/inera-ehds-lm-access-log",
+  "version" : "0.1.0",
+  "name" : "IneraEHDSLMAccessLog"
+},
+{
+  "id" : "inera-ehds-lm-alert-information",
+  "type" : "StructureDefinition",
+  "url" : "https://fhir.inera.se/ig/ehds-tk/StructureDefinition/inera-ehds-lm-alert-information",
+  "version" : "0.1.0",
+  "name" : "IneraEHDSLMAlertInformation"
+},
+{
+  "id" : "inera-ehds-lm-care-contacts",
+  "type" : "StructureDefinition",
+  "url" : "https://fhir.inera.se/ig/ehds-tk/StructureDefinition/inera-ehds-lm-care-contacts",
+  "version" : "0.1.0",
+  "name" : "IneraEHDSLMCareContacts"
+},
+{
+  "id" : "inera-ehds-lm-care-documentation",
+  "type" : "StructureDefinition",
+  "url" : "https://fhir.inera.se/ig/ehds-tk/StructureDefinition/inera-ehds-lm-care-documentation",
+  "version" : "0.1.0",
+  "name" : "IneraEHDSLMCareDocumentation"
+},
+{
+  "id" : "inera-ehds-lm-care-plans",
+  "type" : "StructureDefinition",
+  "url" : "https://fhir.inera.se/ig/ehds-tk/StructureDefinition/inera-ehds-lm-care-plans",
+  "version" : "0.1.0",
+  "name" : "IneraEHDSLMCarePlans"
+},
+{
+  "id" : "inera-ehds-lm-diagnosis",
+  "type" : "StructureDefinition",
+  "url" : "https://fhir.inera.se/ig/ehds-tk/StructureDefinition/inera-ehds-lm-diagnosis",
+  "version" : "0.1.0",
+  "name" : "IneraEHDSLMDiagnosis"
+},
+{
+  "id" : "inera-ehds-lm-functional-status",
+  "type" : "StructureDefinition",
+  "url" : "https://fhir.inera.se/ig/ehds-tk/StructureDefinition/inera-ehds-lm-functional-status",
+  "version" : "0.1.0",
+  "name" : "IneraEHDSLMFunctionalStatus"
+},
+{
+  "id" : "inera-ehds-lm-imaging-outcome",
+  "type" : "StructureDefinition",
+  "url" : "https://fhir.inera.se/ig/ehds-tk/StructureDefinition/inera-ehds-lm-imaging-outcome",
+  "version" : "0.1.0",
+  "name" : "IneraEHDSLMImagingOutcome"
+},
+{
+  "id" : "inera-ehds-lm-laboratory-order-outcome",
+  "type" : "StructureDefinition",
+  "url" : "https://fhir.inera.se/ig/ehds-tk/StructureDefinition/inera-ehds-lm-laboratory-order-outcome",
+  "version" : "0.1.0",
+  "name" : "IneraEHDSLMLaboratoryOrderOutcome"
+},
+{
+  "id" : "inera-ehds-lm-maternity-medical-history",
+  "type" : "StructureDefinition",
+  "url" : "https://fhir.inera.se/ig/ehds-tk/StructureDefinition/inera-ehds-lm-maternity-medical-history",
+  "version" : "0.1.0",
+  "name" : "IneraEHDSLMMaternityMedicalHistory"
+},
+{
+  "id" : "inera-ehds-lm-medication-history",
+  "type" : "StructureDefinition",
+  "url" : "https://fhir.inera.se/ig/ehds-tk/StructureDefinition/inera-ehds-lm-medication-history",
+  "version" : "0.1.0",
+  "name" : "IneraEHDSLMMedicationHistory"
+},
+{
+  "id" : "inera-ehds-lm-observations",
+  "type" : "StructureDefinition",
+  "url" : "https://fhir.inera.se/ig/ehds-tk/StructureDefinition/inera-ehds-lm-observations",
+  "version" : "0.1.0",
+  "name" : "IneraEHDSLMObservations"
+},
+{
+  "id" : "inera-ehds-lm-referral-outcome",
+  "type" : "StructureDefinition",
+  "url" : "https://fhir.inera.se/ig/ehds-tk/StructureDefinition/inera-ehds-lm-referral-outcome",
+  "version" : "0.1.0",
+  "name" : "IneraEHDSLMReferralOutcome"
+},
+{
+  "id" : "inera-ehds-lm-request-activities",
+  "type" : "StructureDefinition",
+  "url" : "https://fhir.inera.se/ig/ehds-tk/StructureDefinition/inera-ehds-lm-request-activities",
+  "version" : "0.1.0",
+  "name" : "IneraEHDSLMRequestActivities"
+},
+{
+  "id" : "inera-ehds-lm-vaccination-history",
+  "type" : "StructureDefinition",
+  "url" : "https://fhir.inera.se/ig/ehds-tk/StructureDefinition/inera-ehds-lm-vaccination-history",
+  "version" : "0.1.0",
+  "name" : "IneraEHDSLMVaccinationHistory"
+},
+{
+  "id" : "inera-ehds-medication-statement",
+  "type" : "StructureDefinition",
+  "url" : "https://fhir.inera.se/ig/ehds-tk/StructureDefinition/inera-ehds-medication-statement",
+  "version" : "0.1.0",
+  "name" : "IneraEHDSMedicationStatement"
+},
+{
+  "id" : "inera-ehds-observation-base",
+  "type" : "StructureDefinition",
+  "url" : "https://fhir.inera.se/ig/ehds-tk/StructureDefinition/inera-ehds-observation-base",
+  "version" : "0.1.0",
+  "name" : "IneraEHDSObservationBase"
+},
+{
+  "id" : "inera-ehds-observation-growth",
+  "type" : "StructureDefinition",
+  "url" : "https://fhir.inera.se/ig/ehds-tk/StructureDefinition/inera-ehds-observation-growth",
+  "version" : "0.1.0",
+  "name" : "IneraEHDSObservationGrowth"
+},
+{
+  "id" : "inera-ehds-observation-lab",
+  "type" : "StructureDefinition",
+  "url" : "https://fhir.inera.se/ig/ehds-tk/StructureDefinition/inera-ehds-observation-lab",
+  "version" : "0.1.0",
+  "name" : "IneraEHDSObservationLab"
+},
+{
+  "id" : "inera-ehds-observation-maternity",
+  "type" : "StructureDefinition",
+  "url" : "https://fhir.inera.se/ig/ehds-tk/StructureDefinition/inera-ehds-observation-maternity",
+  "version" : "0.1.0",
+  "name" : "IneraEHDSObservationMaternity"
+},
+{
+  "id" : "inera-ehds-organization",
+  "type" : "StructureDefinition",
+  "url" : "https://fhir.inera.se/ig/ehds-tk/StructureDefinition/inera-ehds-organization",
+  "version" : "0.1.0",
+  "name" : "IneraEHDSOrganization"
+},
+{
+  "id" : "inera-ehds-patient",
+  "type" : "StructureDefinition",
+  "url" : "https://fhir.inera.se/ig/ehds-tk/StructureDefinition/inera-ehds-patient",
+  "version" : "0.1.0",
+  "name" : "IneraEHDSPatient"
+},
+{
+  "id" : "inera-ehds-provenance",
+  "type" : "StructureDefinition",
+  "url" : "https://fhir.inera.se/ig/ehds-tk/StructureDefinition/inera-ehds-provenance",
+  "version" : "0.1.0",
+  "name" : "IneraEHDSProvenance"
+},
+{
+  "id" : "inera-ehds-service-request-referral",
+  "type" : "StructureDefinition",
+  "url" : "https://fhir.inera.se/ig/ehds-tk/StructureDefinition/inera-ehds-service-request-referral",
+  "version" : "0.1.0",
+  "name" : "IneraEHDSServiceRequestReferral"
+},
+{
+  "id" : "inera-ehds-task",
+  "type" : "StructureDefinition",
+  "url" : "https://fhir.inera.se/ig/ehds-tk/StructureDefinition/inera-ehds-task",
+  "version" : "0.1.0",
+  "name" : "IneraEHDSTask"
+},
+{
+  "id" : "related-alert-information",
+  "type" : "StructureDefinition",
+  "url" : "https://fhir.inera.se/ig/ehds-tk/StructureDefinition/related-alert-information",
+  "version" : "0.1.0",
+  "name" : "RelatedAlertInformation"
+},
+{
+  "id" : "assessmentcategory-vs",
+  "type" : "ValueSet",
+  "url" : "https://fhir.inera.se/ig/ehds-tk/ValueSet/assessmentcategory-vs",
+  "version" : "0.1.0",
+  "name" : "AssessmentCategoryVS"
+},
+{
+  "id" : "clinicaldocumentnotecode-vs",
+  "type" : "ValueSet",
+  "url" : "https://fhir.inera.se/ig/ehds-tk/ValueSet/clinicaldocumentnotecode-vs",
+  "version" : "0.1.0",
+  "name" : "ClinicalDocumentNoteCodeVS"
+},
+{
+  "id" : "deliverycode-vs",
+  "type" : "ValueSet",
+  "url" : "https://fhir.inera.se/ig/ehds-tk/ValueSet/deliverycode-vs",
+  "version" : "0.1.0",
+  "name" : "DeliveryCodeVS"
+},
+{
+  "id" : "diagnosistype-vs",
+  "type" : "ValueSet",
+  "url" : "https://fhir.inera.se/ig/ehds-tk/ValueSet/diagnosistype-vs",
+  "version" : "0.1.0",
+  "name" : "DiagnosisTypeVS"
+},
+{
+  "id" : "errorcode-vs",
+  "type" : "ValueSet",
+  "url" : "https://fhir.inera.se/ig/ehds-tk/ValueSet/errorcode-vs",
+  "version" : "0.1.0",
+  "name" : "ErrorCodeVS"
+},
+{
+  "id" : "examinationstatuscode-vs",
+  "type" : "ValueSet",
+  "url" : "https://fhir.inera.se/ig/ehds-tk/ValueSet/examinationstatuscode-vs",
+  "version" : "0.1.0",
+  "name" : "ExaminationStatusCodeVS"
+},
+{
+  "id" : "fetalpositioncode-vs",
+  "type" : "ValueSet",
+  "url" : "https://fhir.inera.se/ig/ehds-tk/ValueSet/fetalpositioncode-vs",
+  "version" : "0.1.0",
+  "name" : "FetalPositionCodeVS"
+},
+{
+  "id" : "growth-observation-type-vs",
+  "type" : "ValueSet",
+  "url" : "https://fhir.inera.se/ig/ehds-tk/ValueSet/growth-observation-type-vs",
+  "version" : "0.1.0",
+  "name" : "GrowthObservationTypeVS"
+},
+{
+  "id" : "prescriptionstatus-vs",
+  "type" : "ValueSet",
+  "url" : "https://fhir.inera.se/ig/ehds-tk/ValueSet/prescriptionstatus-vs",
+  "version" : "0.1.0",
+  "name" : "PrescriptionStatusVS"
+},
+{
+  "id" : "referraloutcometypecode-vs",
+  "type" : "ValueSet",
+  "url" : "https://fhir.inera.se/ig/ehds-tk/ValueSet/referraloutcometypecode-vs",
+  "version" : "0.1.0",
+  "name" : "ReferralOutcomeTypeCodeVS"
+},
+{
+  "id" : "resultcode-vs",
+  "type" : "ValueSet",
+  "url" : "https://fhir.inera.se/ig/ehds-tk/ValueSet/resultcode-vs",
+  "version" : "0.1.0",
+  "name" : "ResultCodeVS"
+},
+{
+  "id" : "se-observation-status-vs",
+  "type" : "ValueSet",
+  "url" : "https://fhir.inera.se/ig/ehds-tk/ValueSet/se-observation-status-vs",
+  "version" : "0.1.0",
+  "name" : "SEObservationStatusVS"
+},
+{
+  "id" : "sexcode-vs",
+  "type" : "ValueSet",
+  "url" : "https://fhir.inera.se/ig/ehds-tk/ValueSet/sexcode-vs",
+  "version" : "0.1.0",
+  "name" : "SexCodeVS"
+},
+{
+  "id" : "typeofcareplan-vs",
+  "type" : "ValueSet",
+  "url" : "https://fhir.inera.se/ig/ehds-tk/ValueSet/typeofcareplan-vs",
+  "version" : "0.1.0",
+  "name" : "TypeOfCarePlanVS"
+},
+{
+  "id" : "typeofleavecode-vs",
+  "type" : "ValueSet",
+  "url" : "https://fhir.inera.se/ig/ehds-tk/ValueSet/typeofleavecode-vs",
+  "version" : "0.1.0",
+  "name" : "TypeOfLeaveCodeVS"
+},
+{
+  "id" : "typeofprescription-vs",
+  "type" : "ValueSet",
+  "url" : "https://fhir.inera.se/ig/ehds-tk/ValueSet/typeofprescription-vs",
+  "version" : "0.1.0",
+  "name" : "TypeOfPrescriptionVS"
+},
+{
+  "id" : "typeofresultcode-vs",
+  "type" : "ValueSet",
+  "url" : "https://fhir.inera.se/ig/ehds-tk/ValueSet/typeofresultcode-vs",
+  "version" : "0.1.0",
+  "name" : "TypeOfResultCodeVS"
+},
+{
+  "id" : "clinicaldocumentnotecode-cs",
+  "type" : "CodeSystem",
+  "url" : "urn:oid:1.2.752.129.2.2.2.11",
+  "version" : "0.1.0",
+  "name" : "ClinicalDocumentNoteCodeCS"
+}]

@@ -1,0 +1,48 @@
+{
+  "resourceType" : "CodeSystem",
+  "id" : "typeofresultcode-cs",
+  "text" : {
+    "status" : "generated",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Genererad berättande text: CodeSystem typeofresultcode-cs</b></p><a name=\"typeofresultcode-cs\"> </a><a name=\"hctypeofresultcode-cs\"> </a><p>Detta case-sensitive kodsystem <code>https://fhir.inera.se/CodeSystem/typeofresultcode</code> definierar följande koder:</p><table class=\"codes\"><tr><td style=\"white-space:nowrap\"><b>Kod</b></td><td><b>Visning</b></td><td><b>Definition</b></td></tr><tr><td style=\"white-space:nowrap\">PREL<a name=\"typeofresultcode-cs-PREL\"> </a></td><td>Preliminärsvar</td><td>Preliminärt svar</td></tr><tr><td style=\"white-space:nowrap\">DEF<a name=\"typeofresultcode-cs-DEF\"> </a></td><td>Definitivsvar</td><td>Definitivt svar</td></tr><tr><td style=\"white-space:nowrap\">TILL<a name=\"typeofresultcode-cs-TILL\"> </a></td><td>Tilläggssvar</td><td>Tilläggssvar</td></tr></table></div>"
+  },
+  "url" : "https://fhir.inera.se/CodeSystem/typeofresultcode",
+  "version" : "0.1.0",
+  "name" : "TypeOfResultCodeCS",
+  "title" : "TypeOfResultCode",
+  "status" : "active",
+  "date" : "2026-06-24T12:10:33+00:00",
+  "publisher" : "Inera AB",
+  "contact" : [{
+    "name" : "Inera AB",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "https://www.inera.se"
+    }]
+  }],
+  "description" : "Kodverk för typ av resultat (TypeOfResultCodeEnum). Används i GetImagingOutcome och GetReferralOutcome.",
+  "jurisdiction" : [{
+    "coding" : [{
+      "system" : "urn:iso:std:iso:3166",
+      "code" : "SE",
+      "display" : "Sweden"
+    }]
+  }],
+  "caseSensitive" : true,
+  "content" : "complete",
+  "count" : 3,
+  "concept" : [{
+    "code" : "PREL",
+    "display" : "Preliminärsvar",
+    "definition" : "Preliminärt svar"
+  },
+  {
+    "code" : "DEF",
+    "display" : "Definitivsvar",
+    "definition" : "Definitivt svar"
+  },
+  {
+    "code" : "TILL",
+    "display" : "Tilläggssvar",
+    "definition" : "Tilläggssvar"
+  }]
+}

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<CodeSystem xmlns="http://hl7.org/fhir">
+  <id value="assessmentcategory-cs"/>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Genererad berättande text: CodeSystem assessmentcategory-cs</b></p><a name="assessmentcategory-cs"> </a><a name="hcassessmentcategory-cs"> </a><p>Detta  kodsystem <code>https://fhir.inera.se/clinicalprocess-healthcond-description/CodeSystem/assessmentcategory-cs</code> definierar följande koder:</p><table class="codes"><tr><td style="white-space:nowrap"><b>Kod</b></td><td><b>Definition</b></td></tr><tr><td style="white-space:nowrap">pad-pad<a name="assessmentcategory-cs-pad-pad"> </a></td><td>PADL-bedömning</td></tr><tr><td style="white-space:nowrap">fun-fun<a name="assessmentcategory-cs-fun-fun"> </a></td><td>Funktionsnedsättningsbedömning</td></tr></table></div>
+  </text>
+  <url value="https://fhir.inera.se/clinicalprocess-healthcond-description/CodeSystem/assessmentcategory-cs"/>
+  <version value="0.1.0"/>
+  <name value="AssessmentCategoryCS"/>
+  <title value="AssessmentCategory"/>
+  <status value="active"/>
+  <date value="2026-06-24T12:10:33+00:00"/>
+  <publisher value="Inera AB"/>
+  <contact>
+    <name value="Inera AB"/>
+    <telecom>
+      <system value="url"/>
+      <value value="https://www.inera.se"/>
+    </telecom>
+  </contact>
+  <description value="Bedömningskategori för funktionsstatus. Tillåtna värden är 'pad-pad' (PADL-bedömning) och 'fun-fun' (funktionsnedsättningsbedömning). Definierat i enum XSD v2.1 för domänen."/>
+  <jurisdiction>
+    <coding>
+      <system value="urn:iso:std:iso:3166"/>
+      <code value="SE"/>
+      <display value="Sweden"/>
+    </coding>
+  </jurisdiction>
+  <content value="complete"/>
+  <count value="2"/>
+  <concept>
+    <code value="pad-pad"/>
+    <display value="pad-pad"/>
+    <definition value="PADL-bedömning"/>
+  </concept>
+  <concept>
+    <code value="fun-fun"/>
+    <display value="fun-fun"/>
+    <definition value="Funktionsnedsättningsbedömning"/>
+  </concept>
+</CodeSystem>

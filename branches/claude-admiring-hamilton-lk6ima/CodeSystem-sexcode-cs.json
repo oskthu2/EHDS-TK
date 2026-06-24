@@ -1,0 +1,53 @@
+{
+  "resourceType" : "CodeSystem",
+  "id" : "sexcode-cs",
+  "text" : {
+    "status" : "generated",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Genererad berättande text: CodeSystem sexcode-cs</b></p><a name=\"sexcode-cs\"> </a><a name=\"hcsexcode-cs\"> </a><p>Detta case-sensitive kodsystem <code>https://fhir.inera.se/CodeSystem/sexcode</code> definierar följande koder:</p><table class=\"codes\"><tr><td style=\"white-space:nowrap\"><b>Kod</b></td><td><b>Visning</b></td><td><b>Definition</b></td></tr><tr><td style=\"white-space:nowrap\">0<a name=\"sexcode-cs-0\"> </a></td><td>Okänt</td><td>Kön okänt</td></tr><tr><td style=\"white-space:nowrap\">1<a name=\"sexcode-cs-1\"> </a></td><td>Man</td><td>Man</td></tr><tr><td style=\"white-space:nowrap\">2<a name=\"sexcode-cs-2\"> </a></td><td>Kvinna</td><td>Kvinna</td></tr><tr><td style=\"white-space:nowrap\">9<a name=\"sexcode-cs-9\"> </a></td><td>Ej tillämpligt</td><td>Kön ej tillämpligt</td></tr></table></div>"
+  },
+  "url" : "https://fhir.inera.se/CodeSystem/sexcode",
+  "version" : "0.1.0",
+  "name" : "SexCodeCS",
+  "title" : "SexCode",
+  "status" : "active",
+  "date" : "2026-06-24T12:10:33+00:00",
+  "publisher" : "Inera AB",
+  "contact" : [{
+    "name" : "Inera AB",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "https://www.inera.se"
+    }]
+  }],
+  "description" : "Kodverk för kön (SexCodeEnum). Används i GetMaternityMedicalHistory för barnets kön. OBS: Överväg att använda HL7 AdministrativeGender istället.",
+  "jurisdiction" : [{
+    "coding" : [{
+      "system" : "urn:iso:std:iso:3166",
+      "code" : "SE",
+      "display" : "Sweden"
+    }]
+  }],
+  "caseSensitive" : true,
+  "content" : "complete",
+  "count" : 4,
+  "concept" : [{
+    "code" : "0",
+    "display" : "Okänt",
+    "definition" : "Kön okänt"
+  },
+  {
+    "code" : "1",
+    "display" : "Man",
+    "definition" : "Man"
+  },
+  {
+    "code" : "2",
+    "display" : "Kvinna",
+    "definition" : "Kvinna"
+  },
+  {
+    "code" : "9",
+    "display" : "Ej tillämpligt",
+    "definition" : "Kön ej tillämpligt"
+  }]
+}

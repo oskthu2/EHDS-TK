@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<CodeSystem xmlns="http://hl7.org/fhir">
+  <id value="diagnosistype-cs"/>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Genererad berättande text: CodeSystem diagnosistype-cs</b></p><a name="diagnosistype-cs"> </a><a name="hcdiagnosistype-cs"> </a><p>Detta  kodsystem <code>https://fhir.inera.se/clinicalprocess-healthcond-description/CodeSystem/diagnosistype-cs</code> definierar följande koder:</p><table class="codes"><tr><td style="white-space:nowrap"><b>Kod</b></td><td><b>Definition</b></td></tr><tr><td style="white-space:nowrap">Huvuddiagnos<a name="diagnosistype-cs-Huvuddiagnos"> </a></td><td>Huvuddiagnos</td></tr><tr><td style="white-space:nowrap">Bidiagnos<a name="diagnosistype-cs-Bidiagnos"> </a></td><td>Bidiagnos</td></tr></table></div>
+  </text>
+  <url value="https://fhir.inera.se/clinicalprocess-healthcond-description/CodeSystem/diagnosistype-cs"/>
+  <version value="0.1.0"/>
+  <name value="DiagnosisTypeCS"/>
+  <title value="DiagnosisType"/>
+  <status value="active"/>
+  <date value="2026-06-24T12:10:33+00:00"/>
+  <publisher value="Inera AB"/>
+  <contact>
+    <name value="Inera AB"/>
+    <telecom>
+      <system value="url"/>
+      <value value="https://www.inera.se"/>
+    </telecom>
+  </contact>
+  <description value="Kodverk för typ av diagnos (huvud- respektive bidiagnos). Definierat i XSD för domänen."/>
+  <jurisdiction>
+    <coding>
+      <system value="urn:iso:std:iso:3166"/>
+      <code value="SE"/>
+      <display value="Sweden"/>
+    </coding>
+  </jurisdiction>
+  <content value="complete"/>
+  <count value="2"/>
+  <concept>
+    <code value="Huvuddiagnos"/>
+    <display value="Huvuddiagnos"/>
+    <definition value="Huvuddiagnos"/>
+  </concept>
+  <concept>
+    <code value="Bidiagnos"/>
+    <display value="Bidiagnos"/>
+    <definition value="Bidiagnos"/>
+  </concept>
+</CodeSystem>

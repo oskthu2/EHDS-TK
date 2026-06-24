@@ -1,0 +1,53 @@
+{
+  "resourceType" : "CodeSystem",
+  "id" : "fetalpositioncode-cs",
+  "text" : {
+    "status" : "generated",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Genererad berättande text: CodeSystem fetalpositioncode-cs</b></p><a name=\"fetalpositioncode-cs\"> </a><a name=\"hcfetalpositioncode-cs\"> </a><p>Detta case-sensitive kodsystem <code>https://fhir.inera.se/CodeSystem/fetalpositioncode</code> definierar följande koder:</p><table class=\"codes\"><tr><td style=\"white-space:nowrap\"><b>Kod</b></td><td><b>Visning</b></td><td><b>Definition</b></td></tr><tr><td style=\"white-space:nowrap\">0<a name=\"fetalpositioncode-cs-0\"> </a></td><td>Huvudläge</td><td>Fostret ligger med huvudet nedåt</td></tr><tr><td style=\"white-space:nowrap\">1<a name=\"fetalpositioncode-cs-1\"> </a></td><td>Sätesläge</td><td>Fostret ligger med sätet nedåt</td></tr><tr><td style=\"white-space:nowrap\">2<a name=\"fetalpositioncode-cs-2\"> </a></td><td>Snedläge</td><td>Fostret ligger snett</td></tr><tr><td style=\"white-space:nowrap\">3<a name=\"fetalpositioncode-cs-3\"> </a></td><td>Tvärläge</td><td>Fostret ligger tvärs</td></tr></table></div>"
+  },
+  "url" : "https://fhir.inera.se/CodeSystem/fetalpositioncode",
+  "version" : "0.1.0",
+  "name" : "FetalPositionCodeCS",
+  "title" : "FetalPositionCode",
+  "status" : "active",
+  "date" : "2026-06-24T12:10:33+00:00",
+  "publisher" : "Inera AB",
+  "contact" : [{
+    "name" : "Inera AB",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "https://www.inera.se"
+    }]
+  }],
+  "description" : "Kodverk för fosterläge (FetalPositionCodeEnum). Används i GetMaternityMedicalHistory.",
+  "jurisdiction" : [{
+    "coding" : [{
+      "system" : "urn:iso:std:iso:3166",
+      "code" : "SE",
+      "display" : "Sweden"
+    }]
+  }],
+  "caseSensitive" : true,
+  "content" : "complete",
+  "count" : 4,
+  "concept" : [{
+    "code" : "0",
+    "display" : "Huvudläge",
+    "definition" : "Fostret ligger med huvudet nedåt"
+  },
+  {
+    "code" : "1",
+    "display" : "Sätesläge",
+    "definition" : "Fostret ligger med sätet nedåt"
+  },
+  {
+    "code" : "2",
+    "display" : "Snedläge",
+    "definition" : "Fostret ligger snett"
+  },
+  {
+    "code" : "3",
+    "display" : "Tvärläge",
+    "definition" : "Fostret ligger tvärs"
+  }]
+}

@@ -1,0 +1,19 @@
+{
+  "url" : "https://fhir.inera.se/ig/ehds-tk/ImplementationGuide/inera.ehds.tk",
+  "name" : "IneraEHDSTK",
+  "title" : "Inera EHDS Tjänstekontrakt – FHIR Implementation Guide",
+  "description" : "FHIR IG som beskriver hur Ineras RIVTA-tjänstekontrakt mappas till FHIR för att informationsförsörja NPÖ och 1177 Journal.",
+  "status" : "draft",
+  "package-id" : "inera.ehds.tk",
+  "ig-ver" : "0.1.0",
+  "date" : "Wed, 24 Jun, 2026 12:10:33 +0000",
+  "dateISO8601" : "2026-06-24T12:10:33+00:00",
+  "errs" : 38,
+  "warnings" : 2652,
+  "hints" : 362,
+  "suppressed-hints" : 0,
+  "suppressed-warnings" : 4,
+  "version" : "4.0.1",
+  "tool" : "5.0.0 (3)",
+  "maxMemory" : 3884360224
+}

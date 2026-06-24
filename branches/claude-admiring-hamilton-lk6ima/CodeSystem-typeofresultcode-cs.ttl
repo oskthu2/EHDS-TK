@@ -1,0 +1,56 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://fhir.inera.se/ig/ehds-tk/CodeSystem/typeofresultcode-cs> a fhir:CodeSystem ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "typeofresultcode-cs"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Genererad berättande text: CodeSystem typeofresultcode-cs</b></p><a name=\"typeofresultcode-cs\"> </a><a name=\"hctypeofresultcode-cs\"> </a><p>Detta case-sensitive kodsystem <code>https://fhir.inera.se/CodeSystem/typeofresultcode</code> definierar följande koder:</p><table class=\"codes\"><tr><td style=\"white-space:nowrap\"><b>Kod</b></td><td><b>Visning</b></td><td><b>Definition</b></td></tr><tr><td style=\"white-space:nowrap\">PREL<a name=\"typeofresultcode-cs-PREL\"> </a></td><td>Preliminärsvar</td><td>Preliminärt svar</td></tr><tr><td style=\"white-space:nowrap\">DEF<a name=\"typeofresultcode-cs-DEF\"> </a></td><td>Definitivsvar</td><td>Definitivt svar</td></tr><tr><td style=\"white-space:nowrap\">TILL<a name=\"typeofresultcode-cs-TILL\"> </a></td><td>Tilläggssvar</td><td>Tilläggssvar</td></tr></table></div>"^^rdf:XMLLiteral ]
+  ] ; # 
+  fhir:url [ fhir:v "https://fhir.inera.se/CodeSystem/typeofresultcode"^^xsd:anyURI] ; # 
+  fhir:version [ fhir:v "0.1.0"] ; # 
+  fhir:name [ fhir:v "TypeOfResultCodeCS"] ; # 
+  fhir:title [ fhir:v "TypeOfResultCode"] ; # 
+  fhir:status [ fhir:v "active"] ; # 
+  fhir:date [ fhir:v "2026-06-24T12:10:33+00:00"^^xsd:dateTime] ; # 
+  fhir:publisher [ fhir:v "Inera AB"] ; # 
+  fhir:contact ( [
+     fhir:name [ fhir:v "Inera AB" ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "url" ] ;
+       fhir:value [ fhir:v "https://www.inera.se" ]
+     ] )
+  ] ) ; # 
+  fhir:description [ fhir:v "Kodverk för typ av resultat (TypeOfResultCodeEnum). Används i GetImagingOutcome och GetReferralOutcome."] ; # 
+  fhir:jurisdiction ( [
+     fhir:coding ( [
+       fhir:system [ fhir:v "urn:iso:std:iso:3166"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "SE" ] ;
+       fhir:display [ fhir:v "Sweden" ]
+     ] )
+  ] ) ; # 
+  fhir:caseSensitive [ fhir:v true] ; # 
+  fhir:content [ fhir:v "complete"] ; # 
+  fhir:count [ fhir:v "3"^^xsd:nonNegativeInteger] ; # 
+  fhir:concept ( [
+     fhir:code [ fhir:v "PREL" ] ;
+     fhir:display [ fhir:v "Preliminärsvar" ] ;
+     fhir:definition [ fhir:v "Preliminärt svar" ]
+  ] [
+     fhir:code [ fhir:v "DEF" ] ;
+     fhir:display [ fhir:v "Definitivsvar" ] ;
+     fhir:definition [ fhir:v "Definitivt svar" ]
+  ] [
+     fhir:code [ fhir:v "TILL" ] ;
+     fhir:display [ fhir:v "Tilläggssvar" ] ;
+     fhir:definition [ fhir:v "Tilläggssvar" ]
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

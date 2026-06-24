@@ -1,0 +1,48 @@
+{
+  "resourceType" : "CodeSystem",
+  "id" : "typeofleavecode-cs",
+  "text" : {
+    "status" : "generated",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Genererad berättande text: CodeSystem typeofleavecode-cs</b></p><a name=\"typeofleavecode-cs\"> </a><a name=\"hctypeofleavecode-cs\"> </a><p>Detta case-sensitive kodsystem <code>https://fhir.inera.se/CodeSystem/typeofleavecode</code> definierar följande koder:</p><table class=\"codes\"><tr><td style=\"white-space:nowrap\"><b>Kod</b></td><td><b>Visning</b></td><td><b>Definition</b></td></tr><tr><td style=\"white-space:nowrap\">0<a name=\"typeofleavecode-cs-0\"> </a></td><td>Sjukskrivning</td><td>Sjukskrivning under graviditet</td></tr><tr><td style=\"white-space:nowrap\">1<a name=\"typeofleavecode-cs-1\"> </a></td><td>Havandekapsledighet</td><td>Havandekapsledighet</td></tr><tr><td style=\"white-space:nowrap\">2<a name=\"typeofleavecode-cs-2\"> </a></td><td>Föräldrarledighet</td><td>Föräldrarledighet</td></tr></table></div>"
+  },
+  "url" : "https://fhir.inera.se/CodeSystem/typeofleavecode",
+  "version" : "0.1.0",
+  "name" : "TypeOfLeaveCodeCS",
+  "title" : "TypeOfLeaveCode",
+  "status" : "active",
+  "date" : "2026-06-24T12:10:33+00:00",
+  "publisher" : "Inera AB",
+  "contact" : [{
+    "name" : "Inera AB",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "https://www.inera.se"
+    }]
+  }],
+  "description" : "Kodverk för typ av ledighet (TypeOfLeaveCodeEnum). Används i GetMaternityMedicalHistory.",
+  "jurisdiction" : [{
+    "coding" : [{
+      "system" : "urn:iso:std:iso:3166",
+      "code" : "SE",
+      "display" : "Sweden"
+    }]
+  }],
+  "caseSensitive" : true,
+  "content" : "complete",
+  "count" : 3,
+  "concept" : [{
+    "code" : "0",
+    "display" : "Sjukskrivning",
+    "definition" : "Sjukskrivning under graviditet"
+  },
+  {
+    "code" : "1",
+    "display" : "Havandekapsledighet",
+    "definition" : "Havandekapsledighet"
+  },
+  {
+    "code" : "2",
+    "display" : "Föräldrarledighet",
+    "definition" : "Föräldrarledighet"
+  }]
+}

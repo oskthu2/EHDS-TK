@@ -1,0 +1,37 @@
+{
+  "resourceType" : "CodeSystem",
+  "id" : "errorcode-cs",
+  "text" : {
+    "status" : "generated",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Genererad berättande text: CodeSystem errorcode-cs</b></p><a name=\"errorcode-cs\"> </a><a name=\"hcerrorcode-cs\"> </a><p>Detta  kodsystem <code>https://fhir.inera.se/CodeSystem/errorcode-actoutcome</code> definierar följande kod:</p><table class=\"codes\"><tr><td style=\"white-space:nowrap\"><b>Kod</b></td><td><b>Visning</b></td><td><b>Definition</b></td></tr><tr><td style=\"white-space:nowrap\">INVALID_REQUEST<a name=\"errorcode-cs-INVALID_REQUEST\"> </a></td><td>Ogiltig begäran</td><td>Begäran är felaktig eller saknar obligatoriska fält</td></tr></table></div>"
+  },
+  "url" : "https://fhir.inera.se/CodeSystem/errorcode-actoutcome",
+  "version" : "0.1.0",
+  "name" : "ErrorCodeCS",
+  "title" : "ErrorCode",
+  "status" : "active",
+  "date" : "2026-06-24T12:10:33+00:00",
+  "publisher" : "Inera AB",
+  "contact" : [{
+    "name" : "Inera AB",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "https://www.inera.se"
+    }]
+  }],
+  "description" : "Kodverk för felkoder i svar från tjänstekontrakten i domänen clinicalprocess:activityprescription:actoutcome.",
+  "jurisdiction" : [{
+    "coding" : [{
+      "system" : "urn:iso:std:iso:3166",
+      "code" : "SE",
+      "display" : "Sweden"
+    }]
+  }],
+  "content" : "complete",
+  "count" : 1,
+  "concept" : [{
+    "code" : "INVALID_REQUEST",
+    "display" : "Ogiltig begäran",
+    "definition" : "Begäran är felaktig eller saknar obligatoriska fält"
+  }]
+}

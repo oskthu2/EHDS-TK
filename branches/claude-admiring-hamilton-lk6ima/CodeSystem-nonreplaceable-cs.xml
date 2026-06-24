@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<CodeSystem xmlns="http://hl7.org/fhir">
+  <id value="nonreplaceable-cs"/>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Genererad berättande text: CodeSystem nonreplaceable-cs</b></p><a name="nonreplaceable-cs"> </a><a name="hcnonreplaceable-cs"> </a><p>Detta  kodsystem <code>https://fhir.inera.se/CodeSystem/nonreplaceable-actoutcome</code> definierar följande koder:</p><table class="codes"><tr><td style="white-space:nowrap"><b>Kod</b></td><td><b>Visning</b></td><td><b>Definition</b></td></tr><tr><td style="white-space:nowrap">Prescriber<a name="nonreplaceable-cs-Prescriber"> </a></td><td>Förskrivare</td><td>Förskrivaren har angett att läkemedlet inte är utbytbart</td></tr><tr><td style="white-space:nowrap">Patient<a name="nonreplaceable-cs-Patient"> </a></td><td>Patient</td><td>Patienten har begärt att läkemedlet inte ska bytas ut</td></tr></table></div>
+  </text>
+  <url value="https://fhir.inera.se/CodeSystem/nonreplaceable-actoutcome"/>
+  <version value="0.1.0"/>
+  <name value="NonReplaceableCS"/>
+  <title value="NonReplaceable"/>
+  <status value="active"/>
+  <date value="2026-06-24T12:10:33+00:00"/>
+  <publisher value="Inera AB"/>
+  <contact>
+    <name value="Inera AB"/>
+    <telecom>
+      <system value="url"/>
+      <value value="https://www.inera.se"/>
+    </telecom>
+  </contact>
+  <description value="Kodverk för aktör som har angett att ett läkemedel inte är utbytbart i GetMedicationHistory (DispensationAuthorizationType)."/>
+  <jurisdiction>
+    <coding>
+      <system value="urn:iso:std:iso:3166"/>
+      <code value="SE"/>
+      <display value="Sweden"/>
+    </coding>
+  </jurisdiction>
+  <content value="complete"/>
+  <count value="2"/>
+  <concept>
+    <code value="Prescriber"/>
+    <display value="Förskrivare"/>
+    <definition value="Förskrivaren har angett att läkemedlet inte är utbytbart"/>
+  </concept>
+  <concept>
+    <code value="Patient"/>
+    <display value="Patient"/>
+    <definition value="Patienten har begärt att läkemedlet inte ska bytas ut"/>
+  </concept>
+</CodeSystem>

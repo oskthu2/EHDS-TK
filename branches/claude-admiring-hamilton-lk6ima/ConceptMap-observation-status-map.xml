@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ConceptMap xmlns="http://hl7.org/fhir">
+  <id value="observation-status-map"/>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Genererad berättande text: ConceptMap observation-status-map</b></p><a name="observation-status-map"> </a><a name="hcobservation-status-map"> </a><p>Mappning från <a href="http://hl7.org/fhir/R4/codesystem-snomedct.html">http://snomed.info/sct</a> till <a href="http://hl7.org/fhir/R4/codesystem-observation-status.html">http://hl7.org/fhir/observation-status</a></p><br/><p>Mappning från <a href="http://hl7.org/fhir/R4/codesystem-snomedct.html">SNOMED CT (all versions)</a> to <a href="http://hl7.org/fhir/R4/codesystem-observation-status.html">ObservationStatus</a></p><table class="grid"><tr><td><b>Källkod</b></td><td><b>Relation</b></td><td><b>Målkod</b></td><td><b>Kommentar</b></td></tr><tr><td>385676005 (Under utförande)</td><td><a href="http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent" title="equivalent">is equivalent to</a></td><td>preliminary</td><td/></tr><tr><td>385651009 (Slutlig)</td><td><a href="http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent" title="equivalent">is equivalent to</a></td><td>final</td><td/></tr><tr><td>272393004 (Korrigerad)</td><td><a href="http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent" title="equivalent">is equivalent to</a></td><td>amended</td><td/></tr><tr><td>59776000 (Avbeställd/annullerad)</td><td><a href="http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent" title="equivalent">is equivalent to</a></td><td>cancelled</td><td>Avbeställd/annullerad – observationen utfördes aldrig</td></tr><tr><td>444301002 (Avböjd av patient)</td><td><a href="http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#narrower" title="narrower">narrower</a></td><td>cancelled</td><td>Avböjd av patient – semantiken specificeras med dataAbsentReason om värderelevant</td></tr></table></div>
+  </text>
+  <url value="https://fhir.inera.se/ConceptMap/observation-status-map"/>
+  <version value="0.1.0"/>
+  <name value="ObservationStatusMap"/>
+  <title value="GetObservations observationStatus → FHIR ObservationStatus"/>
+  <status value="active"/>
+  <experimental value="false"/>
+  <date value="2025-01-01"/>
+  <publisher value="Inera AB"/>
+  <contact>
+    <name value="Inera AB"/>
+    <telecom>
+      <system value="url"/>
+      <value value="https://www.inera.se"/>
+    </telecom>
+  </contact>
+  <description value="Mappar SNOMED CT-koder från urvals-id 56431000052106 till FHIR ObservationStatus."/>
+  <jurisdiction>
+    <coding>
+      <system value="urn:iso:std:iso:3166"/>
+      <code value="SE"/>
+      <display value="Sweden"/>
+    </coding>
+  </jurisdiction>
+  <sourceUri value="http://snomed.info/sct"/>
+  <targetUri value="http://hl7.org/fhir/observation-status"/>
+  <group>
+    <source value="http://snomed.info/sct"/>
+    <target value="http://hl7.org/fhir/observation-status"/>
+    <element>
+      <code value="385676005"/>
+      <display value="Under utförande"/>
+      <target>
+        <code value="preliminary"/>
+        <display value="Preliminary"/>
+        <equivalence value="equivalent"/>
+      </target>
+    </element>
+    <element>
+      <code value="385651009"/>
+      <display value="Slutlig"/>
+      <target>
+        <code value="final"/>
+        <display value="Final"/>
+        <equivalence value="equivalent"/>
+      </target>
+    </element>
+    <element>
+      <code value="272393004"/>
+      <display value="Korrigerad"/>
+      <target>
+        <code value="amended"/>
+        <display value="Amended"/>
+        <equivalence value="equivalent"/>
+      </target>
+    </element>
+    <element>
+      <code value="59776000"/>
+      <display value="Avbeställd/annullerad"/>
+      <target>
+        <code value="cancelled"/>
+        <display value="Cancelled"/>
+        <equivalence value="equivalent"/>
+        <comment value="Avbeställd/annullerad – observationen utfördes aldrig"/>
+      </target>
+    </element>
+    <element>
+      <code value="444301002"/>
+      <display value="Avböjd av patient"/>
+      <target>
+        <code value="cancelled"/>
+        <display value="Cancelled"/>
+        <equivalence value="narrower"/>
+        <comment value="Avböjd av patient – semantiken specificeras med dataAbsentReason om värderelevant"/>
+      </target>
+    </element>
+    <unmapped>
+      <mode value="fixed"/>
+      <code value="unknown"/>
+      <display value="Unknown"/>
+    </unmapped>
+  </group>
+</ConceptMap>

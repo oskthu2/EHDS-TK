@@ -1,0 +1,88 @@
+{
+  "resourceType" : "CodeSystem",
+  "id" : "examinationstatuscode-cs",
+  "text" : {
+    "status" : "generated",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Genererad berättande text: CodeSystem examinationstatuscode-cs</b></p><a name=\"examinationstatuscode-cs\"> </a><a name=\"hcexaminationstatuscode-cs\"> </a><p>Detta case-sensitive kodsystem <code>https://fhir.inera.se/CodeSystem/examinationstatuscode</code> definierar följande koder:</p><table class=\"codes\"><tr><td style=\"white-space:nowrap\"><b>Kod</b></td><td><b>Visning</b></td><td><b>Definition</b></td></tr><tr><td style=\"white-space:nowrap\">Initierad<a name=\"examinationstatuscode-cs-Initierad\"> </a></td><td>Initierad</td><td>Undersökning initierad</td></tr><tr><td style=\"white-space:nowrap\">Planerad<a name=\"examinationstatuscode-cs-Planerad\"> </a></td><td>Planerad (bevakad)</td><td>Undersökning planerad</td></tr><tr><td style=\"white-space:nowrap\">Tidbokad<a name=\"examinationstatuscode-cs-Tidbokad\"> </a></td><td>Tidbokad</td><td>Undersökning tidbokad</td></tr><tr><td style=\"white-space:nowrap\">Uppskjuten<a name=\"examinationstatuscode-cs-Uppskjuten\"> </a></td><td>Uppskjuten</td><td>Undersökning uppskjuten</td></tr><tr><td style=\"white-space:nowrap\">Annullerad<a name=\"examinationstatuscode-cs-Annullerad\"> </a></td><td>Annullerad</td><td>Undersökning annullerad</td></tr><tr><td style=\"white-space:nowrap\">Pagaende<a name=\"examinationstatuscode-cs-Pagaende\"> </a></td><td>Pågående</td><td>Undersökning pågående</td></tr><tr><td style=\"white-space:nowrap\">Avvakta<a name=\"examinationstatuscode-cs-Avvakta\"> </a></td><td>Avvakta</td><td>Undersökning avvakta</td></tr><tr><td style=\"white-space:nowrap\">Avbruten<a name=\"examinationstatuscode-cs-Avbruten\"> </a></td><td>Avbruten</td><td>Undersökning avbruten</td></tr><tr><td style=\"white-space:nowrap\">Avklarad<a name=\"examinationstatuscode-cs-Avklarad\"> </a></td><td>Avklarad</td><td>Undersökning avklarad</td></tr><tr><td style=\"white-space:nowrap\">Inaktuell<a name=\"examinationstatuscode-cs-Inaktuell\"> </a></td><td>Inaktuell</td><td>Undersökning inaktuell</td></tr><tr><td style=\"white-space:nowrap\">Makulerad<a name=\"examinationstatuscode-cs-Makulerad\"> </a></td><td>Makulerad</td><td>Undersökning makulerad</td></tr></table></div>"
+  },
+  "url" : "https://fhir.inera.se/CodeSystem/examinationstatuscode",
+  "version" : "0.1.0",
+  "name" : "ExaminationStatusCodeCS",
+  "title" : "ExaminationStatusCode",
+  "status" : "active",
+  "date" : "2026-06-24T12:10:33+00:00",
+  "publisher" : "Inera AB",
+  "contact" : [{
+    "name" : "Inera AB",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "https://www.inera.se"
+    }]
+  }],
+  "description" : "Kodverk för undersökningsstatus (ExaminationStatusCodeEnum). Används i GetImagingOutcome.",
+  "jurisdiction" : [{
+    "coding" : [{
+      "system" : "urn:iso:std:iso:3166",
+      "code" : "SE",
+      "display" : "Sweden"
+    }]
+  }],
+  "caseSensitive" : true,
+  "content" : "complete",
+  "count" : 11,
+  "concept" : [{
+    "code" : "Initierad",
+    "display" : "Initierad",
+    "definition" : "Undersökning initierad"
+  },
+  {
+    "code" : "Planerad",
+    "display" : "Planerad (bevakad)",
+    "definition" : "Undersökning planerad"
+  },
+  {
+    "code" : "Tidbokad",
+    "display" : "Tidbokad",
+    "definition" : "Undersökning tidbokad"
+  },
+  {
+    "code" : "Uppskjuten",
+    "display" : "Uppskjuten",
+    "definition" : "Undersökning uppskjuten"
+  },
+  {
+    "code" : "Annullerad",
+    "display" : "Annullerad",
+    "definition" : "Undersökning annullerad"
+  },
+  {
+    "code" : "Pagaende",
+    "display" : "Pågående",
+    "definition" : "Undersökning pågående"
+  },
+  {
+    "code" : "Avvakta",
+    "display" : "Avvakta",
+    "definition" : "Undersökning avvakta"
+  },
+  {
+    "code" : "Avbruten",
+    "display" : "Avbruten",
+    "definition" : "Undersökning avbruten"
+  },
+  {
+    "code" : "Avklarad",
+    "display" : "Avklarad",
+    "definition" : "Undersökning avklarad"
+  },
+  {
+    "code" : "Inaktuell",
+    "display" : "Inaktuell",
+    "definition" : "Undersökning inaktuell"
+  },
+  {
+    "code" : "Makulerad",
+    "display" : "Makulerad",
+    "definition" : "Undersökning makulerad"
+  }]
+}

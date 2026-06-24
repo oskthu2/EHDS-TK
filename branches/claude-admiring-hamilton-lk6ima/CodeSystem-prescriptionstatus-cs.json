@@ -1,0 +1,42 @@
+{
+  "resourceType" : "CodeSystem",
+  "id" : "prescriptionstatus-cs",
+  "text" : {
+    "status" : "generated",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Genererad berättande text: CodeSystem prescriptionstatus-cs</b></p><a name=\"prescriptionstatus-cs\"> </a><a name=\"hcprescriptionstatus-cs\"> </a><p>Detta  kodsystem <code>https://fhir.inera.se/CodeSystem/prescriptionstatus</code> definierar följande koder:</p><table class=\"codes\"><tr><td style=\"white-space:nowrap\"><b>Kod</b></td><td><b>Visning</b></td><td><b>Definition</b></td></tr><tr><td style=\"white-space:nowrap\">Active<a name=\"prescriptionstatus-cs-Active\"> </a></td><td>Aktiv</td><td>Aktiv ordination — den sista i sin ordinationskedja. Representerar gällande behandling.</td></tr><tr><td style=\"white-space:nowrap\">Inactive<a name=\"prescriptionstatus-cs-Inactive\"> </a></td><td>Inaktiv</td><td>Inaktiv ordination — inte den sista i sin ordinationskedja. Historisk ordination.</td></tr></table></div>"
+  },
+  "url" : "https://fhir.inera.se/CodeSystem/prescriptionstatus",
+  "version" : "0.1.0",
+  "name" : "PrescriptionStatusCS",
+  "title" : "PrescriptionStatus",
+  "status" : "active",
+  "date" : "2026-06-24T12:10:33+00:00",
+  "publisher" : "Inera AB",
+  "contact" : [{
+    "name" : "Inera AB",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "https://www.inera.se"
+    }]
+  }],
+  "description" : "Kodverk för ordinationsstatus i GetMedicationHistory. Anger om en ordination är aktiv eller inaktiv.",
+  "jurisdiction" : [{
+    "coding" : [{
+      "system" : "urn:iso:std:iso:3166",
+      "code" : "SE",
+      "display" : "Sweden"
+    }]
+  }],
+  "content" : "complete",
+  "count" : 2,
+  "concept" : [{
+    "code" : "Active",
+    "display" : "Aktiv",
+    "definition" : "Aktiv ordination — den sista i sin ordinationskedja. Representerar gällande behandling."
+  },
+  {
+    "code" : "Inactive",
+    "display" : "Inaktiv",
+    "definition" : "Inaktiv ordination — inte den sista i sin ordinationskedja. Historisk ordination."
+  }]
+}

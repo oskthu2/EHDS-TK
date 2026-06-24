@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<CodeSystem xmlns="http://hl7.org/fhir">
+  <id value="examinationstatuscode-cs"/>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Genererad berättande text: CodeSystem examinationstatuscode-cs</b></p><a name="examinationstatuscode-cs"> </a><a name="hcexaminationstatuscode-cs"> </a><p>Detta case-sensitive kodsystem <code>https://fhir.inera.se/CodeSystem/examinationstatuscode</code> definierar följande koder:</p><table class="codes"><tr><td style="white-space:nowrap"><b>Kod</b></td><td><b>Visning</b></td><td><b>Definition</b></td></tr><tr><td style="white-space:nowrap">Initierad<a name="examinationstatuscode-cs-Initierad"> </a></td><td>Initierad</td><td>Undersökning initierad</td></tr><tr><td style="white-space:nowrap">Planerad<a name="examinationstatuscode-cs-Planerad"> </a></td><td>Planerad (bevakad)</td><td>Undersökning planerad</td></tr><tr><td style="white-space:nowrap">Tidbokad<a name="examinationstatuscode-cs-Tidbokad"> </a></td><td>Tidbokad</td><td>Undersökning tidbokad</td></tr><tr><td style="white-space:nowrap">Uppskjuten<a name="examinationstatuscode-cs-Uppskjuten"> </a></td><td>Uppskjuten</td><td>Undersökning uppskjuten</td></tr><tr><td style="white-space:nowrap">Annullerad<a name="examinationstatuscode-cs-Annullerad"> </a></td><td>Annullerad</td><td>Undersökning annullerad</td></tr><tr><td style="white-space:nowrap">Pagaende<a name="examinationstatuscode-cs-Pagaende"> </a></td><td>Pågående</td><td>Undersökning pågående</td></tr><tr><td style="white-space:nowrap">Avvakta<a name="examinationstatuscode-cs-Avvakta"> </a></td><td>Avvakta</td><td>Undersökning avvakta</td></tr><tr><td style="white-space:nowrap">Avbruten<a name="examinationstatuscode-cs-Avbruten"> </a></td><td>Avbruten</td><td>Undersökning avbruten</td></tr><tr><td style="white-space:nowrap">Avklarad<a name="examinationstatuscode-cs-Avklarad"> </a></td><td>Avklarad</td><td>Undersökning avklarad</td></tr><tr><td style="white-space:nowrap">Inaktuell<a name="examinationstatuscode-cs-Inaktuell"> </a></td><td>Inaktuell</td><td>Undersökning inaktuell</td></tr><tr><td style="white-space:nowrap">Makulerad<a name="examinationstatuscode-cs-Makulerad"> </a></td><td>Makulerad</td><td>Undersökning makulerad</td></tr></table></div>
+  </text>
+  <url value="https://fhir.inera.se/CodeSystem/examinationstatuscode"/>
+  <version value="0.1.0"/>
+  <name value="ExaminationStatusCodeCS"/>
+  <title value="ExaminationStatusCode"/>
+  <status value="active"/>
+  <date value="2026-06-24T12:10:33+00:00"/>
+  <publisher value="Inera AB"/>
+  <contact>
+    <name value="Inera AB"/>
+    <telecom>
+      <system value="url"/>
+      <value value="https://www.inera.se"/>
+    </telecom>
+  </contact>
+  <description value="Kodverk för undersökningsstatus (ExaminationStatusCodeEnum). Används i GetImagingOutcome."/>
+  <jurisdiction>
+    <coding>
+      <system value="urn:iso:std:iso:3166"/>
+      <code value="SE"/>
+      <display value="Sweden"/>
+    </coding>
+  </jurisdiction>
+  <caseSensitive value="true"/>
+  <content value="complete"/>
+  <count value="11"/>
+  <concept>
+    <code value="Initierad"/>
+    <display value="Initierad"/>
+    <definition value="Undersökning initierad"/>
+  </concept>
+  <concept>
+    <code value="Planerad"/>
+    <display value="Planerad (bevakad)"/>
+    <definition value="Undersökning planerad"/>
+  </concept>
+  <concept>
+    <code value="Tidbokad"/>
+    <display value="Tidbokad"/>
+    <definition value="Undersökning tidbokad"/>
+  </concept>
+  <concept>
+    <code value="Uppskjuten"/>
+    <display value="Uppskjuten"/>
+    <definition value="Undersökning uppskjuten"/>
+  </concept>
+  <concept>
+    <code value="Annullerad"/>
+    <display value="Annullerad"/>
+    <definition value="Undersökning annullerad"/>
+  </concept>
+  <concept>
+    <code value="Pagaende"/>
+    <display value="Pågående"/>
+    <definition value="Undersökning pågående"/>
+  </concept>
+  <concept>
+    <code value="Avvakta"/>
+    <display value="Avvakta"/>
+    <definition value="Undersökning avvakta"/>
+  </concept>
+  <concept>
+    <code value="Avbruten"/>
+    <display value="Avbruten"/>
+    <definition value="Undersökning avbruten"/>
+  </concept>
+  <concept>
+    <code value="Avklarad"/>
+    <display value="Avklarad"/>
+    <definition value="Undersökning avklarad"/>
+  </concept>
+  <concept>
+    <code value="Inaktuell"/>
+    <display value="Inaktuell"/>
+    <definition value="Undersökning inaktuell"/>
+  </concept>
+  <concept>
+    <code value="Makulerad"/>
+    <display value="Makulerad"/>
+    <definition value="Undersökning makulerad"/>
+  </concept>
+</CodeSystem>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<CodeSystem xmlns="http://hl7.org/fhir">
+  <id value="prescriptionstatus-cs"/>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Genererad berättande text: CodeSystem prescriptionstatus-cs</b></p><a name="prescriptionstatus-cs"> </a><a name="hcprescriptionstatus-cs"> </a><p>Detta  kodsystem <code>https://fhir.inera.se/CodeSystem/prescriptionstatus</code> definierar följande koder:</p><table class="codes"><tr><td style="white-space:nowrap"><b>Kod</b></td><td><b>Visning</b></td><td><b>Definition</b></td></tr><tr><td style="white-space:nowrap">Active<a name="prescriptionstatus-cs-Active"> </a></td><td>Aktiv</td><td>Aktiv ordination — den sista i sin ordinationskedja. Representerar gällande behandling.</td></tr><tr><td style="white-space:nowrap">Inactive<a name="prescriptionstatus-cs-Inactive"> </a></td><td>Inaktiv</td><td>Inaktiv ordination — inte den sista i sin ordinationskedja. Historisk ordination.</td></tr></table></div>
+  </text>
+  <url value="https://fhir.inera.se/CodeSystem/prescriptionstatus"/>
+  <version value="0.1.0"/>
+  <name value="PrescriptionStatusCS"/>
+  <title value="PrescriptionStatus"/>
+  <status value="active"/>
+  <date value="2026-06-24T12:10:33+00:00"/>
+  <publisher value="Inera AB"/>
+  <contact>
+    <name value="Inera AB"/>
+    <telecom>
+      <system value="url"/>
+      <value value="https://www.inera.se"/>
+    </telecom>
+  </contact>
+  <description value="Kodverk för ordinationsstatus i GetMedicationHistory. Anger om en ordination är aktiv eller inaktiv."/>
+  <jurisdiction>
+    <coding>
+      <system value="urn:iso:std:iso:3166"/>
+      <code value="SE"/>
+      <display value="Sweden"/>
+    </coding>
+  </jurisdiction>
+  <content value="complete"/>
+  <count value="2"/>
+  <concept>
+    <code value="Active"/>
+    <display value="Aktiv"/>
+    <definition value="Aktiv ordination — den sista i sin ordinationskedja. Representerar gällande behandling."/>
+  </concept>
+  <concept>
+    <code value="Inactive"/>
+    <display value="Inaktiv"/>
+    <definition value="Inaktiv ordination — inte den sista i sin ordinationskedja. Historisk ordination."/>
+  </concept>
+</CodeSystem>

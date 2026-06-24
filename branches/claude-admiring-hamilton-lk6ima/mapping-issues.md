@@ -1,0 +1,117 @@
+# Mappningsissues och Designbeslut - Inera EHDS Tjänstekontrakt – FHIR Implementation Guide v0.1.0
+
+* [**Table of Contents**](toc.md)
+* **Mappningsissues och Designbeslut**
+
+## Mappningsissues och Designbeslut
+
+# Mappningsissues och Designbeslut
+
+Denna sida dokumenterar öppna designfrågor och fattade beslut för mappningar från svenska RIVTA-tjänstekontrakt (TKBer) till FHIR R4-resurser inom ramen för EHDS-TK. Sidan används som arbetsunderlag under implementationsguidearbetet och uppdateras löpande i takt med att frågor utreds och beslut fattas. Varje issue är kopplat till ett eller flera tjänstekontrakt och beskriver det tekniska problemet, möjliga lösningsalternativ samt aktuellt förslag eller fattat beslut. Öppna frågor kräver vidare utredning eller nationellt samordningsbeslut innan de kan avslutas.
+
+## Öppna frågor
+
+| | | | | |
+| :--- | :--- | :--- | :--- | :--- |
+| ALERT-002 | GetAlertInformation | `typeOfAlertInformation`kodsystem är okänt/lokalt. TKBn anger "kodsystem okänt externt/lokalt". Nationellt kodverk för uppmärksamhetstyper saknas. Avgör vilka koder som ska styra om Flag eller AllergyIntolerance (eller båda) skapas. Avgör även mapping till`AllergyIntolerance.category`. | Öppen | Avvakta nationellt kodverk från Inera/e-Hälsomyndigheten. Tillsvidare: använd`urn:oid`för lokalt system. |
+| ALERT-004 | GetAlertInformation | **ConceptMap saknas: degreeOfCertainty/degreeOfSeverity → FHIR.**`hypersensitivity.degreeOfCertainty`(KV Visshetsgrad 1.2.752.129.2.2.3.11) behöver ConceptMap till`AllergyIntolerance.verificationStatus`.`hypersensitivity.degreeOfSeverity`(KV Allvarlighetsgrad 1.2.752.129.2.2.3.3) behöver ConceptMap till`AllergyIntolerance.reaction.severity`. | Öppen | Temporärt: sätt`verificationStatus = confirmed`tills ConceptMap finns. Ta fram ConceptMap som del av IG. |
+| ALERT-005 | GetAlertInformation | **`Flag` saknar standard `note`-element.**`alertInformationBody.alertInformationComment`kan inte mappas till ett standardelement på Flag (Flag.note finns ej i R4). | Öppen | Custom extension`extension[alertInformationComment]`. Alternativ:`flag-detail`-extension med länk till Observation med kommentar. |
+| ALERT-006 | GetAlertInformation | **`obsoleteTime`/`obsoleteComment` saknar FHIR-standard.**Inaktiveringsinformation (tid och kommentar) har ingen standardrepresentation i Flag. | Öppen | Custom extensions på Flag. Behöver nationellt beslut. |
+| ALERT-007 | GetAlertInformation | **Kliniska detaljer i non-allergi body-typer saknar FHIR-standardelement.**`seriousDisease.disease`,`treatment.treatmentDescription/Code/pharmaceuticalTreatment`,`communicableDisease.communicableDiseaseCode/routeOfTransmission`,`restrictionOfCare.restrictionOfCareComment`och`unstructuredAlertInformation.*`saknar standardelement i Flag. | Öppen | Custom extensions på Flag. Alternativ:`flag-detail`-extension med länk till Condition/Observation per body-typ. Kräver designbeslut om representationsdjup. |
+| DIAG-001 | GetDiagnosis | `diagnosisBody.chronicDiagnosis`– Boolean, inget direktmappat FHIR Condition-element. | Öppen | Alternativ: (a) extension`Condition.extension[chronicDiagnosis]`med boolean, eller (b)`Condition.category`med kod för kronisk diagnos. Kräver designbeslut. |
+| DIAG-002 | GetDiagnosis | `diagnosisBody.relatedDiagnosis.documentId`– Referens till relaterad diagnos via dokumentid. Inget standardelement i Condition. | Öppen | Alternativ: (a)`Condition.extension[relatedCondition]`med logisk referens, eller (b)`Condition.note`med dokumentid i fritext. Kräver designbeslut. |
+| FUNC-001 | GetFunctionalStatus | PADL-poster (`padl.typeOfAssessment`+`padl.assessment`) saknar direkt FHIR Condition-element. Tre alternativ: (1)`Observation.component`, (2) extension, (3) separata Condition-resurser. | **Beslutat** | Koda som`Condition.note`med format`[typeOfAssessment]: assessment`. Alternativet separata Observation-resurser nämns i profilen som möjlighet vid framtida behov av strukturerad sökning. |
+| FUNC-002 | GetFunctionalStatus | `functionalStatusAssessmentHeader.legalAuthenticator.legalAuthenticatorRoleCode`– Signerande persons befattning.`Condition.asserter`är enkel Reference utan plats för rollkod. | Öppen | Alternativ: (a) inkludera i PractitionerRole-resursen om en skapas, eller (b) ignorera då rollkoden hämtas via HSA-katalogen. Kräver designbeslut. |
+| MED-001 | GetMedicationHistory | `dispensationAuthorization`,`administration`och`relation`i GetMedicationHistory är markerade "SAKNAS I KÄLLDOKUMENT – endast delvis extraherat". Behöver verifieras mot XSD och komplett TKB-dokumentation. | Öppen | Verifiera mot RIVTA XSD. Om saknas: dokumentera begränsning i IG. |
+| MED-002 | GetMedicationHistory | `typeOfPrescription``I`(insättning) /`U`(utsättning) mappar inte rent till`MedicationStatement.status`(`active`/`stopped`/etc.).`I`/`U`är snarare händelsetyp än aktuell status. | Öppen | Kartlägg`typeOfPrescription`som`MedicationStatement.category`(extension) snarare än`status`. Status härleds från`prescriptionStatus`. |
+| MED-003 | GetMedicationHistory | `drug`-fältets XOR-constraint (`unstructuredDrugInformation`/`merchandise`/`drugArticle`/`drug`/`generics`) kan inte uttryckas i FSH-profil. Kräver business logic i implementationen. | Öppen | Dokumentera i IG som "business logic only". Profilerna tillåter alla varianter; validering måste ske i implementationen. |
+| MED-004 | GetMedicationHistory | `drug.drug.pharmaceuticalForm`,`drug.drug.strength`,`drug.drug.strengthUnit`saknar standard FHIR-element i MedicationStatement. Dessa fält beskriver läkemedlets form och styrka på produktnivå. | Öppen | Överväg om de ska mappas till Medication-resurs (Medication.form, Medication.ingredient.strength) istället för MedicationStatement-extension. |
+| MED-005 | GetMedicationHistory | `prescriber`-blocket kontra FHIR`requester`. MedicationStatement.basedOn → MedicationRequest är mer korrekt mönster för förskrivaren. | Öppen | Beslut behövs om MedicationRequest ska ingå i resurshierarkin. |
+| MED-006 | GetMedicationHistory | `documentTitle`(header) saknar mappning. Fritexttiteln för dokument har ingen standardmotpart i MedicationStatement. | Öppen | Överväg`MedicationStatement.note`eller ignorera som administrativ etikett. |
+| VAC-001 | GetVaccinationHistory | `vaccinationMedicalRecord`har`registrationRecord (1..1)`+`administrationRecord (0..*)`. Designbeslut: en Immunization per`administrationRecord`(rekommenderas) eller en per`registrationRecord`? | Öppen | En Immunization per`administrationRecord`.`registrationRecord`-fält delas/ärvs till alla Immunization-resurser från samma post. |
+| VAC-003 | GetVaccinationHistory | `careGiverContact`(`actorId`,`actorName`) saknar FHIR-mappning. Kontaktpersoninfo hos juridisk vårdgivare har ingen naturlig plats i Immunization eller Provenance. | Öppen | Beslut: ignorera eller lägga i extension. |
+| VAC-004 | GetVaccinationHistory | `documentTitle`saknar mappning. Fritexttiteln för vaccinationsdokumentet har ingen standardmotpart i Immunization. | Öppen | Överväg`Immunization.note`eller ignorera som administrativ etikett. |
+| VAC-005 | GetVaccinationHistory | `legalAuthenticator`i Immunization-profil. Immunization saknar standard`authenticator`-fält (till skillnad från DocumentReference). | Öppen | Custom extension behövs för att bevara legalAuthenticator. Beslut om legalAuthenticator är relevant för vaccinationsdata. |
+| CP-001 | GetCarePlans | `carePlan.content`(MultimediaType) saknar standardiserat FHIR R4-uttryck i CarePlan. | Öppen | Alternativ: (a) lokal extension med`mediaType`,`value`(base64Binary) och`reference`(url), eller (b)`DocumentReference`som alternativ resurs. |
+| CP-002 | GetCarePlans | `carePlan.participatingCareUnitHSAId`mappas till`CarePlan.contributor`(Reference(Organization)). Bör logisk referens via identifier tillåtas utan att Organization-resurs skapas? | Öppen | Logisk referens via identifier bör tillåtas. |
+| CP-003 | GetCarePlans | OrgUnit-kontaktdetaljer (`orgUnitTelecom`,`orgUnitEmail`,`orgUnitAddress`,`orgUnitLocation`) under`accountableHealthcareProfessional.healthcareProfessionalOrgUnit`är ej mappade. | Öppen | Ska dessa ignoreras eller kräver de en fullständig Organization-resurs? Gemensamt beslut med CC-002. |
+| CC-001 | GetCareContacts | ConceptMap för SNOMED CT SE (OID 1.2.752.116.2.1.1) → FHIR`Encounter.status`saknas. Vilka SNOMED-koder ingår och hur mappas de till FHIR-värdemängden? | Öppen | Ta fram ConceptMap. |
+| CC-002 | GetCareContacts | OrgUnit-kontaktdetaljer (`orgUnitTelecom`,`orgUnitEmail`,`orgUnitAddress`,`orgUnitLocation`) på två ställen (header-orgUnit och careContactOrgUnit) saknar standardmappning i Encounter. | Öppen | Gemensamt beslut med CP-003. Alternativ: skapa Organization-resurser eller ignorera. |
+| CC-003 | GetCareContacts | `careContact.additionalPatientInformation.gender`(KV Kön OID 1.2.752.129.2.2.1.1, koder 0/1/2/9) behöver ConceptMap till FHIR AdministrativeGender. | Öppen | Bör ConceptMap delas med andra TK? Skapa gemensam ConceptMap. |
+| OBS-001 | GetObservations | `observationBody.observationValue.ts`är en sträng med variabel precision (`YYYYMMDD`,`YYYYMMDDHHMMSS`etc.) och kan inte mappas direkt till FHIR`dateTime`. | **Beslutat** | Precision ≥ dag →`valueDateTime`; precision`YYYY`/`YYYYMM`→`valueString`. För`time.ts`med låg precision:`effectiveDateTime`+`_effectiveDateTime.extension[originalText]`. |
+| OBS-002 | GetObservations | `observationBody.valueNegation=true`saknar direkt FHIR-semantik. | **Beslutat** | `dataAbsentReason.code = "not-detected"`(data-absent-reason);`value[x]`utelämnas. |
+| OBS-003 | GetObservations | `observationBody.observationStatus`använder Snomed CT urvals-id`56431000052106`. Behöver ConceptMap till FHIR ObservationStatus. | **Beslutat** | ConceptMap`ObservationStatusMap.fsh`skapad; 5 koder mappade. Okänd kod →`unknown`+ OperationOutcome-varning. |
+| OBS-004 | GetObservations | `observationBody.targetSite`är`0..*`i TKBn men`Observation.bodySite`är`0..1`i FHIR R4. Information går förlorad om fler än en anatomisk plats anges. | **Beslutat** | `targetSite[0]`→`Observation.bodySite`;`targetSite[1..*]`→`extension[additionalBodySite]`. Extension är R4-övergångslösning – utgår vid FHIR R5-migration. |
+| OBS-005 | GetObservations | `observationBody.relation`(`0..*`) med`relationType`saknar standardrepresentation i FHIR. | Öppen | ConceptMap för`relationType`→ FHIR-relationer. Oklara typer → extension. |
+| OBS-006 | GetObservations | `participation[*].time`,`participation[*].patient`,`participation[*].locationRole`och`participation[*].resource.*`saknar standardmotpart i FHIR Observation. | Öppen | Behöver gemensam`participation`-extension i profilen, eller markeras dessa fält som ej mappade. |
+| OBS-007 | GetObservations | `observationBody.patient.person.givenNameMarker`(tilltalsnamnsmarkering, giltiga värden 10–99) har inget standardiserat FHIR-fält i Patient-resursen. | Öppen | Extension, eller ignoreras. |
+| OBS-008 | GetObservations | `observationBody.patient.person.maritalStatus`och patient-adressfält är ej relevanta för Observation-resursen. | Öppen | Lagras i sammanhörande Patient-resurs om en skapas. Profileringskrav behöver klargöras. |
+| MAT-001 | GetMaternityMedicalHistory | Tre sektioner (`registrationRecord`,`pregnancyCheckupRecord`,`postDeliveryRecord`) med många fält kan inte rymmas i en enda Observation. | Öppen | En Observation per sektion med`Observation.code`som diskriminator; sektionens fält →`Observation.component`. |
+| MAT-002 | GetMaternityMedicalHistory | `orgUnitTelecom`,`orgUnitEmail`,`orgUnitAddress`och`orgUnitLocation`saknar fastlagd FHIR-mappning. | Medium | Bör mappas till`Organization.telecom`/`Organization.address`. Kräver beslut om Organization-profil. |
+| MAT-003 | GetMaternityMedicalHistory | `documentTitle`(0..1 string i header) saknar naturligt mottagarfält i Observation. | Låg | Utred`Observation.note[0].text`, lokal extension, eller`Composition.title`om MAT-001 löses med Composition. |
+| MAT-004 | GetMaternityMedicalHistory | `legalAuthenticator.signatureTime`saknar standardfält i FHIR R4 Observation. Nuvarande förslag: lokal extension`assertedDate`. | Medium | Utred om FHIR R5-mönstret eller Provenance-baserad lösning är att föredra för R4-kompatibilitet. |
+| LAB-001 | GetLaboratoryOrderOutcome | `groupOfAnalyses.analysis.result.value`använder`AnyValueType`(`PQ`, sträng, boolean, kodad). Modellerat som sträng i logisk modell. I FHIR Observation behövs polymorf`value[x]`. | Öppen | Implementera konverteringslogik för att välja rätt`value[x]`-typ baserat på`analysis.code`eller kontext. |
+| LAB-002 | GetLaboratoryOrderOutcome | `analysis.result.related 0..*`– relationstyp okänd (ingår i panel =`hasMember`, härledd =`derivedFrom`). | Öppen | Behöver klarläggande från TKB-förvaltningen. |
+| LAB-003 | GetLaboratoryOrderOutcome | `analysis.specimen.activity`saknar standard Specimen-element (`activity[i].code`,`activity[i].time`,`activity[i].method`). | Öppen | Lokal extension på`Specimen.collection`. Alternativ:`Specimen.collection.fastingStatusCodeableConcept`för fasteaktivitet. |
+| LAB-004 | GetLaboratoryOrderOutcome | `header.signature.byRole`– ingen standardiserad plats på DiagnosticReport. | Öppen | Lokal extension om rollkod ska inkluderas. |
+| IMG-001 | GetImagingOutcome | `imagingOutcomeBody.typeOfResult`-koder (`PREL`/`DEF`/`TILL`) →`DiagnosticReport.status`. Semantiken för`TILL`(tillägg) =`amended`behöver bekräftas. | Öppen | Verifiera mot RIS-systemspecifikationer. |
+| IMG-002 | GetImagingOutcome | DICOM-bilddata (`imageDicomData.dicomSOP`+`dicomValue`/`dicomReference`) – ska binärdata inkluderas? | Öppen | Inkludera metadata (SOP, referens-URL) i ImagingStudy. Binärdata (`dicomValue`) inkluderas EJ. |
+| IMG-003 | GetImagingOutcome | `imageRecording.accountableHealthcareProfessional.healthcareProfessionalOrgUnit`saknar mappning i ImagingStudy R4. | Öppen | Alternativ: PractitionerRole länkad via`ImagingStudy.interpreter`, eller lokal extension. |
+| IMG-004 | GetImagingOutcome | `imageStructuredData.imageData.burnedInAnnotations`saknar FHIR-motpart (boolean för inbrända annotationer). | Öppen | Lokal extension på`ImagingStudy.series.instance`. |
+| IMG-005 | GetImagingOutcome | `imageStructuredData.copyright`– hantering av upphovsrätt. Ingen standardiserad plats i ImagingStudy. | Öppen | `ImagingStudy.note`(semantiken går delvis förlorad) eller lokal extension. |
+| REF-001 | GetReferralOutcome | act-poster i GetReferralOutcome (`actCode`,`actText`,`actResult`med multimedia) saknar standardelement i DiagnosticReport. | Öppen | `DiagnosticReport.presentedForm`för multimediadata;`actCode`/`actText`→ extension eller`conclusion`. |
+| REF-002 | GetReferralOutcome | `referralOutcomeBody.attested.attesterName`vs. header-signatär. Två potentiella signatärstrukturer (`legalAuthenticator`och`body.attested`) kan representera olika signatärer. | Öppen | Behöver klargöras om de är semantiskt ekvivalenta eller distinkta. |
+| REF-003 | GetReferralOutcome | `referralOutcomeBody.referral.referralAuthor.healthcareProfessionalOrgUnit`– sub-fält inte specificerade i LM-FSH. | Öppen | Verifiera sub-fält med TKB-förvaltningen. |
+| REF-004 | GetReferralOutcome | `orgUnitTelecom`,`orgUnitEmail`,`orgUnitAddress`,`orgUnitLocation`i PatientSummaryHeader-blocket – ingen standardiserad plats i DiagnosticReport-kontexten. | Öppen | Beslut om dessa ska inkluderas alls i bryggan. |
+| DOC-001 | GetCareDocumentation | `hasMore`-paginering i GetCareDocumentation har ingen FHIR-motsvarighet. Konsumenten måste anropa tjänsten flera gånger. | Öppen | Dokumentera i IG att paginering hanteras på tjänstenivå, ej i FHIR-resurser. |
+| DOC-002 | GetCareDocumentation | `careDocumentation.header.author`är valfri (0..1) men`author.timestamp`är obligatorisk inom blocket. Om`author`saknas finns ingen`Provenance.recorded`-källa. | Öppen | Sätt`Provenance.recorded`till`record.timestamp`som fallback, eller kräv att`author`alltid finns? |
+| DOC-003 | GetCareDocumentation | `signature.timestamp`är valfri (0..1) trots att det är signeringsinformation. Ingen extension[assertedDate] används. | Öppen | Bekräfta om`DocumentReference.extension[signatureTime]`är korrekt lösning. |
+| DOC-004 | GetCareDocumentation | `clinicalDocumentNoteText`kodas som base64 i`attachment.data`. Klargör om base64-inkodning av entity-encodad DocBook-text är korrekt, eller om dekodning ska ske först. | Öppen | Behöver klargöras med källsystemsleverantörer. |
+| REQ-001 | GetRequestActivities | `requestId`kan avse antingen aktivitetens eget id eller referens till remissen. Ska`Task.identifier`och`Task.focus`båda populeras? | Öppen | Kräver analys av TKB och klarläggande med TKB-förvaltningen. |
+| REQ-002 | GetRequestActivities | `Task.requester`saknar källfält i LM. Avsändaren kan finnas i requestHeader via`senderHSAId`i fullständigt RIVTA-schema. | Öppen | Verifiera mot RIVTA XSD. |
+| LOG-001 | GetAccessLogForPatient | `AuditEvent.patient`är en R4B-utökning som inte finns i basen av FHIR R4. | Hög | Utred om lokal extension eller`entity[patient]`-mönstret (entity.role = 1) ska användas för R4-kompatibilitet. |
+| LOG-002 | GetAccessLogForPatient | `accessType`-kodvärden (Läsning/Sökning) behöver formellt kodverk. Utred om DICOM AuditEventID-koder eller ett lokalt Inera-kodverk ska användas. | Medium | Utred kodverksval och publicera CodeSystem som del av IG. |
+| PDL-001 | Alla TK | `approvedForPatient`(boolean,`1..1`) i alla TK-headrar saknar standardmappning till FHIR`meta.security`. | **Beslutat** | `approvedForPatient = false`→`meta.security`kod`NOPATIENT`från`http://terminology.hl7.org/CodeSystem/v3-ActCode`. Dokumenterat i README avsnitt 9 och i alla berörda profilers`^short`. |
+| GENERAL-001 | Alla TK | RIVTA-tidsstämplar använder formatet`YYYYMMDDhhmmss`(utan tidzon). FHIR kräver ISO 8601 med tidzon. | Öppen | Konvertera till ISO 8601. Antag tidzon Europe/Stockholm (CET/CEST). Implementera i EHDS-bryggan. |
+
+-------
+
+## Stängda frågor
+
+| | | | |
+| :--- | :--- | :--- | :--- |
+| ALERT-001 | GetAlertInformation | Tidigare stub-dokumentation felaktigt angav att`alertInformationBody`innehöll ENBART`typeOfAlertInformation 1..1`. Fält som`alertCode`,`alertStatus`,`alertTimePeriod`,`causeCode`,`reaction`och`alertComment`angavs som ej existerande. | **Stängd.**Den verkliga TKBn v2.0 innehåller ett rikt body-element med XOR-subtyperna`hypersensitivity`,`seriousDisease`,`treatment`,`communicableDisease`,`restrictionOfCare`och`unstructuredAlertInformation`, plus gemensamma fält (`validityTimePeriod`,`ascertainedDate`,`verifiedTime`,`alertInformationComment`,`obsoleteTime`,`obsoleteComment`,`relatedAlertInformation`). Stub-LM och profiler har uppdaterats. Mappningssida reskriven. |
+
+-------
+
+## Designbeslut (fattade)
+
+| | | | |
+| :--- | :--- | :--- | :--- |
+| GENERAL-002 | Alla TK | OID-till-URI-mappning för`patientId.root`: fasta mappningar`1.2.752.129.2.1.3.1`→ personnummer URI,`1.2.752.129.2.1.3.3`→ samordningsnummer URI,`1.2.752.129.2.1.4.1`→`urn:oid`passthrough. Okänt OID behålls som`urn:oid`. | Säkerställer enhetlig och förutsägbar identifieringshantering för svenska nationella identifierare i FHIR. |
+| GENERAL-003 | Alla TK | Provenance-agenter: två agenter definieras —`custodian`(vårdgivare/yttre Sparr) och`author`(vårdenhet/inre Sparr). Gäller alla TK. | Tydlig ansvarskedja i Provenance-resursen krävs för spårbarhet och PDL-krav. |
+| GENERAL-004 | GetAlertInformation | Flag vs AllergyIntolerance: Flag skapas alltid. AllergyIntolerance skapas dessutom om`hypersensitivity`-blocket anges.`Flag.extension[allergyReference]`pekar på AllergyIntolerance. | Flag täcker alla typer av uppmärksamhetsinformation. AllergyIntolerance skapas kompletterande för allergier för EHDS EPS-kompatibilitet. |
+| ALERT-003 | GetAlertInformation | Alignment med HL7 Sweden UMI-IG (`SEAlertInformationFlag`):`IneraEHDSFlag`inkluderar standard`flag-detail`-extension (hl7.org) för framtida länk till Observation med kliniska detaljer. | `flag-detail`möjliggör framtida rikning mot Observation när kliniska detaljer finns tillgängliga. |
+| PDL-001 | Alla TK | `approvedForPatient = false`→`meta.security`kod`NOPATIENT`(v3-ActCode). | Standardkod`NOPATIENT`är närmast semantiskt korrekta för "ej avsedd att visas för patient". Undviker custom extension. |
+| OBS-001 | GetObservations | `ts`-strängar: precision ≥ dag →`valueDateTime`;`YYYY`/`YYYYMM`→`valueString`.`time.ts`med låg precision:`effectiveDateTime`+`extension[originalText]`. | Preserverar precisionssemantik utan att tappa strukturering för datumvärden. |
+| OBS-002 | GetObservations | `valueNegation=true`→`dataAbsentReason.code = "not-detected"`. | Koden signalerar att det kliniska värdet explicit frånkänts/negativt påvisats. |
+| OBS-003 | GetObservations | ConceptMap`ObservationStatusMap.fsh`skapad (5 SNOMED CT-koder → FHIR ObservationStatus). Okänd kod →`unknown`. | Nödvändig för att producera giltig`Observation.status`. Publiceras som del av IG. |
+| OBS-004 | GetObservations | `targetSite[0]`→`bodySite`;`targetSite[1..*]`→`extension[additionalBodySite]`(R4-övergångslösning). | Bevarar alla anatomiska platser utan informationsförlust. Extension utgår vid R5-migration. |
+| FUNC-001 | GetFunctionalStatus | PADL-poster kodas som`Condition.note`med format`[typeOfAssessment]: assessment`. | Enklast möjliga lösning som bevarar PADL-data utan extra resurser. Alternativet Observation nämns i profilen. |
+
+-------
+
+## Kända begränsningar
+
+Följande begränsningar i FHIR R4 påverkar mappningarna i denna implementationsguide:
+
+1. **`Observation.bodySite` är `0..1` (ej `0..*`)**— begränsar mappning av`targetSite`när flera anatomiska platser anges i källdata (se OBS-004).**Beslutat:**extension`additionalBodySite`används för ytterligare platser; tas bort vid R5-migration.
+1. **`DiagnosticReport` saknar inbyggt stöd för act-poster med multimedia**— fält som`actCode`,`actText`och`actResult`med multimediainnehåll från GetReferralOutcome har ingen direkt motsvarighet (se REF-001). Workaround:`DiagnosticReport.presentedForm`och extension.
+1. **`MedicationStatement` saknar modellering av receptkedja (chain)**— relationen mellan insättning (`I`) och utsättning (`U`) kan inte uttryckas med standardelement (se MED-002). Kräver extension.
+1. **`DocumentReference.content[0].attachment.data` är base64**— stora dokument bör refereras via URL i`attachment.url`för att undvika onödigt stora FHIR-resurser.
+1. **`ImagingStudy` är komplex och kan vara overkill för enbart utlåtandemetadata**— för GetImagingOutcome med begränsad DICOM-referensdata kan ImagingStudy-resursen bli onödigt komplex (se IMG-002).
+1. **`Observation.value[x]` stödjer variabelprecisions-datum dåligt**— FHIR R4`dateTime`kräver specifik precisionsnivå, men RIVTA-tidsstämplar kan ha varierande precision (se OBS-001).**Beslutat:**`valueString`för`YYYY`/`YYYYMM`,`valueDateTime`för`YYYYMMDD`/`YYYYMMDDHHMMSS`.
+1. **Inga standardiserade FHIR-element för samtycke/Sparr-information**—`approvedForPatient`-flaggan i RIVTA-headrar har ingen direkt FHIR-motsvarighet.**Beslutat:**`meta.security`med kod`NOPATIENT`(v3-ActCode) om`false`(se PDL-001).
+1. **`Flag` saknar `note`-element i R4**—`alertInformationComment`kan inte mappas till standardelement på Flag (se ALERT-005). Kräver custom extension.
+1. **`AuditEvent.patient` är R4B-tillägg**— för GetAccessLogForPatient behövs workaround för ren R4-kompatibilitet (se LOG-001).
+

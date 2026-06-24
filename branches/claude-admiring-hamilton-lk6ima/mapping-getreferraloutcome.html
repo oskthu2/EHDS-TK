@@ -1,0 +1,910 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE HTML>
+<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
+    <title>GetReferralOutcome – Remisser - Inera EHDS Tjänstekontrakt – FHIR Implementation Guide v0.1.0</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="author" content="http://hl7.org/fhir"/>
+
+    <link href="fhir.css" rel="stylesheet"/>
+
+    <!-- Bootstrap core CSS -->
+    <link href="assets/css/bootstrap-fhir.css" rel="stylesheet"/>
+
+    <!-- Project extras -->
+    <link href="assets/css/project.css" rel="stylesheet"/>
+    <link href="assets/css/pygments-manni.css" rel="stylesheet"/>
+    <link href="assets/css/jquery-ui.css" rel="stylesheet"/>
+  	<link href="assets/css/prism.css" rel="stylesheet" />
+  	<link href="assets/css/cqf.css" rel="stylesheet" />
+    <link href="inera.css" rel="stylesheet"/>
+<link rel="icon" type="image/png" href="inera-thumbnail.png"/>
+<link rel="shortcut icon" href="inera-thumbnail.png"/>
+
+
+    <script type="text/javascript" src="fhir-table-scripts.js"> </script>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="assets/js/html5shiv.js"></script>
+    <script src="assets/js/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Favicons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/icon-fhir-144.png"/>
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/icon-fhir-114.png"/>
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/icon-fhir-72.png"/>
+    <link rel="apple-touch-icon-precomposed" href="assets/ico/icon-fhir-57.png"/>
+    <link rel="shortcut icon" href="assets/ico/favicon.png"/>
+  </head>
+  <body onload="document.body.style.opacity='1'">
+
+	  <script src="assets/js/prism.js"></script>
+    <script type="text/javascript" src="assets/js/mermaid.js"></script>
+    <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
+    <style type="text/css">h2{--heading-prefix:"16"}
+    h3,h4,h5,h6{--heading-prefix:"16"}</style>
+    <div id="segment-header" class="segment">  <!-- segment-header -->
+      <div class="container">  <!-- container -->
+
+        <div id="inera-nav">
+  <a id="inera-logo" data-no-external="true" href="https://www.inera.se">
+    <img height="50" alt="Inera" src="inera-logo-header.svg"/>
+  </a>
+</div>
+
+
+        <div id="ig-status">
+          <p><span style="font-size:12pt;font-weight:bold">Inera EHDS Tjänstekontrakt – FHIR Implementation Guide</span>
+            <br/>
+            <span style="display:inline-block;">0.1.0 - ci-build
+
+
+
+  <img alt="Sweden flag" src="assets/images/swe.svg" height="16" title="Sweden"/>
+
+
+            </span>
+          </p>
+        </div>
+      </div> <!-- /container -->
+    </div>  <!-- /segment-header -->
+
+    <div id="segment-navbar" class="segment">  <!-- segment-navbar -->
+      <div id="stripe"> </div>
+      <div class="container">  <!-- container -->
+        <!-- HEADER CONTENT -->
+
+        <nav class="navbar navbar-inverse">
+          <!--status-bar-->
+          <div class="container">
+            <button data-target=".navbar-inverse-collapse" class="navbar-toggle" data-toggle="collapse" type="button">
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+            </button>
+            <a class="navbar-brand hidden" href="http://hl7.org/fhir/R4/index.html">FHIR</a>
+            <div class="nav-collapse collapse navbar-inverse-collapse">
+              <div id="segment-navbar" class="segment">
+  <div id="stripe"> </div>
+  <div class="container">
+    <nav class="navbar navbar-inverse">
+      <div class="container">
+        <button data-target=".navbar-inverse-collapse" class="navbar-toggle" data-toggle="collapse" type="button">
+          <span class="icon-bar"> </span>
+          <span class="icon-bar"> </span>
+          <span class="icon-bar"> </span>
+        </button>
+        <a class="navbar-brand hidden" href="http://hl7.org/fhir/R4/index.html">FHIR</a>
+        <div class="nav-collapse collapse navbar-inverse-collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="index.html">Hem</a></li>
+            <li class="dropdown">
+              <a data-toggle="dropdown" href="#" class="dropdown-toggle">Bakgrund<b class="caret"> </b></a>
+              <ul class="dropdown-menu">
+                <li><a href="workflow.html">Workflow</a></li>
+                <li><a href="logical-models.html">Logiska modeller</a></li>
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a data-toggle="dropdown" href="#" class="dropdown-toggle">Mappningar<b class="caret"> </b></a>
+              <ul class="dropdown-menu">
+                <li><a href="mappings.html">Översikt</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="dropdown-header">Patientöversikt</li>
+                <li><a href="mapping-getdiagnosis.html">GetDiagnosis – Diagnoser</a></li>
+                <li><a href="mapping-getalertinformation.html">GetAlertInformation – Uppmärksamhet</a></li>
+                <li><a href="mapping-getmedicationhistory.html">GetMedicationHistory – Läkemedel</a></li>
+                <li><a href="mapping-getvaccinationhistory.html">GetVaccinationHistory – Vaccinationer</a></li>
+                <li><a href="mapping-getfunctionalstatus.html">GetFunctionalStatus – Funktionstillstånd</a></li>
+                <li><a href="mapping-getmaternitymedicalhistory.html">GetMaternityMedicalHistory – Mödravård</a></li>
+                <li><a href="mapping-getcareplans.html">GetCarePlans – Vårdplan</a></li>
+                <li><a href="mapping-getcarecontacts.html">GetCareContacts – Vårdkontakter</a></li>
+                <li><a href="mapping-getcaredocumentation.html">GetCareDocumentation – Anteckningar</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="dropdown-header">Laboratorie och diagnostik</li>
+                <li><a href="mapping-getlaboratoryorderoutcome.html">GetLaboratoryOrderOutcome – Provsvar</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="dropdown-header">Bilddiagnostik</li>
+                <li><a href="mapping-getimagingoutcome.html">GetImagingOutcome – Bilddiagnostik</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="dropdown-header">Remiss och process</li>
+                <li><a href="mapping-getreferraloutcome.html">GetReferralOutcome – Remisser</a></li>
+                <li><a href="mapping-getrequestactivities.html">GetRequestActivities – Remisstatus</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="dropdown-header">Tillväxtkurva barn</li>
+                <li><a href="mapping-getobservations.html">GetObservations – Tillväxtkurva</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="dropdown-header">Logg</li>
+                <li><a href="mapping-getaccesslogforpatient.html">GetAccessLogForPatient – Åtkomstloggar</a></li>
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a data-toggle="dropdown" href="#" class="dropdown-toggle">FHIR Artifacts<b class="caret"> </b></a>
+              <ul class="dropdown-menu">
+                <li><a href="profiles.html">Profiles</a></li>
+                <li><a href="terminology.html">Terminology</a></li>
+                <li><a href="examples.html">Examples</a></li>
+                <li><a href="artifacts.html">All Artifacts</a></li>
+              </ul>
+            </li>
+            <li><a href="search-parameters.html">Sökparametrar</a></li>
+            <li><a href="downloads.html">Downloads</a></li>
+            <li><a href="mapping-issues.html">Issues &amp; Beslut</a></li>
+            <li><a href="version-history.html">Version History</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </div>
+</div>
+
+            </div>  <!-- /.nav-collapse -->
+          </div>  <!-- /.container -->
+        </nav>  <!-- /.navbar -->
+      <!-- /HEADER CONTENT -->
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-navbar -->
+    <!--status-bar-->
+
+    <div id="segment-breadcrumb" class="segment">  <!-- segment-breadcrumb -->
+      <div class="container">  <!-- container -->
+        <ul class="breadcrumb">
+          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><b>GetReferralOutcome – Remisser</b></li>
+
+        </ul>
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-breadcrumb -->
+
+    <a name="top"> </a>
+    <div id="segment-content" class="segment">  <!-- segment-content -->
+      <div class="container">  <!-- container -->
+        <div class="row">
+          <div class="inner-wrapper">
+
+<style type="text/css">
+h2:before{color:silver;counter-increment:section;content:var(--heading-prefix) " ";}
+h3:before{color:silver;counter-increment:sub-section;content:var(--heading-prefix) "." counter(sub-section) " ";}
+h4:before{color:silver;counter-increment:composite;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) " ";}
+h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) " ";}
+h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
+</style>
+<div class="col-12">
+  <!--ReleaseHeader--><p id="publish-box">Inera EHDS Tjänstekontrakt – FHIR Implementation Guide - Lokal utvecklingsbygge (v0.1.0) byggt av FHIR (HL7® FHIR® Standard) Build Tools. Se <a href='https://fhir.inera.se/ig/ehds-tk/history.html'>katalogen över publicerade versioner</a></p><!--EndReleaseHeader-->
+  <h2>GetReferralOutcome – Remisser</h2>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+    <p><!-- white space is critical inside of capture --></p>
+<div class="markdown-toc">
+<ul id="markdown-toc">
+  <li><a href="#getreferraloutcome--remissvar--konsultationssvar" id="markdown-toc-getreferraloutcome--remissvar--konsultationssvar">GetReferralOutcome – Remissvar / Konsultationssvar</a>    <ul>
+      <li><a href="#resurshierarki" id="markdown-toc-resurshierarki">Resurshierarki</a></li>
+      <li><a href="#mappningstabell--referraloutcomeheader-patientsummaryheader" id="markdown-toc-mappningstabell--referraloutcomeheader-patientsummaryheader">Mappningstabell – referralOutcomeHeader (PatientSummaryHeader)</a></li>
+      <li><a href="#mappningstabell--referraloutcomebody" id="markdown-toc-mappningstabell--referraloutcomebody">Mappningstabell – referralOutcomeBody</a>        <ul>
+          <li><a href="#svarstext-och-klassificering" id="markdown-toc-svarstext-och-klassificering">Svarstext och klassificering</a></li>
+          <li><a href="#klinisk-information-clinicalinformation" id="markdown-toc-klinisk-information-clinicalinformation">Klinisk information (clinicalInformation)</a></li>
+          <li><a href="#åtgärder-act" id="markdown-toc-åtgärder-act">Åtgärder (act)</a></li>
+          <li><a href="#attestering-attested" id="markdown-toc-attestering-attested">Attestering (attested)</a></li>
+          <li><a href="#kopplad-remiss-referral" id="markdown-toc-kopplad-remiss-referral">Kopplad remiss (referral)</a></li>
+        </ul>
+      </li>
+      <li><a href="#härledda-fält--designbeslut" id="markdown-toc-härledda-fält--designbeslut">Härledda fält / Designbeslut</a>        <ul>
+          <li><a href="#diagnosticreportstatus-från-referraloutcometypecode" id="markdown-toc-diagnosticreportstatus-från-referraloutcometypecode">DiagnosticReport.status (från referralOutcomeTypeCode)</a></li>
+          <li><a href="#titel-prioritering-diagnosticreportextensiontitle" id="markdown-toc-titel-prioritering-diagnosticreportextensiontitle">Titel-prioritering (DiagnosticReport.extension[title])</a></li>
+          <li><a href="#act-poster-och-multimedia-ref-001" id="markdown-toc-act-poster-och-multimedia-ref-001">act-poster och multimedia (REF-001)</a></li>
+          <li><a href="#clinicalinformation-sammanslagning" id="markdown-toc-clinicalinformation-sammanslagning">clinicalInformation-sammanslagning</a></li>
+          <li><a href="#referral--servicerequest" id="markdown-toc-referral--servicerequest">Referral → ServiceRequest</a></li>
+        </ul>
+      </li>
+      <li><a href="#pdl-och-sparr" id="markdown-toc-pdl-och-sparr">PDL och Sparr</a></li>
+      <li><a href="#provenance" id="markdown-toc-provenance">Provenance</a></li>
+      <li><a href="#oid-till-uri-tabell" id="markdown-toc-oid-till-uri-tabell">OID-till-URI-tabell</a></li>
+      <li><a href="#öppna-frågor" id="markdown-toc-öppna-frågor">Öppna frågor</a></li>
+      <li><a href="#föreslagna-nya-issues" id="markdown-toc-föreslagna-nya-issues">Föreslagna nya issues</a></li>
+    </ul>
+  </li>
+</ul>
+
+</div>
+<h1 id="getreferraloutcome--remissvar--konsultationssvar">GetReferralOutcome – Remissvar / Konsultationssvar</h1>
+
+<p><strong>Tjänstekontrakt:</strong> <code class="language-plaintext highlighter-rouge">clinicalprocess:healthcond:actoutcome</code> GetReferralOutcome v3.2<br />
+<strong>FHIR-profil:</strong> <a href="StructureDefinition-inera-ehds-diagnostic-report-referral.html">IneraEHDSDiagnosticReportReferral</a><br />
+<strong>Logisk modell:</strong> <a href="StructureDefinition-inera-ehds-lm-referral-outcome.html">IneraEHDSLMReferralOutcome</a><br />
+<strong>Krävs för NPÖ:</strong> Ja (v3.2) | <strong>Krävs för 1177 Journal:</strong> Ja (v3.2)<br />
+<strong>EHDS-koppling:</strong> Remissvar – relaterar till vårdprocess och resultat (ej separat EHDS-huvudkategori)</p>
+
+<hr />
+
+<h2 id="resurshierarki">Resurshierarki</h2>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>IneraEHDSDiagnosticReportReferral (1 per referralOutcome)
+  └── basedOn → ServiceRequest (logisk referens via referral.referralId)
+  └── performer → PractitionerRole (accountableHealthcareProfessional)
+</code></pre></div></div>
+
+<p>Varje <code class="language-plaintext highlighter-rouge">referralOutcome</code>-post i svaret ger upphov till en <code class="language-plaintext highlighter-rouge">DiagnosticReport</code>. Om <code class="language-plaintext highlighter-rouge">referralOutcomeBody.act</code>-poster finns med multimedia representeras dessa som <code class="language-plaintext highlighter-rouge">DiagnosticReport.presentedForm</code>-bilagor eller via extension – se <a href="#öppna-frågor">REF-001</a>.</p>
+
+<hr />
+
+<h2 id="mappningstabell--referraloutcomeheader-patientsummaryheader">Mappningstabell – referralOutcomeHeader (PatientSummaryHeader)</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>RIVTA-element</th>
+      <th>Kard.</th>
+      <th>FHIR-element</th>
+      <th>Kommentar</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">referralOutcomeHeader.documentId</code></td>
+      <td>1..1</td>
+      <td><code class="language-plaintext highlighter-rouge">DiagnosticReport.identifier[0].value</code></td>
+      <td>Källsystemets dokumentidentifierare</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">referralOutcomeHeader.sourceSystemHSAId</code></td>
+      <td>1..1</td>
+      <td><code class="language-plaintext highlighter-rouge">DiagnosticReport.meta.source</code></td>
+      <td>Format: <code class="language-plaintext highlighter-rouge">urn:oid:1.2.752.129.2.1.4.1#{hsaId}</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">referralOutcomeHeader.documentTitle</code></td>
+      <td>0..1</td>
+      <td><code class="language-plaintext highlighter-rouge">DiagnosticReport.extension[title]</code></td>
+      <td>Dokumenttitel; extension krävs då DiagnosticReport saknar title-fält i R4</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">referralOutcomeHeader.documentTime</code></td>
+      <td>1..1</td>
+      <td><code class="language-plaintext highlighter-rouge">DiagnosticReport.issued</code></td>
+      <td>YYYYMMDDHHMMSS → ISO 8601 (Europe/Stockholm), se <a href="#öppna-frågor">GENERAL-001</a></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">referralOutcomeHeader.patientId.value</code></td>
+      <td>1..1</td>
+      <td><code class="language-plaintext highlighter-rouge">DiagnosticReport.subject.identifier.value</code></td>
+      <td>Personnummer eller samordningsnummer</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">referralOutcomeHeader.patientId.system</code></td>
+      <td>1..1</td>
+      <td><code class="language-plaintext highlighter-rouge">DiagnosticReport.subject.identifier.system</code></td>
+      <td>OID→URI, se tabell nedan</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">referralOutcomeHeader.accountableHealthcareProfessional.authorTime</code></td>
+      <td>1..1</td>
+      <td><code class="language-plaintext highlighter-rouge">Provenance.recorded</code></td>
+      <td>Tidpunkt för ansvarig yrkesutövare; YYYYMMDDHHMMSS → ISO 8601</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">referralOutcomeHeader.accountableHealthcareProfessional.healthcareProfessionalHSAId</code></td>
+      <td>0..1</td>
+      <td><code class="language-plaintext highlighter-rouge">PractitionerRole.identifier.value</code></td>
+      <td>Logisk referens via HSA-id; DiagnosticReport.performer → Reference(PractitionerRole)</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">referralOutcomeHeader.accountableHealthcareProfessional.healthcareProfessionalName</code></td>
+      <td>0..1</td>
+      <td><code class="language-plaintext highlighter-rouge">PractitionerRole.practitioner.display</code></td>
+      <td>Visningsnamn för ansvarig yrkesutövare</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">referralOutcomeHeader.accountableHealthcareProfessional.healthcareProfessionalRoleCode</code></td>
+      <td>0..1</td>
+      <td><code class="language-plaintext highlighter-rouge">PractitionerRole.code</code></td>
+      <td>Yrkesrollskod</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">referralOutcomeHeader.accountableHealthcareProfessional.healthcareProfessionalOrgUnit.orgUnitHSAId</code></td>
+      <td>0..1</td>
+      <td><code class="language-plaintext highlighter-rouge">PractitionerRole.organization.identifier.value</code></td>
+      <td>Organisationsenhetens HSA-id</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">referralOutcomeHeader.accountableHealthcareProfessional.healthcareProfessionalOrgUnit.orgUnitName</code></td>
+      <td>0..1</td>
+      <td><code class="language-plaintext highlighter-rouge">PractitionerRole.organization.display</code></td>
+      <td>Organisationsenhetens namn</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">referralOutcomeHeader.accountableHealthcareProfessional.healthcareProfessionalOrgUnit.orgUnitTelecom</code></td>
+      <td>0..1</td>
+      <td>Ej mappad</td>
+      <td>Telefonnummer till org-enhet; ingen standardiserad plats på DiagnosticReport; kan läggas på Organization.telecom om Organization-instans skapas</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">referralOutcomeHeader.accountableHealthcareProfessional.healthcareProfessionalOrgUnit.orgUnitEmail</code></td>
+      <td>0..1</td>
+      <td>Ej mappad</td>
+      <td>E-post till org-enhet; kan läggas på Organization.telecom om Organization-instans skapas</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">referralOutcomeHeader.accountableHealthcareProfessional.healthcareProfessionalOrgUnit.orgUnitAddress</code></td>
+      <td>0..1</td>
+      <td>Ej mappad</td>
+      <td>Adress till org-enhet; kan läggas på Organization.address om Organization-instans skapas</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">referralOutcomeHeader.accountableHealthcareProfessional.healthcareProfessionalOrgUnit.orgUnitLocation</code></td>
+      <td>0..1</td>
+      <td>Ej mappad</td>
+      <td>Plats/lokation för org-enhet; kan läggas på Organization.address.city om Organization-instans skapas</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">referralOutcomeHeader.accountableHealthcareProfessional.healthcareProfessionalCareUnitHSAId</code></td>
+      <td>0..1</td>
+      <td><code class="language-plaintext highlighter-rouge">Provenance.agent[author].who.identifier</code></td>
+      <td>Inre Sparr – informationsägande vårdenhet</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">referralOutcomeHeader.accountableHealthcareProfessional.healthcareProfessionalCareGiverHSAId</code></td>
+      <td>0..1</td>
+      <td><code class="language-plaintext highlighter-rouge">Provenance.agent[custodian].who.identifier</code></td>
+      <td>Yttre Sparr – juridiskt ansvarig vårdgivare</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">referralOutcomeHeader.legalAuthenticator.signatureTime</code></td>
+      <td>1..1 (om legalAuth)</td>
+      <td><code class="language-plaintext highlighter-rouge">DiagnosticReport.extension[attested].attestedTime</code></td>
+      <td>Signeringstidpunkt; YYYYMMDDHHMMSS → ISO 8601</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">referralOutcomeHeader.legalAuthenticator.legalAuthenticatorHSAId</code></td>
+      <td>0..1</td>
+      <td><code class="language-plaintext highlighter-rouge">DiagnosticReport.extension[attested].attestorHSAId</code></td>
+      <td>HSA-id för signerare</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">referralOutcomeHeader.legalAuthenticator.legalAuthenticatorName</code></td>
+      <td>0..1</td>
+      <td>Ej mappad</td>
+      <td>Namn i klartext – HSA-id räcker för logisk referens</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">referralOutcomeHeader.approvedForPatient</code></td>
+      <td>1..1</td>
+      <td><code class="language-plaintext highlighter-rouge">DiagnosticReport.meta.security</code></td>
+      <td>PDL-kontroll – se <a href="#öppna-frågor">PDL-001</a></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">referralOutcomeHeader.careContactId</code></td>
+      <td>0..1</td>
+      <td><code class="language-plaintext highlighter-rouge">DiagnosticReport.encounter.identifier.value</code></td>
+      <td>Logisk referens till vårdkontakt</td>
+    </tr>
+  </tbody>
+</table>
+
+<hr />
+
+<h2 id="mappningstabell--referraloutcomebody">Mappningstabell – referralOutcomeBody</h2>
+
+<h3 id="svarstext-och-klassificering">Svarstext och klassificering</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>RIVTA-element</th>
+      <th>Kard.</th>
+      <th>FHIR-element</th>
+      <th>Kommentar</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">referralOutcomeBody.referralOutcomeTypeCode</code></td>
+      <td>1..1</td>
+      <td><code class="language-plaintext highlighter-rouge">DiagnosticReport.status</code></td>
+      <td>SS=<code class="language-plaintext highlighter-rouge">final</code>, SR=<code class="language-plaintext highlighter-rouge">preliminary</code>; se <a href="#diagnosticreportstatus-från-referraloutcometypecode">Härledda fält</a></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">referralOutcomeBody.referralOutcomeTitle</code></td>
+      <td>0..1</td>
+      <td><code class="language-plaintext highlighter-rouge">DiagnosticReport.extension[title]</code></td>
+      <td>Titelprioritering: referralOutcomeTitle &gt; documentTitle; se <a href="#titel-prioritering-diagnosticreportextensiontitle">Titel-prioritering</a></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">referralOutcomeBody.referralOutcomeText</code></td>
+      <td>1..1</td>
+      <td><code class="language-plaintext highlighter-rouge">DiagnosticReport.conclusion</code></td>
+      <td>Fritext remissvar/utlåtande</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="klinisk-information-clinicalinformation">Klinisk information (clinicalInformation)</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>RIVTA-element</th>
+      <th>Kard.</th>
+      <th>FHIR-element</th>
+      <th>Kommentar</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">referralOutcomeBody.clinicalInformation[i].clinicalInformationCode</code></td>
+      <td>1..1</td>
+      <td><code class="language-plaintext highlighter-rouge">DiagnosticReport.conclusionCode[i]</code></td>
+      <td>Klinisk informationskod (t.ex. diagnoskod)</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">referralOutcomeBody.clinicalInformation[i].clinicalInformationText</code></td>
+      <td>1..1</td>
+      <td><code class="language-plaintext highlighter-rouge">DiagnosticReport.conclusion</code> (sammanslagen)</td>
+      <td>Fritextbeskrivning av klinisk information; konkateneras med referralOutcomeText; se <a href="#clinicalinformation-sammanslagning">clinicalInformation-sammanslagning</a></td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="åtgärder-act">Åtgärder (act)</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>RIVTA-element</th>
+      <th>Kard.</th>
+      <th>FHIR-element</th>
+      <th>Kommentar</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">referralOutcomeBody.act[i].actId</code></td>
+      <td>0..1</td>
+      <td><code class="language-plaintext highlighter-rouge">DiagnosticReport.presentedForm[i].url</code></td>
+      <td>Åtgärdsidentifierare; se <a href="#öppna-frågor">REF-001</a></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">referralOutcomeBody.act[i].actCode</code></td>
+      <td>0..1</td>
+      <td><code class="language-plaintext highlighter-rouge">DiagnosticReport.extension[act][i].actCode</code></td>
+      <td>Klinisk åtgärdskod (KVÅ eller lokalt kodsystem); kräver lokal extension</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">referralOutcomeBody.act[i].actText</code></td>
+      <td>1..1</td>
+      <td><code class="language-plaintext highlighter-rouge">DiagnosticReport.presentedForm[i].title</code></td>
+      <td>Fritextbeskrivning av åtgärd; se <a href="#öppna-frågor">REF-001</a></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">referralOutcomeBody.act[i].actTime</code></td>
+      <td>0..1</td>
+      <td><code class="language-plaintext highlighter-rouge">DiagnosticReport.extension[act][i].actTime</code></td>
+      <td>Tidpunkt för åtgärd; YYYYMMDDHHMMSS → ISO 8601; kräver lokal extension</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">referralOutcomeBody.act[i].actResult[j].mediaType</code></td>
+      <td>1..1</td>
+      <td><code class="language-plaintext highlighter-rouge">DiagnosticReport.presentedForm[i].contentType</code></td>
+      <td>MIME-typ för resultatet (t.ex. <code class="language-plaintext highlighter-rouge">application/pdf</code>, <code class="language-plaintext highlighter-rouge">image/jpeg</code>)</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">referralOutcomeBody.act[i].actResult[j].value</code></td>
+      <td>0..1</td>
+      <td><code class="language-plaintext highlighter-rouge">DiagnosticReport.presentedForm[i].data</code></td>
+      <td>Binärdata base64-kodat; XOR med reference</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">referralOutcomeBody.act[i].actResult[j].reference</code></td>
+      <td>0..1</td>
+      <td><code class="language-plaintext highlighter-rouge">DiagnosticReport.presentedForm[i].url</code></td>
+      <td>URL till externt dokument; XOR med value</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="attestering-attested">Attestering (attested)</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>RIVTA-element</th>
+      <th>Kard.</th>
+      <th>FHIR-element</th>
+      <th>Kommentar</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">referralOutcomeBody.attested.attestedTime</code></td>
+      <td>1..1 (om attested)</td>
+      <td><code class="language-plaintext highlighter-rouge">DiagnosticReport.extension[attested].attestedTime</code></td>
+      <td>Tid för attestering; YYYYMMDDHHMMSS → ISO 8601</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">referralOutcomeBody.attested.attesterHSAId</code></td>
+      <td>0..1</td>
+      <td><code class="language-plaintext highlighter-rouge">DiagnosticReport.extension[attested].attestorHSAId</code></td>
+      <td>Attesterarens HSA-id</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">referralOutcomeBody.attested.attesterName</code></td>
+      <td>0..1</td>
+      <td>Ej mappad</td>
+      <td>Attesterarens namn i klartext – HSA-id räcker för logisk referens</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="kopplad-remiss-referral">Kopplad remiss (referral)</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>RIVTA-element</th>
+      <th>Kard.</th>
+      <th>FHIR-element</th>
+      <th>Kommentar</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">referralOutcomeBody.referral.referralId</code></td>
+      <td>1..1</td>
+      <td><code class="language-plaintext highlighter-rouge">DiagnosticReport.basedOn.identifier</code></td>
+      <td>Logisk referens till ursprungsremiss (ServiceRequest) via remissens id</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">referralOutcomeBody.referral.referralReason</code></td>
+      <td>1..1</td>
+      <td>Ej mappad till DiagnosticReport</td>
+      <td>Remissorsak tillhör ursprungsremissen (ServiceRequest.note); repeteras ej i svaret</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">referralOutcomeBody.referral.referralTime</code></td>
+      <td>0..1</td>
+      <td>Ej mappad till DiagnosticReport</td>
+      <td>Remisstid tillhör ursprungsremissen (ServiceRequest.authoredOn)</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">referralOutcomeBody.referral.referralAuthor.authorTime</code></td>
+      <td>1..1</td>
+      <td>Ej mappad till DiagnosticReport</td>
+      <td>Remittentens åtgärdstidpunkt tillhör ursprungsremissen</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">referralOutcomeBody.referral.referralAuthor.healthcareProfessionalHSAId</code></td>
+      <td>0..1</td>
+      <td>Ej mappad till DiagnosticReport</td>
+      <td>Remittentens HSA-id tillhör ursprungsremissen (ServiceRequest.requester)</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">referralOutcomeBody.referral.referralAuthor.healthcareProfessionalName</code></td>
+      <td>0..1</td>
+      <td>Ej mappad till DiagnosticReport</td>
+      <td>Remittentens namn tillhör ursprungsremissen</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">referralOutcomeBody.referral.referralAuthor.healthcareProfessionalRoleCode</code></td>
+      <td>0..1</td>
+      <td>Ej mappad till DiagnosticReport</td>
+      <td>Remittentens yrkesroll tillhör ursprungsremissen</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">referralOutcomeBody.referral.referralAuthor.healthcareProfessionalOrgUnit</code></td>
+      <td>0..1</td>
+      <td>Ej mappad till DiagnosticReport</td>
+      <td>Remittentens org-enhet tillhör ursprungsremissen; se <a href="#referral--servicerequest">Referral → ServiceRequest</a></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">referralOutcomeBody.referral.careContactId</code></td>
+      <td>0..1</td>
+      <td><code class="language-plaintext highlighter-rouge">DiagnosticReport.encounter.identifier.value</code></td>
+      <td>Alternativ källa för vårdkontaktsreferens om header.careContactId saknas</td>
+    </tr>
+  </tbody>
+</table>
+
+<blockquote>
+  <p><strong>Obs – DiagnosticReport.code:</strong> Sätts alltid till LOINC <code class="language-plaintext highlighter-rouge">11488-4</code> ("Consult note") som fast kod för remissvar. Det finns inget valfritt kodningsfält i TKB för utlåtandetypen utöver <code class="language-plaintext highlighter-rouge">referralOutcomeTypeCode</code>.</p>
+</blockquote>
+
+<blockquote>
+  <p>Alla <code class="language-plaintext highlighter-rouge">referralOutcomeBody.referral.*</code>-fält utom <code class="language-plaintext highlighter-rouge">referralId</code> och <code class="language-plaintext highlighter-rouge">careContactId</code> är attribut till ursprungsremissen. En logisk referens via <code class="language-plaintext highlighter-rouge">DiagnosticReport.basedOn</code> → <code class="language-plaintext highlighter-rouge">ServiceRequest.identifier</code> är tillräcklig. Bryggan skapar en minimal stub-ServiceRequest om ingen matchning finns.</p>
+</blockquote>
+
+<hr />
+
+<h2 id="härledda-fält--designbeslut">Härledda fält / Designbeslut</h2>
+
+<h3 id="diagnosticreportstatus-från-referraloutcometypecode">DiagnosticReport.status (från referralOutcomeTypeCode)</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>referralOutcomeTypeCode</th>
+      <th>Beskrivning</th>
+      <th>DiagnosticReport.status</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">SS</code></td>
+      <td>Specialistutlåtande/svar (slutgiltig bedömning)</td>
+      <td><code class="language-plaintext highlighter-rouge">final</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">SR</code></td>
+      <td>Specialistremissvar (preliminärt/delsvar)</td>
+      <td><code class="language-plaintext highlighter-rouge">preliminary</code></td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="titel-prioritering-diagnosticreportextensiontitle">Titel-prioritering (DiagnosticReport.extension[title])</h3>
+
+<p>Titeln sätts enligt följande prioriteringsordning:</p>
+
+<ol>
+  <li><code class="language-plaintext highlighter-rouge">referralOutcomeBody.referralOutcomeTitle</code> (om satt)</li>
+  <li><code class="language-plaintext highlighter-rouge">referralOutcomeHeader.documentTitle</code> (om satt)</li>
+  <li>(inget värde) – extension sätts inte</li>
+</ol>
+
+<h3 id="act-poster-och-multimedia-ref-001">act-poster och multimedia (REF-001)</h3>
+
+<p><code class="language-plaintext highlighter-rouge">referralOutcomeBody.act 0..*</code> representerar utförda åtgärder med eventuella bilagor. FHIR <code class="language-plaintext highlighter-rouge">DiagnosticReport</code> har inget dedikerat element för åtgärdslistor. Designbeslut:</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">act[i].actText</code> + multimedia (<code class="language-plaintext highlighter-rouge">actResult</code>) → <code class="language-plaintext highlighter-rouge">DiagnosticReport.presentedForm[i]</code></li>
+  <li><code class="language-plaintext highlighter-rouge">act[i].actCode</code> + <code class="language-plaintext highlighter-rouge">act[i].actTime</code> → <code class="language-plaintext highlighter-rouge">DiagnosticReport.extension[act]</code> (kräver custom extension)</li>
+  <li><code class="language-plaintext highlighter-rouge">actResult.value</code> (base64Binary) → <code class="language-plaintext highlighter-rouge">presentedForm[i].data</code></li>
+  <li><code class="language-plaintext highlighter-rouge">actResult.reference</code> (url) → <code class="language-plaintext highlighter-rouge">presentedForm[i].url</code></li>
+</ul>
+
+<p>Se <a href="#öppna-frågor">REF-001</a> för öppen fråga.</p>
+
+<h3 id="clinicalinformation-sammanslagning">clinicalInformation-sammanslagning</h3>
+
+<p><code class="language-plaintext highlighter-rouge">clinicalInformation 0..*</code> innehåller kliniska fynd/slutsatser med kod och fritext. Koden mappas till <code class="language-plaintext highlighter-rouge">DiagnosticReport.conclusionCode</code>; fritexterna konkateneras med <code class="language-plaintext highlighter-rouge">referralOutcomeText</code> i <code class="language-plaintext highlighter-rouge">DiagnosticReport.conclusion</code>:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{referralOutcomeText}
+\n
+[{clinicalInformationCode.display}]: {clinicalInformationText}   ← per clinicalInformation-post
+</code></pre></div></div>
+
+<h3 id="referral--servicerequest">Referral → ServiceRequest</h3>
+
+<p>Om <code class="language-plaintext highlighter-rouge">referralOutcomeBody.referral.referralId</code> finns skapas en logisk referens till en <code class="language-plaintext highlighter-rouge">ServiceRequest</code> via <code class="language-plaintext highlighter-rouge">DiagnosticReport.basedOn</code>. Bryggan ansvarar för att matcha <code class="language-plaintext highlighter-rouge">referralId</code> mot befintliga ServiceRequest-instanser (från GetReferralOutcome eller GetRequestActivities) eller skapa en minimal stub-ServiceRequest med enbart identifier satt. Remissens övriga fält (<code class="language-plaintext highlighter-rouge">referralReason</code>, <code class="language-plaintext highlighter-rouge">referralTime</code>, <code class="language-plaintext highlighter-rouge">referralAuthor.*</code>) tillhör ServiceRequest och repeteras inte i DiagnosticReport.</p>
+
+<hr />
+
+<h2 id="pdl-och-sparr">PDL och Sparr</h2>
+
+<p>PDL-styrning i GetReferralOutcome utgår från <code class="language-plaintext highlighter-rouge">accountableHealthcareProfessional</code>-blockets HSA-id:n i headern (standard PatientSummaryHeader-mönster):</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>PDL-begrepp</th>
+      <th>RIVTA-källa</th>
+      <th>Hantering</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Yttre Sparr (vårdgivare)</td>
+      <td><code class="language-plaintext highlighter-rouge">referralOutcomeHeader.accountableHealthcareProfessional.healthcareProfessionalCareGiverHSAId</code></td>
+      <td><code class="language-plaintext highlighter-rouge">Provenance.agent[custodian].who.identifier</code></td>
+    </tr>
+    <tr>
+      <td>Inre Sparr (vårdenhet)</td>
+      <td><code class="language-plaintext highlighter-rouge">referralOutcomeHeader.accountableHealthcareProfessional.healthcareProfessionalCareUnitHSAId</code></td>
+      <td><code class="language-plaintext highlighter-rouge">Provenance.agent[author].who.identifier</code></td>
+    </tr>
+    <tr>
+      <td>Patientgodkännande</td>
+      <td><code class="language-plaintext highlighter-rouge">referralOutcomeHeader.approvedForPatient</code> (boolean)</td>
+      <td><code class="language-plaintext highlighter-rouge">DiagnosticReport.meta.security</code>; se <a href="#öppna-frågor">PDL-001</a></td>
+    </tr>
+  </tbody>
+</table>
+
+<hr />
+
+<h2 id="provenance">Provenance</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Agent</th>
+      <th>Roll</th>
+      <th>Källa</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">agent[custodian]</code></td>
+      <td>Juridiskt ansvarig vårdgivare</td>
+      <td><code class="language-plaintext highlighter-rouge">referralOutcomeHeader.accountableHealthcareProfessional.healthcareProfessionalCareGiverHSAId</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">agent[author]</code></td>
+      <td>Informationsägande vårdenhet</td>
+      <td><code class="language-plaintext highlighter-rouge">referralOutcomeHeader.accountableHealthcareProfessional.healthcareProfessionalCareUnitHSAId</code></td>
+    </tr>
+  </tbody>
+</table>
+
+<p><code class="language-plaintext highlighter-rouge">Provenance.target</code> refererar <code class="language-plaintext highlighter-rouge">DiagnosticReport</code> via <code class="language-plaintext highlighter-rouge">urn:uuid:{resurs.id}</code>.<br />
+<code class="language-plaintext highlighter-rouge">Provenance.recorded</code> = <code class="language-plaintext highlighter-rouge">referralOutcomeHeader.accountableHealthcareProfessional.authorTime</code> (ISO 8601).<br />
+<code class="language-plaintext highlighter-rouge">Provenance.agent[author].onBehalfOf</code> = <code class="language-plaintext highlighter-rouge">referralOutcomeHeader.accountableHealthcareProfessional.healthcareProfessionalCareGiverHSAId</code>.</p>
+
+<hr />
+
+<h2 id="oid-till-uri-tabell">OID-till-URI-tabell</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>OID</th>
+      <th>URI</th>
+      <th>Beskrivning</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">1.2.752.129.2.1.3.1</code></td>
+      <td><code class="language-plaintext highlighter-rouge">http://electronichealth.se/identifier/personnummer</code></td>
+      <td>Personnummer</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">1.2.752.129.2.1.3.3</code></td>
+      <td><code class="language-plaintext highlighter-rouge">http://electronichealth.se/identifier/samordningsnummer</code></td>
+      <td>Samordningsnummer</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">1.2.752.129.2.1.4.1</code></td>
+      <td><code class="language-plaintext highlighter-rouge">urn:oid:1.2.752.129.2.1.4.1</code></td>
+      <td>HSA-id (Inera NTjP)</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>OID:er utan känd URI-mappning bevaras som <code class="language-plaintext highlighter-rouge">urn:oid:{oid}</code>.</p>
+
+<hr />
+
+<h2 id="öppna-frågor">Öppna frågor</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Fråga</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>REF-001</td>
+      <td><strong><code class="language-plaintext highlighter-rouge">act 0..*</code> saknar standard DiagnosticReport-element.</strong> <code class="language-plaintext highlighter-rouge">referralOutcomeBody.act</code> innehåller kodad åtgärd (<code class="language-plaintext highlighter-rouge">actCode</code>), fritext (<code class="language-plaintext highlighter-rouge">actText</code>), tidpunkt (<code class="language-plaintext highlighter-rouge">actTime</code>) och eventuell multimedia (<code class="language-plaintext highlighter-rouge">actResult</code> med <code class="language-plaintext highlighter-rouge">mediaType</code>/<code class="language-plaintext highlighter-rouge">value</code>/<code class="language-plaintext highlighter-rouge">reference</code>). Nuvarande lösning: textinnehåll och bilagor → <code class="language-plaintext highlighter-rouge">presentedForm</code>, kodad åtgärd → custom extension. Alternativ: en <code class="language-plaintext highlighter-rouge">Procedure</code>-resurs per <code class="language-plaintext highlighter-rouge">act</code>-post länkad via <code class="language-plaintext highlighter-rouge">DiagnosticReport.result</code>. Kräver beslut.</td>
+    </tr>
+    <tr>
+      <td>PDL-001</td>
+      <td><strong><code class="language-plaintext highlighter-rouge">approvedForPatient</code> (boolean) saknar standardiserad FHIR-motsvarighet.</strong> Fältet finns i headern men <code class="language-plaintext highlighter-rouge">meta.security</code> i FHIR har inget standardkodsystem för detta begrepp. Behöver gemensamt beslut för alla TK:er; se central issue i <a href="mapping-issues.html">mapping-issues</a>.</td>
+    </tr>
+    <tr>
+      <td>GENERAL-001</td>
+      <td><strong>Tidsstämpelformat.</strong> RIVTA använder <code class="language-plaintext highlighter-rouge">YYYYMMDDhhmmss</code> utan tidszon; FHIR kräver ISO 8601 med tidszon. Konvertering ska anta <code class="language-plaintext highlighter-rouge">Europe/Stockholm</code> (CET/CEST). Gäller alla tidsfält.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="föreslagna-nya-issues">Föreslagna nya issues</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Fråga</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>REF-002</td>
+      <td><strong><code class="language-plaintext highlighter-rouge">referralOutcomeBody.attested.attesterName</code> vs. header-signatär.</strong> Svaret har två potentiella signatärstrukturer: <code class="language-plaintext highlighter-rouge">referralOutcomeHeader.legalAuthenticator</code> och <code class="language-plaintext highlighter-rouge">referralOutcomeBody.attested</code>. Nuvarande beslut: båda mappas till samma <code class="language-plaintext highlighter-rouge">DiagnosticReport.extension[attested]</code>. Om de kan representera olika signatärer (t.ex. juridisk autentiserare vs. klinisk attestant) kan detta skapa konflikter. Behöver klargöras med TKB-förvaltningen om de är semantiskt ekvivalenta eller distinkta.</td>
+    </tr>
+    <tr>
+      <td>REF-003</td>
+      <td><strong><code class="language-plaintext highlighter-rouge">referralOutcomeBody.referral.referralAuthor.healthcareProfessionalOrgUnit</code> – detaljnivå saknas.</strong> Den logiska modellen specificerar <code class="language-plaintext highlighter-rouge">healthcareProfessionalOrgUnit</code> som ett BackboneElement men specificerar inte sub-fält (orgUnitHSAId, orgUnitName etc.) på denna nivå i FSH-filen. Bryggan bör behandla det som en enkel logisk referens till ursprungsremissens ServiceRequest.requester-org. Verifiera med TKB-förvaltningen om sub-fält finns i faktisk XSD.</td>
+    </tr>
+    <tr>
+      <td>REF-004</td>
+      <td><strong><code class="language-plaintext highlighter-rouge">orgUnitTelecom</code>, <code class="language-plaintext highlighter-rouge">orgUnitEmail</code>, <code class="language-plaintext highlighter-rouge">orgUnitAddress</code>, <code class="language-plaintext highlighter-rouge">orgUnitLocation</code> – ej mappade i PatientSummaryHeader-blocket.</strong> Kontaktuppgifter för org-enheten finns på flera ställen i modellen (header och referral.accountableHealthcareProfessional) men har ingen standardiserad plats i DiagnosticReport-kontexten utan att skapa separata Organization-instanser. Behöver beslut om dessa ska inkluderas alls i bryggan.</td>
+    </tr>
+  </tbody>
+</table>
+
+
+
+
+</div>
+        </div>  <!-- /inner-wrapper -->
+      </div>  <!-- /row -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-content -->
+
+  <script type="text/javascript" src="assets/js/jquery.js"> </script>     <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+  <script type="text/javascript" src="assets/js/jquery-ui.min.js"> </script>
+
+  <script type="text/javascript" src="assets/js/window-hash.js"> </script>
+  <a name="bottom"> </a>
+  <div id="segment-footer" igtool="footer" class="segment">  <!-- segment-footer -->
+    <div class="container">  <!-- container -->
+
+      <div class="inner-wrapper">
+        <p>
+          IG &#169; 2024+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.inera.se">Inera AB</a>.  Package inera.ehds.tk#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Wed, Jun 24, 2026 12:10+0000">2026-06-24</span>
+          <br/>
+          <span style="color: var(--footer-highlight-text-color)">
+                      Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
+                 <a style="color: var(--footer-hyperlink-text-color)" href="qa.html">QA Report</a>
+                 
+                
+          </span>
+        </p>
+      </div>  <!-- /inner-wrapper -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-footer -->
+  
+  <div id="segment-post-footer" class="segment hidden">  <!-- segment-post-footer -->
+    <div class="container">  <!-- container -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-post-footer -->
+
+  <!-- JS and analytics only. -->
+  <!-- Bootstrap core JavaScript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script type="text/javascript" src="assets/js/bootstrap.min.js"> </script>
+  <script type="text/javascript" src="assets/js/respond.min.js"> </script>
+  <script type="text/javascript" src="assets/js/anchor.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard-btn.js"> </script>
+  <script type="text/javascript" src="assets/js/anchor-hover.js"> </script>
+  <!-- Analytics Below
+  ================================================== -->
+  </body>
+</html>
+

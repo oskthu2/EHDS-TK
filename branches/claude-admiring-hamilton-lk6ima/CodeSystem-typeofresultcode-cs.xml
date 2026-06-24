@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<CodeSystem xmlns="http://hl7.org/fhir">
+  <id value="typeofresultcode-cs"/>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Genererad berättande text: CodeSystem typeofresultcode-cs</b></p><a name="typeofresultcode-cs"> </a><a name="hctypeofresultcode-cs"> </a><p>Detta case-sensitive kodsystem <code>https://fhir.inera.se/CodeSystem/typeofresultcode</code> definierar följande koder:</p><table class="codes"><tr><td style="white-space:nowrap"><b>Kod</b></td><td><b>Visning</b></td><td><b>Definition</b></td></tr><tr><td style="white-space:nowrap">PREL<a name="typeofresultcode-cs-PREL"> </a></td><td>Preliminärsvar</td><td>Preliminärt svar</td></tr><tr><td style="white-space:nowrap">DEF<a name="typeofresultcode-cs-DEF"> </a></td><td>Definitivsvar</td><td>Definitivt svar</td></tr><tr><td style="white-space:nowrap">TILL<a name="typeofresultcode-cs-TILL"> </a></td><td>Tilläggssvar</td><td>Tilläggssvar</td></tr></table></div>
+  </text>
+  <url value="https://fhir.inera.se/CodeSystem/typeofresultcode"/>
+  <version value="0.1.0"/>
+  <name value="TypeOfResultCodeCS"/>
+  <title value="TypeOfResultCode"/>
+  <status value="active"/>
+  <date value="2026-06-24T12:10:33+00:00"/>
+  <publisher value="Inera AB"/>
+  <contact>
+    <name value="Inera AB"/>
+    <telecom>
+      <system value="url"/>
+      <value value="https://www.inera.se"/>
+    </telecom>
+  </contact>
+  <description value="Kodverk för typ av resultat (TypeOfResultCodeEnum). Används i GetImagingOutcome och GetReferralOutcome."/>
+  <jurisdiction>
+    <coding>
+      <system value="urn:iso:std:iso:3166"/>
+      <code value="SE"/>
+      <display value="Sweden"/>
+    </coding>
+  </jurisdiction>
+  <caseSensitive value="true"/>
+  <content value="complete"/>
+  <count value="3"/>
+  <concept>
+    <code value="PREL"/>
+    <display value="Preliminärsvar"/>
+    <definition value="Preliminärt svar"/>
+  </concept>
+  <concept>
+    <code value="DEF"/>
+    <display value="Definitivsvar"/>
+    <definition value="Definitivt svar"/>
+  </concept>
+  <concept>
+    <code value="TILL"/>
+    <display value="Tilläggssvar"/>
+    <definition value="Tilläggssvar"/>
+  </concept>
+</CodeSystem>

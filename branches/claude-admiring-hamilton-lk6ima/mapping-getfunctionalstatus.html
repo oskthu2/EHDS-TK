@@ -1,0 +1,813 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE HTML>
+<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
+    <title>GetFunctionalStatus – Funktionstillstånd och ADL - Inera EHDS Tjänstekontrakt – FHIR Implementation Guide v0.1.0</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="author" content="http://hl7.org/fhir"/>
+
+    <link href="fhir.css" rel="stylesheet"/>
+
+    <!-- Bootstrap core CSS -->
+    <link href="assets/css/bootstrap-fhir.css" rel="stylesheet"/>
+
+    <!-- Project extras -->
+    <link href="assets/css/project.css" rel="stylesheet"/>
+    <link href="assets/css/pygments-manni.css" rel="stylesheet"/>
+    <link href="assets/css/jquery-ui.css" rel="stylesheet"/>
+  	<link href="assets/css/prism.css" rel="stylesheet" />
+  	<link href="assets/css/cqf.css" rel="stylesheet" />
+    <link href="inera.css" rel="stylesheet"/>
+<link rel="icon" type="image/png" href="inera-thumbnail.png"/>
+<link rel="shortcut icon" href="inera-thumbnail.png"/>
+
+
+    <script type="text/javascript" src="fhir-table-scripts.js"> </script>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="assets/js/html5shiv.js"></script>
+    <script src="assets/js/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Favicons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/icon-fhir-144.png"/>
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/icon-fhir-114.png"/>
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/icon-fhir-72.png"/>
+    <link rel="apple-touch-icon-precomposed" href="assets/ico/icon-fhir-57.png"/>
+    <link rel="shortcut icon" href="assets/ico/favicon.png"/>
+  </head>
+  <body onload="document.body.style.opacity='1'">
+
+	  <script src="assets/js/prism.js"></script>
+    <script type="text/javascript" src="assets/js/mermaid.js"></script>
+    <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
+    <style type="text/css">h2{--heading-prefix:"9"}
+    h3,h4,h5,h6{--heading-prefix:"9"}</style>
+    <div id="segment-header" class="segment">  <!-- segment-header -->
+      <div class="container">  <!-- container -->
+
+        <div id="inera-nav">
+  <a id="inera-logo" data-no-external="true" href="https://www.inera.se">
+    <img height="50" alt="Inera" src="inera-logo-header.svg"/>
+  </a>
+</div>
+
+
+        <div id="ig-status">
+          <p><span style="font-size:12pt;font-weight:bold">Inera EHDS Tjänstekontrakt – FHIR Implementation Guide</span>
+            <br/>
+            <span style="display:inline-block;">0.1.0 - ci-build
+
+
+
+  <img alt="Sweden flag" src="assets/images/swe.svg" height="16" title="Sweden"/>
+
+
+            </span>
+          </p>
+        </div>
+      </div> <!-- /container -->
+    </div>  <!-- /segment-header -->
+
+    <div id="segment-navbar" class="segment">  <!-- segment-navbar -->
+      <div id="stripe"> </div>
+      <div class="container">  <!-- container -->
+        <!-- HEADER CONTENT -->
+
+        <nav class="navbar navbar-inverse">
+          <!--status-bar-->
+          <div class="container">
+            <button data-target=".navbar-inverse-collapse" class="navbar-toggle" data-toggle="collapse" type="button">
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+            </button>
+            <a class="navbar-brand hidden" href="http://hl7.org/fhir/R4/index.html">FHIR</a>
+            <div class="nav-collapse collapse navbar-inverse-collapse">
+              <div id="segment-navbar" class="segment">
+  <div id="stripe"> </div>
+  <div class="container">
+    <nav class="navbar navbar-inverse">
+      <div class="container">
+        <button data-target=".navbar-inverse-collapse" class="navbar-toggle" data-toggle="collapse" type="button">
+          <span class="icon-bar"> </span>
+          <span class="icon-bar"> </span>
+          <span class="icon-bar"> </span>
+        </button>
+        <a class="navbar-brand hidden" href="http://hl7.org/fhir/R4/index.html">FHIR</a>
+        <div class="nav-collapse collapse navbar-inverse-collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="index.html">Hem</a></li>
+            <li class="dropdown">
+              <a data-toggle="dropdown" href="#" class="dropdown-toggle">Bakgrund<b class="caret"> </b></a>
+              <ul class="dropdown-menu">
+                <li><a href="workflow.html">Workflow</a></li>
+                <li><a href="logical-models.html">Logiska modeller</a></li>
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a data-toggle="dropdown" href="#" class="dropdown-toggle">Mappningar<b class="caret"> </b></a>
+              <ul class="dropdown-menu">
+                <li><a href="mappings.html">Översikt</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="dropdown-header">Patientöversikt</li>
+                <li><a href="mapping-getdiagnosis.html">GetDiagnosis – Diagnoser</a></li>
+                <li><a href="mapping-getalertinformation.html">GetAlertInformation – Uppmärksamhet</a></li>
+                <li><a href="mapping-getmedicationhistory.html">GetMedicationHistory – Läkemedel</a></li>
+                <li><a href="mapping-getvaccinationhistory.html">GetVaccinationHistory – Vaccinationer</a></li>
+                <li><a href="mapping-getfunctionalstatus.html">GetFunctionalStatus – Funktionstillstånd</a></li>
+                <li><a href="mapping-getmaternitymedicalhistory.html">GetMaternityMedicalHistory – Mödravård</a></li>
+                <li><a href="mapping-getcareplans.html">GetCarePlans – Vårdplan</a></li>
+                <li><a href="mapping-getcarecontacts.html">GetCareContacts – Vårdkontakter</a></li>
+                <li><a href="mapping-getcaredocumentation.html">GetCareDocumentation – Anteckningar</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="dropdown-header">Laboratorie och diagnostik</li>
+                <li><a href="mapping-getlaboratoryorderoutcome.html">GetLaboratoryOrderOutcome – Provsvar</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="dropdown-header">Bilddiagnostik</li>
+                <li><a href="mapping-getimagingoutcome.html">GetImagingOutcome – Bilddiagnostik</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="dropdown-header">Remiss och process</li>
+                <li><a href="mapping-getreferraloutcome.html">GetReferralOutcome – Remisser</a></li>
+                <li><a href="mapping-getrequestactivities.html">GetRequestActivities – Remisstatus</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="dropdown-header">Tillväxtkurva barn</li>
+                <li><a href="mapping-getobservations.html">GetObservations – Tillväxtkurva</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="dropdown-header">Logg</li>
+                <li><a href="mapping-getaccesslogforpatient.html">GetAccessLogForPatient – Åtkomstloggar</a></li>
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a data-toggle="dropdown" href="#" class="dropdown-toggle">FHIR Artifacts<b class="caret"> </b></a>
+              <ul class="dropdown-menu">
+                <li><a href="profiles.html">Profiles</a></li>
+                <li><a href="terminology.html">Terminology</a></li>
+                <li><a href="examples.html">Examples</a></li>
+                <li><a href="artifacts.html">All Artifacts</a></li>
+              </ul>
+            </li>
+            <li><a href="search-parameters.html">Sökparametrar</a></li>
+            <li><a href="downloads.html">Downloads</a></li>
+            <li><a href="mapping-issues.html">Issues &amp; Beslut</a></li>
+            <li><a href="version-history.html">Version History</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </div>
+</div>
+
+            </div>  <!-- /.nav-collapse -->
+          </div>  <!-- /.container -->
+        </nav>  <!-- /.navbar -->
+      <!-- /HEADER CONTENT -->
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-navbar -->
+    <!--status-bar-->
+
+    <div id="segment-breadcrumb" class="segment">  <!-- segment-breadcrumb -->
+      <div class="container">  <!-- container -->
+        <ul class="breadcrumb">
+          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><b>GetFunctionalStatus – Funktionstillstånd och ADL</b></li>
+
+        </ul>
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-breadcrumb -->
+
+    <a name="top"> </a>
+    <div id="segment-content" class="segment">  <!-- segment-content -->
+      <div class="container">  <!-- container -->
+        <div class="row">
+          <div class="inner-wrapper">
+
+<style type="text/css">
+h2:before{color:silver;counter-increment:section;content:var(--heading-prefix) " ";}
+h3:before{color:silver;counter-increment:sub-section;content:var(--heading-prefix) "." counter(sub-section) " ";}
+h4:before{color:silver;counter-increment:composite;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) " ";}
+h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) " ";}
+h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
+</style>
+<div class="col-12">
+  <!--ReleaseHeader--><p id="publish-box">Inera EHDS Tjänstekontrakt – FHIR Implementation Guide - Lokal utvecklingsbygge (v0.1.0) byggt av FHIR (HL7® FHIR® Standard) Build Tools. Se <a href='https://fhir.inera.se/ig/ehds-tk/history.html'>katalogen över publicerade versioner</a></p><!--EndReleaseHeader-->
+  <h2>GetFunctionalStatus – Funktionstillstånd och ADL</h2>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+    <p><!-- white space is critical inside of capture --></p>
+<div class="markdown-toc">
+<ul id="markdown-toc">
+  <li><a href="#getfunctionalstatus--funktionstillstånd-och-adl" id="markdown-toc-getfunctionalstatus--funktionstillstånd-och-adl">GetFunctionalStatus – Funktionstillstånd och ADL</a>    <ul>
+      <li><a href="#härledda-fält--designbeslut" id="markdown-toc-härledda-fält--designbeslut">Härledda fält / Designbeslut</a>        <ul>
+          <li><a href="#en-condition-per-functionalstatusassessment" id="markdown-toc-en-condition-per-functionalstatusassessment">En Condition per functionalStatusAssessment</a></li>
+          <li><a href="#assessmentcategory-styr-körningens-innehåll" id="markdown-toc-assessmentcategory-styr-körningens-innehåll">assessmentCategory styr körningens innehåll</a></li>
+          <li><a href="#clinicalstatus-och-verificationstatus" id="markdown-toc-clinicalstatus-och-verificationstatus">clinicalStatus och verificationStatus</a></li>
+          <li><a href="#padl-poster-func-001--beslutat" id="markdown-toc-padl-poster-func-001--beslutat">PADL-poster (FUNC-001 – Beslutat)</a></li>
+        </ul>
+      </li>
+      <li><a href="#mappningstabell--functionalstatusassessmentheader" id="markdown-toc-mappningstabell--functionalstatusassessmentheader">Mappningstabell – functionalStatusAssessmentHeader</a></li>
+      <li><a href="#mappningstabell--functionalstatusassessmentbody" id="markdown-toc-mappningstabell--functionalstatusassessmentbody">Mappningstabell – functionalStatusAssessmentBody</a>        <ul>
+          <li><a href="#underelement--padl-vid-assessmentcategory--pad-pad" id="markdown-toc-underelement--padl-vid-assessmentcategory--pad-pad">Underelement – padl (vid assessmentCategory = pad-pad)</a></li>
+          <li><a href="#underelement--disability-vid-assessmentcategory--fun-fun" id="markdown-toc-underelement--disability-vid-assessmentcategory--fun-fun">Underelement – disability (vid assessmentCategory = fun-fun)</a></li>
+        </ul>
+      </li>
+      <li><a href="#mappningstabell--result" id="markdown-toc-mappningstabell--result">Mappningstabell – result</a></li>
+      <li><a href="#pdl-och-sparr" id="markdown-toc-pdl-och-sparr">PDL och Sparr</a></li>
+      <li><a href="#provenance" id="markdown-toc-provenance">Provenance</a></li>
+      <li><a href="#oid-till-uri-tabell" id="markdown-toc-oid-till-uri-tabell">OID-till-URI-tabell</a></li>
+      <li><a href="#öppna-frågor" id="markdown-toc-öppna-frågor">Öppna frågor</a></li>
+      <li><a href="#föreslagna-nya-issues" id="markdown-toc-föreslagna-nya-issues">Föreslagna nya issues</a></li>
+    </ul>
+  </li>
+</ul>
+
+</div>
+<h1 id="getfunctionalstatus--funktionstillstånd-och-adl">GetFunctionalStatus – Funktionstillstånd och ADL</h1>
+
+<p><strong>Tjänstekontrakt:</strong> <code class="language-plaintext highlighter-rouge">clinicalprocess:healthcond:description</code> GetFunctionalStatus v2.0<br />
+<strong>FHIR-profil:</strong> <a href="StructureDefinition-inera-ehds-condition-functional.html">IneraEHDSConditionFunctional</a><br />
+<strong>Logisk modell:</strong> <a href="StructureDefinition-inera-ehds-lm-functional-status.html">IneraEHDSLMFunctionalStatus</a><br />
+<strong>Krävs för NPÖ:</strong> Ja (v2.0) | <strong>Krävs för 1177 Journal:</strong> Ja (v2.0)<br />
+<strong>EHDS-koppling:</strong> Patient Summary – Funktionstillstånd (ICF-baserad)</p>
+
+<hr />
+
+<h2 id="härledda-fält--designbeslut">Härledda fält / Designbeslut</h2>
+
+<h3 id="en-condition-per-functionalstatusassessment">En Condition per functionalStatusAssessment</h3>
+
+<p>Varje <code class="language-plaintext highlighter-rouge">functionalStatusAssessment</code>-post mappas till en <code class="language-plaintext highlighter-rouge">Condition</code>-resurs med profilen <code class="language-plaintext highlighter-rouge">IneraEHDSConditionFunctional</code>. Roten för ett svar är <code class="language-plaintext highlighter-rouge">functionalStatusAssessment 0..*</code>.</p>
+
+<h3 id="assessmentcategory-styr-körningens-innehåll">assessmentCategory styr körningens innehåll</h3>
+
+<p><code class="language-plaintext highlighter-rouge">functionalStatusAssessmentBody.assessmentCategory</code> avgör vilka underelement som är relevanta:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th><code class="language-plaintext highlighter-rouge">assessmentCategory</code></th>
+      <th>Underelement</th>
+      <th>FHIR-mappning</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">pad-pad</code> (PADL)</td>
+      <td><code class="language-plaintext highlighter-rouge">padl 0..*</code></td>
+      <td><code class="language-plaintext highlighter-rouge">Condition.note</code> (se <a href="#öppna-frågor">FUNC-001</a>)</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">fun-fun</code> (Funktionsnedsättning)</td>
+      <td><code class="language-plaintext highlighter-rouge">disability 0..1</code></td>
+      <td><code class="language-plaintext highlighter-rouge">Condition.code</code> (ICF-kod)</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Kategorin i sig mappas alltid till <code class="language-plaintext highlighter-rouge">Condition.category</code> från kodverket <code class="language-plaintext highlighter-rouge">AssessmentCategoryCS</code>.</p>
+
+<h3 id="clinicalstatus-och-verificationstatus">clinicalStatus och verificationStatus</h3>
+
+<p>Inget explicit statusfält finns i TKB:n. Fälten härleds:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Fält</th>
+      <th>Värde</th>
+      <th>Motivering</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">Condition.clinicalStatus</code></td>
+      <td><code class="language-plaintext highlighter-rouge">active</code></td>
+      <td>Posterna är aktiva bedömningar vid svarstillfället</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">Condition.verificationStatus</code></td>
+      <td><code class="language-plaintext highlighter-rouge">confirmed</code></td>
+      <td>RIVTA-svar representerar bekräftade journaluppgifter</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="padl-poster-func-001--beslutat">PADL-poster (FUNC-001 – Beslutat)</h3>
+
+<p><code class="language-plaintext highlighter-rouge">padl</code>-blockets <code class="language-plaintext highlighter-rouge">typeOfAssessment</code> och <code class="language-plaintext highlighter-rouge">assessment</code> mappas till <code class="language-plaintext highlighter-rouge">Condition.note</code> med formatet
+<code class="language-plaintext highlighter-rouge">[typeOfAssessment]: assessment</code> per post. <code class="language-plaintext highlighter-rouge">functionalStatusAssessmentBody.comment</code> mappas separat till
+<code class="language-plaintext highlighter-rouge">Condition.note[0]</code> (helbedömningskommentar); därefter en post per <code class="language-plaintext highlighter-rouge">padl</code>-element.</p>
+
+<p>Alternativet med separata <code class="language-plaintext highlighter-rouge">Observation</code>-resurser per PADL-post ger bättre strukturerbarhet
+men ökar resurskomplexiteten avsevärt. Det kan omprövas om strukturerad sökning på
+PADL-typ krävs.</p>
+
+<hr />
+
+<h2 id="mappningstabell--functionalstatusassessmentheader">Mappningstabell – functionalStatusAssessmentHeader</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>RIVTA-element</th>
+      <th>Kard.</th>
+      <th>FHIR-element</th>
+      <th>Kommentar</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">functionalStatusAssessmentHeader.documentId</code></td>
+      <td>1..1</td>
+      <td><code class="language-plaintext highlighter-rouge">Condition.identifier[0].value</code></td>
+      <td>Källsystemets dokumentidentifierare</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">functionalStatusAssessmentHeader.sourceSystemHSAId</code></td>
+      <td>1..1</td>
+      <td><code class="language-plaintext highlighter-rouge">Condition.meta.source</code></td>
+      <td>Format: <code class="language-plaintext highlighter-rouge">urn:oid:1.2.752.129.2.1.4.1#{hsaId}</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">functionalStatusAssessmentHeader.documentTime</code></td>
+      <td>1..1</td>
+      <td><code class="language-plaintext highlighter-rouge">Condition.extension[assertedDate]</code></td>
+      <td>Bedömningstidpunkt/händelsetidpunkt; YYYYMMDDHHMMSS → ISO 8601, se <a href="#öppna-frågor">GENERAL-001</a></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">functionalStatusAssessmentHeader.patientId.extension</code></td>
+      <td>1..1</td>
+      <td><code class="language-plaintext highlighter-rouge">Condition.subject.identifier.value</code></td>
+      <td>Personnummer eller samordningsnummer</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">functionalStatusAssessmentHeader.patientId.root</code></td>
+      <td>1..1</td>
+      <td><code class="language-plaintext highlighter-rouge">Condition.subject.identifier.system</code></td>
+      <td>OID→URI, se tabell nedan</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">functionalStatusAssessmentHeader.accountableHealthcareProfessional.authorTime</code></td>
+      <td>1..1</td>
+      <td><code class="language-plaintext highlighter-rouge">Condition.recordedDate</code></td>
+      <td>Registreringstidpunkt; YYYYMMDDHHMMSS → ISO 8601 (Europe/Stockholm), se <a href="#öppna-frågor">GENERAL-001</a></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">functionalStatusAssessmentHeader.accountableHealthcareProfessional.healthcareProfessionalHSAId</code></td>
+      <td>0..1</td>
+      <td><code class="language-plaintext highlighter-rouge">Condition.recorder</code> (Reference(PractitionerRole))</td>
+      <td>Logisk referens via HSA-id</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">functionalStatusAssessmentHeader.accountableHealthcareProfessional.healthcareProfessionalName</code></td>
+      <td>0..1</td>
+      <td><code class="language-plaintext highlighter-rouge">PractitionerRole.practitioner.display</code></td>
+      <td>Visningsnamn</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">functionalStatusAssessmentHeader.accountableHealthcareProfessional.healthcareProfessionalRoleCode</code></td>
+      <td>0..1</td>
+      <td><code class="language-plaintext highlighter-rouge">PractitionerRole.code</code></td>
+      <td>Yrkesrollskod</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">functionalStatusAssessmentHeader.accountableHealthcareProfessional.healthcareProfessionalOrgUnit.orgUnitHSAId</code></td>
+      <td>0..1</td>
+      <td><code class="language-plaintext highlighter-rouge">PractitionerRole.organization.identifier.value</code></td>
+      <td>Organisationsenhetens HSA-id</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">functionalStatusAssessmentHeader.accountableHealthcareProfessional.healthcareProfessionalOrgUnit.orgUnitName</code></td>
+      <td>0..1</td>
+      <td><code class="language-plaintext highlighter-rouge">PractitionerRole.organization.display</code></td>
+      <td>Organisationsenhetens namn</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">functionalStatusAssessmentHeader.accountableHealthcareProfessional.healthcareProfessionalCareUnitHSAId</code></td>
+      <td>0..1</td>
+      <td><code class="language-plaintext highlighter-rouge">Provenance.agent[author].who.identifier</code></td>
+      <td>Inre Sparr – vårdenhet</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">functionalStatusAssessmentHeader.accountableHealthcareProfessional.healthcareProfessionalCareGiverHSAId</code></td>
+      <td>0..1</td>
+      <td><code class="language-plaintext highlighter-rouge">Provenance.agent[custodian].who.identifier</code></td>
+      <td>Yttre Sparr – vårdgivare</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">functionalStatusAssessmentHeader.legalAuthenticator.signatureTime</code></td>
+      <td>1..1 (om legalAuth)</td>
+      <td><code class="language-plaintext highlighter-rouge">Condition.extension[assertedDate]</code></td>
+      <td>Signeringstidpunkt; YYYYMMDDHHMMSS → ISO 8601 (om legalAuthenticator finns, prioriteras framför documentTime)</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">functionalStatusAssessmentHeader.legalAuthenticator.legalAuthenticatorHSAId</code></td>
+      <td>0..1</td>
+      <td><code class="language-plaintext highlighter-rouge">Condition.asserter</code> (Reference(PractitionerRole))</td>
+      <td>Logisk referens via HSA-id</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">functionalStatusAssessmentHeader.legalAuthenticator.legalAuthenticatorName</code></td>
+      <td>0..1</td>
+      <td>Ej mappad</td>
+      <td>Namn i klartext – HSA-id räcker för logisk referens</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">functionalStatusAssessmentHeader.legalAuthenticator.legalAuthenticatorRoleCode</code></td>
+      <td>0..1</td>
+      <td>Ej mappad</td>
+      <td>Signerande persons befattning – ingen direkt FHIR-mappning utanför PractitionerRole; Condition.asserter är en Reference utan rollkod</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">functionalStatusAssessmentHeader.approvedForPatient</code></td>
+      <td>1..1</td>
+      <td><code class="language-plaintext highlighter-rouge">Condition.meta.security</code></td>
+      <td><code class="language-plaintext highlighter-rouge">false</code> → kod <code class="language-plaintext highlighter-rouge">NOPATIENT</code> från <code class="language-plaintext highlighter-rouge">http://terminology.hl7.org/CodeSystem/v3-ActCode</code>; se PDL-001</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">functionalStatusAssessmentHeader.careContactId</code></td>
+      <td>0..1</td>
+      <td><code class="language-plaintext highlighter-rouge">Condition.encounter.identifier.value</code></td>
+      <td>Logisk referens till vårdkontakt</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">functionalStatusAssessmentHeader.documentTitle</code></td>
+      <td>0..0</td>
+      <td>N/A</td>
+      <td>Ej tillämpligt för detta TK (markerat 0..0 i logisk modell)</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">functionalStatusAssessmentHeader.nullified</code></td>
+      <td>0..0</td>
+      <td>N/A</td>
+      <td>Ej tillämpligt för detta TK</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">functionalStatusAssessmentHeader.nullifiedReason</code></td>
+      <td>0..0</td>
+      <td>N/A</td>
+      <td>Ej tillämpligt för detta TK</td>
+    </tr>
+  </tbody>
+</table>
+
+<hr />
+
+<h2 id="mappningstabell--functionalstatusassessmentbody">Mappningstabell – functionalStatusAssessmentBody</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>RIVTA-element</th>
+      <th>Kard.</th>
+      <th>FHIR-element</th>
+      <th>Kommentar</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">functionalStatusAssessmentBody.assessmentCategory</code></td>
+      <td>1..1</td>
+      <td><code class="language-plaintext highlighter-rouge">Condition.category</code></td>
+      <td>Kodverk <code class="language-plaintext highlighter-rouge">AssessmentCategoryCS</code>; <code class="language-plaintext highlighter-rouge">pad-pad</code> eller <code class="language-plaintext highlighter-rouge">fun-fun</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">functionalStatusAssessmentBody.comment</code></td>
+      <td>0..1</td>
+      <td><code class="language-plaintext highlighter-rouge">Condition.note[0].text</code></td>
+      <td>Fritext-kommentar för hela bedömningen. Villkor: Gäller enbart vid assessmentCategory = 'pad-pad'.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="underelement--padl-vid-assessmentcategory--pad-pad">Underelement – padl (vid assessmentCategory = pad-pad)</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>RIVTA-element</th>
+      <th>Kard.</th>
+      <th>FHIR-element</th>
+      <th>Kommentar</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">functionalStatusAssessmentBody.padl</code></td>
+      <td>0..*</td>
+      <td><code class="language-plaintext highlighter-rouge">Condition.note[n]</code></td>
+      <td>Varje PADL-post enkodas som en note; se <a href="#öppna-frågor">FUNC-001</a></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">functionalStatusAssessmentBody.padl.typeOfAssessment</code></td>
+      <td>1..1</td>
+      <td><code class="language-plaintext highlighter-rouge">Condition.note[n].text</code> (prefix)</td>
+      <td>Typ av PADL-bedömning; läggs som prefix i note-texten, t.ex. <code class="language-plaintext highlighter-rouge">[typeOfAssessment]: assessment</code>. Tillåtna värden (Regel 2): 'personlig hygien', 'på/avklädning', 'förflyttning', 'toalettbesök', 'födointag'</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">functionalStatusAssessmentBody.padl.assessment</code></td>
+      <td>1..1</td>
+      <td><code class="language-plaintext highlighter-rouge">Condition.note[n].text</code> (suffix)</td>
+      <td>Textuell PADL-bedömning</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="underelement--disability-vid-assessmentcategory--fun-fun">Underelement – disability (vid assessmentCategory = fun-fun)</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>RIVTA-element</th>
+      <th>Kard.</th>
+      <th>FHIR-element</th>
+      <th>Kommentar</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">functionalStatusAssessmentBody.disability.disabilityAssessment</code></td>
+      <td>1..1</td>
+      <td><code class="language-plaintext highlighter-rouge">Condition.code</code></td>
+      <td>ICF-kod för funktionsnedsättning; se underelement nedan</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">functionalStatusAssessmentBody.disability.disabilityAssessment.code</code></td>
+      <td>—</td>
+      <td><code class="language-plaintext highlighter-rouge">Condition.code.coding.code</code></td>
+      <td>ICF-kod, t.ex. <code class="language-plaintext highlighter-rouge">b310</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">functionalStatusAssessmentBody.disability.disabilityAssessment.codeSystem</code></td>
+      <td>—</td>
+      <td><code class="language-plaintext highlighter-rouge">Condition.code.coding.system</code></td>
+      <td>OID <code class="language-plaintext highlighter-rouge">1.2.752.116.1.1.3</code> → <code class="language-plaintext highlighter-rouge">urn:oid:1.2.752.116.1.1.3</code> (ICF, se tabell nedan)</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">functionalStatusAssessmentBody.disability.disabilityAssessment.displayName</code></td>
+      <td>0..1</td>
+      <td><code class="language-plaintext highlighter-rouge">Condition.code.coding.display</code></td>
+      <td>Kodverkets officiella benämning</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">functionalStatusAssessmentBody.disability.comment</code></td>
+      <td>0..1</td>
+      <td><code class="language-plaintext highlighter-rouge">Condition.note[n].text</code></td>
+      <td>Kommentar specifik för funktionsnedsättningsbedömningen</td>
+    </tr>
+  </tbody>
+</table>
+
+<blockquote>
+  <p><strong>CVType-restriktion för <code class="language-plaintext highlighter-rouge">disabilityAssessment</code>:</strong> <code class="language-plaintext highlighter-rouge">codeSystemName</code> och <code class="language-plaintext highlighter-rouge">codeSystemVersion</code> är förbjudna (0..0) i detta fält per TKB. Använd enbart <code class="language-plaintext highlighter-rouge">code</code>, <code class="language-plaintext highlighter-rouge">codeSystem</code>, <code class="language-plaintext highlighter-rouge">displayName</code> och <code class="language-plaintext highlighter-rouge">originalText</code>.</p>
+</blockquote>
+
+<hr />
+
+<h2 id="mappningstabell--result">Mappningstabell – result</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>RIVTA-element</th>
+      <th>Kard.</th>
+      <th>FHIR-element</th>
+      <th>Kommentar</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">result.resultCode</code></td>
+      <td>1..1</td>
+      <td>Ej mappad</td>
+      <td>Teknisk responskod – hanteras av transportlagret</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">result.errorCode</code></td>
+      <td>0..1</td>
+      <td>Ej mappad</td>
+      <td>Teknisk felkod – hanteras av transportlagret</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">result.logId</code></td>
+      <td>1..1</td>
+      <td>Ej mappad</td>
+      <td>Teknisk spårnings-UUID – hanteras av transportlagret</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">result.message</code></td>
+      <td>0..1</td>
+      <td>Ej mappad</td>
+      <td>Teknisk felbeskrivning – hanteras av transportlagret</td>
+    </tr>
+  </tbody>
+</table>
+
+<hr />
+
+<h2 id="pdl-och-sparr">PDL och Sparr</h2>
+
+<p>PDL-styrning i GetFunctionalStatus utgår från <code class="language-plaintext highlighter-rouge">accountableHealthcareProfessional</code>-blockets HSA-id:n i headern (samma mönster som övriga PatientSummaryHeader-kontrakt):</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>PDL-begrepp</th>
+      <th>RIVTA-källa</th>
+      <th>Hantering</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Yttre Sparr (vårdgivare)</td>
+      <td><code class="language-plaintext highlighter-rouge">functionalStatusAssessmentHeader.accountableHealthcareProfessional.healthcareProfessionalCareGiverHSAId</code></td>
+      <td><code class="language-plaintext highlighter-rouge">Provenance.agent[custodian].who.identifier</code></td>
+    </tr>
+    <tr>
+      <td>Inre Sparr (vårdenhet)</td>
+      <td><code class="language-plaintext highlighter-rouge">functionalStatusAssessmentHeader.accountableHealthcareProfessional.healthcareProfessionalCareUnitHSAId</code></td>
+      <td><code class="language-plaintext highlighter-rouge">Provenance.agent[author].who.identifier</code></td>
+    </tr>
+    <tr>
+      <td>Patientgodkännande</td>
+      <td><code class="language-plaintext highlighter-rouge">functionalStatusAssessmentHeader.approvedForPatient</code> (boolean)</td>
+      <td><code class="language-plaintext highlighter-rouge">Condition.meta.security</code>; <code class="language-plaintext highlighter-rouge">false</code> → <code class="language-plaintext highlighter-rouge">NOPATIENT</code> (v3-ActCode)</td>
+    </tr>
+  </tbody>
+</table>
+
+<hr />
+
+<h2 id="provenance">Provenance</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Agent</th>
+      <th>Roll</th>
+      <th>Källa</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">agent[custodian]</code></td>
+      <td>Juridiskt ansvarig vårdgivare</td>
+      <td><code class="language-plaintext highlighter-rouge">functionalStatusAssessmentHeader.accountableHealthcareProfessional.healthcareProfessionalCareGiverHSAId</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">agent[author]</code></td>
+      <td>Informationsägande vårdenhet</td>
+      <td><code class="language-plaintext highlighter-rouge">functionalStatusAssessmentHeader.accountableHealthcareProfessional.healthcareProfessionalCareUnitHSAId</code></td>
+    </tr>
+  </tbody>
+</table>
+
+<p><code class="language-plaintext highlighter-rouge">Provenance.target</code> refererar Condition via <code class="language-plaintext highlighter-rouge">urn:uuid:{Condition.id}</code>.<br />
+<code class="language-plaintext highlighter-rouge">Provenance.recorded</code> = <code class="language-plaintext highlighter-rouge">functionalStatusAssessmentHeader.accountableHealthcareProfessional.authorTime</code> (ISO 8601).</p>
+
+<hr />
+
+<h2 id="oid-till-uri-tabell">OID-till-URI-tabell</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>OID</th>
+      <th>URI</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">1.2.752.129.2.1.3.1</code></td>
+      <td><code class="language-plaintext highlighter-rouge">http://electronichealth.se/identifier/personnummer</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">1.2.752.129.2.1.3.3</code></td>
+      <td><code class="language-plaintext highlighter-rouge">http://electronichealth.se/identifier/samordningsnummer</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">1.2.752.129.2.1.4.1</code></td>
+      <td><code class="language-plaintext highlighter-rouge">urn:oid:1.2.752.129.2.1.4.1</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">1.2.752.116.1.1.3</code></td>
+      <td><code class="language-plaintext highlighter-rouge">urn:oid:1.2.752.116.1.1.3</code></td>
+    </tr>
+  </tbody>
+</table>
+
+<p>OID:er utan känd URI-mappning bevaras som <code class="language-plaintext highlighter-rouge">urn:oid:{oid}</code>.</p>
+
+<hr />
+
+<h2 id="öppna-frågor">Öppna frågor</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Fråga</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>FUNC-001</td>
+      <td><strong>Beslutat:</strong> PADL-poster kodas som <code class="language-plaintext highlighter-rouge">Condition.note</code> med format <code class="language-plaintext highlighter-rouge">[typeOfAssessment]: assessment</code>. Se avsnitt ovan.</td>
+    </tr>
+    <tr>
+      <td>PDL-001</td>
+      <td><strong>Beslutat:</strong> <code class="language-plaintext highlighter-rouge">approvedForPatient = false</code> → <code class="language-plaintext highlighter-rouge">meta.security</code> kod <code class="language-plaintext highlighter-rouge">NOPATIENT</code> (v3-ActCode). Se README avsnitt 9.</td>
+    </tr>
+    <tr>
+      <td>GENERAL-001</td>
+      <td><strong>Öppen:</strong> Tidsstämpelformat. RIVTA använder <code class="language-plaintext highlighter-rouge">YYYYMMDDhhmmss</code> utan tidszon; FHIR kräver ISO 8601 med tidszon. Konvertering ska anta <code class="language-plaintext highlighter-rouge">Europe/Stockholm</code> (CET/CEST). Gäller alla tidsfält i alla tjänstekontrakt.</td>
+    </tr>
+  </tbody>
+</table>
+
+<hr />
+
+<h2 id="föreslagna-nya-issues">Föreslagna nya issues</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Fält</th>
+      <th>Beskrivning</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>FUNC-002</td>
+      <td><code class="language-plaintext highlighter-rouge">functionalStatusAssessmentHeader.legalAuthenticator.legalAuthenticatorRoleCode</code></td>
+      <td>Signerande persons befattning (CodeableConcept). Det finns inget standardelement i Condition för detta. <code class="language-plaintext highlighter-rouge">Condition.asserter</code> är en enkel Reference utan plats för rollkod. Alternativ: (a) enkoda i den refererade PractitionerRole-resursen om en sådan skapas, eller (b) ignorera då det är samma person som legalAuthenticatorHSAId och rollkoden hämtas via HSA-katalogen. Kräver designbeslut.</td>
+    </tr>
+  </tbody>
+</table>
+
+
+
+
+</div>
+        </div>  <!-- /inner-wrapper -->
+      </div>  <!-- /row -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-content -->
+
+  <script type="text/javascript" src="assets/js/jquery.js"> </script>     <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+  <script type="text/javascript" src="assets/js/jquery-ui.min.js"> </script>
+
+  <script type="text/javascript" src="assets/js/window-hash.js"> </script>
+  <a name="bottom"> </a>
+  <div id="segment-footer" igtool="footer" class="segment">  <!-- segment-footer -->
+    <div class="container">  <!-- container -->
+
+      <div class="inner-wrapper">
+        <p>
+          IG &#169; 2024+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.inera.se">Inera AB</a>.  Package inera.ehds.tk#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Wed, Jun 24, 2026 12:10+0000">2026-06-24</span>
+          <br/>
+          <span style="color: var(--footer-highlight-text-color)">
+                      Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
+                 <a style="color: var(--footer-hyperlink-text-color)" href="qa.html">QA Report</a>
+                 
+                
+          </span>
+        </p>
+      </div>  <!-- /inner-wrapper -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-footer -->
+  
+  <div id="segment-post-footer" class="segment hidden">  <!-- segment-post-footer -->
+    <div class="container">  <!-- container -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-post-footer -->
+
+  <!-- JS and analytics only. -->
+  <!-- Bootstrap core JavaScript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script type="text/javascript" src="assets/js/bootstrap.min.js"> </script>
+  <script type="text/javascript" src="assets/js/respond.min.js"> </script>
+  <script type="text/javascript" src="assets/js/anchor.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard-btn.js"> </script>
+  <script type="text/javascript" src="assets/js/anchor-hover.js"> </script>
+  <!-- Analytics Below
+  ================================================== -->
+  </body>
+</html>
+

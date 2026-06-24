@@ -1,0 +1,823 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE HTML>
+<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
+    <title>Mappningsissues och Designbeslut - Inera EHDS Tjänstekontrakt – FHIR Implementation Guide v0.1.0</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="author" content="http://hl7.org/fhir"/>
+
+    <link href="fhir.css" rel="stylesheet"/>
+
+    <!-- Bootstrap core CSS -->
+    <link href="assets/css/bootstrap-fhir.css" rel="stylesheet"/>
+
+    <!-- Project extras -->
+    <link href="assets/css/project.css" rel="stylesheet"/>
+    <link href="assets/css/pygments-manni.css" rel="stylesheet"/>
+    <link href="assets/css/jquery-ui.css" rel="stylesheet"/>
+  	<link href="assets/css/prism.css" rel="stylesheet" />
+  	<link href="assets/css/cqf.css" rel="stylesheet" />
+    <link href="inera.css" rel="stylesheet"/>
+<link rel="icon" type="image/png" href="inera-thumbnail.png"/>
+<link rel="shortcut icon" href="inera-thumbnail.png"/>
+
+
+    <script type="text/javascript" src="fhir-table-scripts.js"> </script>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="assets/js/html5shiv.js"></script>
+    <script src="assets/js/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Favicons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/icon-fhir-144.png"/>
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/icon-fhir-114.png"/>
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/icon-fhir-72.png"/>
+    <link rel="apple-touch-icon-precomposed" href="assets/ico/icon-fhir-57.png"/>
+    <link rel="shortcut icon" href="assets/ico/favicon.png"/>
+  </head>
+  <body onload="document.body.style.opacity='1'">
+
+	  <script src="assets/js/prism.js"></script>
+    <script type="text/javascript" src="assets/js/mermaid.js"></script>
+    <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
+    <style type="text/css">h2{--heading-prefix:"21"}
+    h3,h4,h5,h6{--heading-prefix:"21"}</style>
+    <div id="segment-header" class="segment">  <!-- segment-header -->
+      <div class="container">  <!-- container -->
+
+        <div id="inera-nav">
+  <a id="inera-logo" data-no-external="true" href="https://www.inera.se">
+    <img height="50" alt="Inera" src="inera-logo-header.svg"/>
+  </a>
+</div>
+
+
+        <div id="ig-status">
+          <p><span style="font-size:12pt;font-weight:bold">Inera EHDS Tjänstekontrakt – FHIR Implementation Guide</span>
+            <br/>
+            <span style="display:inline-block;">0.1.0 - ci-build
+
+
+
+  <img alt="Sweden flag" src="assets/images/swe.svg" height="16" title="Sweden"/>
+
+
+            </span>
+          </p>
+        </div>
+      </div> <!-- /container -->
+    </div>  <!-- /segment-header -->
+
+    <div id="segment-navbar" class="segment">  <!-- segment-navbar -->
+      <div id="stripe"> </div>
+      <div class="container">  <!-- container -->
+        <!-- HEADER CONTENT -->
+
+        <nav class="navbar navbar-inverse">
+          <!--status-bar-->
+          <div class="container">
+            <button data-target=".navbar-inverse-collapse" class="navbar-toggle" data-toggle="collapse" type="button">
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+            </button>
+            <a class="navbar-brand hidden" href="http://hl7.org/fhir/R4/index.html">FHIR</a>
+            <div class="nav-collapse collapse navbar-inverse-collapse">
+              <div id="segment-navbar" class="segment">
+  <div id="stripe"> </div>
+  <div class="container">
+    <nav class="navbar navbar-inverse">
+      <div class="container">
+        <button data-target=".navbar-inverse-collapse" class="navbar-toggle" data-toggle="collapse" type="button">
+          <span class="icon-bar"> </span>
+          <span class="icon-bar"> </span>
+          <span class="icon-bar"> </span>
+        </button>
+        <a class="navbar-brand hidden" href="http://hl7.org/fhir/R4/index.html">FHIR</a>
+        <div class="nav-collapse collapse navbar-inverse-collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="index.html">Hem</a></li>
+            <li class="dropdown">
+              <a data-toggle="dropdown" href="#" class="dropdown-toggle">Bakgrund<b class="caret"> </b></a>
+              <ul class="dropdown-menu">
+                <li><a href="workflow.html">Workflow</a></li>
+                <li><a href="logical-models.html">Logiska modeller</a></li>
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a data-toggle="dropdown" href="#" class="dropdown-toggle">Mappningar<b class="caret"> </b></a>
+              <ul class="dropdown-menu">
+                <li><a href="mappings.html">Översikt</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="dropdown-header">Patientöversikt</li>
+                <li><a href="mapping-getdiagnosis.html">GetDiagnosis – Diagnoser</a></li>
+                <li><a href="mapping-getalertinformation.html">GetAlertInformation – Uppmärksamhet</a></li>
+                <li><a href="mapping-getmedicationhistory.html">GetMedicationHistory – Läkemedel</a></li>
+                <li><a href="mapping-getvaccinationhistory.html">GetVaccinationHistory – Vaccinationer</a></li>
+                <li><a href="mapping-getfunctionalstatus.html">GetFunctionalStatus – Funktionstillstånd</a></li>
+                <li><a href="mapping-getmaternitymedicalhistory.html">GetMaternityMedicalHistory – Mödravård</a></li>
+                <li><a href="mapping-getcareplans.html">GetCarePlans – Vårdplan</a></li>
+                <li><a href="mapping-getcarecontacts.html">GetCareContacts – Vårdkontakter</a></li>
+                <li><a href="mapping-getcaredocumentation.html">GetCareDocumentation – Anteckningar</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="dropdown-header">Laboratorie och diagnostik</li>
+                <li><a href="mapping-getlaboratoryorderoutcome.html">GetLaboratoryOrderOutcome – Provsvar</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="dropdown-header">Bilddiagnostik</li>
+                <li><a href="mapping-getimagingoutcome.html">GetImagingOutcome – Bilddiagnostik</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="dropdown-header">Remiss och process</li>
+                <li><a href="mapping-getreferraloutcome.html">GetReferralOutcome – Remisser</a></li>
+                <li><a href="mapping-getrequestactivities.html">GetRequestActivities – Remisstatus</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="dropdown-header">Tillväxtkurva barn</li>
+                <li><a href="mapping-getobservations.html">GetObservations – Tillväxtkurva</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="dropdown-header">Logg</li>
+                <li><a href="mapping-getaccesslogforpatient.html">GetAccessLogForPatient – Åtkomstloggar</a></li>
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a data-toggle="dropdown" href="#" class="dropdown-toggle">FHIR Artifacts<b class="caret"> </b></a>
+              <ul class="dropdown-menu">
+                <li><a href="profiles.html">Profiles</a></li>
+                <li><a href="terminology.html">Terminology</a></li>
+                <li><a href="examples.html">Examples</a></li>
+                <li><a href="artifacts.html">All Artifacts</a></li>
+              </ul>
+            </li>
+            <li><a href="search-parameters.html">Sökparametrar</a></li>
+            <li><a href="downloads.html">Downloads</a></li>
+            <li><a href="mapping-issues.html">Issues &amp; Beslut</a></li>
+            <li><a href="version-history.html">Version History</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </div>
+</div>
+
+            </div>  <!-- /.nav-collapse -->
+          </div>  <!-- /.container -->
+        </nav>  <!-- /.navbar -->
+      <!-- /HEADER CONTENT -->
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-navbar -->
+    <!--status-bar-->
+
+    <div id="segment-breadcrumb" class="segment">  <!-- segment-breadcrumb -->
+      <div class="container">  <!-- container -->
+        <ul class="breadcrumb">
+          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><b>Mappningsissues och Designbeslut</b></li>
+
+        </ul>
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-breadcrumb -->
+
+    <a name="top"> </a>
+    <div id="segment-content" class="segment">  <!-- segment-content -->
+      <div class="container">  <!-- container -->
+        <div class="row">
+          <div class="inner-wrapper">
+
+<style type="text/css">
+h2:before{color:silver;counter-increment:section;content:var(--heading-prefix) " ";}
+h3:before{color:silver;counter-increment:sub-section;content:var(--heading-prefix) "." counter(sub-section) " ";}
+h4:before{color:silver;counter-increment:composite;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) " ";}
+h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) " ";}
+h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
+</style>
+<div class="col-12">
+  <!--ReleaseHeader--><p id="publish-box">Inera EHDS Tjänstekontrakt – FHIR Implementation Guide - Lokal utvecklingsbygge (v0.1.0) byggt av FHIR (HL7® FHIR® Standard) Build Tools. Se <a href='https://fhir.inera.se/ig/ehds-tk/history.html'>katalogen över publicerade versioner</a></p><!--EndReleaseHeader-->
+  <h2>Mappningsissues och Designbeslut</h2>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+    <p><!-- white space is critical inside of capture --></p>
+<div>
+<!-- do not remove - needed to prevent Jekyll from adding a p tag to any non block level element in the markdown.-->
+</div>
+<h1 id="mappningsissues-och-designbeslut">Mappningsissues och Designbeslut</h1>
+
+<p>Denna sida dokumenterar öppna designfrågor och fattade beslut för mappningar från svenska RIVTA-tjänstekontrakt (TKBer) till FHIR R4-resurser inom ramen för EHDS-TK. Sidan används som arbetsunderlag under implementationsguidearbetet och uppdateras löpande i takt med att frågor utreds och beslut fattas. Varje issue är kopplat till ett eller flera tjänstekontrakt och beskriver det tekniska problemet, möjliga lösningsalternativ samt aktuellt förslag eller fattat beslut. Öppna frågor kräver vidare utredning eller nationellt samordningsbeslut innan de kan avslutas.</p>
+
+<h2 id="öppna-frågor">Öppna frågor</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>TK</th>
+      <th>Issue</th>
+      <th>Status</th>
+      <th>Förslag</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>ALERT-002</td>
+      <td>GetAlertInformation</td>
+      <td><code class="language-plaintext highlighter-rouge">typeOfAlertInformation</code> kodsystem är okänt/lokalt. TKBn anger "kodsystem okänt externt/lokalt". Nationellt kodverk för uppmärksamhetstyper saknas. Avgör vilka koder som ska styra om Flag eller AllergyIntolerance (eller båda) skapas. Avgör även mapping till <code class="language-plaintext highlighter-rouge">AllergyIntolerance.category</code>.</td>
+      <td>Öppen</td>
+      <td>Avvakta nationellt kodverk från Inera/e-Hälsomyndigheten. Tillsvidare: använd <code class="language-plaintext highlighter-rouge">urn:oid</code> för lokalt system.</td>
+    </tr>
+    <tr>
+      <td>ALERT-004</td>
+      <td>GetAlertInformation</td>
+      <td><strong>ConceptMap saknas: degreeOfCertainty/degreeOfSeverity → FHIR.</strong> <code class="language-plaintext highlighter-rouge">hypersensitivity.degreeOfCertainty</code> (KV Visshetsgrad 1.2.752.129.2.2.3.11) behöver ConceptMap till <code class="language-plaintext highlighter-rouge">AllergyIntolerance.verificationStatus</code>. <code class="language-plaintext highlighter-rouge">hypersensitivity.degreeOfSeverity</code> (KV Allvarlighetsgrad 1.2.752.129.2.2.3.3) behöver ConceptMap till <code class="language-plaintext highlighter-rouge">AllergyIntolerance.reaction.severity</code>.</td>
+      <td>Öppen</td>
+      <td>Temporärt: sätt <code class="language-plaintext highlighter-rouge">verificationStatus = confirmed</code> tills ConceptMap finns. Ta fram ConceptMap som del av IG.</td>
+    </tr>
+    <tr>
+      <td>ALERT-005</td>
+      <td>GetAlertInformation</td>
+      <td><strong><code class="language-plaintext highlighter-rouge">Flag</code> saknar standard <code class="language-plaintext highlighter-rouge">note</code>-element.</strong> <code class="language-plaintext highlighter-rouge">alertInformationBody.alertInformationComment</code> kan inte mappas till ett standardelement på Flag (Flag.note finns ej i R4).</td>
+      <td>Öppen</td>
+      <td>Custom extension <code class="language-plaintext highlighter-rouge">extension[alertInformationComment]</code>. Alternativ: <code class="language-plaintext highlighter-rouge">flag-detail</code>-extension med länk till Observation med kommentar.</td>
+    </tr>
+    <tr>
+      <td>ALERT-006</td>
+      <td>GetAlertInformation</td>
+      <td><strong><code class="language-plaintext highlighter-rouge">obsoleteTime</code>/<code class="language-plaintext highlighter-rouge">obsoleteComment</code> saknar FHIR-standard.</strong> Inaktiveringsinformation (tid och kommentar) har ingen standardrepresentation i Flag.</td>
+      <td>Öppen</td>
+      <td>Custom extensions på Flag. Behöver nationellt beslut.</td>
+    </tr>
+    <tr>
+      <td>ALERT-007</td>
+      <td>GetAlertInformation</td>
+      <td><strong>Kliniska detaljer i non-allergi body-typer saknar FHIR-standardelement.</strong> <code class="language-plaintext highlighter-rouge">seriousDisease.disease</code>, <code class="language-plaintext highlighter-rouge">treatment.treatmentDescription/Code/pharmaceuticalTreatment</code>, <code class="language-plaintext highlighter-rouge">communicableDisease.communicableDiseaseCode/routeOfTransmission</code>, <code class="language-plaintext highlighter-rouge">restrictionOfCare.restrictionOfCareComment</code> och <code class="language-plaintext highlighter-rouge">unstructuredAlertInformation.*</code> saknar standardelement i Flag.</td>
+      <td>Öppen</td>
+      <td>Custom extensions på Flag. Alternativ: <code class="language-plaintext highlighter-rouge">flag-detail</code>-extension med länk till Condition/Observation per body-typ. Kräver designbeslut om representationsdjup.</td>
+    </tr>
+    <tr>
+      <td>DIAG-001</td>
+      <td>GetDiagnosis</td>
+      <td><code class="language-plaintext highlighter-rouge">diagnosisBody.chronicDiagnosis</code> – Boolean, inget direktmappat FHIR Condition-element.</td>
+      <td>Öppen</td>
+      <td>Alternativ: (a) extension <code class="language-plaintext highlighter-rouge">Condition.extension[chronicDiagnosis]</code> med boolean, eller (b) <code class="language-plaintext highlighter-rouge">Condition.category</code> med kod för kronisk diagnos. Kräver designbeslut.</td>
+    </tr>
+    <tr>
+      <td>DIAG-002</td>
+      <td>GetDiagnosis</td>
+      <td><code class="language-plaintext highlighter-rouge">diagnosisBody.relatedDiagnosis.documentId</code> – Referens till relaterad diagnos via dokumentid. Inget standardelement i Condition.</td>
+      <td>Öppen</td>
+      <td>Alternativ: (a) <code class="language-plaintext highlighter-rouge">Condition.extension[relatedCondition]</code> med logisk referens, eller (b) <code class="language-plaintext highlighter-rouge">Condition.note</code> med dokumentid i fritext. Kräver designbeslut.</td>
+    </tr>
+    <tr>
+      <td>FUNC-001</td>
+      <td>GetFunctionalStatus</td>
+      <td>PADL-poster (<code class="language-plaintext highlighter-rouge">padl.typeOfAssessment</code> + <code class="language-plaintext highlighter-rouge">padl.assessment</code>) saknar direkt FHIR Condition-element. Tre alternativ: (1) <code class="language-plaintext highlighter-rouge">Observation.component</code>, (2) extension, (3) separata Condition-resurser.</td>
+      <td><strong>Beslutat</strong></td>
+      <td>Koda som <code class="language-plaintext highlighter-rouge">Condition.note</code> med format <code class="language-plaintext highlighter-rouge">[typeOfAssessment]: assessment</code>. Alternativet separata Observation-resurser nämns i profilen som möjlighet vid framtida behov av strukturerad sökning.</td>
+    </tr>
+    <tr>
+      <td>FUNC-002</td>
+      <td>GetFunctionalStatus</td>
+      <td><code class="language-plaintext highlighter-rouge">functionalStatusAssessmentHeader.legalAuthenticator.legalAuthenticatorRoleCode</code> – Signerande persons befattning. <code class="language-plaintext highlighter-rouge">Condition.asserter</code> är enkel Reference utan plats för rollkod.</td>
+      <td>Öppen</td>
+      <td>Alternativ: (a) inkludera i PractitionerRole-resursen om en skapas, eller (b) ignorera då rollkoden hämtas via HSA-katalogen. Kräver designbeslut.</td>
+    </tr>
+    <tr>
+      <td>MED-001</td>
+      <td>GetMedicationHistory</td>
+      <td><code class="language-plaintext highlighter-rouge">dispensationAuthorization</code>, <code class="language-plaintext highlighter-rouge">administration</code> och <code class="language-plaintext highlighter-rouge">relation</code> i GetMedicationHistory är markerade "SAKNAS I KÄLLDOKUMENT – endast delvis extraherat". Behöver verifieras mot XSD och komplett TKB-dokumentation.</td>
+      <td>Öppen</td>
+      <td>Verifiera mot RIVTA XSD. Om saknas: dokumentera begränsning i IG.</td>
+    </tr>
+    <tr>
+      <td>MED-002</td>
+      <td>GetMedicationHistory</td>
+      <td><code class="language-plaintext highlighter-rouge">typeOfPrescription</code> <code class="language-plaintext highlighter-rouge">I</code> (insättning) / <code class="language-plaintext highlighter-rouge">U</code> (utsättning) mappar inte rent till <code class="language-plaintext highlighter-rouge">MedicationStatement.status</code> (<code class="language-plaintext highlighter-rouge">active</code>/<code class="language-plaintext highlighter-rouge">stopped</code>/etc.). <code class="language-plaintext highlighter-rouge">I</code>/<code class="language-plaintext highlighter-rouge">U</code> är snarare händelsetyp än aktuell status.</td>
+      <td>Öppen</td>
+      <td>Kartlägg <code class="language-plaintext highlighter-rouge">typeOfPrescription</code> som <code class="language-plaintext highlighter-rouge">MedicationStatement.category</code> (extension) snarare än <code class="language-plaintext highlighter-rouge">status</code>. Status härleds från <code class="language-plaintext highlighter-rouge">prescriptionStatus</code>.</td>
+    </tr>
+    <tr>
+      <td>MED-003</td>
+      <td>GetMedicationHistory</td>
+      <td><code class="language-plaintext highlighter-rouge">drug</code>-fältets XOR-constraint (<code class="language-plaintext highlighter-rouge">unstructuredDrugInformation</code> / <code class="language-plaintext highlighter-rouge">merchandise</code> / <code class="language-plaintext highlighter-rouge">drugArticle</code> / <code class="language-plaintext highlighter-rouge">drug</code> / <code class="language-plaintext highlighter-rouge">generics</code>) kan inte uttryckas i FSH-profil. Kräver business logic i implementationen.</td>
+      <td>Öppen</td>
+      <td>Dokumentera i IG som "business logic only". Profilerna tillåter alla varianter; validering måste ske i implementationen.</td>
+    </tr>
+    <tr>
+      <td>MED-004</td>
+      <td>GetMedicationHistory</td>
+      <td><code class="language-plaintext highlighter-rouge">drug.drug.pharmaceuticalForm</code>, <code class="language-plaintext highlighter-rouge">drug.drug.strength</code>, <code class="language-plaintext highlighter-rouge">drug.drug.strengthUnit</code> saknar standard FHIR-element i MedicationStatement. Dessa fält beskriver läkemedlets form och styrka på produktnivå.</td>
+      <td>Öppen</td>
+      <td>Överväg om de ska mappas till Medication-resurs (Medication.form, Medication.ingredient.strength) istället för MedicationStatement-extension.</td>
+    </tr>
+    <tr>
+      <td>MED-005</td>
+      <td>GetMedicationHistory</td>
+      <td><code class="language-plaintext highlighter-rouge">prescriber</code>-blocket kontra FHIR <code class="language-plaintext highlighter-rouge">requester</code>. MedicationStatement.basedOn → MedicationRequest är mer korrekt mönster för förskrivaren.</td>
+      <td>Öppen</td>
+      <td>Beslut behövs om MedicationRequest ska ingå i resurshierarkin.</td>
+    </tr>
+    <tr>
+      <td>MED-006</td>
+      <td>GetMedicationHistory</td>
+      <td><code class="language-plaintext highlighter-rouge">documentTitle</code> (header) saknar mappning. Fritexttiteln för dokument har ingen standardmotpart i MedicationStatement.</td>
+      <td>Öppen</td>
+      <td>Överväg <code class="language-plaintext highlighter-rouge">MedicationStatement.note</code> eller ignorera som administrativ etikett.</td>
+    </tr>
+    <tr>
+      <td>VAC-001</td>
+      <td>GetVaccinationHistory</td>
+      <td><code class="language-plaintext highlighter-rouge">vaccinationMedicalRecord</code> har <code class="language-plaintext highlighter-rouge">registrationRecord (1..1)</code> + <code class="language-plaintext highlighter-rouge">administrationRecord (0..*)</code>. Designbeslut: en Immunization per <code class="language-plaintext highlighter-rouge">administrationRecord</code> (rekommenderas) eller en per <code class="language-plaintext highlighter-rouge">registrationRecord</code>?</td>
+      <td>Öppen</td>
+      <td>En Immunization per <code class="language-plaintext highlighter-rouge">administrationRecord</code>. <code class="language-plaintext highlighter-rouge">registrationRecord</code>-fält delas/ärvs till alla Immunization-resurser från samma post.</td>
+    </tr>
+    <tr>
+      <td>VAC-003</td>
+      <td>GetVaccinationHistory</td>
+      <td><code class="language-plaintext highlighter-rouge">careGiverContact</code> (<code class="language-plaintext highlighter-rouge">actorId</code>, <code class="language-plaintext highlighter-rouge">actorName</code>) saknar FHIR-mappning. Kontaktpersoninfo hos juridisk vårdgivare har ingen naturlig plats i Immunization eller Provenance.</td>
+      <td>Öppen</td>
+      <td>Beslut: ignorera eller lägga i extension.</td>
+    </tr>
+    <tr>
+      <td>VAC-004</td>
+      <td>GetVaccinationHistory</td>
+      <td><code class="language-plaintext highlighter-rouge">documentTitle</code> saknar mappning. Fritexttiteln för vaccinationsdokumentet har ingen standardmotpart i Immunization.</td>
+      <td>Öppen</td>
+      <td>Överväg <code class="language-plaintext highlighter-rouge">Immunization.note</code> eller ignorera som administrativ etikett.</td>
+    </tr>
+    <tr>
+      <td>VAC-005</td>
+      <td>GetVaccinationHistory</td>
+      <td><code class="language-plaintext highlighter-rouge">legalAuthenticator</code> i Immunization-profil. Immunization saknar standard <code class="language-plaintext highlighter-rouge">authenticator</code>-fält (till skillnad från DocumentReference).</td>
+      <td>Öppen</td>
+      <td>Custom extension behövs för att bevara legalAuthenticator. Beslut om legalAuthenticator är relevant för vaccinationsdata.</td>
+    </tr>
+    <tr>
+      <td>CP-001</td>
+      <td>GetCarePlans</td>
+      <td><code class="language-plaintext highlighter-rouge">carePlan.content</code> (MultimediaType) saknar standardiserat FHIR R4-uttryck i CarePlan.</td>
+      <td>Öppen</td>
+      <td>Alternativ: (a) lokal extension med <code class="language-plaintext highlighter-rouge">mediaType</code>, <code class="language-plaintext highlighter-rouge">value</code> (base64Binary) och <code class="language-plaintext highlighter-rouge">reference</code> (url), eller (b) <code class="language-plaintext highlighter-rouge">DocumentReference</code> som alternativ resurs.</td>
+    </tr>
+    <tr>
+      <td>CP-002</td>
+      <td>GetCarePlans</td>
+      <td><code class="language-plaintext highlighter-rouge">carePlan.participatingCareUnitHSAId</code> mappas till <code class="language-plaintext highlighter-rouge">CarePlan.contributor</code> (Reference(Organization)). Bör logisk referens via identifier tillåtas utan att Organization-resurs skapas?</td>
+      <td>Öppen</td>
+      <td>Logisk referens via identifier bör tillåtas.</td>
+    </tr>
+    <tr>
+      <td>CP-003</td>
+      <td>GetCarePlans</td>
+      <td>OrgUnit-kontaktdetaljer (<code class="language-plaintext highlighter-rouge">orgUnitTelecom</code>, <code class="language-plaintext highlighter-rouge">orgUnitEmail</code>, <code class="language-plaintext highlighter-rouge">orgUnitAddress</code>, <code class="language-plaintext highlighter-rouge">orgUnitLocation</code>) under <code class="language-plaintext highlighter-rouge">accountableHealthcareProfessional.healthcareProfessionalOrgUnit</code> är ej mappade.</td>
+      <td>Öppen</td>
+      <td>Ska dessa ignoreras eller kräver de en fullständig Organization-resurs? Gemensamt beslut med CC-002.</td>
+    </tr>
+    <tr>
+      <td>CC-001</td>
+      <td>GetCareContacts</td>
+      <td>ConceptMap för SNOMED CT SE (OID 1.2.752.116.2.1.1) → FHIR <code class="language-plaintext highlighter-rouge">Encounter.status</code> saknas. Vilka SNOMED-koder ingår och hur mappas de till FHIR-värdemängden?</td>
+      <td>Öppen</td>
+      <td>Ta fram ConceptMap.</td>
+    </tr>
+    <tr>
+      <td>CC-002</td>
+      <td>GetCareContacts</td>
+      <td>OrgUnit-kontaktdetaljer (<code class="language-plaintext highlighter-rouge">orgUnitTelecom</code>, <code class="language-plaintext highlighter-rouge">orgUnitEmail</code>, <code class="language-plaintext highlighter-rouge">orgUnitAddress</code>, <code class="language-plaintext highlighter-rouge">orgUnitLocation</code>) på två ställen (header-orgUnit och careContactOrgUnit) saknar standardmappning i Encounter.</td>
+      <td>Öppen</td>
+      <td>Gemensamt beslut med CP-003. Alternativ: skapa Organization-resurser eller ignorera.</td>
+    </tr>
+    <tr>
+      <td>CC-003</td>
+      <td>GetCareContacts</td>
+      <td><code class="language-plaintext highlighter-rouge">careContact.additionalPatientInformation.gender</code> (KV Kön OID 1.2.752.129.2.2.1.1, koder 0/1/2/9) behöver ConceptMap till FHIR AdministrativeGender.</td>
+      <td>Öppen</td>
+      <td>Bör ConceptMap delas med andra TK? Skapa gemensam ConceptMap.</td>
+    </tr>
+    <tr>
+      <td>OBS-001</td>
+      <td>GetObservations</td>
+      <td><code class="language-plaintext highlighter-rouge">observationBody.observationValue.ts</code> är en sträng med variabel precision (<code class="language-plaintext highlighter-rouge">YYYYMMDD</code>, <code class="language-plaintext highlighter-rouge">YYYYMMDDHHMMSS</code> etc.) och kan inte mappas direkt till FHIR <code class="language-plaintext highlighter-rouge">dateTime</code>.</td>
+      <td><strong>Beslutat</strong></td>
+      <td>Precision ≥ dag → <code class="language-plaintext highlighter-rouge">valueDateTime</code>; precision <code class="language-plaintext highlighter-rouge">YYYY</code>/<code class="language-plaintext highlighter-rouge">YYYYMM</code> → <code class="language-plaintext highlighter-rouge">valueString</code>. För <code class="language-plaintext highlighter-rouge">time.ts</code> med låg precision: <code class="language-plaintext highlighter-rouge">effectiveDateTime</code> + <code class="language-plaintext highlighter-rouge">_effectiveDateTime.extension[originalText]</code>.</td>
+    </tr>
+    <tr>
+      <td>OBS-002</td>
+      <td>GetObservations</td>
+      <td><code class="language-plaintext highlighter-rouge">observationBody.valueNegation=true</code> saknar direkt FHIR-semantik.</td>
+      <td><strong>Beslutat</strong></td>
+      <td><code class="language-plaintext highlighter-rouge">dataAbsentReason.code = "not-detected"</code> (data-absent-reason); <code class="language-plaintext highlighter-rouge">value[x]</code> utelämnas.</td>
+    </tr>
+    <tr>
+      <td>OBS-003</td>
+      <td>GetObservations</td>
+      <td><code class="language-plaintext highlighter-rouge">observationBody.observationStatus</code> använder Snomed CT urvals-id <code class="language-plaintext highlighter-rouge">56431000052106</code>. Behöver ConceptMap till FHIR ObservationStatus.</td>
+      <td><strong>Beslutat</strong></td>
+      <td>ConceptMap <code class="language-plaintext highlighter-rouge">ObservationStatusMap.fsh</code> skapad; 5 koder mappade. Okänd kod → <code class="language-plaintext highlighter-rouge">unknown</code> + OperationOutcome-varning.</td>
+    </tr>
+    <tr>
+      <td>OBS-004</td>
+      <td>GetObservations</td>
+      <td><code class="language-plaintext highlighter-rouge">observationBody.targetSite</code> är <code class="language-plaintext highlighter-rouge">0..*</code> i TKBn men <code class="language-plaintext highlighter-rouge">Observation.bodySite</code> är <code class="language-plaintext highlighter-rouge">0..1</code> i FHIR R4. Information går förlorad om fler än en anatomisk plats anges.</td>
+      <td><strong>Beslutat</strong></td>
+      <td><code class="language-plaintext highlighter-rouge">targetSite[0]</code> → <code class="language-plaintext highlighter-rouge">Observation.bodySite</code>; <code class="language-plaintext highlighter-rouge">targetSite[1..*]</code> → <code class="language-plaintext highlighter-rouge">extension[additionalBodySite]</code>. Extension är R4-övergångslösning – utgår vid FHIR R5-migration.</td>
+    </tr>
+    <tr>
+      <td>OBS-005</td>
+      <td>GetObservations</td>
+      <td><code class="language-plaintext highlighter-rouge">observationBody.relation</code> (<code class="language-plaintext highlighter-rouge">0..*</code>) med <code class="language-plaintext highlighter-rouge">relationType</code> saknar standardrepresentation i FHIR.</td>
+      <td>Öppen</td>
+      <td>ConceptMap för <code class="language-plaintext highlighter-rouge">relationType</code> → FHIR-relationer. Oklara typer → extension.</td>
+    </tr>
+    <tr>
+      <td>OBS-006</td>
+      <td>GetObservations</td>
+      <td><code class="language-plaintext highlighter-rouge">participation[*].time</code>, <code class="language-plaintext highlighter-rouge">participation[*].patient</code>, <code class="language-plaintext highlighter-rouge">participation[*].locationRole</code> och <code class="language-plaintext highlighter-rouge">participation[*].resource.*</code> saknar standardmotpart i FHIR Observation.</td>
+      <td>Öppen</td>
+      <td>Behöver gemensam <code class="language-plaintext highlighter-rouge">participation</code>-extension i profilen, eller markeras dessa fält som ej mappade.</td>
+    </tr>
+    <tr>
+      <td>OBS-007</td>
+      <td>GetObservations</td>
+      <td><code class="language-plaintext highlighter-rouge">observationBody.patient.person.givenNameMarker</code> (tilltalsnamnsmarkering, giltiga värden 10–99) har inget standardiserat FHIR-fält i Patient-resursen.</td>
+      <td>Öppen</td>
+      <td>Extension, eller ignoreras.</td>
+    </tr>
+    <tr>
+      <td>OBS-008</td>
+      <td>GetObservations</td>
+      <td><code class="language-plaintext highlighter-rouge">observationBody.patient.person.maritalStatus</code> och patient-adressfält är ej relevanta för Observation-resursen.</td>
+      <td>Öppen</td>
+      <td>Lagras i sammanhörande Patient-resurs om en skapas. Profileringskrav behöver klargöras.</td>
+    </tr>
+    <tr>
+      <td>MAT-001</td>
+      <td>GetMaternityMedicalHistory</td>
+      <td>Tre sektioner (<code class="language-plaintext highlighter-rouge">registrationRecord</code>, <code class="language-plaintext highlighter-rouge">pregnancyCheckupRecord</code>, <code class="language-plaintext highlighter-rouge">postDeliveryRecord</code>) med många fält kan inte rymmas i en enda Observation.</td>
+      <td>Öppen</td>
+      <td>En Observation per sektion med <code class="language-plaintext highlighter-rouge">Observation.code</code> som diskriminator; sektionens fält → <code class="language-plaintext highlighter-rouge">Observation.component</code>.</td>
+    </tr>
+    <tr>
+      <td>MAT-002</td>
+      <td>GetMaternityMedicalHistory</td>
+      <td><code class="language-plaintext highlighter-rouge">orgUnitTelecom</code>, <code class="language-plaintext highlighter-rouge">orgUnitEmail</code>, <code class="language-plaintext highlighter-rouge">orgUnitAddress</code> och <code class="language-plaintext highlighter-rouge">orgUnitLocation</code> saknar fastlagd FHIR-mappning.</td>
+      <td>Medium</td>
+      <td>Bör mappas till <code class="language-plaintext highlighter-rouge">Organization.telecom</code>/<code class="language-plaintext highlighter-rouge">Organization.address</code>. Kräver beslut om Organization-profil.</td>
+    </tr>
+    <tr>
+      <td>MAT-003</td>
+      <td>GetMaternityMedicalHistory</td>
+      <td><code class="language-plaintext highlighter-rouge">documentTitle</code> (0..1 string i header) saknar naturligt mottagarfält i Observation.</td>
+      <td>Låg</td>
+      <td>Utred <code class="language-plaintext highlighter-rouge">Observation.note[0].text</code>, lokal extension, eller <code class="language-plaintext highlighter-rouge">Composition.title</code> om MAT-001 löses med Composition.</td>
+    </tr>
+    <tr>
+      <td>MAT-004</td>
+      <td>GetMaternityMedicalHistory</td>
+      <td><code class="language-plaintext highlighter-rouge">legalAuthenticator.signatureTime</code> saknar standardfält i FHIR R4 Observation. Nuvarande förslag: lokal extension <code class="language-plaintext highlighter-rouge">assertedDate</code>.</td>
+      <td>Medium</td>
+      <td>Utred om FHIR R5-mönstret eller Provenance-baserad lösning är att föredra för R4-kompatibilitet.</td>
+    </tr>
+    <tr>
+      <td>LAB-001</td>
+      <td>GetLaboratoryOrderOutcome</td>
+      <td><code class="language-plaintext highlighter-rouge">groupOfAnalyses.analysis.result.value</code> använder <code class="language-plaintext highlighter-rouge">AnyValueType</code> (<code class="language-plaintext highlighter-rouge">PQ</code>, sträng, boolean, kodad). Modellerat som sträng i logisk modell. I FHIR Observation behövs polymorf <code class="language-plaintext highlighter-rouge">value[x]</code>.</td>
+      <td>Öppen</td>
+      <td>Implementera konverteringslogik för att välja rätt <code class="language-plaintext highlighter-rouge">value[x]</code>-typ baserat på <code class="language-plaintext highlighter-rouge">analysis.code</code> eller kontext.</td>
+    </tr>
+    <tr>
+      <td>LAB-002</td>
+      <td>GetLaboratoryOrderOutcome</td>
+      <td><code class="language-plaintext highlighter-rouge">analysis.result.related 0..*</code> – relationstyp okänd (ingår i panel = <code class="language-plaintext highlighter-rouge">hasMember</code>, härledd = <code class="language-plaintext highlighter-rouge">derivedFrom</code>).</td>
+      <td>Öppen</td>
+      <td>Behöver klarläggande från TKB-förvaltningen.</td>
+    </tr>
+    <tr>
+      <td>LAB-003</td>
+      <td>GetLaboratoryOrderOutcome</td>
+      <td><code class="language-plaintext highlighter-rouge">analysis.specimen.activity</code> saknar standard Specimen-element (<code class="language-plaintext highlighter-rouge">activity[i].code</code>, <code class="language-plaintext highlighter-rouge">activity[i].time</code>, <code class="language-plaintext highlighter-rouge">activity[i].method</code>).</td>
+      <td>Öppen</td>
+      <td>Lokal extension på <code class="language-plaintext highlighter-rouge">Specimen.collection</code>. Alternativ: <code class="language-plaintext highlighter-rouge">Specimen.collection.fastingStatusCodeableConcept</code> för fasteaktivitet.</td>
+    </tr>
+    <tr>
+      <td>LAB-004</td>
+      <td>GetLaboratoryOrderOutcome</td>
+      <td><code class="language-plaintext highlighter-rouge">header.signature.byRole</code> – ingen standardiserad plats på DiagnosticReport.</td>
+      <td>Öppen</td>
+      <td>Lokal extension om rollkod ska inkluderas.</td>
+    </tr>
+    <tr>
+      <td>IMG-001</td>
+      <td>GetImagingOutcome</td>
+      <td><code class="language-plaintext highlighter-rouge">imagingOutcomeBody.typeOfResult</code>-koder (<code class="language-plaintext highlighter-rouge">PREL</code>/<code class="language-plaintext highlighter-rouge">DEF</code>/<code class="language-plaintext highlighter-rouge">TILL</code>) → <code class="language-plaintext highlighter-rouge">DiagnosticReport.status</code>. Semantiken för <code class="language-plaintext highlighter-rouge">TILL</code> (tillägg) = <code class="language-plaintext highlighter-rouge">amended</code> behöver bekräftas.</td>
+      <td>Öppen</td>
+      <td>Verifiera mot RIS-systemspecifikationer.</td>
+    </tr>
+    <tr>
+      <td>IMG-002</td>
+      <td>GetImagingOutcome</td>
+      <td>DICOM-bilddata (<code class="language-plaintext highlighter-rouge">imageDicomData.dicomSOP</code> + <code class="language-plaintext highlighter-rouge">dicomValue</code>/<code class="language-plaintext highlighter-rouge">dicomReference</code>) – ska binärdata inkluderas?</td>
+      <td>Öppen</td>
+      <td>Inkludera metadata (SOP, referens-URL) i ImagingStudy. Binärdata (<code class="language-plaintext highlighter-rouge">dicomValue</code>) inkluderas EJ.</td>
+    </tr>
+    <tr>
+      <td>IMG-003</td>
+      <td>GetImagingOutcome</td>
+      <td><code class="language-plaintext highlighter-rouge">imageRecording.accountableHealthcareProfessional.healthcareProfessionalOrgUnit</code> saknar mappning i ImagingStudy R4.</td>
+      <td>Öppen</td>
+      <td>Alternativ: PractitionerRole länkad via <code class="language-plaintext highlighter-rouge">ImagingStudy.interpreter</code>, eller lokal extension.</td>
+    </tr>
+    <tr>
+      <td>IMG-004</td>
+      <td>GetImagingOutcome</td>
+      <td><code class="language-plaintext highlighter-rouge">imageStructuredData.imageData.burnedInAnnotations</code> saknar FHIR-motpart (boolean för inbrända annotationer).</td>
+      <td>Öppen</td>
+      <td>Lokal extension på <code class="language-plaintext highlighter-rouge">ImagingStudy.series.instance</code>.</td>
+    </tr>
+    <tr>
+      <td>IMG-005</td>
+      <td>GetImagingOutcome</td>
+      <td><code class="language-plaintext highlighter-rouge">imageStructuredData.copyright</code> – hantering av upphovsrätt. Ingen standardiserad plats i ImagingStudy.</td>
+      <td>Öppen</td>
+      <td><code class="language-plaintext highlighter-rouge">ImagingStudy.note</code> (semantiken går delvis förlorad) eller lokal extension.</td>
+    </tr>
+    <tr>
+      <td>REF-001</td>
+      <td>GetReferralOutcome</td>
+      <td>act-poster i GetReferralOutcome (<code class="language-plaintext highlighter-rouge">actCode</code>, <code class="language-plaintext highlighter-rouge">actText</code>, <code class="language-plaintext highlighter-rouge">actResult</code> med multimedia) saknar standardelement i DiagnosticReport.</td>
+      <td>Öppen</td>
+      <td><code class="language-plaintext highlighter-rouge">DiagnosticReport.presentedForm</code> för multimediadata; <code class="language-plaintext highlighter-rouge">actCode</code>/<code class="language-plaintext highlighter-rouge">actText</code> → extension eller <code class="language-plaintext highlighter-rouge">conclusion</code>.</td>
+    </tr>
+    <tr>
+      <td>REF-002</td>
+      <td>GetReferralOutcome</td>
+      <td><code class="language-plaintext highlighter-rouge">referralOutcomeBody.attested.attesterName</code> vs. header-signatär. Två potentiella signatärstrukturer (<code class="language-plaintext highlighter-rouge">legalAuthenticator</code> och <code class="language-plaintext highlighter-rouge">body.attested</code>) kan representera olika signatärer.</td>
+      <td>Öppen</td>
+      <td>Behöver klargöras om de är semantiskt ekvivalenta eller distinkta.</td>
+    </tr>
+    <tr>
+      <td>REF-003</td>
+      <td>GetReferralOutcome</td>
+      <td><code class="language-plaintext highlighter-rouge">referralOutcomeBody.referral.referralAuthor.healthcareProfessionalOrgUnit</code> – sub-fält inte specificerade i LM-FSH.</td>
+      <td>Öppen</td>
+      <td>Verifiera sub-fält med TKB-förvaltningen.</td>
+    </tr>
+    <tr>
+      <td>REF-004</td>
+      <td>GetReferralOutcome</td>
+      <td><code class="language-plaintext highlighter-rouge">orgUnitTelecom</code>, <code class="language-plaintext highlighter-rouge">orgUnitEmail</code>, <code class="language-plaintext highlighter-rouge">orgUnitAddress</code>, <code class="language-plaintext highlighter-rouge">orgUnitLocation</code> i PatientSummaryHeader-blocket – ingen standardiserad plats i DiagnosticReport-kontexten.</td>
+      <td>Öppen</td>
+      <td>Beslut om dessa ska inkluderas alls i bryggan.</td>
+    </tr>
+    <tr>
+      <td>DOC-001</td>
+      <td>GetCareDocumentation</td>
+      <td><code class="language-plaintext highlighter-rouge">hasMore</code>-paginering i GetCareDocumentation har ingen FHIR-motsvarighet. Konsumenten måste anropa tjänsten flera gånger.</td>
+      <td>Öppen</td>
+      <td>Dokumentera i IG att paginering hanteras på tjänstenivå, ej i FHIR-resurser.</td>
+    </tr>
+    <tr>
+      <td>DOC-002</td>
+      <td>GetCareDocumentation</td>
+      <td><code class="language-plaintext highlighter-rouge">careDocumentation.header.author</code> är valfri (0..1) men <code class="language-plaintext highlighter-rouge">author.timestamp</code> är obligatorisk inom blocket. Om <code class="language-plaintext highlighter-rouge">author</code> saknas finns ingen <code class="language-plaintext highlighter-rouge">Provenance.recorded</code>-källa.</td>
+      <td>Öppen</td>
+      <td>Sätt <code class="language-plaintext highlighter-rouge">Provenance.recorded</code> till <code class="language-plaintext highlighter-rouge">record.timestamp</code> som fallback, eller kräv att <code class="language-plaintext highlighter-rouge">author</code> alltid finns?</td>
+    </tr>
+    <tr>
+      <td>DOC-003</td>
+      <td>GetCareDocumentation</td>
+      <td><code class="language-plaintext highlighter-rouge">signature.timestamp</code> är valfri (0..1) trots att det är signeringsinformation. Ingen extension[assertedDate] används.</td>
+      <td>Öppen</td>
+      <td>Bekräfta om <code class="language-plaintext highlighter-rouge">DocumentReference.extension[signatureTime]</code> är korrekt lösning.</td>
+    </tr>
+    <tr>
+      <td>DOC-004</td>
+      <td>GetCareDocumentation</td>
+      <td><code class="language-plaintext highlighter-rouge">clinicalDocumentNoteText</code> kodas som base64 i <code class="language-plaintext highlighter-rouge">attachment.data</code>. Klargör om base64-inkodning av entity-encodad DocBook-text är korrekt, eller om dekodning ska ske först.</td>
+      <td>Öppen</td>
+      <td>Behöver klargöras med källsystemsleverantörer.</td>
+    </tr>
+    <tr>
+      <td>REQ-001</td>
+      <td>GetRequestActivities</td>
+      <td><code class="language-plaintext highlighter-rouge">requestId</code> kan avse antingen aktivitetens eget id eller referens till remissen. Ska <code class="language-plaintext highlighter-rouge">Task.identifier</code> och <code class="language-plaintext highlighter-rouge">Task.focus</code> båda populeras?</td>
+      <td>Öppen</td>
+      <td>Kräver analys av TKB och klarläggande med TKB-förvaltningen.</td>
+    </tr>
+    <tr>
+      <td>REQ-002</td>
+      <td>GetRequestActivities</td>
+      <td><code class="language-plaintext highlighter-rouge">Task.requester</code> saknar källfält i LM. Avsändaren kan finnas i requestHeader via <code class="language-plaintext highlighter-rouge">senderHSAId</code> i fullständigt RIVTA-schema.</td>
+      <td>Öppen</td>
+      <td>Verifiera mot RIVTA XSD.</td>
+    </tr>
+    <tr>
+      <td>LOG-001</td>
+      <td>GetAccessLogForPatient</td>
+      <td><code class="language-plaintext highlighter-rouge">AuditEvent.patient</code> är en R4B-utökning som inte finns i basen av FHIR R4.</td>
+      <td>Hög</td>
+      <td>Utred om lokal extension eller <code class="language-plaintext highlighter-rouge">entity[patient]</code>-mönstret (entity.role = 1) ska användas för R4-kompatibilitet.</td>
+    </tr>
+    <tr>
+      <td>LOG-002</td>
+      <td>GetAccessLogForPatient</td>
+      <td><code class="language-plaintext highlighter-rouge">accessType</code>-kodvärden (Läsning/Sökning) behöver formellt kodverk. Utred om DICOM AuditEventID-koder eller ett lokalt Inera-kodverk ska användas.</td>
+      <td>Medium</td>
+      <td>Utred kodverksval och publicera CodeSystem som del av IG.</td>
+    </tr>
+    <tr>
+      <td>PDL-001</td>
+      <td>Alla TK</td>
+      <td><code class="language-plaintext highlighter-rouge">approvedForPatient</code> (boolean, <code class="language-plaintext highlighter-rouge">1..1</code>) i alla TK-headrar saknar standardmappning till FHIR <code class="language-plaintext highlighter-rouge">meta.security</code>.</td>
+      <td><strong>Beslutat</strong></td>
+      <td><code class="language-plaintext highlighter-rouge">approvedForPatient = false</code> → <code class="language-plaintext highlighter-rouge">meta.security</code> kod <code class="language-plaintext highlighter-rouge">NOPATIENT</code> från <code class="language-plaintext highlighter-rouge">http://terminology.hl7.org/CodeSystem/v3-ActCode</code>. Dokumenterat i README avsnitt 9 och i alla berörda profilers <code class="language-plaintext highlighter-rouge">^short</code>.</td>
+    </tr>
+    <tr>
+      <td>GENERAL-001</td>
+      <td>Alla TK</td>
+      <td>RIVTA-tidsstämplar använder formatet <code class="language-plaintext highlighter-rouge">YYYYMMDDhhmmss</code> (utan tidzon). FHIR kräver ISO 8601 med tidzon.</td>
+      <td>Öppen</td>
+      <td>Konvertera till ISO 8601. Antag tidzon Europe/Stockholm (CET/CEST). Implementera i EHDS-bryggan.</td>
+    </tr>
+  </tbody>
+</table>
+
+<hr />
+
+<h2 id="stängda-frågor">Stängda frågor</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>TK</th>
+      <th>Issue</th>
+      <th>Beslut</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>ALERT-001</td>
+      <td>GetAlertInformation</td>
+      <td>Tidigare stub-dokumentation felaktigt angav att <code class="language-plaintext highlighter-rouge">alertInformationBody</code> innehöll ENBART <code class="language-plaintext highlighter-rouge">typeOfAlertInformation 1..1</code>. Fält som <code class="language-plaintext highlighter-rouge">alertCode</code>, <code class="language-plaintext highlighter-rouge">alertStatus</code>, <code class="language-plaintext highlighter-rouge">alertTimePeriod</code>, <code class="language-plaintext highlighter-rouge">causeCode</code>, <code class="language-plaintext highlighter-rouge">reaction</code> och <code class="language-plaintext highlighter-rouge">alertComment</code> angavs som ej existerande.</td>
+      <td><strong>Stängd.</strong> Den verkliga TKBn v2.0 innehåller ett rikt body-element med XOR-subtyperna <code class="language-plaintext highlighter-rouge">hypersensitivity</code>, <code class="language-plaintext highlighter-rouge">seriousDisease</code>, <code class="language-plaintext highlighter-rouge">treatment</code>, <code class="language-plaintext highlighter-rouge">communicableDisease</code>, <code class="language-plaintext highlighter-rouge">restrictionOfCare</code> och <code class="language-plaintext highlighter-rouge">unstructuredAlertInformation</code>, plus gemensamma fält (<code class="language-plaintext highlighter-rouge">validityTimePeriod</code>, <code class="language-plaintext highlighter-rouge">ascertainedDate</code>, <code class="language-plaintext highlighter-rouge">verifiedTime</code>, <code class="language-plaintext highlighter-rouge">alertInformationComment</code>, <code class="language-plaintext highlighter-rouge">obsoleteTime</code>, <code class="language-plaintext highlighter-rouge">obsoleteComment</code>, <code class="language-plaintext highlighter-rouge">relatedAlertInformation</code>). Stub-LM och profiler har uppdaterats. Mappningssida reskriven.</td>
+    </tr>
+  </tbody>
+</table>
+
+<hr />
+
+<h2 id="designbeslut-fattade">Designbeslut (fattade)</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>TK</th>
+      <th>Beslut</th>
+      <th>Motivering</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>GENERAL-002</td>
+      <td>Alla TK</td>
+      <td>OID-till-URI-mappning för <code class="language-plaintext highlighter-rouge">patientId.root</code>: fasta mappningar <code class="language-plaintext highlighter-rouge">1.2.752.129.2.1.3.1</code> → personnummer URI, <code class="language-plaintext highlighter-rouge">1.2.752.129.2.1.3.3</code> → samordningsnummer URI, <code class="language-plaintext highlighter-rouge">1.2.752.129.2.1.4.1</code> → <code class="language-plaintext highlighter-rouge">urn:oid</code> passthrough. Okänt OID behålls som <code class="language-plaintext highlighter-rouge">urn:oid</code>.</td>
+      <td>Säkerställer enhetlig och förutsägbar identifieringshantering för svenska nationella identifierare i FHIR.</td>
+    </tr>
+    <tr>
+      <td>GENERAL-003</td>
+      <td>Alla TK</td>
+      <td>Provenance-agenter: två agenter definieras — <code class="language-plaintext highlighter-rouge">custodian</code> (vårdgivare/yttre Sparr) och <code class="language-plaintext highlighter-rouge">author</code> (vårdenhet/inre Sparr). Gäller alla TK.</td>
+      <td>Tydlig ansvarskedja i Provenance-resursen krävs för spårbarhet och PDL-krav.</td>
+    </tr>
+    <tr>
+      <td>GENERAL-004</td>
+      <td>GetAlertInformation</td>
+      <td>Flag vs AllergyIntolerance: Flag skapas alltid. AllergyIntolerance skapas dessutom om <code class="language-plaintext highlighter-rouge">hypersensitivity</code>-blocket anges. <code class="language-plaintext highlighter-rouge">Flag.extension[allergyReference]</code> pekar på AllergyIntolerance.</td>
+      <td>Flag täcker alla typer av uppmärksamhetsinformation. AllergyIntolerance skapas kompletterande för allergier för EHDS EPS-kompatibilitet.</td>
+    </tr>
+    <tr>
+      <td>ALERT-003</td>
+      <td>GetAlertInformation</td>
+      <td>Alignment med HL7 Sweden UMI-IG (<code class="language-plaintext highlighter-rouge">SEAlertInformationFlag</code>): <code class="language-plaintext highlighter-rouge">IneraEHDSFlag</code> inkluderar standard <code class="language-plaintext highlighter-rouge">flag-detail</code>-extension (hl7.org) för framtida länk till Observation med kliniska detaljer.</td>
+      <td><code class="language-plaintext highlighter-rouge">flag-detail</code> möjliggör framtida rikning mot Observation när kliniska detaljer finns tillgängliga.</td>
+    </tr>
+    <tr>
+      <td>PDL-001</td>
+      <td>Alla TK</td>
+      <td><code class="language-plaintext highlighter-rouge">approvedForPatient = false</code> → <code class="language-plaintext highlighter-rouge">meta.security</code> kod <code class="language-plaintext highlighter-rouge">NOPATIENT</code> (v3-ActCode).</td>
+      <td>Standardkod <code class="language-plaintext highlighter-rouge">NOPATIENT</code> är närmast semantiskt korrekta för "ej avsedd att visas för patient". Undviker custom extension.</td>
+    </tr>
+    <tr>
+      <td>OBS-001</td>
+      <td>GetObservations</td>
+      <td><code class="language-plaintext highlighter-rouge">ts</code>-strängar: precision ≥ dag → <code class="language-plaintext highlighter-rouge">valueDateTime</code>; <code class="language-plaintext highlighter-rouge">YYYY</code>/<code class="language-plaintext highlighter-rouge">YYYYMM</code> → <code class="language-plaintext highlighter-rouge">valueString</code>. <code class="language-plaintext highlighter-rouge">time.ts</code> med låg precision: <code class="language-plaintext highlighter-rouge">effectiveDateTime</code> + <code class="language-plaintext highlighter-rouge">extension[originalText]</code>.</td>
+      <td>Preserverar precisionssemantik utan att tappa strukturering för datumvärden.</td>
+    </tr>
+    <tr>
+      <td>OBS-002</td>
+      <td>GetObservations</td>
+      <td><code class="language-plaintext highlighter-rouge">valueNegation=true</code> → <code class="language-plaintext highlighter-rouge">dataAbsentReason.code = "not-detected"</code>.</td>
+      <td>Koden signalerar att det kliniska värdet explicit frånkänts/negativt påvisats.</td>
+    </tr>
+    <tr>
+      <td>OBS-003</td>
+      <td>GetObservations</td>
+      <td>ConceptMap <code class="language-plaintext highlighter-rouge">ObservationStatusMap.fsh</code> skapad (5 SNOMED CT-koder → FHIR ObservationStatus). Okänd kod → <code class="language-plaintext highlighter-rouge">unknown</code>.</td>
+      <td>Nödvändig för att producera giltig <code class="language-plaintext highlighter-rouge">Observation.status</code>. Publiceras som del av IG.</td>
+    </tr>
+    <tr>
+      <td>OBS-004</td>
+      <td>GetObservations</td>
+      <td><code class="language-plaintext highlighter-rouge">targetSite[0]</code> → <code class="language-plaintext highlighter-rouge">bodySite</code>; <code class="language-plaintext highlighter-rouge">targetSite[1..*]</code> → <code class="language-plaintext highlighter-rouge">extension[additionalBodySite]</code> (R4-övergångslösning).</td>
+      <td>Bevarar alla anatomiska platser utan informationsförlust. Extension utgår vid R5-migration.</td>
+    </tr>
+    <tr>
+      <td>FUNC-001</td>
+      <td>GetFunctionalStatus</td>
+      <td>PADL-poster kodas som <code class="language-plaintext highlighter-rouge">Condition.note</code> med format <code class="language-plaintext highlighter-rouge">[typeOfAssessment]: assessment</code>.</td>
+      <td>Enklast möjliga lösning som bevarar PADL-data utan extra resurser. Alternativet Observation nämns i profilen.</td>
+    </tr>
+  </tbody>
+</table>
+
+<hr />
+
+<h2 id="kända-begränsningar">Kända begränsningar</h2>
+
+<p>Följande begränsningar i FHIR R4 påverkar mappningarna i denna implementationsguide:</p>
+
+<ol>
+  <li><strong><code class="language-plaintext highlighter-rouge">Observation.bodySite</code> är <code class="language-plaintext highlighter-rouge">0..1</code> (ej <code class="language-plaintext highlighter-rouge">0..*</code>)</strong> — begränsar mappning av <code class="language-plaintext highlighter-rouge">targetSite</code> när flera anatomiska platser anges i källdata (se OBS-004). <strong>Beslutat:</strong> extension <code class="language-plaintext highlighter-rouge">additionalBodySite</code> används för ytterligare platser; tas bort vid R5-migration.</li>
+  <li><strong><code class="language-plaintext highlighter-rouge">DiagnosticReport</code> saknar inbyggt stöd för act-poster med multimedia</strong> — fält som <code class="language-plaintext highlighter-rouge">actCode</code>, <code class="language-plaintext highlighter-rouge">actText</code> och <code class="language-plaintext highlighter-rouge">actResult</code> med multimediainnehåll från GetReferralOutcome har ingen direkt motsvarighet (se REF-001). Workaround: <code class="language-plaintext highlighter-rouge">DiagnosticReport.presentedForm</code> och extension.</li>
+  <li><strong><code class="language-plaintext highlighter-rouge">MedicationStatement</code> saknar modellering av receptkedja (chain)</strong> — relationen mellan insättning (<code class="language-plaintext highlighter-rouge">I</code>) och utsättning (<code class="language-plaintext highlighter-rouge">U</code>) kan inte uttryckas med standardelement (se MED-002). Kräver extension.</li>
+  <li><strong><code class="language-plaintext highlighter-rouge">DocumentReference.content[0].attachment.data</code> är base64</strong> — stora dokument bör refereras via URL i <code class="language-plaintext highlighter-rouge">attachment.url</code> för att undvika onödigt stora FHIR-resurser.</li>
+  <li><strong><code class="language-plaintext highlighter-rouge">ImagingStudy</code> är komplex och kan vara overkill för enbart utlåtandemetadata</strong> — för GetImagingOutcome med begränsad DICOM-referensdata kan ImagingStudy-resursen bli onödigt komplex (se IMG-002).</li>
+  <li><strong><code class="language-plaintext highlighter-rouge">Observation.value[x]</code> stödjer variabelprecisions-datum dåligt</strong> — FHIR R4 <code class="language-plaintext highlighter-rouge">dateTime</code> kräver specifik precisionsnivå, men RIVTA-tidsstämplar kan ha varierande precision (se OBS-001). <strong>Beslutat:</strong> <code class="language-plaintext highlighter-rouge">valueString</code> för <code class="language-plaintext highlighter-rouge">YYYY</code>/<code class="language-plaintext highlighter-rouge">YYYYMM</code>, <code class="language-plaintext highlighter-rouge">valueDateTime</code> för <code class="language-plaintext highlighter-rouge">YYYYMMDD</code>/<code class="language-plaintext highlighter-rouge">YYYYMMDDHHMMSS</code>.</li>
+  <li><strong>Inga standardiserade FHIR-element för samtycke/Sparr-information</strong> — <code class="language-plaintext highlighter-rouge">approvedForPatient</code>-flaggan i RIVTA-headrar har ingen direkt FHIR-motsvarighet. <strong>Beslutat:</strong> <code class="language-plaintext highlighter-rouge">meta.security</code> med kod <code class="language-plaintext highlighter-rouge">NOPATIENT</code> (v3-ActCode) om <code class="language-plaintext highlighter-rouge">false</code> (se PDL-001).</li>
+  <li><strong><code class="language-plaintext highlighter-rouge">Flag</code> saknar <code class="language-plaintext highlighter-rouge">note</code>-element i R4</strong> — <code class="language-plaintext highlighter-rouge">alertInformationComment</code> kan inte mappas till standardelement på Flag (se ALERT-005). Kräver custom extension.</li>
+  <li><strong><code class="language-plaintext highlighter-rouge">AuditEvent.patient</code> är R4B-tillägg</strong> — för GetAccessLogForPatient behövs workaround för ren R4-kompatibilitet (se LOG-001).</li>
+</ol>
+
+
+
+
+</div>
+        </div>  <!-- /inner-wrapper -->
+      </div>  <!-- /row -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-content -->
+
+  <script type="text/javascript" src="assets/js/jquery.js"> </script>     <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+  <script type="text/javascript" src="assets/js/jquery-ui.min.js"> </script>
+
+  <script type="text/javascript" src="assets/js/window-hash.js"> </script>
+  <a name="bottom"> </a>
+  <div id="segment-footer" igtool="footer" class="segment">  <!-- segment-footer -->
+    <div class="container">  <!-- container -->
+
+      <div class="inner-wrapper">
+        <p>
+          IG &#169; 2024+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.inera.se">Inera AB</a>.  Package inera.ehds.tk#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Wed, Jun 24, 2026 12:10+0000">2026-06-24</span>
+          <br/>
+          <span style="color: var(--footer-highlight-text-color)">
+                      Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
+                 <a style="color: var(--footer-hyperlink-text-color)" href="qa.html">QA Report</a>
+                 
+                
+          </span>
+        </p>
+      </div>  <!-- /inner-wrapper -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-footer -->
+  
+  <div id="segment-post-footer" class="segment hidden">  <!-- segment-post-footer -->
+    <div class="container">  <!-- container -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-post-footer -->
+
+  <!-- JS and analytics only. -->
+  <!-- Bootstrap core JavaScript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script type="text/javascript" src="assets/js/bootstrap.min.js"> </script>
+  <script type="text/javascript" src="assets/js/respond.min.js"> </script>
+  <script type="text/javascript" src="assets/js/anchor.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard-btn.js"> </script>
+  <script type="text/javascript" src="assets/js/anchor-hover.js"> </script>
+  <!-- Analytics Below
+  ================================================== -->
+  </body>
+</html>
+

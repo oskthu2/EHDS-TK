@@ -1,0 +1,79 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://fhir.inera.se/ig/ehds-tk/CodeSystem/clinicaldocumentnotecode-cs> a fhir:CodeSystem ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "clinicaldocumentnotecode-cs"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Genererad berättande text: CodeSystem clinicaldocumentnotecode-cs</b></p><a name=\"clinicaldocumentnotecode-cs\"> </a><a name=\"hcclinicaldocumentnotecode-cs\"> </a><p>Detta  kodsystem <code>urn:oid:1.2.752.129.2.2.2.11</code> definierar följande koder:</p><table class=\"codes\"><tr><td style=\"white-space:nowrap\"><b>Kod</b></td><td><b>Definition</b></td></tr><tr><td style=\"white-space:nowrap\">utr<a name=\"clinicaldocumentnotecode-cs-utr\"> </a></td><td>Utredning</td></tr><tr><td style=\"white-space:nowrap\">atb<a name=\"clinicaldocumentnotecode-cs-atb\"> </a></td><td>Åtgärd/Behandling</td></tr><tr><td style=\"white-space:nowrap\">sam<a name=\"clinicaldocumentnotecode-cs-sam\"> </a></td><td>Sammanfattning</td></tr><tr><td style=\"white-space:nowrap\">sao<a name=\"clinicaldocumentnotecode-cs-sao\"> </a></td><td>Samordning</td></tr><tr><td style=\"white-space:nowrap\">ins<a name=\"clinicaldocumentnotecode-cs-ins\"> </a></td><td>Inskrivning</td></tr><tr><td style=\"white-space:nowrap\">slu<a name=\"clinicaldocumentnotecode-cs-slu\"> </a></td><td>Slutanteckning</td></tr><tr><td style=\"white-space:nowrap\">auf<a name=\"clinicaldocumentnotecode-cs-auf\"> </a></td><td>Anteckning utan fysiskt möte</td></tr><tr><td style=\"white-space:nowrap\">sva<a name=\"clinicaldocumentnotecode-cs-sva\"> </a></td><td>Slutenvårdsanteckning</td></tr><tr><td style=\"white-space:nowrap\">bes<a name=\"clinicaldocumentnotecode-cs-bes\"> </a></td><td>Besöksanteckning</td></tr></table></div>"^^rdf:XMLLiteral ]
+  ] ; # 
+  fhir:url [ fhir:v "urn:oid:1.2.752.129.2.2.2.11"^^xsd:anyURI] ; # 
+  fhir:version [ fhir:v "0.1.0"] ; # 
+  fhir:name [ fhir:v "ClinicalDocumentNoteCodeCS"] ; # 
+  fhir:title [ fhir:v "KV Anteckningstyp"] ; # 
+  fhir:status [ fhir:v "active"] ; # 
+  fhir:date [ fhir:v "2026-06-24T12:10:33+00:00"^^xsd:dateTime] ; # 
+  fhir:publisher [ fhir:v "Inera AB"] ; # 
+  fhir:contact ( [
+     fhir:name [ fhir:v "Inera AB" ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "url" ] ;
+       fhir:value [ fhir:v "https://www.inera.se" ]
+     ] )
+  ] ) ; # 
+  fhir:description [ fhir:v "Kodverk för typ av journalanteckning enligt KV Anteckningstyp. OID: 1.2.752.129.2.2.2.11."] ; # 
+  fhir:jurisdiction ( [
+     fhir:coding ( [
+       fhir:system [ fhir:v "urn:iso:std:iso:3166"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "SE" ] ;
+       fhir:display [ fhir:v "Sweden" ]
+     ] )
+  ] ) ; # 
+  fhir:content [ fhir:v "complete"] ; # 
+  fhir:count [ fhir:v "9"^^xsd:nonNegativeInteger] ; # 
+  fhir:concept ( [
+     fhir:code [ fhir:v "utr" ] ;
+     fhir:display [ fhir:v "utr" ] ;
+     fhir:definition [ fhir:v "Utredning" ]
+  ] [
+     fhir:code [ fhir:v "atb" ] ;
+     fhir:display [ fhir:v "atb" ] ;
+     fhir:definition [ fhir:v "Åtgärd/Behandling" ]
+  ] [
+     fhir:code [ fhir:v "sam" ] ;
+     fhir:display [ fhir:v "sam" ] ;
+     fhir:definition [ fhir:v "Sammanfattning" ]
+  ] [
+     fhir:code [ fhir:v "sao" ] ;
+     fhir:display [ fhir:v "sao" ] ;
+     fhir:definition [ fhir:v "Samordning" ]
+  ] [
+     fhir:code [ fhir:v "ins" ] ;
+     fhir:display [ fhir:v "ins" ] ;
+     fhir:definition [ fhir:v "Inskrivning" ]
+  ] [
+     fhir:code [ fhir:v "slu" ] ;
+     fhir:display [ fhir:v "slu" ] ;
+     fhir:definition [ fhir:v "Slutanteckning" ]
+  ] [
+     fhir:code [ fhir:v "auf" ] ;
+     fhir:display [ fhir:v "auf" ] ;
+     fhir:definition [ fhir:v "Anteckning utan fysiskt möte" ]
+  ] [
+     fhir:code [ fhir:v "sva" ] ;
+     fhir:display [ fhir:v "sva" ] ;
+     fhir:definition [ fhir:v "Slutenvårdsanteckning" ]
+  ] [
+     fhir:code [ fhir:v "bes" ] ;
+     fhir:display [ fhir:v "bes" ] ;
+     fhir:definition [ fhir:v "Besöksanteckning" ]
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

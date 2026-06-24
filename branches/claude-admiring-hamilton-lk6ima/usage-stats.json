@@ -1,0 +1,627 @@
+{
+  "package": "inera.ehds.tk",
+  "version": "0.1.0",
+  "fhirVersion": "4.0.1",
+  "jurisdiction": "SE",
+  "extensions": [
+    {
+      "url": "https://fhir.inera.se/ig/ehds-tk/StructureDefinition/alert-ascertained-date",
+      "title": "Datum för konstaterande",
+      "types": [
+        "date"
+      ]
+    },
+    {
+      "url": "https://fhir.inera.se/ig/ehds-tk/StructureDefinition/alert-asserted-date",
+      "title": "Signeringstidpunkt för uppmärksamhetssignal",
+      "types": [
+        "dateTime"
+      ]
+    },
+    {
+      "url": "https://fhir.inera.se/ig/ehds-tk/StructureDefinition/alert-asserter",
+      "title": "Juridisk äkthetsintygsgivare för uppmärksamhetssignal",
+      "types": [
+        "Reference"
+      ]
+    },
+    {
+      "url": "https://fhir.inera.se/ig/ehds-tk/StructureDefinition/alert-degree-of-certainty",
+      "title": "Visshet för överkänslighet",
+      "types": [
+        "CodeableConcept"
+      ]
+    },
+    {
+      "url": "https://fhir.inera.se/ig/ehds-tk/StructureDefinition/alert-degree-of-severity",
+      "title": "Allvarlighetsgrad för överkänslighet",
+      "types": [
+        "CodeableConcept"
+      ]
+    },
+    {
+      "url": "https://fhir.inera.se/ig/ehds-tk/StructureDefinition/alert-information-comment",
+      "title": "Kommentar till uppmärksamhetssignal",
+      "types": [
+        "string"
+      ]
+    },
+    {
+      "url": "https://fhir.inera.se/ig/ehds-tk/StructureDefinition/alert-pharmaceutical-hypersensitivity",
+      "title": "Läkemedelsöverkänslighet – substansdetaljer",
+      "types": [
+        "string",
+        "CodeableConcept",
+        "base64Binary",
+        "boolean",
+        "canonical",
+        "code",
+        "date",
+        "dateTime",
+        "decimal",
+        "id",
+        "instant",
+        "integer",
+        "markdown",
+        "oid",
+        "positiveInt",
+        "string",
+        "time",
+        "unsignedInt",
+        "uri",
+        "url",
+        "uuid",
+        "Address",
+        "Age",
+        "Annotation",
+        "Attachment",
+        "CodeableConcept",
+        "Coding",
+        "ContactPoint",
+        "Count",
+        "Distance",
+        "Duration",
+        "HumanName",
+        "Identifier",
+        "Money",
+        "Period",
+        "Quantity",
+        "Range",
+        "Ratio",
+        "Reference",
+        "SampledData",
+        "Signature",
+        "Timing",
+        "ContactDetail",
+        "Contributor",
+        "DataRequirement",
+        "Expression",
+        "ParameterDefinition",
+        "RelatedArtifact",
+        "TriggerDefinition",
+        "UsageContext",
+        "Dosage",
+        "Meta"
+      ]
+    },
+    {
+      "url": "https://fhir.inera.se/ig/ehds-tk/StructureDefinition/alert-pharmaceutical-treatment",
+      "title": "Läkemedel vid behandling",
+      "types": [
+        "CodeableConcept"
+      ]
+    },
+    {
+      "url": "https://fhir.inera.se/ig/ehds-tk/StructureDefinition/alert-restriction-of-care-comment",
+      "title": "Kommentar om vårdbegränsning",
+      "types": [
+        "string"
+      ]
+    },
+    {
+      "url": "https://fhir.inera.se/ig/ehds-tk/StructureDefinition/alert-route-of-transmission",
+      "title": "Smittväg",
+      "types": [
+        "CodeableConcept"
+      ]
+    },
+    {
+      "url": "https://fhir.inera.se/ig/ehds-tk/StructureDefinition/alert-treatment-description",
+      "title": "Behandlingsbeskrivning",
+      "types": [
+        "string"
+      ]
+    },
+    {
+      "url": "https://fhir.inera.se/ig/ehds-tk/StructureDefinition/alert-verified-time",
+      "title": "Tidpunkt för verifiering",
+      "types": [
+        "dateTime"
+      ]
+    },
+    {
+      "url": "https://fhir.inera.se/ig/ehds-tk/StructureDefinition/approved-for-patient",
+      "title": "Godkänd för patient",
+      "types": [
+        "boolean"
+      ]
+    },
+    {
+      "url": "https://fhir.inera.se/ig/ehds-tk/StructureDefinition/device-source-system-contact",
+      "title": "Källsystemskontakt",
+      "types": [
+        "string",
+        "string",
+        "base64Binary",
+        "boolean",
+        "canonical",
+        "code",
+        "date",
+        "dateTime",
+        "decimal",
+        "id",
+        "instant",
+        "integer",
+        "markdown",
+        "oid",
+        "positiveInt",
+        "string",
+        "time",
+        "unsignedInt",
+        "uri",
+        "url",
+        "uuid",
+        "Address",
+        "Age",
+        "Annotation",
+        "Attachment",
+        "CodeableConcept",
+        "Coding",
+        "ContactPoint",
+        "Count",
+        "Distance",
+        "Duration",
+        "HumanName",
+        "Identifier",
+        "Money",
+        "Period",
+        "Quantity",
+        "Range",
+        "Ratio",
+        "Reference",
+        "SampledData",
+        "Signature",
+        "Timing",
+        "ContactDetail",
+        "Contributor",
+        "DataRequirement",
+        "Expression",
+        "ParameterDefinition",
+        "RelatedArtifact",
+        "TriggerDefinition",
+        "UsageContext",
+        "Dosage",
+        "Meta"
+      ]
+    },
+    {
+      "url": "https://fhir.inera.se/ig/ehds-tk/StructureDefinition/immunization-is-dose-complete",
+      "title": "Fullständig dos administrerad",
+      "types": [
+        "boolean"
+      ]
+    },
+    {
+      "url": "https://fhir.inera.se/ig/ehds-tk/StructureDefinition/immunization-legal-authenticator",
+      "title": "Juridisk äkthetsintygsgivare för vaccination",
+      "types": [
+        "dateTime",
+        "string",
+        "base64Binary",
+        "boolean",
+        "canonical",
+        "code",
+        "date",
+        "dateTime",
+        "decimal",
+        "id",
+        "instant",
+        "integer",
+        "markdown",
+        "oid",
+        "positiveInt",
+        "string",
+        "time",
+        "unsignedInt",
+        "uri",
+        "url",
+        "uuid",
+        "Address",
+        "Age",
+        "Annotation",
+        "Attachment",
+        "CodeableConcept",
+        "Coding",
+        "ContactPoint",
+        "Count",
+        "Distance",
+        "Duration",
+        "HumanName",
+        "Identifier",
+        "Money",
+        "Period",
+        "Quantity",
+        "Range",
+        "Ratio",
+        "Reference",
+        "SampledData",
+        "Signature",
+        "Timing",
+        "ContactDetail",
+        "Contributor",
+        "DataRequirement",
+        "Expression",
+        "ParameterDefinition",
+        "RelatedArtifact",
+        "TriggerDefinition",
+        "UsageContext",
+        "Dosage",
+        "Meta"
+      ]
+    },
+    {
+      "url": "https://fhir.inera.se/ig/ehds-tk/StructureDefinition/immunization-patient-postal-code",
+      "title": "Patientens postnummer vid vaccination",
+      "types": [
+        "string"
+      ]
+    },
+    {
+      "url": "https://fhir.inera.se/ig/ehds-tk/StructureDefinition/immunization-registration-device",
+      "title": "Källsystem för vaccinationsregistrering",
+      "types": [
+        "Reference"
+      ]
+    },
+    {
+      "url": "https://fhir.inera.se/ig/ehds-tk/StructureDefinition/related-alert-information",
+      "title": "Relaterad uppmärksamhetssignal",
+      "types": [
+        "CodeableConcept",
+        "string",
+        "string",
+        "base64Binary",
+        "boolean",
+        "canonical",
+        "code",
+        "date",
+        "dateTime",
+        "decimal",
+        "id",
+        "instant",
+        "integer",
+        "markdown",
+        "oid",
+        "positiveInt",
+        "string",
+        "time",
+        "unsignedInt",
+        "uri",
+        "url",
+        "uuid",
+        "Address",
+        "Age",
+        "Annotation",
+        "Attachment",
+        "CodeableConcept",
+        "Coding",
+        "ContactPoint",
+        "Count",
+        "Distance",
+        "Duration",
+        "HumanName",
+        "Identifier",
+        "Money",
+        "Period",
+        "Quantity",
+        "Range",
+        "Ratio",
+        "Reference",
+        "SampledData",
+        "Signature",
+        "Timing",
+        "ContactDetail",
+        "Contributor",
+        "DataRequirement",
+        "Expression",
+        "ParameterDefinition",
+        "RelatedArtifact",
+        "TriggerDefinition",
+        "UsageContext",
+        "Dosage",
+        "Meta"
+      ]
+    }
+  ],
+  "profiles": {
+    "AllergyIntolerance": [
+      {
+        "url": "https://fhir.inera.se/ig/ehds-tk/StructureDefinition/inera-ehds-allergy-intolerance",
+        "title": "SE EHDS AllergyIntolerance – Allergi/överkänslighet (GetAlertInformation)"
+      }
+    ],
+    "AuditEvent": [
+      {
+        "url": "https://fhir.inera.se/ig/ehds-tk/StructureDefinition/inera-ehds-audit-event",
+        "title": "SE EHDS AuditEvent – Åtkomstloggar (GetAccessLogForPatient)"
+      }
+    ],
+    "CarePlan": [
+      {
+        "url": "https://fhir.inera.se/ig/ehds-tk/StructureDefinition/inera-ehds-care-plan",
+        "title": "SE EHDS CarePlan – Vårdplan (GetCarePlans)"
+      }
+    ],
+    "Condition": [
+      {
+        "url": "https://fhir.inera.se/ig/ehds-tk/StructureDefinition/inera-ehds-condition-diagnosis",
+        "title": "SE EHDS Condition – Diagnos (GetDiagnosis)"
+      },
+      {
+        "url": "https://fhir.inera.se/ig/ehds-tk/StructureDefinition/inera-ehds-condition-functional",
+        "title": "SE EHDS Condition – Funktionstillstånd och ADL (GetFunctionalStatus)"
+      }
+    ],
+    "Device": [
+      {
+        "url": "https://fhir.inera.se/ig/ehds-tk/StructureDefinition/inera-ehds-device",
+        "title": "SE EHDS Device – Källsystem (GetVaccinationHistory registrationRecord)"
+      }
+    ],
+    "DiagnosticReport": [
+      {
+        "url": "https://fhir.inera.se/ig/ehds-tk/StructureDefinition/inera-ehds-diagnostic-report-imaging",
+        "title": "SE EHDS DiagnosticReport – Bilddiagnostiskt utlåtande (GetImagingOutcome)"
+      },
+      {
+        "url": "https://fhir.inera.se/ig/ehds-tk/StructureDefinition/inera-ehds-diagnostic-report-lab",
+        "title": "SE EHDS DiagnosticReport – Provsvar (GetLaboratoryOrderOutcome)"
+      },
+      {
+        "url": "https://fhir.inera.se/ig/ehds-tk/StructureDefinition/inera-ehds-diagnostic-report-referral",
+        "title": "SE EHDS DiagnosticReport – Konsultationssvar (GetReferralOutcome)"
+      }
+    ],
+    "DocumentReference": [
+      {
+        "url": "https://fhir.inera.se/ig/ehds-tk/StructureDefinition/inera-ehds-document-reference",
+        "title": "SE EHDS DocumentReference – Anteckningar (GetCareDocumentation)"
+      }
+    ],
+    "Encounter": [
+      {
+        "url": "https://fhir.inera.se/ig/ehds-tk/StructureDefinition/inera-ehds-encounter",
+        "title": "SE EHDS Encounter – Vårdkontakter (GetCareContacts)"
+      }
+    ],
+    "Flag": [
+      {
+        "url": "https://fhir.inera.se/ig/ehds-tk/StructureDefinition/inera-ehds-flag",
+        "title": "SE EHDS Flag – Uppmärksamhetsinformation (GetAlertInformation)"
+      }
+    ],
+    "ImagingStudy": [
+      {
+        "url": "https://fhir.inera.se/ig/ehds-tk/StructureDefinition/inera-ehds-imaging-study",
+        "title": "SE EHDS ImagingStudy – Bilddiagnostik (GetImagingOutcome)"
+      }
+    ],
+    "Immunization": [
+      {
+        "url": "https://fhir.inera.se/ig/ehds-tk/StructureDefinition/inera-ehds-immunization",
+        "title": "SE EHDS Immunization – Vaccinationer (GetVaccinationHistory)"
+      }
+    ],
+    "MedicationStatement": [
+      {
+        "url": "https://fhir.inera.se/ig/ehds-tk/StructureDefinition/inera-ehds-medication-statement",
+        "title": "SE EHDS MedicationStatement – Läkemedel (GetMedicationHistory)"
+      }
+    ],
+    "Observation": [
+      {
+        "url": "https://fhir.inera.se/ig/ehds-tk/StructureDefinition/inera-ehds-observation-base",
+        "title": "SE EHDS Observation Base – GetObservations"
+      },
+      {
+        "url": "https://fhir.inera.se/ig/ehds-tk/StructureDefinition/inera-ehds-observation-growth",
+        "title": "SE EHDS Observation – Tillväxtkurva (GetObservations + IoÖ v3)"
+      },
+      {
+        "url": "https://fhir.inera.se/ig/ehds-tk/StructureDefinition/inera-ehds-observation-lab",
+        "title": "SE EHDS Observation – Laboratoriesvar (GetLaboratoryOrderOutcome)"
+      },
+      {
+        "url": "https://fhir.inera.se/ig/ehds-tk/StructureDefinition/inera-ehds-observation-maternity",
+        "title": "SE EHDS Observation – Mödravård (GetMaternityMedicalHistory)"
+      }
+    ],
+    "Organization": [
+      {
+        "url": "https://fhir.inera.se/ig/ehds-tk/StructureDefinition/inera-ehds-organization",
+        "title": "SE EHDS Organization – Organisationsenhet"
+      }
+    ],
+    "Patient": [
+      {
+        "url": "https://fhir.inera.se/ig/ehds-tk/StructureDefinition/inera-ehds-patient",
+        "title": "SE EHDS Patient"
+      }
+    ],
+    "Provenance": [
+      {
+        "url": "https://fhir.inera.se/ig/ehds-tk/StructureDefinition/inera-ehds-provenance",
+        "title": "SE EHDS Provenance"
+      }
+    ],
+    "ServiceRequest": [
+      {
+        "url": "https://fhir.inera.se/ig/ehds-tk/StructureDefinition/inera-ehds-service-request-referral",
+        "title": "SE EHDS ServiceRequest – Konsultationsremiss (GetReferralOutcome)"
+      }
+    ],
+    "Task": [
+      {
+        "url": "https://fhir.inera.se/ig/ehds-tk/StructureDefinition/inera-ehds-task",
+        "title": "SE EHDS Task – Remisstatus (GetRequestActivities)"
+      }
+    ]
+  },
+  "usage": {
+    "http://hl7.org/fhir/StructureDefinition/allergyintolerance-abatement|5.3.0-ballot-tc1": [
+      "AllergyIntolerance"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/condition-assertedDate": [
+      "Condition"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/data-absent-reason": [
+      "Observation.effective[x]"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/elementdefinition-bestpractice": [
+      "StructureDefinition.snapshot.element.constraint"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/elementdefinition-bestpractice-explanation": [
+      "StructureDefinition.snapshot.element.constraint"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName": [
+      "StructureDefinition.snapshot.element.binding"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/elementdefinition-isCommonBinding": [
+      "StructureDefinition.snapshot.element.binding"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/elementdefinition-maxValueSet": [
+      "StructureDefinition.snapshot.element.binding"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable": [
+      "StructureDefinition.snapshot.element"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/elementdefinition-type-must-support": [
+      "StructureDefinition.differential.element.type",
+      "StructureDefinition.snapshot.element.type"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/flag-detail": [
+      "Flag"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/individual-genderIdentity|5.3.0-ballot-tc1": [
+      "Patient"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/individual-pronouns|5.3.0-ballot-tc1": [
+      "Patient"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/obligation": [
+      "StructureDefinition.snapshot.element"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/regex": [
+      "StructureDefinition.snapshot.element.type"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/structuredefinition-display-hint": [
+      "StructureDefinition.snapshot.element"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/structuredefinition-fhir-type": [
+      "StructureDefinition.snapshot.element.type"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/structuredefinition-hierarchy": [
+      "StructureDefinition.snapshot.element.type"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/structuredefinition-type-characteristics": [
+      "StructureDefinition"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/translation|5.3.0-ballot-tc1": [
+      "Condition.category.coding.display",
+      "Condition.category.text",
+      "Condition.code.coding.display",
+      "Condition.code.text",
+      "Observation.code.coding.display",
+      "Observation.code.text"
+    ],
+    "http://hl7.org/fhir/tools/StructureDefinition/additional-binding": [
+      "StructureDefinition.snapshot.element.binding"
+    ],
+    "http://hl7.org/fhir/tools/StructureDefinition/ig-internal-dependency": [
+      "ImplementationGuide.definition"
+    ],
+    "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name": [
+      "ImplementationGuide.definition.page",
+      "ImplementationGuide.definition.page.page"
+    ],
+    "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter": [
+      "ImplementationGuide.definition"
+    ],
+    "http://hl7.org/fhir/tools/StructureDefinition/implementationguide-dependency-comment": [
+      "ImplementationGuide.dependsOn"
+    ],
+    "http://hl7.org/fhir/tools/StructureDefinition/resource-information": [
+      "ImplementationGuide.definition.resource"
+    ],
+    "http://hl7.org/fhir/tools/StructureDefinition/snapshot-base-version": [
+      "StructureDefinition.snapshot"
+    ],
+    "https://fhir.inera.se/ig/ehds-tk/StructureDefinition/alert-ascertained-date": [
+      "Flag"
+    ],
+    "https://fhir.inera.se/ig/ehds-tk/StructureDefinition/alert-asserted-date": [
+      "Flag"
+    ],
+    "https://fhir.inera.se/ig/ehds-tk/StructureDefinition/alert-asserter": [
+      "Flag"
+    ],
+    "https://fhir.inera.se/ig/ehds-tk/StructureDefinition/alert-degree-of-certainty": [
+      "Flag"
+    ],
+    "https://fhir.inera.se/ig/ehds-tk/StructureDefinition/alert-degree-of-severity": [
+      "Flag"
+    ],
+    "https://fhir.inera.se/ig/ehds-tk/StructureDefinition/alert-information-comment": [
+      "Flag"
+    ],
+    "https://fhir.inera.se/ig/ehds-tk/StructureDefinition/alert-pharmaceutical-hypersensitivity": [
+      "Flag"
+    ],
+    "https://fhir.inera.se/ig/ehds-tk/StructureDefinition/alert-pharmaceutical-treatment": [
+      "Flag"
+    ],
+    "https://fhir.inera.se/ig/ehds-tk/StructureDefinition/alert-restriction-of-care-comment": [
+      "Flag"
+    ],
+    "https://fhir.inera.se/ig/ehds-tk/StructureDefinition/alert-route-of-transmission": [
+      "Flag"
+    ],
+    "https://fhir.inera.se/ig/ehds-tk/StructureDefinition/alert-treatment-description": [
+      "Flag"
+    ],
+    "https://fhir.inera.se/ig/ehds-tk/StructureDefinition/alert-verified-time": [
+      "Flag"
+    ],
+    "https://fhir.inera.se/ig/ehds-tk/StructureDefinition/approved-for-patient": [
+      "CarePlan"
+    ],
+    "https://fhir.inera.se/ig/ehds-tk/StructureDefinition/device-source-system-contact": [
+      "Device"
+    ],
+    "https://fhir.inera.se/ig/ehds-tk/StructureDefinition/immunization-is-dose-complete": [
+      "Immunization"
+    ],
+    "https://fhir.inera.se/ig/ehds-tk/StructureDefinition/immunization-legal-authenticator": [
+      "Immunization"
+    ],
+    "https://fhir.inera.se/ig/ehds-tk/StructureDefinition/immunization-patient-postal-code": [
+      "Immunization"
+    ],
+    "https://fhir.inera.se/ig/ehds-tk/StructureDefinition/immunization-registration-device": [
+      "Immunization"
+    ],
+    "https://fhir.inera.se/ig/ehds-tk/StructureDefinition/related-alert-information": [
+      "Flag"
+    ]
+  }
+}

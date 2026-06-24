@@ -1,0 +1,56 @@
+{
+  "resourceType" : "ValueSet",
+  "id" : "se-observation-status-vs",
+  "text" : {
+    "status" : "generated",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Genererad berättande text: ValueSet se-observation-status-vs</b></p><a name=\"se-observation-status-vs\"> </a><a name=\"hcse-observation-status-vs\"> </a><ul><li>Include dessa koder enligt definitionen i <a href=\"http://www.snomed.org/\"><code>http://snomed.info/sct</code></a><span title=\"Versionen är inte uttryckligen angiven. Ingen matchande Kodsystem hittades\"> version Ej angiven (använd senaste från terminologiserver)</span><table class=\"none\"><tr><td style=\"white-space:nowrap\"><b>Kod</b></td><td><b>Visning</b></td></tr><tr><td><a href=\"http://snomed.info/id/385676005\">385676005</a></td><td>Under utförande</td></tr><tr><td><a href=\"http://snomed.info/id/385651009\">385651009</a></td><td>Slutlig</td></tr><tr><td><a href=\"http://snomed.info/id/272393004\">272393004</a></td><td>Korrigerad</td></tr><tr><td><a href=\"http://snomed.info/id/59776000\">59776000</a></td><td>Avbeställd/annullerad</td></tr><tr><td><a href=\"http://snomed.info/id/444301002\">444301002</a></td><td>Avböjd av patient</td></tr></table></li></ul></div>"
+  },
+  "url" : "https://fhir.inera.se/ig/ehds-tk/ValueSet/se-observation-status-vs",
+  "version" : "0.1.0",
+  "name" : "SEObservationStatusVS",
+  "title" : "SE Observation Status (SNOMED CT urval 56431000052106)",
+  "status" : "active",
+  "experimental" : false,
+  "date" : "2026-06-24T12:10:33+00:00",
+  "publisher" : "Inera AB",
+  "contact" : [{
+    "name" : "Inera AB",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "https://www.inera.se"
+    }]
+  }],
+  "description" : "Tillåtna statusvärden för GetObservations observationStatus.\nUrvals-id 56431000052106, SNOMED CT SE (OID 1.2.752.116.2.1.1).\nMappning till FHIR ObservationStatus via ConceptMap observation-status-map.",
+  "jurisdiction" : [{
+    "coding" : [{
+      "system" : "urn:iso:std:iso:3166",
+      "code" : "SE",
+      "display" : "Sweden"
+    }]
+  }],
+  "compose" : {
+    "include" : [{
+      "system" : "http://snomed.info/sct",
+      "concept" : [{
+        "code" : "385676005",
+        "display" : "Under utförande"
+      },
+      {
+        "code" : "385651009",
+        "display" : "Slutlig"
+      },
+      {
+        "code" : "272393004",
+        "display" : "Korrigerad"
+      },
+      {
+        "code" : "59776000",
+        "display" : "Avbeställd/annullerad"
+      },
+      {
+        "code" : "444301002",
+        "display" : "Avböjd av patient"
+      }]
+    }]
+  }
+}

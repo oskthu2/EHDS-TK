@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ValueSet xmlns="http://hl7.org/fhir">
+  <id value="typeofleavecode-vs"/>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Genererad berättande text: ValueSet typeofleavecode-vs</b></p><a name="typeofleavecode-vs"> </a><a name="hctypeofleavecode-vs"> </a><ul><li>Include alla koder som definieras i <a href="CodeSystem-typeofleavecode-cs.html"><code>https://fhir.inera.se/CodeSystem/typeofleavecode</code></a><span title="Versionen är inte uttryckligen angiven, vilket innebär att den är fast till den version som tillhandahålls i denna specifikation"> version &#x1F4E6;0.1.0</span></li></ul></div>
+  </text>
+  <url value="https://fhir.inera.se/ig/ehds-tk/ValueSet/typeofleavecode-vs"/>
+  <version value="0.1.0"/>
+  <name value="TypeOfLeaveCodeVS"/>
+  <title value="TypeOfLeaveCode — ValueSet"/>
+  <status value="active"/>
+  <date value="2026-06-24T12:10:33+00:00"/>
+  <publisher value="Inera AB"/>
+  <contact>
+    <name value="Inera AB"/>
+    <telecom>
+      <system value="url"/>
+      <value value="https://www.inera.se"/>
+    </telecom>
+  </contact>
+  <description value="Tillåtna värden för typ av ledighet i GetMaternityMedicalHistory."/>
+  <jurisdiction>
+    <coding>
+      <system value="urn:iso:std:iso:3166"/>
+      <code value="SE"/>
+      <display value="Sweden"/>
+    </coding>
+  </jurisdiction>
+  <compose>
+    <include>
+      <system value="https://fhir.inera.se/CodeSystem/typeofleavecode"/>
+    </include>
+  </compose>
+</ValueSet>

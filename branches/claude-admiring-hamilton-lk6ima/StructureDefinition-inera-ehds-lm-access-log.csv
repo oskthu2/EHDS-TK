@@ -1,0 +1,27 @@
+"Id","Path","Slice Name","Alias(s)","Label","Min","Max","Must Support?","Is Modifier?","Is Summary?","Type(s)","Short","Definition","Comments","Requirements","Default Value","Meaning When Missing","Fixed Value","Pattern","Example","Minimum Value","Maximum Value","Maximum Length","Binding Strength","Binding Description","Binding Value Set","Code","Slicing Discriminator","Slicing Description","Slicing Ordered","Slicing Rules","Base Path","Base Min","Base Max","Condition(s)","Constraint(s)"
+"inera-ehds-lm-access-log","inera-ehds-lm-access-log","","","",0,*,"","","","null {[]} {[]}
+","GetAccessLogForPatient","Logisk modell för patientens åtkomstloggar hämtad via GetAccessLogForPatient (informationsecurity:auditing:log v1.1, 2.0). Krävs för 1177 Journal 1.1, 2.0 men ej för NPÖ.","","","","","","","","","",,,,,"",,,,"Base",0,*,"",""
+"inera-ehds-lm-access-log.accessLogId","inera-ehds-lm-access-log.accessLogId","","","",1,1,"","","","Identifier {[]} {[]}
+","Loggpostens identifierare","Loggpostens identifierare","","","","","","","","","",,,,,"",,,,"inera-ehds-lm-access-log.accessLogId",1,1,"",""
+"inera-ehds-lm-access-log.patientId","inera-ehds-lm-access-log.patientId","","","",1,1,"","","","Identifier {[]} {[]}
+","Patientidentifierare","Patientidentifierare","","","","","","","","","",,,,,"",,,,"inera-ehds-lm-access-log.patientId",1,1,"",""
+"inera-ehds-lm-access-log.accessTime","inera-ehds-lm-access-log.accessTime","","","",1,1,"","","","dateTime {[]} {[]}
+","Åtkomsttidpunkt (UTC)","Åtkomsttidpunkt (UTC)","","","","","","","","","",,,,,"",,,,"inera-ehds-lm-access-log.accessTime",1,1,"",""
+"inera-ehds-lm-access-log.accessType","inera-ehds-lm-access-log.accessType","","","",1,1,"","","","CodeableConcept {[]} {[]}
+","Åtkomsttyp (Läsning/Sökning)","Åtkomsttyp (Läsning/Sökning)","","","","","","","","","",,,,,"",,,,"inera-ehds-lm-access-log.accessType",1,1,"",""
+"inera-ehds-lm-access-log.accessSubType","inera-ehds-lm-access-log.accessSubType","","","",0,1,"","","","CodeableConcept {[]} {[]}
+","Åtkomstundertyp","Åtkomstundertyp","","","","","","","","","",,,,,"",,,,"inera-ehds-lm-access-log.accessSubType",0,1,"",""
+"inera-ehds-lm-access-log.accessOutcome","inera-ehds-lm-access-log.accessOutcome","","","",1,1,"","","","CodeableConcept {[]} {[]}
+","Utfall (Beviljad/Nekad)","Utfall (Beviljad/Nekad)","","","","","","","","","",,,,,"",,,,"inera-ehds-lm-access-log.accessOutcome",1,1,"",""
+"inera-ehds-lm-access-log.accessPurpose","inera-ehds-lm-access-log.accessPurpose","","","",0,1,"","","","CodeableConcept {[]} {[]}
+","Åtkomstsyfte (Vård/Administration)","Åtkomstsyfte (Vård/Administration)","","","","","","","","","",,,,,"",,,,"inera-ehds-lm-access-log.accessPurpose",0,1,"",""
+"inera-ehds-lm-access-log.userId","inera-ehds-lm-access-log.userId","","","",1,1,"","","","Identifier {[]} {[]}
+","Användarens HSA-id","Användarens HSA-id","","","","","","","","","",,,,,"",,,,"inera-ehds-lm-access-log.userId",1,1,"",""
+"inera-ehds-lm-access-log.userRole","inera-ehds-lm-access-log.userRole","","","",0,1,"","","","CodeableConcept {[]} {[]}
+","Användarroll","Användarroll","","","","","","","","","",,,,,"",,,,"inera-ehds-lm-access-log.userRole",0,1,"",""
+"inera-ehds-lm-access-log.userOrganization","inera-ehds-lm-access-log.userOrganization","","","",0,1,"","","","Identifier {[]} {[]}
+","Användarens organisations HSA-id","Användarens organisations HSA-id","","","","","","","","","",,,,,"",,,,"inera-ehds-lm-access-log.userOrganization",0,1,"",""
+"inera-ehds-lm-access-log.sourceSystemHSAId","inera-ehds-lm-access-log.sourceSystemHSAId","","","",1,1,"","","","string {[]} {[]}
+","Källsystem (loggkälla)","Källsystem (loggkälla)","","","","","","","","","",,,,,"",,,,"inera-ehds-lm-access-log.sourceSystemHSAId",1,1,"",""
+"inera-ehds-lm-access-log.accessedResource","inera-ehds-lm-access-log.accessedResource","","","",0,1,"","","","string {[]} {[]}
+","Resurs/tjänst som åtkoms","Resurs/tjänst som åtkoms","","","","","","","","","",,,,,"",,,,"inera-ehds-lm-access-log.accessedResource",0,1,"",""

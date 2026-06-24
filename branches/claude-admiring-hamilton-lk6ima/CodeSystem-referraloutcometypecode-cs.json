@@ -1,0 +1,43 @@
+{
+  "resourceType" : "CodeSystem",
+  "id" : "referraloutcometypecode-cs",
+  "text" : {
+    "status" : "generated",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Genererad berättande text: CodeSystem referraloutcometypecode-cs</b></p><a name=\"referraloutcometypecode-cs\"> </a><a name=\"hcreferraloutcometypecode-cs\"> </a><p>Detta case-sensitive kodsystem <code>https://fhir.inera.se/CodeSystem/referraloutcometypecode</code> definierar följande koder:</p><table class=\"codes\"><tr><td style=\"white-space:nowrap\"><b>Kod</b></td><td><b>Visning</b></td><td><b>Definition</b></td></tr><tr><td style=\"white-space:nowrap\">SS<a name=\"referraloutcometypecode-cs-SS\"> </a></td><td>Slutsvar på remissfråga</td><td>Slutsvar på remissfråga</td></tr><tr><td style=\"white-space:nowrap\">SR<a name=\"referraloutcometypecode-cs-SR\"> </a></td><td>Svar på remissfråga</td><td>Svar på remissfråga</td></tr></table></div>"
+  },
+  "url" : "https://fhir.inera.se/CodeSystem/referraloutcometypecode",
+  "version" : "0.1.0",
+  "name" : "ReferralOutcomeTypeCodeCS",
+  "title" : "ReferralOutcomeTypeCode",
+  "status" : "active",
+  "date" : "2026-06-24T12:10:33+00:00",
+  "publisher" : "Inera AB",
+  "contact" : [{
+    "name" : "Inera AB",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "https://www.inera.se"
+    }]
+  }],
+  "description" : "Kodverk för typ av remissvar (ReferralOutcomeTypeCodeEnum). Används i GetReferralOutcome.",
+  "jurisdiction" : [{
+    "coding" : [{
+      "system" : "urn:iso:std:iso:3166",
+      "code" : "SE",
+      "display" : "Sweden"
+    }]
+  }],
+  "caseSensitive" : true,
+  "content" : "complete",
+  "count" : 2,
+  "concept" : [{
+    "code" : "SS",
+    "display" : "Slutsvar på remissfråga",
+    "definition" : "Slutsvar på remissfråga"
+  },
+  {
+    "code" : "SR",
+    "display" : "Svar på remissfråga",
+    "definition" : "Svar på remissfråga"
+  }]
+}

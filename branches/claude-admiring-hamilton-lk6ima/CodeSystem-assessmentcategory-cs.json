@@ -1,0 +1,42 @@
+{
+  "resourceType" : "CodeSystem",
+  "id" : "assessmentcategory-cs",
+  "text" : {
+    "status" : "generated",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Genererad berättande text: CodeSystem assessmentcategory-cs</b></p><a name=\"assessmentcategory-cs\"> </a><a name=\"hcassessmentcategory-cs\"> </a><p>Detta  kodsystem <code>https://fhir.inera.se/clinicalprocess-healthcond-description/CodeSystem/assessmentcategory-cs</code> definierar följande koder:</p><table class=\"codes\"><tr><td style=\"white-space:nowrap\"><b>Kod</b></td><td><b>Definition</b></td></tr><tr><td style=\"white-space:nowrap\">pad-pad<a name=\"assessmentcategory-cs-pad-pad\"> </a></td><td>PADL-bedömning</td></tr><tr><td style=\"white-space:nowrap\">fun-fun<a name=\"assessmentcategory-cs-fun-fun\"> </a></td><td>Funktionsnedsättningsbedömning</td></tr></table></div>"
+  },
+  "url" : "https://fhir.inera.se/clinicalprocess-healthcond-description/CodeSystem/assessmentcategory-cs",
+  "version" : "0.1.0",
+  "name" : "AssessmentCategoryCS",
+  "title" : "AssessmentCategory",
+  "status" : "active",
+  "date" : "2026-06-24T12:10:33+00:00",
+  "publisher" : "Inera AB",
+  "contact" : [{
+    "name" : "Inera AB",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "https://www.inera.se"
+    }]
+  }],
+  "description" : "Bedömningskategori för funktionsstatus. Tillåtna värden är 'pad-pad' (PADL-bedömning) och 'fun-fun' (funktionsnedsättningsbedömning). Definierat i enum XSD v2.1 för domänen.",
+  "jurisdiction" : [{
+    "coding" : [{
+      "system" : "urn:iso:std:iso:3166",
+      "code" : "SE",
+      "display" : "Sweden"
+    }]
+  }],
+  "content" : "complete",
+  "count" : 2,
+  "concept" : [{
+    "code" : "pad-pad",
+    "display" : "pad-pad",
+    "definition" : "PADL-bedömning"
+  },
+  {
+    "code" : "fun-fun",
+    "display" : "fun-fun",
+    "definition" : "Funktionsnedsättningsbedömning"
+  }]
+}

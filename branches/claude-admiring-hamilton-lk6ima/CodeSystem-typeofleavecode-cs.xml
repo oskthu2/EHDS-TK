@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<CodeSystem xmlns="http://hl7.org/fhir">
+  <id value="typeofleavecode-cs"/>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Genererad berättande text: CodeSystem typeofleavecode-cs</b></p><a name="typeofleavecode-cs"> </a><a name="hctypeofleavecode-cs"> </a><p>Detta case-sensitive kodsystem <code>https://fhir.inera.se/CodeSystem/typeofleavecode</code> definierar följande koder:</p><table class="codes"><tr><td style="white-space:nowrap"><b>Kod</b></td><td><b>Visning</b></td><td><b>Definition</b></td></tr><tr><td style="white-space:nowrap">0<a name="typeofleavecode-cs-0"> </a></td><td>Sjukskrivning</td><td>Sjukskrivning under graviditet</td></tr><tr><td style="white-space:nowrap">1<a name="typeofleavecode-cs-1"> </a></td><td>Havandekapsledighet</td><td>Havandekapsledighet</td></tr><tr><td style="white-space:nowrap">2<a name="typeofleavecode-cs-2"> </a></td><td>Föräldrarledighet</td><td>Föräldrarledighet</td></tr></table></div>
+  </text>
+  <url value="https://fhir.inera.se/CodeSystem/typeofleavecode"/>
+  <version value="0.1.0"/>
+  <name value="TypeOfLeaveCodeCS"/>
+  <title value="TypeOfLeaveCode"/>
+  <status value="active"/>
+  <date value="2026-06-24T12:10:33+00:00"/>
+  <publisher value="Inera AB"/>
+  <contact>
+    <name value="Inera AB"/>
+    <telecom>
+      <system value="url"/>
+      <value value="https://www.inera.se"/>
+    </telecom>
+  </contact>
+  <description value="Kodverk för typ av ledighet (TypeOfLeaveCodeEnum). Används i GetMaternityMedicalHistory."/>
+  <jurisdiction>
+    <coding>
+      <system value="urn:iso:std:iso:3166"/>
+      <code value="SE"/>
+      <display value="Sweden"/>
+    </coding>
+  </jurisdiction>
+  <caseSensitive value="true"/>
+  <content value="complete"/>
+  <count value="3"/>
+  <concept>
+    <code value="0"/>
+    <display value="Sjukskrivning"/>
+    <definition value="Sjukskrivning under graviditet"/>
+  </concept>
+  <concept>
+    <code value="1"/>
+    <display value="Havandekapsledighet"/>
+    <definition value="Havandekapsledighet"/>
+  </concept>
+  <concept>
+    <code value="2"/>
+    <display value="Föräldrarledighet"/>
+    <definition value="Föräldrarledighet"/>
+  </concept>
+</CodeSystem>

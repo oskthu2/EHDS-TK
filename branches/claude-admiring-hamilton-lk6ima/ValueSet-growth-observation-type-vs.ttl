@@ -1,0 +1,64 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://fhir.inera.se/ig/ehds-tk/ValueSet/growth-observation-type-vs> a fhir:ValueSet ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "growth-observation-type-vs"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Genererad berättande text: ValueSet growth-observation-type-vs</b></p><a name=\"growth-observation-type-vs\"> </a><a name=\"hcgrowth-observation-type-vs\"> </a><ul><li>Include dessa koder enligt definitionen i <a href=\"http://www.snomed.org/\"><code>http://snomed.info/sct</code></a><span title=\"Versionen är inte uttryckligen angiven. Ingen matchande Kodsystem hittades\"> version Ej angiven (använd senaste från terminologiserver)</span><table class=\"none\"><tr><td style=\"white-space:nowrap\"><b>Kod</b></td><td><b>Visning</b></td></tr><tr><td><a href=\"http://snomed.info/id/1153637007\">1153637007</a></td><td>Kroppslängd</td></tr><tr><td><a href=\"http://snomed.info/id/50373000\">50373000</a></td><td>Mått på kroppslängd</td></tr><tr><td><a href=\"http://snomed.info/id/248334005\">248334005</a></td><td>Längd i liggande (bakåtkompatibel – ej för nyanslutning)</td></tr><tr><td><a href=\"http://snomed.info/id/27113001\">27113001</a></td><td>Kroppsvikt</td></tr><tr><td><a href=\"http://snomed.info/id/363812007\">363812007</a></td><td>Huvudomfång</td></tr><tr><td><a href=\"http://snomed.info/id/412726003\">412726003</a></td><td>Graviditetslängd vid födelse</td></tr></table></li></ul></div>"^^rdf:XMLLiteral ]
+  ] ; # 
+  fhir:url [ fhir:v "https://fhir.inera.se/ig/ehds-tk/ValueSet/growth-observation-type-vs"^^xsd:anyURI] ; # 
+  fhir:version [ fhir:v "0.1.0"] ; # 
+  fhir:name [ fhir:v "GrowthObservationTypeVS"] ; # 
+  fhir:title [ fhir:v "Tillväxtkurva – observationstyper (IoÖ Tillväxtkurva v3)"] ; # 
+  fhir:status [ fhir:v "draft"] ; # 
+  fhir:date [ fhir:v "2026-06-24T12:10:33+00:00"^^xsd:dateTime] ; # 
+  fhir:publisher [ fhir:v "Inera AB"] ; # 
+  fhir:contact ( [
+     fhir:name [ fhir:v "Inera AB" ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "url" ] ;
+       fhir:value [ fhir:v "https://www.inera.se" ]
+     ] )
+  ] ) ; # 
+  fhir:description [ fhir:v "SNOMED CT-koder för tillväxtmätningar enligt Interaktionsöverenskommelse\nTillväxtkurva för barn och ungdom v3 (Inera, 2023-05-15).\n\nAlla koder från kodsystemet SNOMED CT SE (OID 1.2.752.116.2.1.1).\n\nKoder:\n- 1153637007 | Kroppslängd | (primärkod för längd)\n- 50373000   | Mått på kroppslängd | (alternativkod för längd)\n- 248334005  | Längd i liggande | (bakåtkompatibel – ej för nyanslutning)\n- 27113001   | Kroppsvikt |\n- 363812007  | Huvudomfång |\n- 412726003  | Graviditetslängd vid födelse |"] ; # 
+  fhir:jurisdiction ( [
+     fhir:coding ( [
+       fhir:system [ fhir:v "urn:iso:std:iso:3166"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "SE" ] ;
+       fhir:display [ fhir:v "Sweden" ]
+     ] )
+  ] ) ; # 
+  fhir:compose [
+     fhir:include ( [
+       fhir:system [ fhir:v "http://snomed.info/sct"^^xsd:anyURI ] ;
+       fhir:concept ( [
+         fhir:code [ fhir:v "1153637007" ] ;
+         fhir:display [ fhir:v "Kroppslängd" ]
+       ] [
+         fhir:code [ fhir:v "50373000" ] ;
+         fhir:display [ fhir:v "Mått på kroppslängd" ]
+       ] [
+         fhir:code [ fhir:v "248334005" ] ;
+         fhir:display [ fhir:v "Längd i liggande (bakåtkompatibel – ej för nyanslutning)" ]
+       ] [
+         fhir:code [ fhir:v "27113001" ] ;
+         fhir:display [ fhir:v "Kroppsvikt" ]
+       ] [
+         fhir:code [ fhir:v "363812007" ] ;
+         fhir:display [ fhir:v "Huvudomfång" ]
+       ] [
+         fhir:code [ fhir:v "412726003" ] ;
+         fhir:display [ fhir:v "Graviditetslängd vid födelse" ]
+       ] )
+     ] )
+  ] . # 
+
+# -------------------------------------------------------------------------------------
+

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<CodeSystem xmlns="http://hl7.org/fhir">
+  <id value="fetalpositioncode-cs"/>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Genererad berättande text: CodeSystem fetalpositioncode-cs</b></p><a name="fetalpositioncode-cs"> </a><a name="hcfetalpositioncode-cs"> </a><p>Detta case-sensitive kodsystem <code>https://fhir.inera.se/CodeSystem/fetalpositioncode</code> definierar följande koder:</p><table class="codes"><tr><td style="white-space:nowrap"><b>Kod</b></td><td><b>Visning</b></td><td><b>Definition</b></td></tr><tr><td style="white-space:nowrap">0<a name="fetalpositioncode-cs-0"> </a></td><td>Huvudläge</td><td>Fostret ligger med huvudet nedåt</td></tr><tr><td style="white-space:nowrap">1<a name="fetalpositioncode-cs-1"> </a></td><td>Sätesläge</td><td>Fostret ligger med sätet nedåt</td></tr><tr><td style="white-space:nowrap">2<a name="fetalpositioncode-cs-2"> </a></td><td>Snedläge</td><td>Fostret ligger snett</td></tr><tr><td style="white-space:nowrap">3<a name="fetalpositioncode-cs-3"> </a></td><td>Tvärläge</td><td>Fostret ligger tvärs</td></tr></table></div>
+  </text>
+  <url value="https://fhir.inera.se/CodeSystem/fetalpositioncode"/>
+  <version value="0.1.0"/>
+  <name value="FetalPositionCodeCS"/>
+  <title value="FetalPositionCode"/>
+  <status value="active"/>
+  <date value="2026-06-24T12:10:33+00:00"/>
+  <publisher value="Inera AB"/>
+  <contact>
+    <name value="Inera AB"/>
+    <telecom>
+      <system value="url"/>
+      <value value="https://www.inera.se"/>
+    </telecom>
+  </contact>
+  <description value="Kodverk för fosterläge (FetalPositionCodeEnum). Används i GetMaternityMedicalHistory."/>
+  <jurisdiction>
+    <coding>
+      <system value="urn:iso:std:iso:3166"/>
+      <code value="SE"/>
+      <display value="Sweden"/>
+    </coding>
+  </jurisdiction>
+  <caseSensitive value="true"/>
+  <content value="complete"/>
+  <count value="4"/>
+  <concept>
+    <code value="0"/>
+    <display value="Huvudläge"/>
+    <definition value="Fostret ligger med huvudet nedåt"/>
+  </concept>
+  <concept>
+    <code value="1"/>
+    <display value="Sätesläge"/>
+    <definition value="Fostret ligger med sätet nedåt"/>
+  </concept>
+  <concept>
+    <code value="2"/>
+    <display value="Snedläge"/>
+    <definition value="Fostret ligger snett"/>
+  </concept>
+  <concept>
+    <code value="3"/>
+    <display value="Tvärläge"/>
+    <definition value="Fostret ligger tvärs"/>
+  </concept>
+</CodeSystem>

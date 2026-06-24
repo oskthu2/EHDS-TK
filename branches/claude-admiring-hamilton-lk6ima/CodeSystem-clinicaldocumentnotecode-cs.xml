@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<CodeSystem xmlns="http://hl7.org/fhir">
+  <id value="clinicaldocumentnotecode-cs"/>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Genererad berättande text: CodeSystem clinicaldocumentnotecode-cs</b></p><a name="clinicaldocumentnotecode-cs"> </a><a name="hcclinicaldocumentnotecode-cs"> </a><p>Detta  kodsystem <code>urn:oid:1.2.752.129.2.2.2.11</code> definierar följande koder:</p><table class="codes"><tr><td style="white-space:nowrap"><b>Kod</b></td><td><b>Definition</b></td></tr><tr><td style="white-space:nowrap">utr<a name="clinicaldocumentnotecode-cs-utr"> </a></td><td>Utredning</td></tr><tr><td style="white-space:nowrap">atb<a name="clinicaldocumentnotecode-cs-atb"> </a></td><td>Åtgärd/Behandling</td></tr><tr><td style="white-space:nowrap">sam<a name="clinicaldocumentnotecode-cs-sam"> </a></td><td>Sammanfattning</td></tr><tr><td style="white-space:nowrap">sao<a name="clinicaldocumentnotecode-cs-sao"> </a></td><td>Samordning</td></tr><tr><td style="white-space:nowrap">ins<a name="clinicaldocumentnotecode-cs-ins"> </a></td><td>Inskrivning</td></tr><tr><td style="white-space:nowrap">slu<a name="clinicaldocumentnotecode-cs-slu"> </a></td><td>Slutanteckning</td></tr><tr><td style="white-space:nowrap">auf<a name="clinicaldocumentnotecode-cs-auf"> </a></td><td>Anteckning utan fysiskt möte</td></tr><tr><td style="white-space:nowrap">sva<a name="clinicaldocumentnotecode-cs-sva"> </a></td><td>Slutenvårdsanteckning</td></tr><tr><td style="white-space:nowrap">bes<a name="clinicaldocumentnotecode-cs-bes"> </a></td><td>Besöksanteckning</td></tr></table></div>
+  </text>
+  <url value="urn:oid:1.2.752.129.2.2.2.11"/>
+  <version value="0.1.0"/>
+  <name value="ClinicalDocumentNoteCodeCS"/>
+  <title value="KV Anteckningstyp"/>
+  <status value="active"/>
+  <date value="2026-06-24T12:10:33+00:00"/>
+  <publisher value="Inera AB"/>
+  <contact>
+    <name value="Inera AB"/>
+    <telecom>
+      <system value="url"/>
+      <value value="https://www.inera.se"/>
+    </telecom>
+  </contact>
+  <description value="Kodverk för typ av journalanteckning enligt KV Anteckningstyp. OID: 1.2.752.129.2.2.2.11."/>
+  <jurisdiction>
+    <coding>
+      <system value="urn:iso:std:iso:3166"/>
+      <code value="SE"/>
+      <display value="Sweden"/>
+    </coding>
+  </jurisdiction>
+  <content value="complete"/>
+  <count value="9"/>
+  <concept>
+    <code value="utr"/>
+    <display value="utr"/>
+    <definition value="Utredning"/>
+  </concept>
+  <concept>
+    <code value="atb"/>
+    <display value="atb"/>
+    <definition value="Åtgärd/Behandling"/>
+  </concept>
+  <concept>
+    <code value="sam"/>
+    <display value="sam"/>
+    <definition value="Sammanfattning"/>
+  </concept>
+  <concept>
+    <code value="sao"/>
+    <display value="sao"/>
+    <definition value="Samordning"/>
+  </concept>
+  <concept>
+    <code value="ins"/>
+    <display value="ins"/>
+    <definition value="Inskrivning"/>
+  </concept>
+  <concept>
+    <code value="slu"/>
+    <display value="slu"/>
+    <definition value="Slutanteckning"/>
+  </concept>
+  <concept>
+    <code value="auf"/>
+    <display value="auf"/>
+    <definition value="Anteckning utan fysiskt möte"/>
+  </concept>
+  <concept>
+    <code value="sva"/>
+    <display value="sva"/>
+    <definition value="Slutenvårdsanteckning"/>
+  </concept>
+  <concept>
+    <code value="bes"/>
+    <display value="bes"/>
+    <definition value="Besöksanteckning"/>
+  </concept>
+</CodeSystem>

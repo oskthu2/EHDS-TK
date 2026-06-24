@@ -1,0 +1,75 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://fhir.inera.se/ig/ehds-tk/CodeSystem/typeofcareplan-cs> a fhir:CodeSystem ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "typeofcareplan-cs"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Genererad berättande text: CodeSystem typeofcareplan-cs</b></p><a name=\"typeofcareplan-cs\"> </a><a name=\"hctypeofcareplan-cs\"> </a><p>Detta  kodsystem <code>https://fhir.inera.se/CodeSystem/typeofcareplan-cs</code> definierar följande koder:</p><table class=\"codes\"><tr><td style=\"white-space:nowrap\"><b>Kod</b></td><td><b>Definition</b></td></tr><tr><td style=\"white-space:nowrap\">SIP<a name=\"typeofcareplan-cs-SIP\"> </a></td><td>Samordnad individuell plan</td></tr><tr><td style=\"white-space:nowrap\">SPLPTLRV<a name=\"typeofcareplan-cs-SPLPTLRV\"> </a></td><td>Samordnad plan enligt LPT och LRV</td></tr><tr><td style=\"white-space:nowrap\">SPU<a name=\"typeofcareplan-cs-SPU\"> </a></td><td>Samordnad plan vid utskrivning</td></tr><tr><td style=\"white-space:nowrap\">VP<a name=\"typeofcareplan-cs-VP\"> </a></td><td>Vårdplan</td></tr><tr><td style=\"white-space:nowrap\">HP<a name=\"typeofcareplan-cs-HP\"> </a></td><td>Habiliteringsplan</td></tr><tr><td style=\"white-space:nowrap\">RP<a name=\"typeofcareplan-cs-RP\"> </a></td><td>Rehabiliteringsplan</td></tr><tr><td style=\"white-space:nowrap\">GP<a name=\"typeofcareplan-cs-GP\"> </a></td><td>Genomförandeplan</td></tr><tr><td style=\"white-space:nowrap\">SVP<a name=\"typeofcareplan-cs-SVP\"> </a></td><td>Standardiserad vårdplan</td></tr></table></div>"^^rdf:XMLLiteral ]
+  ] ; # 
+  fhir:url [ fhir:v "https://fhir.inera.se/CodeSystem/typeofcareplan-cs"^^xsd:anyURI] ; # 
+  fhir:version [ fhir:v "0.1.0"] ; # 
+  fhir:name [ fhir:v "TypeOfCarePlanCS"] ; # 
+  fhir:title [ fhir:v "TypeOfCarePlan"] ; # 
+  fhir:status [ fhir:v "active"] ; # 
+  fhir:date [ fhir:v "2026-06-24T12:10:33+00:00"^^xsd:dateTime] ; # 
+  fhir:publisher [ fhir:v "Inera AB"] ; # 
+  fhir:contact ( [
+     fhir:name [ fhir:v "Inera AB" ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "url" ] ;
+       fhir:value [ fhir:v "https://www.inera.se" ]
+     ] )
+  ] ) ; # 
+  fhir:description [ fhir:v "Typ av vård- och omsorgsplan enligt clinicalprocess:logistics:logistics v3.0. Definierad i clinicalprocess_logistics_logistics_enum_3.0.xsd."] ; # 
+  fhir:jurisdiction ( [
+     fhir:coding ( [
+       fhir:system [ fhir:v "urn:iso:std:iso:3166"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "SE" ] ;
+       fhir:display [ fhir:v "Sweden" ]
+     ] )
+  ] ) ; # 
+  fhir:content [ fhir:v "complete"] ; # 
+  fhir:count [ fhir:v "8"^^xsd:nonNegativeInteger] ; # 
+  fhir:concept ( [
+     fhir:code [ fhir:v "SIP" ] ;
+     fhir:display [ fhir:v "SIP" ] ;
+     fhir:definition [ fhir:v "Samordnad individuell plan" ]
+  ] [
+     fhir:code [ fhir:v "SPLPTLRV" ] ;
+     fhir:display [ fhir:v "SPLPTLRV" ] ;
+     fhir:definition [ fhir:v "Samordnad plan enligt LPT och LRV" ]
+  ] [
+     fhir:code [ fhir:v "SPU" ] ;
+     fhir:display [ fhir:v "SPU" ] ;
+     fhir:definition [ fhir:v "Samordnad plan vid utskrivning" ]
+  ] [
+     fhir:code [ fhir:v "VP" ] ;
+     fhir:display [ fhir:v "VP" ] ;
+     fhir:definition [ fhir:v "Vårdplan" ]
+  ] [
+     fhir:code [ fhir:v "HP" ] ;
+     fhir:display [ fhir:v "HP" ] ;
+     fhir:definition [ fhir:v "Habiliteringsplan" ]
+  ] [
+     fhir:code [ fhir:v "RP" ] ;
+     fhir:display [ fhir:v "RP" ] ;
+     fhir:definition [ fhir:v "Rehabiliteringsplan" ]
+  ] [
+     fhir:code [ fhir:v "GP" ] ;
+     fhir:display [ fhir:v "GP" ] ;
+     fhir:definition [ fhir:v "Genomförandeplan" ]
+  ] [
+     fhir:code [ fhir:v "SVP" ] ;
+     fhir:display [ fhir:v "SVP" ] ;
+     fhir:definition [ fhir:v "Standardiserad vårdplan" ]
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

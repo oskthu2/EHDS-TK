@@ -1,0 +1,1796 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ImplementationGuide xmlns="http://hl7.org/fhir">
+  <id value="inera.ehds.tk"/>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Genererad berättande text: ImplementationGuide inera.ehds.tk</b></p><a name="inera.ehds.tk"> </a><a name="hcinera.ehds.tk"> </a><h2>IneraEHDSTK</h2><p>Den officiella URL:en för denna implementationsguide är: </p><pre>https://fhir.inera.se/ig/ehds-tk/ImplementationGuide/inera.ehds.tk</pre><div><p>FHIR IG som beskriver hur Ineras RIVTA-tjänstekontrakt mappas till FHIR för att informationsförsörja NPÖ och 1177 Journal.</p>
+</div></div>
+  </text>
+  <url value="https://fhir.inera.se/ig/ehds-tk/ImplementationGuide/inera.ehds.tk"/>
+  <version value="0.1.0"/>
+  <name value="IneraEHDSTK"/>
+  <title value="Inera EHDS Tjänstekontrakt – FHIR Implementation Guide"/>
+  <status value="draft"/>
+  <date value="2026-06-24T12:10:33+00:00"/>
+  <publisher value="Inera AB"/>
+  <contact>
+    <name value="Inera AB"/>
+    <telecom>
+      <system value="url"/>
+      <value value="https://www.inera.se"/>
+    </telecom>
+  </contact>
+  <description value="FHIR IG som beskriver hur Ineras RIVTA-tjänstekontrakt mappas till FHIR för att informationsförsörja NPÖ och 1177 Journal."/>
+  <jurisdiction>
+    <coding>
+      <system value="urn:iso:std:iso:3166"/>
+      <code value="SE"/>
+      <display value="Sweden"/>
+    </coding>
+  </jurisdiction>
+  <packageId value="inera.ehds.tk"/>
+  <license value="CC0-1.0"/>
+  <fhirVersion value="4.0.1"/>
+  <dependsOn id="hl7tx">
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/implementationguide-dependency-comment">
+      <valueMarkdown value="Automatically added as a dependency - all IGs depend on HL7 Terminology"/>
+    </extension>
+    <uri value="http://terminology.hl7.org/ImplementationGuide/hl7.terminology"/>
+    <packageId value="hl7.terminology.r4"/>
+    <version value="7.2.0"/>
+  </dependsOn>
+  <dependsOn id="hl7ext">
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/implementationguide-dependency-comment">
+      <valueMarkdown value="Automatically added as a dependency - all IGs depend on the HL7 Extension Pack"/>
+    </extension>
+    <uri value="http://hl7.org/fhir/extensions/ImplementationGuide/hl7.fhir.uv.extensions"/>
+    <packageId value="hl7.fhir.uv.extensions.r4"/>
+    <version value="5.3.0"/>
+  </dependsOn>
+  <dependsOn id="hl7_fhir_uv_ips">
+    <uri value="http://hl7.org/fhir/uv/ips/ImplementationGuide/hl7.fhir.uv.ips"/>
+    <packageId value="hl7.fhir.uv.ips"/>
+    <version value="1.1.0"/>
+  </dependsOn>
+  <dependsOn id="hl7_fhir_eu_eps">
+    <uri value="http://hl7.eu/fhir/eps/ImplementationGuide/hl7.fhir.eu.eps"/>
+    <packageId value="hl7.fhir.eu.eps"/>
+    <version value="current"/>
+  </dependsOn>
+  <definition>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="copyrightyear"/>
+      </extension>
+      <extension url="value">
+        <valueString value="2024+"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="releaselabel"/>
+      </extension>
+      <extension url="value">
+        <valueString value="ci-build"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="show-inherited-invariants"/>
+      </extension>
+      <extension url="value">
+        <valueString value="false"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="usage-stats-opt-out"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="autoload-resources"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="path-liquid"/>
+      </extension>
+      <extension url="value">
+        <valueString value="template/liquid"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="path-liquid"/>
+      </extension>
+      <extension url="value">
+        <valueString value="input/liquid"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="path-qa"/>
+      </extension>
+      <extension url="value">
+        <valueString value="temp/qa"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="path-temp"/>
+      </extension>
+      <extension url="value">
+        <valueString value="temp/pages"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="path-output"/>
+      </extension>
+      <extension url="value">
+        <valueString value="output"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="path-suppressed-warnings"/>
+      </extension>
+      <extension url="value">
+        <valueString value="input/ignoreWarnings.txt"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="path-history"/>
+      </extension>
+      <extension url="value">
+        <valueString value="https://fhir.inera.se/ig/ehds-tk/history.html"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="template-html"/>
+      </extension>
+      <extension url="value">
+        <valueString value="template-page.html"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="template-md"/>
+      </extension>
+      <extension url="value">
+        <valueString value="template-page-md.html"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="apply-contact"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="apply-context"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="apply-copyright"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="apply-jurisdiction"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="apply-license"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="apply-publisher"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="apply-version"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="apply-wg"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="active-tables"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="fmm-definition"/>
+      </extension>
+      <extension url="value">
+        <valueString value="http://hl7.org/fhir/versions.html#maturity"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="propagate-status"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="excludelogbinaryformat"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="tabbed-snapshots"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-internal-dependency">
+      <valueCode value="hl7.fhir.uv.tools.r4#1.1.2"/>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="copyrightyear"/>
+      </extension>
+      <extension url="value">
+        <valueString value="2024+"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="releaselabel"/>
+      </extension>
+      <extension url="value">
+        <valueString value="ci-build"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="show-inherited-invariants"/>
+      </extension>
+      <extension url="value">
+        <valueString value="false"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="usage-stats-opt-out"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="autoload-resources"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="path-liquid"/>
+      </extension>
+      <extension url="value">
+        <valueString value="template/liquid"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="path-liquid"/>
+      </extension>
+      <extension url="value">
+        <valueString value="input/liquid"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="path-qa"/>
+      </extension>
+      <extension url="value">
+        <valueString value="temp/qa"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="path-temp"/>
+      </extension>
+      <extension url="value">
+        <valueString value="temp/pages"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="path-output"/>
+      </extension>
+      <extension url="value">
+        <valueString value="output"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="path-suppressed-warnings"/>
+      </extension>
+      <extension url="value">
+        <valueString value="input/ignoreWarnings.txt"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="path-history"/>
+      </extension>
+      <extension url="value">
+        <valueString value="https://fhir.inera.se/ig/ehds-tk/history.html"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="template-html"/>
+      </extension>
+      <extension url="value">
+        <valueString value="template-page.html"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="template-md"/>
+      </extension>
+      <extension url="value">
+        <valueString value="template-page-md.html"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="apply-contact"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="apply-context"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="apply-copyright"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="apply-jurisdiction"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="apply-license"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="apply-publisher"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="apply-version"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="apply-wg"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="active-tables"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="fmm-definition"/>
+      </extension>
+      <extension url="value">
+        <valueString value="http://hl7.org/fhir/versions.html#maturity"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="propagate-status"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="excludelogbinaryformat"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="tabbed-snapshots"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/alert-degree-of-severity"/>
+      </reference>
+      <name value="Allvarlighetsgrad för överkänslighet"/>
+      <description value="Bedömning av överkänslighetens allvarlighetsgrad (alertInformationBody.hypersensitivity.degreeOfSeverity). KV Allvarlighetsgrad 1.2.752.129.2.2.3.3."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CodeSystem"/>
+      </extension>
+      <reference>
+        <reference value="CodeSystem/assessmentcategory-cs"/>
+      </reference>
+      <name value="AssessmentCategory"/>
+      <description value="Bedömningskategori för funktionsstatus. Tillåtna värden är 'pad-pad' (PADL-bedömning) och 'fun-fun' (funktionsnedsättningsbedömning). Definierat i enum XSD v2.1 för domänen."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/assessmentcategory-vs"/>
+      </reference>
+      <name value="AssessmentCategory — ValueSet"/>
+      <description value="Tillåtna värden för fältet assessmentCategory i GetFunctionalStatus."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/alert-treatment-description"/>
+      </reference>
+      <name value="Behandlingsbeskrivning"/>
+      <description value="Beskrivning av allvarlig behandling som patienten genomgår (alertInformationBody.treatment.treatmentDescription). Behandlingskod läggs i Flag.code."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/alert-ascertained-date"/>
+      </reference>
+      <name value="Datum för konstaterande"/>
+      <description value="Datum då förhållandet som föranledde uppmärksamhetssignalen konstaterades (alertInformationBody.ascertainedDate)."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CodeSystem"/>
+      </extension>
+      <reference>
+        <reference value="CodeSystem/deliverycode-cs"/>
+      </reference>
+      <name value="DeliveryCode"/>
+      <description value="Kodverk för förlossningssätt (DeliveryCodeEnum). Används i GetMaternityMedicalHistory."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/deliverycode-vs"/>
+      </reference>
+      <name value="DeliveryCode — ValueSet"/>
+      <description value="Tillåtna värden för förlossningssätt i GetMaternityMedicalHistory."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CodeSystem"/>
+      </extension>
+      <reference>
+        <reference value="CodeSystem/diagnosistype-cs"/>
+      </reference>
+      <name value="DiagnosisType"/>
+      <description value="Kodverk för typ av diagnos (huvud- respektive bidiagnos). Definierat i XSD för domänen."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/diagnosistype-vs"/>
+      </reference>
+      <name value="DiagnosisType — ValueSet"/>
+      <description value="Tillåtna värden för fältet typeOfDiagnosis i GetDiagnosis."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CodeSystem"/>
+      </extension>
+      <reference>
+        <reference value="CodeSystem/errorcode-cs"/>
+      </reference>
+      <name value="ErrorCode"/>
+      <description value="Kodverk för felkoder i svar från tjänstekontrakten i domänen clinicalprocess:activityprescription:actoutcome."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/errorcode-vs"/>
+      </reference>
+      <name value="ErrorCode — ValueSet"/>
+      <description value="Tillåtna värden för errorCode i svar."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CodeSystem"/>
+      </extension>
+      <reference>
+        <reference value="CodeSystem/examinationstatuscode-cs"/>
+      </reference>
+      <name value="ExaminationStatusCode"/>
+      <description value="Kodverk för undersökningsstatus (ExaminationStatusCodeEnum). Används i GetImagingOutcome."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/examinationstatuscode-vs"/>
+      </reference>
+      <name value="ExaminationStatusCode — ValueSet"/>
+      <description value="Tillåtna värden för examinationStatus i GetImagingOutcome."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CodeSystem"/>
+      </extension>
+      <reference>
+        <reference value="CodeSystem/fetalpositioncode-cs"/>
+      </reference>
+      <name value="FetalPositionCode"/>
+      <description value="Kodverk för fosterläge (FetalPositionCodeEnum). Används i GetMaternityMedicalHistory."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/fetalpositioncode-vs"/>
+      </reference>
+      <name value="FetalPositionCode — ValueSet"/>
+      <description value="Tillåtna värden för fosterläge i GetMaternityMedicalHistory."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/immunization-is-dose-complete"/>
+      </reference>
+      <name value="Fullständig dos administrerad"/>
+      <description value="Anger om hela den ordinerade dosen administrerades (administrationRecord.isDoseComplete)."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:logical"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/inera-ehds-lm-access-log"/>
+      </reference>
+      <name value="GetAccessLogForPatient"/>
+      <description value="Logisk modell för patientens åtkomstloggar hämtad via GetAccessLogForPatient (informationsecurity:auditing:log v1.1, 2.0). Krävs för 1177 Journal 1.1, 2.0 men ej för NPÖ."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:logical"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/inera-ehds-lm-alert-information"/>
+      </reference>
+      <name value="GetAlertInformation"/>
+      <description value="Logisk modell för tjänstekontraktet GetAlertInformation&#xA;(RIV-TA urn:riv:clinicalprocess:healthcond:description:GetAlertInformationResponder:2).&#xA;Representerar responsens informationsstruktur: uppmärksamhetsinformation för en patient,&#xA;exempelvis överkänslighet mot läkemedel, allvarlig sjukdom, behandling, smittsam sjukdom,&#xA;vårdbegränsning eller historisk varning.&#xA;&#xA;Body-strukturen är XOR – exakt en av hypersensitivity, seriousDisease, treatment,&#xA;communicableDisease, restrictionOfCare, unstructuredAlertInformation ska anges per post."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:logical"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/inera-ehds-lm-care-contacts"/>
+      </reference>
+      <name value="GetCareContacts"/>
+      <description value="Logisk modell för tjänstekontraktet GetCareContacts&#xA;(RIV-TA urn:riv:clinicalprocess:logistics:logistics:GetCareContacts:3).&#xA;Representerar responsens informationsstruktur (GetCareContactsResponseType).&#xA;En lista med CareContactType returneras."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:logical"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/inera-ehds-lm-care-documentation"/>
+      </reference>
+      <name value="GetCareDocumentation"/>
+      <description value="Logisk modell för tjänstekontraktet GetCareDocumentation&#xA;(RIV-TA urn:riv:clinicalprocess:healthcond:description:GetCareDocumentationResponder:3).&#xA;Representerar responsens informationsstruktur: journalanteckningar för en patient.&#xA;Anteckningstyper: utredning, åtgärd/behandling, sammanfattning, samordning, inskrivning,&#xA;slutanteckning, anteckning utan fysiskt möte, slutenvårdsanteckning och besöksanteckning.&#xA;Meddelandeformatet är kompatibelt med HL7 v3 CDA v2."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:logical"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/inera-ehds-lm-care-plans"/>
+      </reference>
+      <name value="GetCarePlans"/>
+      <description value="Logisk modell för tjänstekontraktet GetCarePlans&#xA;(RIV-TA urn:riv:clinicalprocess:logistics:logistics:GetCarePlans:2).&#xA;Representerar responsens informationsstruktur (GetCarePlansResponseType).&#xA;En lista med CarePlanType returneras, var och en med header- och body-element."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:logical"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/inera-ehds-lm-diagnosis"/>
+      </reference>
+      <name value="GetDiagnosis"/>
+      <description value="Logisk modell för tjänstekontraktet GetDiagnosis&#xA;(RIV-TA urn:riv:clinicalprocess:healthcond:description:GetDiagnosisResponder:2).&#xA;Representerar responsens informationsstruktur: registrerade diagnoser för en patient&#xA;inklusive diagnoskod per ursprungligt diagnosticeringstillfälle."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:logical"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/inera-ehds-lm-functional-status"/>
+      </reference>
+      <name value="GetFunctionalStatus"/>
+      <description value="Logisk modell för tjänstekontraktet GetFunctionalStatus&#xA;(RIV-TA urn:riv:clinicalprocess:healthcond:description:GetFunctionalStatusResponder:2).&#xA;Representerar responsens informationsstruktur: dokumenterade bedömningar av&#xA;funktionsnedsättningar och/eller aktivitetsförmåga (PADL) för en patient.&#xA;Bedömningskategori styrs av assessmentCategory: 'pad-pad' (PADL) eller 'fun-fun' (funktionsnedsättning).&#xA;En tjänsteproducent måste använda samma värde för categorization i engagemangsindex som&#xA;för assessmentCategory i svaret."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:logical"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/inera-ehds-lm-imaging-outcome"/>
+      </reference>
+      <name value="GetImagingOutcome"/>
+      <description value="Logisk modell för tjänstekontraktet GetImagingOutcome&#xA;(RIV-TA urn:riv:clinicalprocess:healthcond:actoutcome:GetImagingOutcome:1).&#xA;Representerar responsens informationsstruktur — bilddiagnostiska resultat&#xA;för en patient. Baseras på NPÖ RIV 2.2.0-specifikation."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:logical"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/inera-ehds-lm-laboratory-order-outcome"/>
+      </reference>
+      <name value="GetLaboratoryOrderOutcome"/>
+      <description value="Logisk modell för tjänstekontraktet GetLaboratoryOrderOutcome&#xA;(RIV-TA urn:riv:clinicalprocess:healthcond:actoutcome:GetLaboratoryOrderOutcome:4).&#xA;Representerar responsens informationsstruktur — multidisciplinära laboratoriesvar&#xA;för en patient."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:logical"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/inera-ehds-lm-maternity-medical-history"/>
+      </reference>
+      <name value="GetMaternityMedicalHistory"/>
+      <description value="Logisk modell för tjänstekontraktet GetMaternityMedicalHistory&#xA;(RIV-TA urn:riv:clinicalprocess:healthcond:actoutcome:GetMaternityMedicalHistory:2).&#xA;Representerar responsens informationsstruktur — mödravårdsjournal för en patient."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:logical"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/inera-ehds-lm-medication-history"/>
+      </reference>
+      <name value="GetMedicationHistory"/>
+      <description value="Logisk modell för tjänstekontraktet GetMedicationHistory&#xA;(RIV-TA urn:riv:clinicalprocess:activityprescription:actoutcome:GetMedicationHistoryResponder:2).&#xA;Representerar responsens informationsstruktur — läkemedelshistorik per patient.&#xA;&#xA;OBS: Kontraktet är tämligen omfattande. Se tillämpningsanvisningen&#xA;(AB_clinicalprocess_activityprescription_actoutcome.docx) för implementationsdetaljer."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:logical"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/inera-ehds-lm-observations"/>
+      </reference>
+      <name value="GetObservations"/>
+      <description value="Logisk modell för tjänstekontraktet GetObservations&#xA;(RIV-TA urn:riv:clinicalprocess:healthcond:basic:GetObservationsInteraction:2).&#xA;Representerar responsens informationsstruktur — en samling observationer som&#xA;matchar sökkriterier i begäran, inklusive header-information.&#xA;Meddelandemodellen från avsnitt 5.1 V-MIM — Observationer i TKB motsvarar&#xA;en observation i svarsmeddelandet."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ConceptMap"/>
+      </extension>
+      <reference>
+        <reference value="ConceptMap/observation-status-map"/>
+      </reference>
+      <name value="GetObservations – observationStatus (SNOMED CT) → FHIR ObservationStatus"/>
+      <description value="Mappning från RIVTA GetObservations observationStatus-koder (SNOMED CT,&#xA;urvals-id 56431000052106) till FHIR R4 ObservationStatus (OBS-003).&#xA;&#xA;Kodsystem: SNOMED CT SE, OID 1.2.752.116.2.1.1 → URI http://snomed.info/sct.&#xA;Om en okänd kod tas emot sätts status till 'unknown' och en OperationOutcome-varning&#xA;genereras av bryggan."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:logical"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/inera-ehds-lm-referral-outcome"/>
+      </reference>
+      <name value="GetReferralOutcome"/>
+      <description value="Logisk modell för tjänstekontraktet GetReferralOutcome&#xA;(RIV-TA urn:riv:clinicalprocess:healthcond:actoutcome:GetReferralOutcome:3).&#xA;Representerar responsens informationsstruktur — svar på konsultationsremiss&#xA;och begäran om övertagande av vårdansvar. Meddelandeformatet är kompatibelt&#xA;med HL7v3 CDA v.2."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:logical"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/inera-ehds-lm-request-activities"/>
+      </reference>
+      <name value="GetRequestActivities"/>
+      <description value="Logisk modell för remisstatus och processaktiviteter hämtad via GetRequestActivities (crm:requeststatus v2.0)."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:logical"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/inera-ehds-lm-vaccination-history"/>
+      </reference>
+      <name value="GetVaccinationHistory"/>
+      <description value="Logisk modell för tjänstekontraktet GetVaccinationHistory&#xA;(RIV-TA urn:riv:clinicalprocess:activityprescription:actoutcome:GetVaccinationHistoryResponder:2).&#xA;Representerar responsens informationsstruktur — vaccinationsjournal per patient."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/approved-for-patient"/>
+      </reference>
+      <name value="Godkänd för patient"/>
+      <description value="Anger om information är godkänd för delning med patient (approvedForPatient, Regel 3)."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/alert-asserter"/>
+      </reference>
+      <name value="Juridisk äkthetsintygsgivare för uppmärksamhetssignal"/>
+      <description value="HSA-id för juridisk äkthetsintygsgivare (alertInformationHeader.legalAuthenticator.legalAuthenticatorHSAId)."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/immunization-legal-authenticator"/>
+      </reference>
+      <name value="Juridisk äkthetsintygsgivare för vaccination"/>
+      <description value="Signeringstidpunkt och HSA-id för juridisk äkthetsintygsgivare (vaccinationMedicalRecordHeader.legalAuthenticator)."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/alert-restriction-of-care-comment"/>
+      </reference>
+      <name value="Kommentar om vårdbegränsning"/>
+      <description value="Information om uppmärksammat förhållande som inte avser överkänslighet, sjukdom eller behandling (alertInformationBody.restrictionOfCare.restrictionOfCareComment)."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/alert-information-comment"/>
+      </reference>
+      <name value="Kommentar till uppmärksamhetssignal"/>
+      <description value="Kommentar angående uppmärksamhetssignalen (alertInformationBody.alertInformationComment).&#xA;Om obsoleteComment är angivet konkateneras det med prefix 'Inaktiveringskommentar: {obsoleteComment}'.&#xA;För body = unstructuredAlertInformation: unstructuredAlertInformationContent läggs här."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CodeSystem"/>
+      </extension>
+      <reference>
+        <reference value="CodeSystem/clinicaldocumentnotecode-cs"/>
+      </reference>
+      <name value="KV Anteckningstyp"/>
+      <description value="Kodverk för typ av journalanteckning enligt KV Anteckningstyp. OID: 1.2.752.129.2.2.2.11."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/clinicaldocumentnotecode-vs"/>
+      </reference>
+      <name value="KV Anteckningstyp — ValueSet"/>
+      <description value="Tillåtna värden för fältet clinicalDocumentNoteCode i GetCareDocumentation enligt KV Anteckningstyp (OID: 1.2.752.129.2.2.2.11)."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/immunization-registration-device"/>
+      </reference>
+      <name value="Källsystem för vaccinationsregistrering"/>
+      <description value="Referens till den Device-resurs som beskriver källsystemet varifrån&#xA;vaccinationsregistreringen härstammar&#xA;(registrationRecord.sourceSystemName/productName/productVersion/sourceSystemContact)."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/device-source-system-contact"/>
+      </reference>
+      <name value="Källsystemskontakt"/>
+      <description value="Ansvarig kontaktperson för källsystemet (registrationRecord.sourceSystemContact.actorId/actorName)."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/alert-pharmaceutical-treatment"/>
+      </reference>
+      <name value="Läkemedel vid behandling"/>
+      <description value="Läkemedel som används vid uppmärksammad behandling, ATC-kod rekommenderas (alertInformationBody.treatment.pharmaceuticalTreatment). Lista med 0..* – ryms ej i Flag.code (1..1)."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/alert-pharmaceutical-hypersensitivity"/>
+      </reference>
+      <name value="Läkemedelsöverkänslighet – substansdetaljer"/>
+      <description value="Kompletterande substansdetaljer för läkemedelsöverkänslighet&#xA;(alertInformationBody.hypersensitivity.pharmaceuticalHypersensitivity).&#xA;Primär substans: atcSubstance → Flag.code.coding; nonATCSubstance → Flag.code.text.&#xA;Denna extension bär kvarvarande detaljer: nonATCSubstanceComment och pharmaceuticalProductId."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CodeSystem"/>
+      </extension>
+      <reference>
+        <reference value="CodeSystem/maternity-section"/>
+      </reference>
+      <name value="MaternityMedicalSection"/>
+      <description value="Diskriminatorkoder för de tre sektionerna i mödravårdsjournalen (GetMaternityMedicalHistory v2.0). Varje Observation-resurs som skapas ur ett maternityMedicalRecord sätter Observation.code till en av dessa koder."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CodeSystem"/>
+      </extension>
+      <reference>
+        <reference value="CodeSystem/nonreplaceable-cs"/>
+      </reference>
+      <name value="NonReplaceable"/>
+      <description value="Kodverk för aktör som har angett att ett läkemedel inte är utbytbart i GetMedicationHistory (DispensationAuthorizationType)."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/immunization-patient-postal-code"/>
+      </reference>
+      <name value="Patientens postnummer vid vaccination"/>
+      <description value="Patientens postnummer vid vaccinationstillfället (registrationRecord.patientPostalCode)."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CodeSystem"/>
+      </extension>
+      <reference>
+        <reference value="CodeSystem/prescriptionstatus-cs"/>
+      </reference>
+      <name value="PrescriptionStatus"/>
+      <description value="Kodverk för ordinationsstatus i GetMedicationHistory. Anger om en ordination är aktiv eller inaktiv."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/prescriptionstatus-vs"/>
+      </reference>
+      <name value="PrescriptionStatus — ValueSet"/>
+      <description value="Tillåtna värden för prescriptionStatus i GetMedicationHistory."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CodeSystem"/>
+      </extension>
+      <reference>
+        <reference value="CodeSystem/referraloutcometypecode-cs"/>
+      </reference>
+      <name value="ReferralOutcomeTypeCode"/>
+      <description value="Kodverk för typ av remissvar (ReferralOutcomeTypeCodeEnum). Används i GetReferralOutcome."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/referraloutcometypecode-vs"/>
+      </reference>
+      <name value="ReferralOutcomeTypeCode — ValueSet"/>
+      <description value="Tillåtna värden för referralOutcomeTypeCode i GetReferralOutcome."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/related-alert-information"/>
+      </reference>
+      <name value="Relaterad uppmärksamhetssignal"/>
+      <description value="Information om samband med andra uppmärksamhetssignaler (alertInformationBody.relatedAlertInformation)."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CodeSystem"/>
+      </extension>
+      <reference>
+        <reference value="CodeSystem/resultcode-cs"/>
+      </reference>
+      <name value="ResultCode"/>
+      <description value="Kodverk för resultatkod i svar från tjänstekontrakten i domänen clinicalprocess:activityprescription:actoutcome."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/resultcode-vs"/>
+      </reference>
+      <name value="ResultCode — ValueSet"/>
+      <description value="Tillåtna värden för resultCode i svar."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/inera-ehds-allergy-intolerance"/>
+      </reference>
+      <name value="SE EHDS AllergyIntolerance – Allergi/överkänslighet (GetAlertInformation)"/>
+      <description value="Sekundär profil för allergier och överkänslighet från GetAlertInformation.&#xA;&#xA;Skapas ENBART när alertInformationBody = hypersensitivity.&#xA;Den tillhörande IneraEHDSFlag-resursen är alltid primär och pekar på denna&#xA;resurs via Flag.extension[flag-detail] (standard R4-extension; R5: supportingInfo).&#xA;&#xA;Populeras med klinisk information från hypersensitivity-blocket:&#xA;- atcSubstance/hypersensitivityAgentCode → AllergyIntolerance.code&#xA;- degreeOfSeverity → AllergyIntolerance.reaction.severity&#xA;- degreeOfCertainty → AllergyIntolerance.verificationStatus (se ALERT-004)&#xA;- ascertainedDate → AllergyIntolerance.onsetDateTime&#xA;- alertInformationComment → AllergyIntolerance.note&#xA;- pharmaceuticalProductId → AllergyIntolerance.reaction.substance.coding (NPL-id)&#xA;&#xA;Täcker NPÖ 2.0 och 1177 Journal 2.0."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/inera-ehds-audit-event"/>
+      </reference>
+      <name value="SE EHDS AuditEvent – Åtkomstloggar (GetAccessLogForPatient)"/>
+      <description value="Profil för åtkomstloggar mappat från RIVTA-tjänstekontraktet GetAccessLogForPatient (informationsecurity:auditing:log v1.1, 2.0). Täcker 1177 Journal 1.1, 2.0. Krävs ej för NPÖ."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/inera-ehds-care-plan"/>
+      </reference>
+      <name value="SE EHDS CarePlan – Vårdplan (GetCarePlans)"/>
+      <description value="Profil för vård- och omsorgsplaner mappat från RIVTA-tjänstekontraktet GetCarePlans (clinicalprocess:logistics:logistics v2.0). Täcker NPÖ 2.0 och 1177 Journal 2.0."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/inera-ehds-condition-diagnosis"/>
+      </reference>
+      <name value="SE EHDS Condition – Diagnos (GetDiagnosis)"/>
+      <description value="Profil för diagnos/problem mappat från RIVTA-tjänstekontraktet GetDiagnosis (clinicalprocess:healthcond:description v2.0). Täcker NPÖ 2.0 och 1177 Journal 2.0."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/inera-ehds-condition-functional"/>
+      </reference>
+      <name value="SE EHDS Condition – Funktionstillstånd och ADL (GetFunctionalStatus)"/>
+      <description value="Profil för funktionstillstånd och ADL-bedömningar mappat från RIVTA-tjänstekontraktet&#xA;GetFunctionalStatus (clinicalprocess:healthcond:description v2.0).&#xA;Täcker NPÖ 2.0 och 1177 Journal 2.0.&#xA;&#xA;TKBn har två bedömningskategorier: 'pad-pad' (PADL-bedömning) och 'fun-fun'&#xA;(funktionsnedsättningsbedömning med ICF-kod). Condition.code mappas mot&#xA;assessmentCategory (för PADL) eller disability.disabilityAssessment (ICF-kod).&#xA;Inget statusfält, tidperiod eller svårighetsgradfält finns i TKBn – dessa är härleddda."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/inera-ehds-device"/>
+      </reference>
+      <name value="SE EHDS Device – Källsystem (GetVaccinationHistory registrationRecord)"/>
+      <description value="Profil för det källsystem som registrerat en vaccination i GetVaccinationHistory v2.0.&#xA;&#xA;Representerar vaccinationMedicalRecordBody.registrationRecord.sourceSystem*&#xA;och sourceSystemContact. Refereras från IneraEHDSImmunization via&#xA;extension[registrationDevice].&#xA;&#xA;deviceName[systemName]  = sourceSystemName     (1..1, obligatorisk)&#xA;deviceName[productName] = sourceSystemProductName (0..1)&#xA;version                 = sourceSystemProductVersion (0..1)&#xA;extension[sourceSystemContact] = sourceSystemContact.actorId/actorName (0..1)"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/inera-ehds-diagnostic-report-imaging"/>
+      </reference>
+      <name value="SE EHDS DiagnosticReport – Bilddiagnostiskt utlåtande (GetImagingOutcome)"/>
+      <description value="Profil för bilddiagnostiska utlåtanden/fynd från GetImagingOutcome. Används tillsammans med IneraEHDSImagingStudy för att representera både undersökning och svar."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/inera-ehds-diagnostic-report-referral"/>
+      </reference>
+      <name value="SE EHDS DiagnosticReport – Konsultationssvar (GetReferralOutcome)"/>
+      <description value="Profil för konsultationssvar (outcome) från GetReferralOutcome. Används tillsammans med IneraEHDSServiceRequestReferral."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/inera-ehds-diagnostic-report-lab"/>
+      </reference>
+      <name value="SE EHDS DiagnosticReport – Provsvar (GetLaboratoryOrderOutcome)"/>
+      <description value="Profil för laboratorieresultat mappat från RIVTA-tjänstekontraktet GetLaboratoryOrderOutcome (clinicalprocess:healthcond:actoutcome v4.2). Täcker NPÖ v4.2 och 1177 Journal v4.2."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/inera-ehds-document-reference"/>
+      </reference>
+      <name value="SE EHDS DocumentReference – Anteckningar (GetCareDocumentation)"/>
+      <description value="Profil för vårdanteckningar mappat från RIVTA-tjänstekontraktet GetCareDocumentation&#xA;(clinicalprocess:healthcond:description v3.0). Täcker NPÖ 3.0 och 1177 Journal 3.0.&#xA;&#xA;Använder JoL-header v2.2 (ej PatientSummaryHeader): accessControlHeader för PDL,&#xA;record för journaluppgift-metadata, author för dokumentationsansvarig,&#xA;signature för signeringsinformation."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/inera-ehds-encounter"/>
+      </reference>
+      <name value="SE EHDS Encounter – Vårdkontakter (GetCareContacts)"/>
+      <description value="Profil för vårdkontakter mappat från RIVTA-tjänstekontraktet GetCareContacts (clinicalprocess:logistics:logistics v3.0). Täcker NPÖ 2.0, 3.0 och 1177 Journal 2.0, 3.0."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/inera-ehds-flag"/>
+      </reference>
+      <name value="SE EHDS Flag – Uppmärksamhetsinformation (GetAlertInformation)"/>
+      <description value="Primär profil för ALL uppmärksamhetsinformation från GetAlertInformation&#xA;(clinicalprocess:healthcond:description v2.0).&#xA;&#xA;Varje alertInformation-post ger alltid en Flag-resurs.&#xA;Om typeOfAlertInformation anger allergi/överkänslighet (body = hypersensitivity)&#xA;skapas dessutom en IneraEHDSAllergyIntolerance-resurs som pekas ut via&#xA;extension[flag-detail] (standard R4-extension; kallas supportingInfo i R5).&#xA;&#xA;Body-strukturen är XOR: exakt en av hypersensitivity, seriousDisease, treatment,&#xA;communicableDisease, restrictionOfCare, unstructuredAlertInformation anges per post.&#xA;&#xA;Flag.category[alertType]           = typeOfAlertInformation (obligatorisk).&#xA;Flag.category[hypersensitivityType] = typeOfHypersensitivity (när body = hypersensitivity).&#xA;Flag.code                           = den kliniska koden specifik för body-typen.&#xA;&#xA;Täcker NPÖ 2.0 och 1177 Journal 2.0."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/inera-ehds-imaging-study"/>
+      </reference>
+      <name value="SE EHDS ImagingStudy – Bilddiagnostik (GetImagingOutcome)"/>
+      <description value="Profil för bilddiagnostiska undersökningar mappat från RIVTA-tjänstekontraktet GetImagingOutcome (clinicalprocess:healthcond:actoutcome v1.0). Täcker NPÖ 1.0 och 1177 Journal 1.0."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/inera-ehds-immunization"/>
+      </reference>
+      <name value="SE EHDS Immunization – Vaccinationer (GetVaccinationHistory)"/>
+      <description value="Profil för vaccinationer mappat från RIVTA-tjänstekontraktet GetVaccinationHistory (clinicalprocess:activityprescription:actoutcome v2.0). Täcker NPÖ 2.0 och 1177 Journal 1.0, 2.0."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/inera-ehds-medication-statement"/>
+      </reference>
+      <name value="SE EHDS MedicationStatement – Läkemedel (GetMedicationHistory)"/>
+      <description value="Profil för läkemedelsordinationer, förskrivningar och administrerade läkemedel mappat från RIVTA-tjänstekontraktet GetMedicationHistory (clinicalprocess:activityprescription:actoutcome v2.2). Täcker NPÖ 2.2 och 1177 Journal 2.2."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/inera-ehds-observation-base"/>
+      </reference>
+      <name value="SE EHDS Observation Base – GetObservations"/>
+      <description value="Basprofil för alla observationer från GetObservations&#xA;(clinicalprocess:healthcond:basic v2.0).&#xA;&#xA;Profilen fångar den generella TK-mappningen och används som förälder av&#xA;domänspecifika profiler (t.ex. IneraEHDSObservationGrowth för tillväxtkurva).&#xA;&#xA;Nyckeldesignbeslut:&#xA;- observationBody.observationValue är XOR-union av sju värdetyper (cv/pq/ivlpq/ts/ivlts/st/int).&#xA;  Varje gren mappas till respektive FHIR value[x]-variant.&#xA;- Om valueNegation=true utelämnas value[x] och dataAbsentReason sätts.&#xA;- observationBody.time (ts/ivlts) → effective[x]; registrationTime → issued.&#xA;- participation är polymorf (healthcareProfessional/patient/otherPerson/locationRole/resource/organisation).&#xA;  Välj FHIR-element per deltagartyp (se mappningssida).&#xA;- PDL-fält (Sparr) hanteras via Provenance och meta.security (se mappningssida).&#xA;&#xA;Täcker NPÖ 1.2 och 1177 Journal 1.2."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/inera-ehds-observation-lab"/>
+      </reference>
+      <name value="SE EHDS Observation – Laboratoriesvar (GetLaboratoryOrderOutcome)"/>
+      <description value="Profil för enskilda laboratorieresultat/analyser mappat från GetLaboratoryOrderOutcome. Används i kombination med IneraEHDSDiagnosticReportLab."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/inera-ehds-observation-maternity"/>
+      </reference>
+      <name value="SE EHDS Observation – Mödravård (GetMaternityMedicalHistory)"/>
+      <description value="Generisk profil för medicinsk historik inom mödravård mappat från RIVTA-tjänstekontraktet&#xA;GetMaternityMedicalHistory (clinicalprocess:healthcond:actoutcome v2.0).&#xA;Täcker NPÖ 2.0 och 1177 Journal 2.0.&#xA;&#xA;OBS: TKBn har tre separata sektioner (registrationRecord, pregnancyCheckupRecord,&#xA;postDeliveryRecord) med egna sektionsspecifika fält. En Observation skapas per sektion&#xA;med Observation.code som diskriminator (se MAT-001 i mapping-issues). Fältnamnen&#xA;i ^short nedan refererar till sektionsspecifika element – implementatören väljer rätt&#xA;sektionselement baserat på Observation.code."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/inera-ehds-observation-growth"/>
+      </reference>
+      <name value="SE EHDS Observation – Tillväxtkurva (GetObservations + IoÖ v3)"/>
+      <description value="Profil för tillväxtobservationer (längd, vikt, huvudomfång, beräknad&#xA;graviditetslängd) för barn och ungdom, baserad på:&#xA;- GetObservations (clinicalprocess:healthcond:basic v2.0)&#xA;- Interaktionsöverenskommelse Tillväxtkurva för barn och ungdom v3 (Inera, 2023-05-15)&#xA;&#xA;Ärver IneraEHDSObservationBase och lägger till:&#xA;- code bunden till GrowthObservationTypeVS (IoÖ-specificerade SNOMED CT-koder)&#xA;- value[x] begränsad till Quantity (pq-grenen; IoÖ anger alltid PQ-värden)&#xA;- Enhet (UCUM) per mättyp: cm (längd/hC), kg (vikt), d (gestationslängd)&#xA;- LOINC-kod-slice på code.coding för EHDS/EPS-interoperabilitet&#xA;- category = vital-signs&#xA;&#xA;Kodsystem för observationType.type: SNOMED CT SE, OID 1.2.752.116.2.1.1.&#xA;&#xA;Täcker NPÖ 1.2 och 1177 Journal 1.2."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/inera-ehds-organization"/>
+      </reference>
+      <name value="SE EHDS Organization – Organisationsenhet"/>
+      <description value="Profil för organisationsenheter i EHDS-TK-mappningar (vårdenheter, juridiska vårdgivare m.fl.).&#xA;&#xA;Identifier-slicen ger stöd för HSA-id och SMI-id (Folkhälsomyndighetens&#xA;id för vaccinationsenheter i det nationella vaccinationsregistret).&#xA;Namn, kontaktuppgifter och adress mappar fält som annars inte har plats&#xA;i resurserna de refereras ifrån."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/inera-ehds-patient"/>
+      </reference>
+      <name value="SE EHDS Patient"/>
+      <description value="Patientprofil för EHDS-TK IG. Ärver från IPS Patient och lägger till svenska identifierarslicar."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/inera-ehds-provenance"/>
+      </reference>
+      <name value="SE EHDS Provenance"/>
+      <description value="Provenance-profil för EHDS-TK. Varje klinisk resurs åtföljs av en Provenance&#xA;med två agenter som speglar spärr-hierarkin enligt PDL:&#xA;- custodian (yttre Sparr) — den juridiskt ansvariga vårdgivaren&#xA;- author (inre Sparr) — den informationsägande vårdenheten&#xA;&#xA;OBS: Om den FHIR-server som tillhandahåller data själv hanterar åtkomstfiltrering&#xA;baserat på anropande vårdpersonals kontext eller patientens e-hälsotjänst, behöver&#xA;Provenance-agenterna för spärr och `meta.security` för `approvedForPatient` inte&#xA;inkluderas i svaret — filtreringen sker då redan på servernivå."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/inera-ehds-service-request-referral"/>
+      </reference>
+      <name value="SE EHDS ServiceRequest – Konsultationsremiss (GetReferralOutcome)"/>
+      <description value="Profil för konsultationsremisser mappat från RIVTA-tjänstekontraktet GetReferralOutcome&#xA;(clinicalprocess:healthcond:actoutcome v3.2). Täcker NPÖ 3.2 och 1177 Journal 3.2.&#xA;&#xA;Notera: GetReferralOutcome returnerar remissvaret, inte remissen i sig. Remissens&#xA;metadata finns under referralOutcomeBody.referral och är begränsad till id, orsak,&#xA;tid och avsändare. Inget mottagarfält, prioritet, typ eller diagnos finns i TKBn&#xA;för remissens del."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/inera-ehds-task"/>
+      </reference>
+      <name value="SE EHDS Task – Remisstatus (GetRequestActivities)"/>
+      <description value="Profil för remisstatus och processaktiviteter mappat från RIVTA-tjänstekontraktet GetRequestActivities (crm:requeststatus v2.0). Täcker NPÖ 2.0 och 1177 Journal 1.0, 2.0."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/se-observation-status-vs"/>
+      </reference>
+      <name value="SE Observation Status (SNOMED CT urval 56431000052106)"/>
+      <description value="Tillåtna statusvärden för GetObservations observationStatus.&#xA;Urvals-id 56431000052106, SNOMED CT SE (OID 1.2.752.116.2.1.1).&#xA;Mappning till FHIR ObservationStatus via ConceptMap observation-status-map."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CodeSystem"/>
+      </extension>
+      <reference>
+        <reference value="CodeSystem/sexcode-cs"/>
+      </reference>
+      <name value="SexCode"/>
+      <description value="Kodverk för kön (SexCodeEnum). Används i GetMaternityMedicalHistory för barnets kön. OBS: Överväg att använda HL7 AdministrativeGender istället."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/sexcode-vs"/>
+      </reference>
+      <name value="SexCode — ValueSet"/>
+      <description value="Tillåtna värden för kön i GetMaternityMedicalHistory."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/alert-asserted-date"/>
+      </reference>
+      <name value="Signeringstidpunkt för uppmärksamhetssignal"/>
+      <description value="Tidpunkt för signering av uppmärksamhetsinformation (alertInformationHeader.legalAuthenticator.signatureTime)."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/alert-route-of-transmission"/>
+      </reference>
+      <name value="Smittväg"/>
+      <description value="Kod för hur sjukdomen smittar (alertInformationBody.communicableDisease.routeOfTransmission). KV Smittväg."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/alert-verified-time"/>
+      </reference>
+      <name value="Tidpunkt för verifiering"/>
+      <description value="Tidpunkt då uppmärksamhetssignalen verifierades i det lokala systemet (alertInformationBody.verifiedTime)."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/growth-observation-type-vs"/>
+      </reference>
+      <name value="Tillväxtkurva – observationstyper (IoÖ Tillväxtkurva v3)"/>
+      <description value="SNOMED CT-koder för tillväxtmätningar enligt Interaktionsöverenskommelse&#xA;Tillväxtkurva för barn och ungdom v3 (Inera, 2023-05-15).&#xA;&#xA;Alla koder från kodsystemet SNOMED CT SE (OID 1.2.752.116.2.1.1).&#xA;&#xA;Koder:&#xA;- 1153637007 | Kroppslängd | (primärkod för längd)&#xA;- 50373000   | Mått på kroppslängd | (alternativkod för längd)&#xA;- 248334005  | Längd i liggande | (bakåtkompatibel – ej för nyanslutning)&#xA;- 27113001   | Kroppsvikt |&#xA;- 363812007  | Huvudomfång |&#xA;- 412726003  | Graviditetslängd vid födelse |"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CodeSystem"/>
+      </extension>
+      <reference>
+        <reference value="CodeSystem/typeofcareplan-cs"/>
+      </reference>
+      <name value="TypeOfCarePlan"/>
+      <description value="Typ av vård- och omsorgsplan enligt clinicalprocess:logistics:logistics v3.0. Definierad i clinicalprocess_logistics_logistics_enum_3.0.xsd."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/typeofcareplan-vs"/>
+      </reference>
+      <name value="TypeOfCarePlan — ValueSet"/>
+      <description value="Tillåtna värden för typeOfCarePlan i GetCarePlans enligt clinicalprocess:logistics:logistics."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CodeSystem"/>
+      </extension>
+      <reference>
+        <reference value="CodeSystem/typeofleavecode-cs"/>
+      </reference>
+      <name value="TypeOfLeaveCode"/>
+      <description value="Kodverk för typ av ledighet (TypeOfLeaveCodeEnum). Används i GetMaternityMedicalHistory."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/typeofleavecode-vs"/>
+      </reference>
+      <name value="TypeOfLeaveCode — ValueSet"/>
+      <description value="Tillåtna värden för typ av ledighet i GetMaternityMedicalHistory."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CodeSystem"/>
+      </extension>
+      <reference>
+        <reference value="CodeSystem/typeofprescription-cs"/>
+      </reference>
+      <name value="TypeOfPrescription"/>
+      <description value="Kodverk för ordinationstyp i GetMedicationHistory. Anger om en ordination är en insättnings- eller utsättningsordination."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/typeofprescription-vs"/>
+      </reference>
+      <name value="TypeOfPrescription — ValueSet"/>
+      <description value="Tillåtna värden för typeOfPrescription i GetMedicationHistory."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CodeSystem"/>
+      </extension>
+      <reference>
+        <reference value="CodeSystem/typeofresultcode-cs"/>
+      </reference>
+      <name value="TypeOfResultCode"/>
+      <description value="Kodverk för typ av resultat (TypeOfResultCodeEnum). Används i GetImagingOutcome och GetReferralOutcome."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/typeofresultcode-vs"/>
+      </reference>
+      <name value="TypeOfResultCode — ValueSet"/>
+      <description value="Tillåtna värden för typeOfResult i GetImagingOutcome."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/alert-degree-of-certainty"/>
+      </reference>
+      <name value="Visshet för överkänslighet"/>
+      <description value="Visshetsgrad för överkänsligheten (alertInformationBody.hypersensitivity.degreeOfCertainty). KV Visshetsgrad 1.2.752.129.2.2.3.11."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <page>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+        <valueUrl value="toc.html"/>
+      </extension>
+      <nameUrl value="toc.html"/>
+      <title value="Table of Contents"/>
+      <generation value="html"/>
+      <page>
+        <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+          <valueUrl value="index.html"/>
+        </extension>
+        <nameUrl value="index.html"/>
+        <title value="Introduction"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+          <valueUrl value="workflow.html"/>
+        </extension>
+        <nameUrl value="workflow.html"/>
+        <title value="Workflow"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+          <valueUrl value="logical-models.html"/>
+        </extension>
+        <nameUrl value="logical-models.html"/>
+        <title value="Logical Models"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+          <valueUrl value="mappings.html"/>
+        </extension>
+        <nameUrl value="mappings.html"/>
+        <title value="Mappings"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+          <valueUrl value="mapping-getdiagnosis.html"/>
+        </extension>
+        <nameUrl value="mapping-getdiagnosis.html"/>
+        <title value="GetDiagnosis – Diagnoser"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+          <valueUrl value="mapping-getalertinformation.html"/>
+        </extension>
+        <nameUrl value="mapping-getalertinformation.html"/>
+        <title value="GetAlertInformation – Uppmärksamhetsinformation"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+          <valueUrl value="mapping-getmedicationhistory.html"/>
+        </extension>
+        <nameUrl value="mapping-getmedicationhistory.html"/>
+        <title value="GetMedicationHistory – Läkemedel"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+          <valueUrl value="mapping-getvaccinationhistory.html"/>
+        </extension>
+        <nameUrl value="mapping-getvaccinationhistory.html"/>
+        <title value="GetVaccinationHistory – Vaccinationer"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+          <valueUrl value="mapping-getfunctionalstatus.html"/>
+        </extension>
+        <nameUrl value="mapping-getfunctionalstatus.html"/>
+        <title value="GetFunctionalStatus – Funktionstillstånd och ADL"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+          <valueUrl value="mapping-getmaternitymedicalhistory.html"/>
+        </extension>
+        <nameUrl value="mapping-getmaternitymedicalhistory.html"/>
+        <title value="GetMaternityMedicalHistory – Mödravård"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+          <valueUrl value="mapping-getcareplans.html"/>
+        </extension>
+        <nameUrl value="mapping-getcareplans.html"/>
+        <title value="GetCarePlans – Vårdplan"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+          <valueUrl value="mapping-getcarecontacts.html"/>
+        </extension>
+        <nameUrl value="mapping-getcarecontacts.html"/>
+        <title value="GetCareContacts – Vårdkontakter"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+          <valueUrl value="mapping-getcaredocumentation.html"/>
+        </extension>
+        <nameUrl value="mapping-getcaredocumentation.html"/>
+        <title value="GetCareDocumentation – Anteckningar"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+          <valueUrl value="mapping-getlaboratoryorderoutcome.html"/>
+        </extension>
+        <nameUrl value="mapping-getlaboratoryorderoutcome.html"/>
+        <title value="GetLaboratoryOrderOutcome – Provsvar"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+          <valueUrl value="mapping-getimagingoutcome.html"/>
+        </extension>
+        <nameUrl value="mapping-getimagingoutcome.html"/>
+        <title value="GetImagingOutcome – Bilddiagnostik"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+          <valueUrl value="mapping-getreferraloutcome.html"/>
+        </extension>
+        <nameUrl value="mapping-getreferraloutcome.html"/>
+        <title value="GetReferralOutcome – Remisser"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+          <valueUrl value="mapping-getrequestactivities.html"/>
+        </extension>
+        <nameUrl value="mapping-getrequestactivities.html"/>
+        <title value="GetRequestActivities – Remisstatus"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+          <valueUrl value="mapping-getobservations.html"/>
+        </extension>
+        <nameUrl value="mapping-getobservations.html"/>
+        <title value="GetObservations – Tillväxtkurva"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+          <valueUrl value="mapping-getaccesslogforpatient.html"/>
+        </extension>
+        <nameUrl value="mapping-getaccesslogforpatient.html"/>
+        <title value="GetAccessLogForPatient – Åtkomstloggar"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+          <valueUrl value="search-parameters.html"/>
+        </extension>
+        <nameUrl value="search-parameters.html"/>
+        <title value="Sökparametrar"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+          <valueUrl value="mapping-issues.html"/>
+        </extension>
+        <nameUrl value="mapping-issues.html"/>
+        <title value="Mappningsissues och Designbeslut"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+          <valueUrl value="profiles.html"/>
+        </extension>
+        <nameUrl value="profiles.html"/>
+        <title value="Profiles"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+          <valueUrl value="terminology.html"/>
+        </extension>
+        <nameUrl value="terminology.html"/>
+        <title value="Terminology"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+          <valueUrl value="examples.html"/>
+        </extension>
+        <nameUrl value="examples.html"/>
+        <title value="Examples"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+          <valueUrl value="downloads.html"/>
+        </extension>
+        <nameUrl value="downloads.html"/>
+        <title value="Downloads"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+          <valueUrl value="version-history.html"/>
+        </extension>
+        <nameUrl value="version-history.html"/>
+        <title value="Version History"/>
+        <generation value="markdown"/>
+      </page>
+    </page>
+    <parameter>
+      <code value="path-resource"/>
+      <value value="input/capabilities"/>
+    </parameter>
+    <parameter>
+      <code value="path-resource"/>
+      <value value="input/examples"/>
+    </parameter>
+    <parameter>
+      <code value="path-resource"/>
+      <value value="input/extensions"/>
+    </parameter>
+    <parameter>
+      <code value="path-resource"/>
+      <value value="input/models"/>
+    </parameter>
+    <parameter>
+      <code value="path-resource"/>
+      <value value="input/operations"/>
+    </parameter>
+    <parameter>
+      <code value="path-resource"/>
+      <value value="input/profiles"/>
+    </parameter>
+    <parameter>
+      <code value="path-resource"/>
+      <value value="input/resources"/>
+    </parameter>
+    <parameter>
+      <code value="path-resource"/>
+      <value value="input/vocabulary"/>
+    </parameter>
+    <parameter>
+      <code value="path-resource"/>
+      <value value="input/maps"/>
+    </parameter>
+    <parameter>
+      <code value="path-resource"/>
+      <value value="input/testing"/>
+    </parameter>
+    <parameter>
+      <code value="path-resource"/>
+      <value value="input/history"/>
+    </parameter>
+    <parameter>
+      <code value="path-resource"/>
+      <value value="fsh-generated/resources"/>
+    </parameter>
+    <parameter>
+      <code value="path-pages"/>
+      <value value="template/config"/>
+    </parameter>
+    <parameter>
+      <code value="path-pages"/>
+      <value value="input/images"/>
+    </parameter>
+    <parameter>
+      <code value="path-tx-cache"/>
+      <value value="input-cache/txcache"/>
+    </parameter>
+  </definition>
+</ImplementationGuide>

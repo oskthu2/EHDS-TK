@@ -1,0 +1,60 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://fhir.inera.se/ig/ehds-tk/CodeSystem/fetalpositioncode-cs> a fhir:CodeSystem ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "fetalpositioncode-cs"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Genererad berättande text: CodeSystem fetalpositioncode-cs</b></p><a name=\"fetalpositioncode-cs\"> </a><a name=\"hcfetalpositioncode-cs\"> </a><p>Detta case-sensitive kodsystem <code>https://fhir.inera.se/CodeSystem/fetalpositioncode</code> definierar följande koder:</p><table class=\"codes\"><tr><td style=\"white-space:nowrap\"><b>Kod</b></td><td><b>Visning</b></td><td><b>Definition</b></td></tr><tr><td style=\"white-space:nowrap\">0<a name=\"fetalpositioncode-cs-0\"> </a></td><td>Huvudläge</td><td>Fostret ligger med huvudet nedåt</td></tr><tr><td style=\"white-space:nowrap\">1<a name=\"fetalpositioncode-cs-1\"> </a></td><td>Sätesläge</td><td>Fostret ligger med sätet nedåt</td></tr><tr><td style=\"white-space:nowrap\">2<a name=\"fetalpositioncode-cs-2\"> </a></td><td>Snedläge</td><td>Fostret ligger snett</td></tr><tr><td style=\"white-space:nowrap\">3<a name=\"fetalpositioncode-cs-3\"> </a></td><td>Tvärläge</td><td>Fostret ligger tvärs</td></tr></table></div>"^^rdf:XMLLiteral ]
+  ] ; # 
+  fhir:url [ fhir:v "https://fhir.inera.se/CodeSystem/fetalpositioncode"^^xsd:anyURI] ; # 
+  fhir:version [ fhir:v "0.1.0"] ; # 
+  fhir:name [ fhir:v "FetalPositionCodeCS"] ; # 
+  fhir:title [ fhir:v "FetalPositionCode"] ; # 
+  fhir:status [ fhir:v "active"] ; # 
+  fhir:date [ fhir:v "2026-06-24T12:10:33+00:00"^^xsd:dateTime] ; # 
+  fhir:publisher [ fhir:v "Inera AB"] ; # 
+  fhir:contact ( [
+     fhir:name [ fhir:v "Inera AB" ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "url" ] ;
+       fhir:value [ fhir:v "https://www.inera.se" ]
+     ] )
+  ] ) ; # 
+  fhir:description [ fhir:v "Kodverk för fosterläge (FetalPositionCodeEnum). Används i GetMaternityMedicalHistory."] ; # 
+  fhir:jurisdiction ( [
+     fhir:coding ( [
+       fhir:system [ fhir:v "urn:iso:std:iso:3166"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "SE" ] ;
+       fhir:display [ fhir:v "Sweden" ]
+     ] )
+  ] ) ; # 
+  fhir:caseSensitive [ fhir:v true] ; # 
+  fhir:content [ fhir:v "complete"] ; # 
+  fhir:count [ fhir:v "4"^^xsd:nonNegativeInteger] ; # 
+  fhir:concept ( [
+     fhir:code [ fhir:v "0" ] ;
+     fhir:display [ fhir:v "Huvudläge" ] ;
+     fhir:definition [ fhir:v "Fostret ligger med huvudet nedåt" ]
+  ] [
+     fhir:code [ fhir:v "1" ] ;
+     fhir:display [ fhir:v "Sätesläge" ] ;
+     fhir:definition [ fhir:v "Fostret ligger med sätet nedåt" ]
+  ] [
+     fhir:code [ fhir:v "2" ] ;
+     fhir:display [ fhir:v "Snedläge" ] ;
+     fhir:definition [ fhir:v "Fostret ligger snett" ]
+  ] [
+     fhir:code [ fhir:v "3" ] ;
+     fhir:display [ fhir:v "Tvärläge" ] ;
+     fhir:definition [ fhir:v "Fostret ligger tvärs" ]
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+
