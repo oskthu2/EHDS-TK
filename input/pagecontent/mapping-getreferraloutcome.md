@@ -1,8 +1,8 @@
 # GetReferralOutcome – Remissvar / Konsultationssvar
 
 **Tjänstekontrakt:** `clinicalprocess:healthcond:actoutcome` GetReferralOutcome v3.2  
-**FHIR-profil:** [SEEHDSDiagnosticReportReferral](StructureDefinition-se-ehds-diagnostic-report-referral.html)  
-**Logisk modell:** [SEEHDSLMReferralOutcome](StructureDefinition-se-ehds-lm-referral-outcome.html)  
+**FHIR-profil:** [IneraEHDSDiagnosticReportReferral](StructureDefinition-inera-ehds-diagnostic-report-referral.html)  
+**Logisk modell:** [IneraEHDSLMReferralOutcome](StructureDefinition-inera-ehds-lm-referral-outcome.html)  
 **Krävs för NPÖ:** Ja (v3.2) | **Krävs för 1177 Journal:** Ja (v3.2)  
 **EHDS-koppling:** Remissvar – relaterar till vårdprocess och resultat (ej separat EHDS-huvudkategori)
 
@@ -11,7 +11,7 @@
 ## Resurshierarki
 
 ```
-SEEHDSDiagnosticReportReferral (1 per referralOutcome)
+IneraEHDSDiagnosticReportReferral (1 per referralOutcome)
   └── basedOn → ServiceRequest (logisk referens via referral.referralId)
   └── performer → PractitionerRole (accountableHealthcareProfessional)
 ```

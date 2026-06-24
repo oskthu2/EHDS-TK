@@ -1,8 +1,8 @@
 # GetAccessLogForPatient – Åtkomstloggar
 
 **Tjänstekontrakt:** `informationsecurity:auditing:log` GetAccessLogForPatient v1.1, 2.0  
-**FHIR-profil:** [SEEHDSAuditEvent](StructureDefinition-se-ehds-audit-event.html)  
-**Logisk modell:** [SEEHDSLMAccessLog](StructureDefinition-se-ehds-lm-access-log.html)  
+**FHIR-profil:** [IneraEHDSAuditEvent](StructureDefinition-inera-ehds-audit-event.html)  
+**Logisk modell:** [IneraEHDSLMAccessLog](StructureDefinition-inera-ehds-lm-access-log.html)  
 **Krävs för NPÖ:** Nej (Ej listad) | **Krävs för 1177 Journal:** Ja (v1.1, 2.0)  
 **EHDS-koppling:** EHDS-relevant rättighets- och transparensförmåga, ej klinisk prioriterad datakategori
 
@@ -17,7 +17,7 @@
 | RIVTA-element | Kard. | FHIR-element | Kommentar |
 |---|---|---|---|
 | `accessLogId` | 1..1 | `AuditEvent.entity[loggpost].what.identifier.value` | Loggpostens unika identifierare |
-| `patientId` | 1..1 | `AuditEvent.patient` | Reference(SEEHDSPatient); patienten vars data åtkoms |
+| `patientId` | 1..1 | `AuditEvent.patient` | Reference(IneraEHDSPatient); patienten vars data åtkoms |
 | `accessTime` | 1..1 | `AuditEvent.recorded` | Åtkomsttidpunkt; UTC ISO 8601 |
 | `accessType` | 1..1 | `AuditEvent.type` | Åtkomsttyp (Läsning/Sökning); kodad med DICOM `DCM#110110` el. liknande |
 | `accessSubType` | 0..1 | `AuditEvent.subtype` | Åtkomstundertyp; mer specifik klassificering av händelsen |
@@ -90,5 +90,5 @@ tillämpas standardmönstret med `sourceSystemHSAId` i `Provenance.agent[custodi
 
 | Id | Fråga | Prioritet |
 |---|---|---|
-| LOG-001 | `AuditEvent.patient` är en R4B-utökning som inte finns i basen av FHIR R4. Behöver utredas om en lokal extension eller `entity[patient]`-mönstret (med `entity.role = 1`) ska användas i SEEHDSAuditEvent-profilen för R4-kompatibilitet. | Hög |
+| LOG-001 | `AuditEvent.patient` är en R4B-utökning som inte finns i basen av FHIR R4. Behöver utredas om en lokal extension eller `entity[patient]`-mönstret (med `entity.role = 1`) ska användas i IneraEHDSAuditEvent-profilen för R4-kompatibilitet. | Hög |
 | LOG-002 | `accessType`-kodvärden behöver formellt kodverk (Läsning/Sökning). Utred om DICOM AuditEventID-koder eller ett lokalt Inera-kodverk ska användas för `AuditEvent.type` respektive `AuditEvent.subtype`. | Medium |

@@ -1,8 +1,8 @@
 # GetRequestActivities – Remisstatus
 
 **Tjänstekontrakt:** `crm:requeststatus` GetRequestActivities v2.0  
-**FHIR-profil:** [SEEHDSTask](StructureDefinition-se-ehds-task.html)  
-**Logisk modell:** [SEEHDSLMRequestActivities](StructureDefinition-se-ehds-lm-request-activities.html)  
+**FHIR-profil:** [IneraEHDSTask](StructureDefinition-inera-ehds-task.html)  
+**Logisk modell:** [IneraEHDSLMRequestActivities](StructureDefinition-inera-ehds-lm-request-activities.html)  
 **Krävs för NPÖ:** Ja (v2.0) | **Krävs för 1177 Journal:** Ja (v1.0, 2.0)  
 **EHDS-koppling:** Stödjande processinformation (ej separat EHDS-huvudkategori)
 
@@ -92,7 +92,7 @@ OID:er utan känd URI-mappning bevaras som `urn:oid:{oid}`.
 `requestId` i LM är remissaktivitetens egen identifierare (ej remissen i sig). Den
 mappas därför till `Task.identifier[0].value` för att representera källsystemets id
 för detta aktivitetsobjekt. En referens till den underliggande remissen (om tillgänglig)
-kan läggas i `Task.focus` som `Reference(SEEHDSServiceRequestReferral)`, men det
+kan läggas i `Task.focus` som `Reference(IneraEHDSServiceRequestReferral)`, men det
 kräver att remiss-id är separat tillgängligt vilket ej framgår av LM-strukturen.
 
 ### Task.requester

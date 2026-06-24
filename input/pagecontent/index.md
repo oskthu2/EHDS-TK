@@ -52,7 +52,7 @@ Profilerna bygger på:
 - **HL7 Sweden basprofiler** – SEBasePractitionerRole och SEBaseOrganization används för personreferenser
 
 Varje producerad FHIR-resurs bär **två profiler** i `meta.profile`:
-1. Aktuell EHDS-TK-profil (t.ex. `SEEHDSConditionDiagnosis`)
+1. Aktuell EHDS-TK-profil (t.ex. `IneraEHDSConditionDiagnosis`)
 2. Relevant EU EPS obligations-profil
 
 ---

@@ -1,8 +1,8 @@
 # GetDiagnosis – Diagnoser
 
 **Tjänstekontrakt:** `clinicalprocess:healthcond:description` GetDiagnosis v2.0  
-**FHIR-profil:** [SEEHDSConditionDiagnosis](StructureDefinition-se-ehds-condition-diagnosis.html)  
-**Logisk modell:** [SEEHDSLMDiagnosis](StructureDefinition-se-ehds-lm-diagnosis.html)  
+**FHIR-profil:** [IneraEHDSConditionDiagnosis](StructureDefinition-inera-ehds-condition-diagnosis.html)  
+**Logisk modell:** [IneraEHDSLMDiagnosis](StructureDefinition-inera-ehds-lm-diagnosis.html)  
 **Krävs för NPÖ:** Ja (v2.0) | **Krävs för 1177 Journal:** Ja (v2.0)  
 **EHDS-koppling:** Patient Summary – Problem/diagnoser
 
@@ -98,7 +98,7 @@ Varje producerad Condition bär **två profiler** i `meta.profile`:
 
 | Profil | URL |
 |---|---|
-| SEEHDSConditionDiagnosis | `https://fhir.inera.se/ig/ehds-tk/StructureDefinition/se-ehds-condition-diagnosis` |
+| IneraEHDSConditionDiagnosis | `https://fhir.inera.se/ig/ehds-tk/StructureDefinition/inera-ehds-condition-diagnosis` |
 | condition-obl-eu-eps | `http://hl7.eu/fhir/eps/StructureDefinition/condition-obl-eu-eps` |
 
 ---
@@ -178,7 +178,7 @@ PDL-styrning i GetDiagnosis utgår från `accountableHealthcareProfessional`-blo
   "meta": {
     "source": "urn:oid:1.2.752.129.2.1.4.1#SE2321000016-4HK5",
     "profile": [
-      "https://fhir.inera.se/ig/ehds-tk/StructureDefinition/se-ehds-condition-diagnosis",
+      "https://fhir.inera.se/ig/ehds-tk/StructureDefinition/inera-ehds-condition-diagnosis",
       "http://hl7.eu/fhir/eps/StructureDefinition/condition-obl-eu-eps"
     ]
   },

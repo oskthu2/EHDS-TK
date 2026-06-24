@@ -1,8 +1,8 @@
 # GetCareDocumentation – Journalanteckningar
 
 **Tjänstekontrakt:** `clinicalprocess:healthcond:description` GetCareDocumentation v3.0  
-**FHIR-profil:** [SEEHDSDocumentReference](StructureDefinition-se-ehds-document-reference.html)  
-**Logisk modell:** [SEEHDSLMCareDocumentation](StructureDefinition-se-ehds-lm-care-documentation.html)  
+**FHIR-profil:** [IneraEHDSDocumentReference](StructureDefinition-inera-ehds-document-reference.html)  
+**Logisk modell:** [IneraEHDSLMCareDocumentation](StructureDefinition-inera-ehds-lm-care-documentation.html)  
 **Krävs för NPÖ:** Ja (v3.0) | **Krävs för 1177 Journal:** Ja (v3.0)  
 **EHDS-koppling:** Journalanteckningar – kan bidra till discharge report eller dokumentationsunderlag; bredare än EHDS discharge reports
 
@@ -23,7 +23,7 @@
 ## Resurshierarki
 
 ```
-SEEHDSDocumentReference (1 per careDocumentation)
+IneraEHDSDocumentReference (1 per careDocumentation)
   └── author → PractitionerRole (header.author)
   └── authenticator → PractitionerRole (header.signature)
   └── content[0].attachment (XOR: clinicalDocumentNoteText eller multimediaEntry)

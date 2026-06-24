@@ -1,8 +1,8 @@
 # GetCareContacts – Vårdkontakter
 
 **Tjänstekontrakt:** `clinicalprocess:logistics:logistics` GetCareContacts v3.0  
-**FHIR-profil:** [SEEHDSEncounter](StructureDefinition-se-ehds-encounter.html)  
-**Logisk modell:** [SEEHDSLMCareContacts](StructureDefinition-se-ehds-lm-care-contacts.html)  
+**FHIR-profil:** [IneraEHDSEncounter](StructureDefinition-inera-ehds-encounter.html)  
+**Logisk modell:** [IneraEHDSLMCareContacts](StructureDefinition-inera-ehds-lm-care-contacts.html)  
 **Krävs för NPÖ:** Ja (v2.0, 3.0) | **Krävs för 1177 Journal:** Ja (v2.0, 3.0)  
 
 ---

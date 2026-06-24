@@ -1,8 +1,8 @@
 # GetImagingOutcome – Bilddiagnostik
 
 **Tjänstekontrakt:** `clinicalprocess:healthcond:actoutcome` GetImagingOutcome v1.0  
-**FHIR-profiler:** [SEEHDSDiagnosticReportImaging](StructureDefinition-se-ehds-diagnostic-report-imaging.html) (primär) | [ImagingStudy](http://hl7.org/fhir/R4/imagingstudy.html) (sekundär, per imageRecording)  
-**Logisk modell:** [SEEHDSLMImagingOutcome](StructureDefinition-se-ehds-lm-imaging-outcome.html)  
+**FHIR-profiler:** [IneraEHDSDiagnosticReportImaging](StructureDefinition-inera-ehds-diagnostic-report-imaging.html) (primär) | [ImagingStudy](http://hl7.org/fhir/R4/imagingstudy.html) (sekundär, per imageRecording)  
+**Logisk modell:** [IneraEHDSLMImagingOutcome](StructureDefinition-inera-ehds-lm-imaging-outcome.html)  
 **Krävs för NPÖ:** Ja (v1.0) | **Krävs för 1177 Journal:** Ja (v1.0)  
 **EHDS-koppling:** Medical imaging studies – bilddiagnostiska utlåtanden
 
@@ -13,15 +13,15 @@
 ```
 imagingOutcome 0..*
 │
-SEEHDSDiagnosticReportImaging  (1 per imagingOutcome – utlåtandet)
+IneraEHDSDiagnosticReportImaging  (1 per imagingOutcome – utlåtandet)
   └── ImagingStudy               (0..* per imageRecording – undersökning/DICOM-data)
 ```
 
-En `imagingOutcome` representerar ett bilddiagnostiskt utlåtande (t.ex. ett röntgensvar) och mappas till en `SEEHDSDiagnosticReportImaging`. Varje `imageRecording` inom svaret (enskilda undersökningar med modalitetsdata) mappas till en separat `ImagingStudy`-instans. Referensen `DiagnosticReport.imagingStudy` binder ihop utlåtandet med undersökningarna. Se [IMG-002](#öppna-frågor) för DICOM-designfrågor.
+En `imagingOutcome` representerar ett bilddiagnostiskt utlåtande (t.ex. ett röntgensvar) och mappas till en `IneraEHDSDiagnosticReportImaging`. Varje `imageRecording` inom svaret (enskilda undersökningar med modalitetsdata) mappas till en separat `ImagingStudy`-instans. Referensen `DiagnosticReport.imagingStudy` binder ihop utlåtandet med undersökningarna. Se [IMG-002](#öppna-frågor) för DICOM-designfrågor.
 
 ---
 
-## Mappningstabell – SEEHDSDiagnosticReportImaging
+## Mappningstabell – IneraEHDSDiagnosticReportImaging
 
 Rotelementet `imagingOutcomeHeader` och `imagingOutcomeBody` mappas gemensamt till DiagnosticReport.
 

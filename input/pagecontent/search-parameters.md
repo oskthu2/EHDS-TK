@@ -141,7 +141,7 @@ Täcker inte alla resurstyper (t.ex. `Condition` saknar `performer`) och kräver
 GET /Observation?patient.identifier=...&code=http://snomed.info/sct|1153637007
 ```
 
-Detta täcker den vanligaste användningen i IoÖ Tillväxtkurva (se `SEEHDSObservationGrowth`) där specifika SNOMED CT-koder söks. `displayName` och `originalText` i CVType är presentationsdata och inte relevanta för filtrering.
+Detta täcker den vanligaste användningen i IoÖ Tillväxtkurva (se `IneraEHDSObservationGrowth`) där specifika SNOMED CT-koder söks. `displayName` och `originalText` i CVType är presentationsdata och inte relevanta för filtrering.
 
 ---
 
@@ -152,7 +152,7 @@ Detta täcker den vanligaste användningen i IoÖ Tillväxtkurva (se `SEEHDSObse
 | `fromDate` | `authored=ge{datum}` | `Task` | `Task.authoredOn` (tidpunkt för skapande av aktivitetsbegäran) |
 | `toDate` | `authored=le{datum}` | `Task` | Kombineras med `fromDate` |
 
-`GetRequestActivities` returnerar remisstatus och aktiviteter. I FHIR-mappningen (profil `SEEHDSTask`) är `authored` den närmaste tidssöksparametern. `Task` stöder även `modified` (senast ändrad) och `period` (period för aktiviteten) som alternativa filtreringspunkter beroende på vad `fromDate`/`toDate` faktiskt avser i TKB:n – detta bör verifieras.
+`GetRequestActivities` returnerar remisstatus och aktiviteter. I FHIR-mappningen (profil `IneraEHDSTask`) är `authored` den närmaste tidssöksparametern. `Task` stöder även `modified` (senast ändrad) och `period` (period för aktiviteten) som alternativa filtreringspunkter beroende på vad `fromDate`/`toDate` faktiskt avser i TKB:n – detta bör verifieras.
 
 ---
 

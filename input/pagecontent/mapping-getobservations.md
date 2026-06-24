@@ -1,8 +1,8 @@
 # GetObservations – Kliniska observationer och mätvärden
 
 **Tjänstekontrakt:** `clinicalprocess:healthcond:basic` GetObservations v2.0  
-**FHIR-profiler:** [SEEHDSObservationBase](StructureDefinition-se-ehds-observation-base.html) (generell) | [SEEHDSObservationGrowth](StructureDefinition-se-ehds-observation-growth.html) (tillväxtkurva)  
-**Logisk modell:** [SEEHDSLMObservations](StructureDefinition-se-ehds-lm-observations.html)  
+**FHIR-profiler:** [IneraEHDSObservationBase](StructureDefinition-inera-ehds-observation-base.html) (generell) | [IneraEHDSObservationGrowth](StructureDefinition-inera-ehds-observation-growth.html) (tillväxtkurva)  
+**Logisk modell:** [IneraEHDSLMObservations](StructureDefinition-inera-ehds-lm-observations.html)  
 **Krävs för NPÖ:** Ja (v1.2) | **Krävs för 1177 Journal:** Ja (v1.2)  
 **EHDS-koppling:** Kliniska mätresultat och tillväxtdata  
 **IoÖ:** Interaktionsöverenskommelse Tillväxtkurva för barn och ungdom v3 (Inera, 2023-05-15)
@@ -20,10 +20,10 @@ GetObservations-mappningen är uppdelad i två profiler:
 
 | Profil | Parent | Användning |
 |---|---|---|
-| `SEEHDSObservationBase` | IPS `Observation-results-uv-ips` | Basprofil för ALL mappning från GetObservations TK; täcker alla fält i LM |
-| `SEEHDSObservationGrowth` | `SEEHDSObservationBase` | Tillväxtkurva; lägger till IoÖ-constraints (SNOMED-koder, Quantity, LOINC) |
+| `IneraEHDSObservationBase` | IPS `Observation-results-uv-ips` | Basprofil för ALL mappning från GetObservations TK; täcker alla fält i LM |
+| `IneraEHDSObservationGrowth` | `IneraEHDSObservationBase` | Tillväxtkurva; lägger till IoÖ-constraints (SNOMED-koder, Quantity, LOINC) |
 
-Alla GetObservations-implementationer instansierar `SEEHDSObservationBase` (eller en specialisering av den). För tillväxtkurvadata ska `SEEHDSObservationGrowth` användas eftersom IoÖ v3 anger specifika krav på koder och enheter.
+Alla GetObservations-implementationer instansierar `IneraEHDSObservationBase` (eller en specialisering av den). För tillväxtkurvadata ska `IneraEHDSObservationGrowth` användas eftersom IoÖ v3 anger specifika krav på koder och enheter.
 
 ---
 
@@ -417,7 +417,7 @@ OID:er utan känd URI-mappning bevaras som `urn:oid:{oid}`.
 
 ## IoÖ Tillväxtkurva för barn och ungdom v3
 
-Interaktionsöverenskommelsen (IoÖ) specificerar hur GetObservations ska användas för fyra tillväxtmätningar. Profilen `SEEHDSObservationGrowth` implementerar dessa krav.
+Interaktionsöverenskommelsen (IoÖ) specificerar hur GetObservations ska användas för fyra tillväxtmätningar. Profilen `IneraEHDSObservationGrowth` implementerar dessa krav.
 
 ### Kodtabell – IoÖ SNOMED CT-koder → FHIR
 
@@ -434,7 +434,7 @@ Kodsystem för `observationBody.observationType.type.codeSystem`: `1.2.752.116.2
 
 ### IoÖ-fält → FHIR Observation mappning
 
-Nedanstående tabell visar hur IoÖ-dokumentets konkreta fältnamn (i GetObservations-kontexten) mappar till FHIR `SEEHDSObservationGrowth`:
+Nedanstående tabell visar hur IoÖ-dokumentets konkreta fältnamn (i GetObservations-kontexten) mappar till FHIR `IneraEHDSObservationGrowth`:
 
 | IoÖ-fält | Innehåll per IoÖ | FHIR-element | Kommentar |
 |---|---|---|---|

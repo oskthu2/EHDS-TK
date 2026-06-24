@@ -1,8 +1,8 @@
 # GetAlertInformation – Uppmärksamhetsinformation
 
 **Tjänstekontrakt:** `clinicalprocess:healthcond:description` GetAlertInformation v2.0  
-**FHIR-profiler:** [SEEHDSFlag](StructureDefinition-se-ehds-flag.html) | [SEEHDSAllergyIntolerance](StructureDefinition-se-ehds-allergy-intolerance.html)  
-**Logisk modell:** [SEEHDSLMAlertInformation](StructureDefinition-se-ehds-lm-alert-information.html)  
+**FHIR-profiler:** [IneraEHDSFlag](StructureDefinition-inera-ehds-flag.html) | [IneraEHDSAllergyIntolerance](StructureDefinition-inera-ehds-allergy-intolerance.html)  
+**Logisk modell:** [IneraEHDSLMAlertInformation](StructureDefinition-inera-ehds-lm-alert-information.html)  
 **Krävs för NPÖ:** Ja (v2.0) | **Krävs för 1177 Journal:** Ja (v2.0)  
 **EHDS-koppling:** Patient Summary – Allergier, överkänslighet och varningsinformation
 

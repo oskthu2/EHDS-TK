@@ -1,8 +1,8 @@
 # GetCarePlans – Vårdplan
 
 **Tjänstekontrakt:** `clinicalprocess:logistics:logistics` GetCarePlans v2.0  
-**FHIR-profil:** [SEEHDSCarePlan](StructureDefinition-se-ehds-care-plan.html)  
-**Logisk modell:** [SEEHDSLMCarePlans](StructureDefinition-se-ehds-lm-care-plans.html)  
+**FHIR-profil:** [IneraEHDSCarePlan](StructureDefinition-inera-ehds-care-plan.html)  
+**Logisk modell:** [IneraEHDSLMCarePlans](StructureDefinition-inera-ehds-lm-care-plans.html)  
 **Krävs för NPÖ:** Ja (v2.0) | **Krävs för 1177 Journal:** Ja (v2.0)  
 
 ---

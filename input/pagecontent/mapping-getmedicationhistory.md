@@ -1,8 +1,8 @@
 # GetMedicationHistory – Läkemedelshistorik
 
 **Tjänstekontrakt:** `clinicalprocess:activityprescription:actoutcome` GetMedicationHistory v2.2  
-**FHIR-profil:** [SEEHDSMedicationStatement](StructureDefinition-se-ehds-medication-statement.html)  
-**Logisk modell:** [SEEHDSLMMedicationHistory](StructureDefinition-se-ehds-lm-medication-history.html)  
+**FHIR-profil:** [IneraEHDSMedicationStatement](StructureDefinition-inera-ehds-medication-statement.html)  
+**Logisk modell:** [IneraEHDSLMMedicationHistory](StructureDefinition-inera-ehds-lm-medication-history.html)  
 **Krävs för NPÖ:** Ja (v2.2) | **Krävs för 1177 Journal:** Ja (v2.2)  
 **EHDS-koppling:** Patient Summary – Aktuella läkemedel. EHDS har även separata domäner för ePrescription och eDispensation.
 
@@ -20,7 +20,7 @@
 ## Resurshierarki
 
 ```
-SEEHDSMedicationStatement (1 per medicationMedicalRecord)
+IneraEHDSMedicationStatement (1 per medicationMedicalRecord)
   └── informationSource → PractitionerRole (accountableHealthcareProfessional)
   └── medicationCodeableConcept (drug, 5 XOR-varianter)
   └── basedOn → (logisk referens om koppling till recept/SIL finns)

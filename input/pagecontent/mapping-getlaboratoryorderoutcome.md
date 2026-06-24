@@ -1,8 +1,8 @@
 # GetLaboratoryOrderOutcome – Provsvar
 
 **Tjänstekontrakt:** `clinicalprocess:healthcond:actoutcome` GetLaboratoryOrderOutcome v4.2  
-**FHIR-profiler:** [SEEHDSDiagnosticReportLab](StructureDefinition-se-ehds-diagnostic-report-lab.html) | [SEEHDSObservationLab](StructureDefinition-se-ehds-observation-lab.html)  
-**Logisk modell:** [SEEHDSLMLaboratoryOrderOutcome](StructureDefinition-se-ehds-lm-laboratory-order-outcome.html)  
+**FHIR-profiler:** [IneraEHDSDiagnosticReportLab](StructureDefinition-inera-ehds-diagnostic-report-lab.html) | [IneraEHDSObservationLab](StructureDefinition-inera-ehds-observation-lab.html)  
+**Logisk modell:** [IneraEHDSLMLaboratoryOrderOutcome](StructureDefinition-inera-ehds-lm-laboratory-order-outcome.html)  
 **Krävs för NPÖ:** Ja (v4.2) | **Krävs för 1177 Journal:** Ja (v4.2)  
 **EHDS-koppling:** Medical test results – laboratorie- och diagnostiska resultat
 
@@ -19,16 +19,16 @@
 ```
 laboratoryOrderOutcome 0..*
 │
-SEEHDSDiagnosticReportLab  (1 per laboratoryOrderOutcome)
-  └── SEEHDSObservationLab (1 per groupOfAnalyses.analysis)
+IneraEHDSDiagnosticReportLab  (1 per laboratoryOrderOutcome)
+  └── IneraEHDSObservationLab (1 per groupOfAnalyses.analysis)
         └── Specimen        (0..* per analysis.specimen)
 ```
 
-En `laboratoryOrderOutcome` representerar en beställning (order) med tillhörande analysresultat. Varje analys inom `groupOfAnalyses.analysis` mappas till en separat `SEEHDSObservationLab`. Provrör/specimen kopplas till respektive `Observation` och kan delas mellan analyser med samma specimen-identifierare.
+En `laboratoryOrderOutcome` representerar en beställning (order) med tillhörande analysresultat. Varje analys inom `groupOfAnalyses.analysis` mappas till en separat `IneraEHDSObservationLab`. Provrör/specimen kopplas till respektive `Observation` och kan delas mellan analyser med samma specimen-identifierare.
 
 ---
 
-## Mappningstabell – SEEHDSDiagnosticReportLab
+## Mappningstabell – IneraEHDSDiagnosticReportLab
 
 Rotelementet `laboratoryOrderOutcome` (ett per svar) mappas till en DiagnosticReport-instans.
 
@@ -118,7 +118,7 @@ Rotelementet `laboratoryOrderOutcome` (ett per svar) mappas till en DiagnosticRe
 | Källa | FHIR-element | Kommentar |
 |---|---|---|
 | (härledd från analysis.status) | `DiagnosticReport.status` | Se [Härledda fält – DiagnosticReport.status](#diagnosticreportstatus) |
-| (groupOfAnalyses.analysis → ObservationLab) | `DiagnosticReport.result` | Reference(SEEHDSObservationLab) per analys |
+| (groupOfAnalyses.analysis → ObservationLab) | `DiagnosticReport.result` | Reference(IneraEHDSObservationLab) per analys |
 
 ---
 
@@ -134,9 +134,9 @@ Rotelementet `laboratoryOrderOutcome` (ett per svar) mappas till en DiagnosticRe
 
 ---
 
-## Mappningstabell – SEEHDSObservationLab (per analysis)
+## Mappningstabell – IneraEHDSObservationLab (per analysis)
 
-Varje element i `body.groupOfAnalyses[*].analysis[*]` mappas till en separat `SEEHDSObservationLab`-instans.
+Varje element i `body.groupOfAnalyses[*].analysis[*]` mappas till en separat `IneraEHDSObservationLab`-instans.
 
 | RIVTA-element | Kard. | FHIR-element | Kommentar |
 |---|---|---|---|

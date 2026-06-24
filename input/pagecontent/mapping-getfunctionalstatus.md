@@ -1,8 +1,8 @@
 # GetFunctionalStatus – Funktionstillstånd och ADL
 
 **Tjänstekontrakt:** `clinicalprocess:healthcond:description` GetFunctionalStatus v2.0  
-**FHIR-profil:** [SEEHDSConditionFunctional](StructureDefinition-se-ehds-condition-functional.html)  
-**Logisk modell:** [SEEHDSLMFunctionalStatus](StructureDefinition-se-ehds-lm-functional-status.html)  
+**FHIR-profil:** [IneraEHDSConditionFunctional](StructureDefinition-inera-ehds-condition-functional.html)  
+**Logisk modell:** [IneraEHDSLMFunctionalStatus](StructureDefinition-inera-ehds-lm-functional-status.html)  
 **Krävs för NPÖ:** Ja (v2.0) | **Krävs för 1177 Journal:** Ja (v2.0)  
 **EHDS-koppling:** Patient Summary – Funktionstillstånd (ICF-baserad)
 
@@ -12,7 +12,7 @@
 
 ### En Condition per functionalStatusAssessment
 
-Varje `functionalStatusAssessment`-post mappas till en `Condition`-resurs med profilen `SEEHDSConditionFunctional`. Roten för ett svar är `functionalStatusAssessment 0..*`.
+Varje `functionalStatusAssessment`-post mappas till en `Condition`-resurs med profilen `IneraEHDSConditionFunctional`. Roten för ett svar är `functionalStatusAssessment 0..*`.
 
 ### assessmentCategory styr körningens innehåll
 

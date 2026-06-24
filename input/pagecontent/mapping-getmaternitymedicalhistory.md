@@ -1,8 +1,8 @@
 # GetMaternityMedicalHistory – Mödravård
 
 **Tjänstekontrakt:** `clinicalprocess:healthcond:actoutcome` GetMaternityMedicalHistory v2.0  
-**FHIR-profil:** [SEEHDSObservationMaternity](StructureDefinition-se-ehds-observation-maternity.html)  
-**Logisk modell:** [SEEHDSLMMaternityMedicalHistory](StructureDefinition-se-ehds-lm-maternity-medical-history.html)  
+**FHIR-profil:** [IneraEHDSObservationMaternity](StructureDefinition-inera-ehds-observation-maternity.html)  
+**Logisk modell:** [IneraEHDSLMMaternityMedicalHistory](StructureDefinition-inera-ehds-lm-maternity-medical-history.html)  
 **Krävs för NPÖ:** Ja (v2.0) | **Krävs för 1177 Journal:** Ja (v2.0)  
 **EHDS-koppling:** Mödravårdsdata – bakgrundsinformation i Patient Summary
 
