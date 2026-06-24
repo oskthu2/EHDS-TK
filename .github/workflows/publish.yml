@@ -41,7 +41,7 @@ jobs:
             echo "is_release=true"           >> $GITHUB_OUTPUT
             echo "version=${VERSION}"        >> $GITHUB_OUTPUT
           elif [[ "$BRANCH" == "main" ]]; then
-            echo "deploy_path=branches/main" >> $GITHUB_OUTPUT
+            echo "deploy_path="              >> $GITHUB_OUTPUT
             echo "is_release=false"          >> $GITHUB_OUTPUT
           elif [[ "$BRANCH" == "develop" ]]; then
             echo "deploy_path=branches/develop" >> $GITHUB_OUTPUT
