@@ -1,0 +1,33 @@
+name: Cleanup branch build
+
+on:
+  delete:
+
+permissions:
+  contents: write
+
+jobs:
+  cleanup:
+    name: Remove build for deleted branch
+    runs-on: ubuntu-latest
+    if: github.event.ref_type == 'branch'
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: gh-pages
+
+      - name: Remove branch directory
+        run: |
+          BRANCH="${{ github.event.ref }}"
+          SLUG=$(echo "$BRANCH" | sed 's|[^a-zA-Z0-9]|-|g' | sed 's|-\+|-|g' | sed 's|^-||;s|-$||')
+          DIR="branches/${SLUG}"
+          if [ -d "$DIR" ]; then
+            git rm -rf "$DIR"
+            git config user.name "github-actions[bot]"
+            git config user.email "github-actions[bot]@users.noreply.github.com"
+            git commit -m "chore: remove build for deleted branch ${BRANCH}"
+            git push
+            echo "Removed ${DIR}"
+          else
+            echo "No build directory found for ${BRANCH} (looked for ${DIR}), nothing to clean up."
+          fi

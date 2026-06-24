@@ -10,7 +10,7 @@
     {
       "version": "current",
       "desc": "Continuous Integration Build — latest commit on main branch",
-      "path": "https://oskthu2.github.io/ehds-tk",
+      "path": "https://oskthu2.github.io/ehds-tk/branches/main",
       "status": "ci-build",
       "current": true
     }
