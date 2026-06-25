@@ -1,5 +1,9 @@
 # Mappningsprinciper: RIVTA-tjänstekontrakt → FHIR
 
+Detta projekt har flyttat över till Inera. Detta repo stängs. 
+https://github.com/Inera-AB/EHDS-TK
+
+
 ## 1. Förberedelse
 
 Innan mappning påbörjas behöver du:
